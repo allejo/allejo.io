@@ -10,4 +10,7 @@ github_username:  allejo
 
 # Build settings
 markdown: redcarpet
-include: ['_pages']
+
+exclude:
+  - LICENSE
+  - README.md
