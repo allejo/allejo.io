@@ -62,7 +62,7 @@ Oh for fuck's sake. One of the most useful and fundamental things in most langua
 .example_module {
     @each $color in green, red, blue {
         &.#{$color} {
-            backgrounc: $color;
+            background: $color;
         }
     }
 }
