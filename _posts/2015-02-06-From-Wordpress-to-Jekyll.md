@@ -27,8 +27,6 @@ Since I just started using Jekyll here are some immediate pros and cons:
 
 - Lack of server side processing
     - I am unable to have any dynamically generated content; I will be forced to create my own API and use other APIs to generate some dynamic content. On the bright side, I will be able to practice my JavaScript more
-- Slower publishing
-    - In order for me to publish a blog post or page or to edit anything, I must have access to my computer to edit things, compile it, and upload it since I'm not using GitHub Pages. I do plan on writing my own webhook to do this for me, but for the moment, it is a con.
 - URL Routes require a lot of folders
     - This is one of the biggest issues I have with Jekyll but I understand. Because everything is static, there are a lot of folders needed to create pretty URLs which I don't really mind since they're automatically generated but it still bugs me.
 
