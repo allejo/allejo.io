@@ -5,7 +5,7 @@ title: "About"
 
 ---
 
-I'm an arrogant, sarcastic, and self-centered colleged student.
+I'm an arrogant, sarcastic, and self-centered college student.
 
 Sometimes I'm funny.
 
