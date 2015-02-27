@@ -2,7 +2,7 @@
 
 layout: post
 title:  "My obsessive love of CSS Preprocessors"
-date:   2015-02-07 02:03:50
+date:   2015-02-26 02:03:50
 categories: blog rants
 tags: coding sass less css
 
@@ -115,3 +115,74 @@ If it's absolutely necessary to organize your mixins or need to avoid conflicts,
 ```
 
 And another thing! When I write my SASS/CSS, I never use IDs; I feel like they should solely be used for JavaScript. Stylesheets should have reusable styles, not something only usable for a single element. I'm not going to argue this since there are plenty of debates concerning this like this one on [StackOverflow](http://stackoverflow.com/questions/8084555/why-selecting-by-id-is-not-recommended-in-css). But there you go again, LESS, you just *had* to use a selector that already has meaning in CSS to signify a namespace.
+
+### SASS' @content blocks
+
+Of the several features that SASS has, one of the features I appreciate is the `@content` block. If you're not familiar with it, you can use it to create mixins, give it a set of rules, and the mixin will pass the set of rules as a parameter, so to speak. For example, here's a [mixin I've written](https://github.com/allejo/bzion/blob/master/web/assets/css/modules/_mobile-responsive-definitions.scss) and use repeatedly on several different projects, one of them being [BZiON](https://github.com/allejo/bzion).
+
+**SASS Definition**
+
+``` scss
+@mixin respond-to($media) {
+    @if $media == phones {
+        @media only screen and (max-width: $phone-max-size) { @content; }
+    }
+    @else if $media == phablets {
+        @media only screen and (max-width: $phablet-max-size) { @content; }
+    }
+    @else if $media == tablets {
+        @media only screen and (max-width: $tablet-max-size) { @content; }
+    }
+}
+```
+
+**SASS Usage**
+
+``` scss
+.display-on-phone-only {
+    display: none;
+
+    @include respond-to(phones) {
+        display: block;
+    }
+}
+```
+
+Oh don't worry, LESS has this feature as well! It supports it just like it supports loops... As I'm writing LESS and using this syntax, I'm forced to tolerate it but it simply doesn't feel natural to me. At this point, it feels like I'm writing JavaScript with all of the anonymous functions.
+
+**LESS Definition**
+
+``` scss
+.respond-to(@media-size, @rules) {
+    & when(@media-size = phones) {
+        @media only screen and (max-width: @phone-max-size) { @rules(); }
+    }
+    & when(@media-size = phablets) {
+        @media only screen and (max-width: @phablets-max-size) { @rules(); }
+    }
+    & when(@media-size = tablet) {
+        @media only screen and (max-width: @tablet-max-size) { @rules(); }
+    }
+}
+```
+
+**LESS Usage**
+
+``` scss
+.display-on-phone-only {
+    display: none;
+
+    .respond-to(phones; {
+        display: block;
+    });
+}
+```
+
+### Final Thoughts
+
+While I am forced to work with LESS for my job and I've grown to tolerate it, I still much prefer SASS. I honestly think the Bootstrap team should have used SASS instead so LESS could have died... The sole reason LESS was revived was because Bootstrap used it. I'm fully aware why the Bootstrap team [choose to use LESS](https://web.archive.org/web/20140708195223/http://www.wordsbyf.at/2012/03/08/why-less/) over SASS but I still don't agree with some of their reasoning.
+
+1. "LESS is simple"
+    - Look at the LESS loop...
+2. LESS is only "a stopgap" until the future of CSS
+    - "stopgap", you keep using that word, I do not think it means what you think it means. CSS spec shows no real signs of improvements in the direction of supporting things that preprocessors support; this is a joke.
