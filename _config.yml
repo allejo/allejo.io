@@ -12,5 +12,4 @@ github_username:  allejo
 markdown: redcarpet
 
 exclude:
-  - LICENSE
   - README.md
