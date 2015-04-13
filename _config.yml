@@ -13,3 +13,4 @@ markdown: redcarpet
 
 exclude:
   - README.md
+  - allejo.sublime-project
