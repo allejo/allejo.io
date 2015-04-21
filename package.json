@@ -1,0 +1,22 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allejo/allejo.io"
+  },
+  "dependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-sass": "*",
+    "load-grunt-tasks": "^3.1.0"
+  },
+  "devDependencies": {
+    "grunt-check-gems": "0.0.2",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-jekyll": "^0.4.2",
+    "grunt-sass": "^0.18.0",
+    "grunt-scss-lint": "^0.3.4",
+    "jshint-stylish": "^0.4.0"
+  }
+}
