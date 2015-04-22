@@ -9,5 +9,11 @@ url: "https://allejo.io"
 # Build settings
 markdown: redcarpet
 
+keep_files:
+  - '_site/css'
+
 exclude:
   - README.md
+  - node_module
+  - css
+  - _sass

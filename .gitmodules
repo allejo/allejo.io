@@ -1,0 +1,4 @@
+[submodule "_sass/vendor/bourbon"]
+	path = _sass/vendor/bourbon
+	url = https://github.com/Sujevo/lib-bourbon
+	branch = v4_2
