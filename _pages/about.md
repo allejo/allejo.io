@@ -15,7 +15,7 @@ I'm arrogant, facetious, sarcastic, and self-centered. I'm also notorious for br
 
 ...sometimes I'm funny.
 
-<hr>
+---
 
 ## Experience
 

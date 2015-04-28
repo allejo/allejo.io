@@ -14,6 +14,15 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        jekyll: {
+            serve: {
+                options: {
+                    doctor: true,
+                    drafts: true,
+                    serve: true
+                }
+            }
+        },
         libsass: {
             options: {
                 style: 'expanded',
@@ -92,14 +101,10 @@ module.exports = function(grunt) {
                 }
             },
             views: {
-                files: [ 'views/**/*.html.twig' ],
+                files: [ '_pages', '_layouts', '_includes' ],
                 options: {
                     livereload: true
                 }
-            },
-            tests: {
-                files: [ 'models/*.php', 'tests/ModelTests/*.php' ],
-                tasks: [ 'phpunit' ]
             }
         }
     });
