@@ -22,7 +22,7 @@ Both SASS and LESS support functions (or mixins) and I love them both to death, 
 
 ``` scss
 
-@include my-function;
+@include my-mixin;
 
 ```
 
@@ -30,7 +30,7 @@ or
 
 ``` scss
 
-@include my-function();
+@include my-mixin();
 
 ```
 
@@ -38,7 +38,7 @@ or
 
 ``` scss
 
-.my-function;
+.my-mixin;
 
 ```
 
@@ -46,7 +46,7 @@ or
 
 ``` scss
 
-.my-function();
+.my-mixin();
 
 ```
 
