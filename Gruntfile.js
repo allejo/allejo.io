@@ -22,7 +22,6 @@ module.exports = function(grunt) {
         // Grunt task settings
         jekyll: {
             options: {
-                doctor: true,
                 drafts: true
             },
             staging: {
