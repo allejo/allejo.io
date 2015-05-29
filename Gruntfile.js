@@ -1,58 +1,41 @@
 module.exports = function(grunt) {
+    // Load the libsass grunt task first and rename it because the ruby sass grunt task also has the same name for
+    // initConfig().
     grunt.task.loadNpmTasks("grunt-sass");
     grunt.renameTask("sass", "libsass");
 
+    // Load the rest of the tasks except for libsass that we already loaded manually
     require('load-grunt-tasks')(grunt, {
         pattern: [ 'grunt-*', '!grunt-sass' ]
     });
 
     grunt.initConfig({
-        'check-gems': {
-            dist: {
-                files: [{
-                    src: '.'
-                }]
-            }
+        // Variables
+        globalConfig: {
+            sassDir: '_sass',
+            targetCss: '_site/css',
+            masterStyle: 'styles',
+            cssPath: '<%= globalConfig.targetCss %>/<%= globalConfig.masterStyle %>.css',
+            sassPath: '<%= globalConfig.sassDir %>/<%= globalConfig.masterStyle %>.scss'
         },
+
+        // Grunt task settings
         jekyll: {
-            serve: {
-                options: {
-                    doctor: true,
-                    drafts: true,
-                    serve: true
-                }
-            }
-        },
-        libsass: {
             options: {
-                style: 'expanded',
-                sourceMap: true,
-                lineNumbers: true
+                doctor: true,
+                drafts: true
             },
-            debug: {
-                files: {
-                    '_site/css/styles.css': '_sass/styles.scss'
-                }
-            }
-        },
-        sass: {
-            dist: {
+            staging: {
                 options: {
-                    style: 'compressed',
-                    sourcemap: 'none',
-                    require: 'sass-media_query_combiner'
-                },
-                files: {
-                    '_site/css/styles.css': '_sass/styles.scss'
+                    config: '_config.yml,_config_dev.yml',
+                    serve: true,
+                    watch: true
                 }
-            }
-        },
-        scsslint: {
-            allFiles: [
-                '_sass/**/*.scss'
-            ],
-            options: {
-                config: '.scss-lint.yml'
+            },
+            production: {
+                options: {
+                    config: '_config.yml'
+                }
             }
         },
         jshint: {
@@ -65,6 +48,38 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: ['Gruntfile.js']
+        },
+        libsass: {
+            options: {
+                style: 'expanded',
+                sourceMap: true,
+                lineNumbers: true
+            },
+            debug: {
+                files: {
+                    '<%= globalConfig.cssPath %>': '<%= globalConfig.sassPath %>'
+                }
+            }
+        },
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed',
+                    sourcemap: 'none',
+                    require: 'sass-media_query_combiner'
+                },
+                files: {
+                    '<%= globalConfig.cssPath %>': '<%= globalConfig.sassPath %>'
+                }
+            }
+        },
+        scsslint: {
+            allFiles: [
+                '<%= globalConfig.sassDir %>/**/*.scss'
+            ],
+            options: {
+                config: '.scss-lint.yml'
+            }
         },
         uglify: {
             options: {
@@ -87,14 +102,14 @@ module.exports = function(grunt) {
                 }
             },
             css: {
-                files: [ 'web/assets/css/styles.css' ]
+                files: '<%= globalConfig.cssPath %>'
             },
             styles: {
                 files: [
-                    'web/assets/css/**/*.scss',
-                    '!web/assets/css/vendor/**/*.scss'
+                    '<%= globalConfig.sassDir %>/**/*.scss',
+                    '!<%= globalConfig.sassDir %>/vendor/**/*.scss'
                 ],
-                tasks: [ 'libsass' ],
+                tasks: [ 'libsass', 'scsslint' ],
                 options: {
                     livereload: false,
                     spawn: true
@@ -109,7 +124,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('css', [ 'sass:dist' ]);
-    grunt.registerTask('js', [ 'jshint', 'uglify' ]);
-    grunt.registerTask('default', [ 'css', 'js' ]);
+    grunt.registerTask('dist', [ 'sass', 'uglify', 'jekyll:production' ]);
+    grunt.registerTask('default', [ 'libsass', 'jshint', 'jekyll:staging', 'watch' ]);
 };

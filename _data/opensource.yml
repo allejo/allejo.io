@@ -1,0 +1,5 @@
+bzflag:
+  plugins:
+    - name: Shot Limit Zone
+      github: allejo/shotLimitZone
+      bitbucket: allejo/shotlimitzone
