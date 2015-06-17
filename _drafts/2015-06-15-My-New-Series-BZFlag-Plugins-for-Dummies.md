@@ -3,7 +3,7 @@
 layout: post
 title:  "My New Series: BZFlag Plug-ins for Dummies"
 date:   2015-06-15 00:00:00
-categories: bzflag announcements
+categories: bzflag announcements tutorials
 tags: bzflag plugins development
 
 ---
