@@ -1,7 +1,7 @@
 # Generated Files
 _site
 .sass-cache
-*.sublime-workspace
+node_modules
 
 # OS Generated Files
 .DS_Store
@@ -13,7 +13,3 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *~
-node_modules
-.sass-cache
-composer.phar
-.idea/workspace.xml
