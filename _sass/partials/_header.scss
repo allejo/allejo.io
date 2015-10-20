@@ -1,0 +1,11 @@
+.c-header {
+    @include make-container();
+
+    &__title {
+        @include make-columns(3);
+    }
+
+    &__navigation {
+        @include make-columns(9);
+    }
+}
