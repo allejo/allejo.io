@@ -1,9 +1,8 @@
-/**
- * Syntax highlighting styles
- */
+// scss-lint:disable all
+
 .highlight {
     background: #fff;
-    @extend %vertical-rhythm;
+    margin-bottom: $Settings-Margin;
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error

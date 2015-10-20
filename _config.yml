@@ -9,6 +9,9 @@ url: "https://allejo.io"
 # Build settings
 markdown: redcarpet
 
+sass:
+  style: compressed
+
 exclude:
   - README.md
   - node_module
