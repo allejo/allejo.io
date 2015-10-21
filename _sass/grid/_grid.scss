@@ -1,0 +1,15 @@
+%row {
+    @include make-container();
+}
+
+%body-with-sidebar {
+    @include make-columns(8);
+
+    @include media-breakpoint-down(sm) {
+        @include make-columns(12);
+    }
+}
+
+%body-sidebar {
+    @include make-columns(4);
+}

@@ -1,11 +1,13 @@
 .c-header {
-    @include make-container();
+    @extend %row;
+}
 
-    &__title {
-        @include make-columns(3);
-    }
+.c-header__title {
+    @include make-columns(3);
+}
 
-    &__navigation {
-        @include make-columns(9);
-    }
+.c-header__navigation {
+    @include make-columns(9);
+
+    text-align: right;
 }

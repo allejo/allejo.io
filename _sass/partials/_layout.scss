@@ -1,3 +1,25 @@
+@each $bp, $val in $grid-breakpoints {
+    .hide-down-#{$bp} {
+        @include media-breakpoint-down($bp) {
+            display: none;
+        }
+    }
+
+    .hide-up-#{$bp} {
+        @include media-breakpoint-up($bp) {
+            display: none;
+        }
+    }
+}
+
 .wrapper {
-    width: 1000px;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    width: 100%;
+
+    @include media-breakpoint-only(lg) {
+        width: 1000px;
+    }
 }
