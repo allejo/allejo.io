@@ -4,13 +4,17 @@
 @charset 'utf-8';
 
 @import 'base';
+@import 'reset';
 
 @import 'vendor/Bourbon/bourbon';
 @import 'vendor/OnTheRocks/src/rocks';
 
-@import 'partials/syntax-highlighting';
 @import 'grid/responsive';
 @import 'grid/grid';
+
+@import 'partials/syntax-highlighting';
+@import 'helpers/hide';
+@import 'helpers/lists';
 
 @import 'partials/layout';
 @import 'partials/header';

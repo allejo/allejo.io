@@ -1,0 +1,13 @@
+@each $bp, $val in $grid-breakpoints {
+    .hide-down-#{$bp} {
+        @include media-breakpoint-down($bp) {
+            display: none;
+        }
+    }
+
+    .hide-up-#{$bp} {
+        @include media-breakpoint-up($bp) {
+            display: none;
+        }
+    }
+}

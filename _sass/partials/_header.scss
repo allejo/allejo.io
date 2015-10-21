@@ -1,13 +1,26 @@
 .c-header {
     @extend %row;
+
+    padding: $Settings-Spacer $Settings-Spacer_Small;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 .c-header__title {
     @include make-columns(3);
+
+    font-family: $Font-Family-BreeSerif;
+    font-size: 2.5rem;
 }
 
 .c-header__navigation {
     @include make-columns(9);
 
     text-align: right;
+}
+
+.c-navigation__pages {
+    @extend %horizontal-list;
 }

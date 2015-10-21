@@ -4,16 +4,16 @@
     </div>
 
     <nav class="c-header__navigation">
-        <a href="#" class="c-header__navigation__menu-icon hide-up-lg">
+        <a href="#" class="c-navigation__menu-icon hide-up-lg">
             <i class="fa fa-bars"></i>
         </a>
 
-        <div class="c-navigation__pages">
+        <ul class="c-navigation__pages">
             {% for page in site.pages %}
                 {% if page.title %}
-                    <a class="c-navigation__pages__page" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    <li><a class="c-navigation__pages__page" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
                 {% endif %}
             {% endfor %}
-        </div>
+        </ul>
     </nav>
 </header>
