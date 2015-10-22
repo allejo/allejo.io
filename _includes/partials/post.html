@@ -1,0 +1,13 @@
+<article class="c-post">
+    <h2 class="c-post__title">
+        <a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+    </h2>
+    <p class="c-post__meta">{{ include.post.date | date: "%b %-d, %Y" }}</p>
+    <section class="c-post__content">
+        {% if include.summary %}
+            {{ include.post.excerpt | strip_html }}
+        {% else %}
+            {{ include.post.content }}
+        {% endif %}
+    </section>
+</article>

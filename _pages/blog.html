@@ -1,0 +1,15 @@
+---
+
+layout: default
+title: "Blog"
+permalink: /blog/
+
+---
+
+<main class="blog wrapper">
+    <section class="newsfeed">
+        {% for post in site.posts %}
+            {% include partials/post.html post=post summary=true %}
+        {% endfor %}
+    </section>
+</main>

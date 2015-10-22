@@ -1,10 +1,13 @@
 .c-header {
     @extend %row;
+    @extend %anchor-decoration-hidden;
 
+    align-items: center;
     padding: $Settings-Spacer $Settings-Spacer_Small;
+    text-transform: lowercase;
 
     a {
-        text-decoration: none;
+        color: $Color-Black;
     }
 }
 
@@ -23,4 +26,8 @@
 
 .c-navigation__pages {
     @extend %horizontal-list;
+}
+
+.c-navigation__pages__page {
+    margin-left: $Settings-Spacer_Small;
 }

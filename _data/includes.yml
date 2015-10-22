@@ -1,5 +1,5 @@
 css:
-  - url: assets/css/main.css
+  - url: /assets/css/main.css
     external: false
   - url: >
       https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Bree+Serif
@@ -9,7 +9,7 @@ css:
     external: true
 
 js:
-  - url: assets/js/main.js
+  - url: /assets/js/main.js
     external: false
   - url: >
       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js

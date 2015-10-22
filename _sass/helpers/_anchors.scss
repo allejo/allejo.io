@@ -1,0 +1,13 @@
+%anchor-decoration-hidden {
+    a {
+        text-decoration: none;
+    }
+}
+
+a {
+    color: $Color-Azure_Radiance;
+
+    &:hover {
+        color: darken($Color-Azure_Radiance, 20%);
+    }
+}

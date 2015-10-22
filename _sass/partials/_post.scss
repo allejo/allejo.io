@@ -1,0 +1,28 @@
+.c-post {
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-post__title,
+.c-post__meta {
+    margin-bottom: $Settings-Spacer_Mini;
+}
+
+.c-post__title {
+    @extend %anchor-decoration-hidden;
+
+    font-size: $Font-Size-H2;
+    font-weight: 300;
+
+    a {
+        color: $Color-Black;
+    }
+}
+
+.c-post__meta {
+    color: $Color-Dusty_Grey;
+    font-size: $Font-Size-H5;
+}
+
+.c-post__content {
+    font-weight: 300;
+}

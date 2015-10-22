@@ -17,6 +17,5 @@ include:
 
 exclude:
   - README.md
-  - node_module
-  - css
-  - _sass
+  - Gemfile
+  - Gemfile.lock
