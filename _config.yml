@@ -9,6 +9,9 @@ url: "https://allejo.io"
 # Build settings
 markdown: redcarpet
 
+gems:
+  - jekyll-gist
+
 sass:
   style: compressed
 

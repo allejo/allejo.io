@@ -19,4 +19,7 @@
 
 @import 'partials/layout';
 @import 'partials/header';
+@import 'partials/banners';
 @import 'partials/post';
+
+{% include_relative dynamic/_banners.scss %}

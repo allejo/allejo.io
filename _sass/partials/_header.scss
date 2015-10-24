@@ -3,7 +3,10 @@
     @extend %anchor-decoration-hidden;
 
     align-items: center;
-    padding: $Settings-Spacer $Settings-Spacer_Small;
+    padding: {
+        bottom: $Settings-Spacer;
+        top: $Settings-Spacer;
+    }
     text-transform: lowercase;
 
     a {

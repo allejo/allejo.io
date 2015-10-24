@@ -1,0 +1,9 @@
+path: /assets/images/banners/
+list:
+  - name: coast
+    file: coast.jpg
+    position: center center
+  - name: lake
+    file: lake.jpg
+  - name: rocks
+    file: rocks.jpg
