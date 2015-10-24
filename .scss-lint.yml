@@ -2,7 +2,7 @@ scss_files: '_sass/**/*.scss'
 
 exclude:
   - '_sass/vendor/*'
-  - '_sass/partials/_reset.scss'
+  - '_sass/_reset.scss'
 
 linters:
   ElsePlacement:
@@ -26,9 +26,14 @@ linters:
   NameFormat:
     enabled: false
 
+  NestingDepth:
+    max_depth: 4
+
+  SelectorDepth:
+    max_depth: 4
+
   SelectorFormat:
     enabled: false
-    convention: ^\.(_)?[a-z]+-[a-z0-9-]+((_{2}|-{2})?[a-z0-9-]+)?(-{2}[a-z0-9-]+)?[a-z0-9]$
 
   SingleLinePerSelector:
     allow_single_line_rule_sets: true
