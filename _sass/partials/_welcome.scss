@@ -1,3 +1,13 @@
+.c-banner {
+    &.welcome {
+        height: 400px;
+
+        .c-banner__image {
+            height: 400px;
+        }
+    }
+}
+
 .c-welcome {
     font-weight: 300;
 }
