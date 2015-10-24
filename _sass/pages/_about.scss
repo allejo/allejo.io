@@ -1,3 +1,8 @@
+.c-about__content {
+    font-family: $Font-Family-Roboto;
+    margin-bottom: $Settings-Spacer;
+}
+
 .c-job {
     margin-bottom: $Settings-Spacer;
 }
@@ -37,4 +42,8 @@
     color: $Color-Waikawa_Gray;
     font-weight: 400;
     padding: 2px 7px;
+}
+
+.c-job__description {
+    font-family: $Font-Family-Roboto;
 }

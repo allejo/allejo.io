@@ -2,15 +2,16 @@
     margin-bottom: $Settings-Spacer;
 }
 
-.c-post__title,
-.c-post__meta {
-    margin-bottom: $Settings-Spacer_Mini;
+.c-post__meta,
+.c-post__title {
+    margin-bottom: $Settings-Spacer_Small;
 }
 
 .c-post__title {
     @extend %anchor-decoration-hidden;
     @include font-size(h2);
 
+    font-family: $Font-Family-FiraSans;
     font-weight: 300;
 
     a {
@@ -25,5 +26,6 @@
 }
 
 .c-post__content {
+    font-family: $Font-Family-Roboto;
     font-weight: 300;
 }

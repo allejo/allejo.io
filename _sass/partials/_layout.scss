@@ -9,7 +9,7 @@
     }
     width: 100%;
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-up(lg) {
         padding: {
             left: 0;
             right: 0;

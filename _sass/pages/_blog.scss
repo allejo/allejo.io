@@ -1,0 +1,7 @@
+.c-blog {
+    width: 800px;
+
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+}
