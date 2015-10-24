@@ -12,5 +12,7 @@ banner: coast
         {% for post in site.posts %}
             {% include partials/post.html post=post summary=true %}
         {% endfor %}
+
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
     </section>
 </main>
