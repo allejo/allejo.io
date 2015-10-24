@@ -1,14 +1,14 @@
-<footer class="c-footer">
+<footer class="c-footer wrapper">
     <section class="c-footer__copyright">
-        <p>"Verizon. Like Jesus, it's always working for you"</p>
         <p>Copyright &copy; {{ site.time | date: '%Y' }}</p>
     </section>
 
     <section class="c-footer__social">
-        <p>stalk me on</p>
         <ul>
             {% for account in site.data.social %}
-                <a href="{{ account.url }}"><i class="fa fa-{{ account.logo }}"></i></a>
+                <li>
+                    <a class="{{ account.logo }}" href="{{ account.url }}"><i class="fa fa-{{ account.logo }}"></i></a>
+                </li>
             {% endfor %}
         </ul>
     </section>

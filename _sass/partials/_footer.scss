@@ -1,0 +1,26 @@
+.c-footer {
+    @extend %row;
+
+    font-weight: 300;
+    padding: {
+        bottom: $Settings-Spacer;
+        top: $Settings-Spacer;
+    }
+}
+
+.c-footer__social,
+.c-footer__copyright {
+    @extend %body-half;
+}
+
+.c-footer__social {
+    text-align: right;
+
+    ul {
+        @extend %horizontal-list;
+
+        li {
+            margin-left: $Settings-Spacer_Mini;
+        }
+    }
+}

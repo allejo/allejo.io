@@ -21,5 +21,7 @@
 @import 'partials/header';
 @import 'partials/banners';
 @import 'partials/post';
+@import 'partials/footer';
 
 {% include_relative dynamic/_banners.scss %}
+{% include_relative dynamic/_social.scss %}

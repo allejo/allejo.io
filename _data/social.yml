@@ -1,14 +1,21 @@
 - logo: facebook
   url: https://www.facebook.com/allejo.me
+  color: "#3B5998"
 - logo: instagram
   url: https://instagram.com/allejo256/
+  color: "#125688"
 - logo: twitter
   url: https://twitter.com/allejome
+  color: "#55ACEE"
 - logo: linkedin
   url: https://www.linkedin.com/in/allejo
+  color: "#0077B5"
 - logo: github
   url: http://github.com/allejo
+  color: "#181717"
 - logo: codepen
   url: http://codepen.io/allejo/
+  color: "#000000"
 - logo: stack-overflow
   url: http://stackoverflow.com/users/1239484/allejo
+  color: "#F48024"
