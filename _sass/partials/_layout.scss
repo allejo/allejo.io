@@ -8,9 +8,17 @@ body {
         left: auto;
         right: auto;
     }
+    padding: {
+        left: $Settings-Spacer;
+        right: $Settings-Spacer;
+    }
     width: 100%;
 
     @include media-breakpoint-only(lg) {
+        padding: {
+            left: 0;
+            right: 0;
+        }
         width: 1000px;
     }
 }
