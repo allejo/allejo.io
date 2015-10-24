@@ -15,6 +15,7 @@
     },
     "rocks": {
         "name": "rocks",
-        "file": "/assets/images/banners/rocks.jpg"
+        "file": "/assets/images/banners/rocks.jpg",
+        "position": "center"
     }
 }

@@ -3,6 +3,16 @@ title: allejo
 baseurl: ""
 url: "https://allejo.io"
 
+collections:
+  - experience
+
+defaults:
+  - scope:
+      path: ""
+      type: experience
+    values:
+      layout: experience-block
+
 # Build settings
 markdown: redcarpet
 

@@ -1,11 +1,3 @@
----
-
-layout: page
-title: "About"
-permalink: /about/
-
----
-
 Hi, I'm allejo  
 <small>(or allejo256 if someone has rudely taken "allejo" on a specific website)</small>
 
@@ -14,17 +6,3 @@ My name's Vladimir but most people just call me Vlad; well that and Asshole. I'm
 I'm arrogant, facetious, sarcastic, and self-centered. I'm also notorious for breaking the build.
 
 ...sometimes I'm funny.
-
----
-
-## Experience
-
-{% for job in site.data.experience %}
-{% include resume-entry.html %}
-{% endfor %}
-
-## Volunteer
-
-{% for job in site.data.volunteer %}
-{% include resume-entry.html %}
-{% endfor %}
