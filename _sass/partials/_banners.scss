@@ -1,7 +1,16 @@
 .c-banner {
-    .image {
-        background-size: cover;
-        height: 300px;
-        width: 100%;
-    }
+    margin-bottom: $Settings-Spacer_Small;
+}
+
+.c-banner__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+
+.c-banner__credit {
+    color: $Color-Dusty_Grey;
+    font-size: $Font-Size-H6;
+    text-align: right;
 }

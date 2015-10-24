@@ -1,8 +1,8 @@
-.c-banner {
-    {% for banner in site.data.banners.list %}
-        .image.{{ banner.name }} {
-            background-image: url("{{ site.data.banners.path | prepend: site.baseurl }}{{ banner.file }}");
-            background-position: {{ banner.position | default: 'initial' }};
-        }
-    {% endfor %}
-}
+{% for data in site.data.banners %}
+    {% assign banner = data[1] %}
+
+    .c-banner__image.{{ banner.name }} {
+        background-image: url("{{ banner.file | prepend: site.baseurl }}");
+        background-position: {{ banner.position | default: 'initial' }};
+    }
+{% endfor %}

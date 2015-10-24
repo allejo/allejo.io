@@ -1,8 +1,5 @@
 # Site settings
 title: allejo
-description: >
-  A Jekyll blog about an arrogant, sarcastic, and self-centered college student
-  who thinks he's funny. He gets bored, a lot.
 baseurl: ""
 url: "https://allejo.io"
 
