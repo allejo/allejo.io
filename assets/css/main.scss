@@ -14,6 +14,7 @@
 
 @import 'partials/syntax-highlighting';
 @import 'helpers/anchors';
+@import 'helpers/body';
 @import 'helpers/headers';
 @import 'helpers/hide';
 @import 'helpers/lists';
@@ -22,9 +23,11 @@
 @import 'partials/layout';
 @import 'partials/header';
 @import 'partials/banners';
+@import 'partials/jobs';
 @import 'partials/post';
 @import 'partials/footer';
 
+@import 'partials/about';
 @import 'partials/welcome';
 
 {% include_relative dynamic/_banners.scss %}

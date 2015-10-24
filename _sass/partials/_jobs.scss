@@ -1,0 +1,40 @@
+.c-job {
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-job__header {
+    @extend %row;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.c-job__header__time {
+    @include make-columns(4);
+
+    text-align: right;
+}
+
+.c-job__header__position {
+    @include make-columns(8);
+
+    margin-bottom: $Settings-Spacer_Mini;
+
+    .title {
+        font-weight: 400;
+    }
+}
+
+.c-job__tags {
+    margin-bottom: $Settings-Spacer_Mini;
+}
+
+.c-job__tags__tag {
+    @include font-size(h6);
+
+    background-color: $Color-Catskill_White;
+    color: $Color-Waikawa_Gray;
+    font-weight: 400;
+    padding: 2px 7px;
+}
