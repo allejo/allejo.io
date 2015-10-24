@@ -5,7 +5,7 @@
     <p class="c-post__meta">{{ include.post.date | date: "%b %-d, %Y" }}</p>
     <section class="c-post__content">
         {% if include.summary %}
-            {{ include.post.excerpt | strip_html }}
+            {{ include.post.excerpt | markdownify | strip_html }}
         {% else %}
             {{ include.post.content }}
         {% endif %}
