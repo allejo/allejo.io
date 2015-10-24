@@ -10,7 +10,8 @@
     },
     "lake": {
         "name": "lake",
-        "file": "/assets/images/banners/lake.jpg"
+        "file": "/assets/images/banners/lake.jpg",
+        "position": "center"
     },
     "rocks": {
         "name": "rocks",

@@ -1,12 +1,12 @@
 {% if page.banner %}
-    <section class="c-banner">
+    <section class="c-banner {{ page.bannercss }}">
         <div class="c-banner__image {{ page.banner }}"></div>
 
         {% assign banner = site.data.banners[page.banner] %}
         {% if banner.author %}
             <div class="wrapper">
                 <p class="c-banner__credit">
-                    <span>Photography by</span>
+                    <span>photography by</span>
                     {% assign author = banner.author %}
                     {% if author.url %}
                         <a href="{{ author.url }}">{{ author.name }}</a>

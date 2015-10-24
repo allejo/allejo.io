@@ -1,0 +1,17 @@
+.c-welcome {
+    font-weight: 300;
+}
+
+.c-welcome__header {
+    font-size: $Font-Size-H1;
+    line-height: $Font-Size-H1;
+}
+
+.c-welcome__slug {
+    font-size: $Font-Size-H3;
+    line-height: $Font-Size-H3;
+}
+
+.c-welcome__content {
+    margin-top: $Settings-Spacer;
+}

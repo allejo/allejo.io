@@ -23,5 +23,7 @@
 @import 'partials/post';
 @import 'partials/footer';
 
+@import 'partials/welcome';
+
 {% include_relative dynamic/_banners.scss %}
 {% include_relative dynamic/_social.scss %}
