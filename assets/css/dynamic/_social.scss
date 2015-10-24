@@ -1,5 +1,5 @@
 {% for site in site.data.social %}
-    .fa-{{ site.logo }} {
+    .fa-{{ site.logo }}:hover {
         color: {{ site.color | default: "#000000" }};
     }
 {% endfor %}

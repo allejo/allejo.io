@@ -21,6 +21,10 @@
 
         li {
             margin-left: $Settings-Spacer_Mini;
+
+            a {
+                color: $Color-Dusty_Grey;
+            }
         }
     }
 }
