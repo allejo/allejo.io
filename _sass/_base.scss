@@ -7,12 +7,14 @@ $Font-Family-OpenSans: 'Open Sans', sans-serif;
 $Font-Family-BreeSerif: 'Bree Serif', serif;
 
 $Font-Size-Base: 16px;
-$Font-Size-H1: floor(($Font-Size-Base * 2.6));
-$Font-Size-H2: floor(($Font-Size-Base * 2.15));
-$Font-Size-H3: ceil(($Font-Size-Base * 1.7));
-$Font-Size-H4: ceil(($Font-Size-Base * 1.25));
-$Font-Size-H5: ceil(($Font-Size-Base * 0.9));
-$Font-Size-H6: ceil(($Font-Size-Base * 0.8));
+$Font-Sizes: (
+    h1: floor(($Font-Size-Base * 2.6)),
+    h2: floor(($Font-Size-Base * 2.15)),
+    h3: ceil(($Font-Size-Base * 1.7)),
+    h4: ceil(($Font-Size-Base * 1.25)),
+    h5: ceil(($Font-Size-Base * 0.9)),
+    h6: ceil(($Font-Size-Base * 0.8))
+);
 
 $Settings-Spacer: 30px;
 $Settings-Spacer_Small: $Settings-Spacer / 2;

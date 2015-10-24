@@ -9,10 +9,9 @@
 
 .c-post__title {
     @extend %anchor-decoration-hidden;
+    @include font-size(h2);
 
-    font-size: $Font-Size-H2;
     font-weight: 300;
-    line-height: $Font-Size-H2;
 
     a {
         color: $Color-Black;
@@ -20,8 +19,9 @@
 }
 
 .c-post__meta {
+    @include font-size(h5);
+
     color: $Color-Dusty_Grey;
-    font-size: $Font-Size-H5;
 }
 
 .c-post__content {

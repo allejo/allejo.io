@@ -1,0 +1,12 @@
+@mixin font-size ($size) {
+    font-size: map-get($Font-Sizes, $size);
+    line-height: map-get($Font-Sizes, $size);
+}
+
+@each $tag, $size in $Font-Sizes {
+    #{$tag} {
+        @include font-size($tag);
+
+        margin-bottom: $Settings-Spacer_Small;
+    }
+}

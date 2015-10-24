@@ -10,8 +10,9 @@
 }
 
 .c-banner__credit {
+    @include font-size(h6);
+
     color: $Color-Dusty_Grey;
-    font-size: $Font-Size-H6;
     text-align: right;
 
     a {
