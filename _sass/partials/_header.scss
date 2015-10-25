@@ -15,19 +15,41 @@
 
 .c-header__title {
     @include make-columns(3);
+    @include font-size(h1);
 
     font-family: $Font-Family-BreeSerif;
-    font-size: 2.5rem;
 }
 
-.c-header__navigation {
+.c-navigation,
+.c-navigation--mobile {
     @include make-columns(9);
 
     text-align: right;
 }
 
+.c-navigation {
+    @include media-breakpoint-down(md) {
+        @include make-columns(12);
+
+        display: none;
+        text-align: left;
+
+        li {
+            display: block;
+        }
+    }
+}
+
+.c-navigation--mobile {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
 .c-navigation__pages {
     @extend %horizontal-list;
+
+    margin-bottom: 0;
 }
 
 .c-navigation__pages__page {
