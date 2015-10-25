@@ -4,6 +4,10 @@
 
 %body-half {
     @include make-columns(6);
+
+    @include media-breakpoint-down(ms) {
+        @include make-columns(12);
+    }
 }
 
 %body-with-sidebar {

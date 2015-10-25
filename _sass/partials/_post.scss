@@ -40,7 +40,9 @@
 }
 
 .c-post__footer__tags {
-    text-align: right;
+    @include media-breakpoint-up(lg) {
+        text-align: right;
+    }
 }
 
 .c-post__tags {
