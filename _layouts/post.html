@@ -2,35 +2,8 @@
 layout: default
 ---
 
-<div class="c-post wrapper">
-    <header class="c-post__header">
-        <h1 class="c-post__header__title">{{ page.title }}</h1>
-        <section class="c-post__header__meta">
-            <span class="c-post__header__meta__date">{{ page.date | date: "%b %-d, %Y" }}</span>
-        </section>
-    </header>
-
-    <article class="c-post__content">
-        {{ content }}
-    </article>
-
-    <footer class="c-post__footer">
-        <section class="c-post__footer__section">
-            <ul>
-                {% for category in page.categories %}
-                    <li>{{ category }}</li>
-                {% endfor %}
-            </ul>
-        </section>
-
-        <section class="c-post__footer__section">
-            <ul>
-                {% for tag in page.tags %}
-                    <li>{{ tag }}</li>
-                {% endfor %}
-            </ul>
-        </section>
-    </footer>
+<main class="c-post wrapper">
+    {% include partials/post.html post=page %}
 
     <!-- Disqus Setup -->
     <div id="disqus_thread"></div>
@@ -43,4 +16,4 @@ layout: default
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+</main>
