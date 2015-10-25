@@ -1,3 +1,15 @@
+em {
+    font-style: italic;;
+}
+
 p {
     margin-bottom: $Settings-Spacer_Small;
+}
+
+small {
+    @include font-size(h6);
+}
+
+strong {
+    font-weight: bold;
 }
