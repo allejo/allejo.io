@@ -7,6 +7,10 @@
     background-size: cover;
     height: 300px;
     width: 100%;
+
+    @include media-breakpoint-down(md) {
+        height: 200px;
+    }
 }
 
 .c-banner__credit {

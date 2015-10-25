@@ -8,6 +8,13 @@
     }
     text-transform: lowercase;
 
+    @include media-breakpoint-down(md) {
+        padding: {
+            bottom: $Settings-Spacer_Small;
+            top: $Settings-Spacer_Small;
+        }
+    }
+
     a {
         color: $Color-Black;
     }
@@ -36,11 +43,18 @@
         text-align: left;
 
         li {
+            @include font-size(h4);
+
             display: block;
+            margin-bottom: $Settings-Spacer_Small;
             padding-left: $rocks-gutter / 2;
 
             a {
                 margin-left: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }

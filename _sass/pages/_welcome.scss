@@ -2,8 +2,16 @@
     &.welcome {
         height: 400px;
 
+        @include media-breakpoint-down(md) {
+            height: 200px;
+        }
+
         .c-banner__image {
             height: 400px;
+
+            @include media-breakpoint-down(md) {
+                height: 200px;
+            }
         }
     }
 }

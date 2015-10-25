@@ -12,5 +12,8 @@ js:
   - url: >
       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
     external: true
+  - url: >
+      https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js
+    external: true
   - url: /assets/js/main.js
     external: false

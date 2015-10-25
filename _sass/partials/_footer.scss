@@ -11,10 +11,16 @@
 .c-footer__social,
 .c-footer__copyright {
     @extend %body-half;
+
+    @include media-breakpoint-down(ms) {
+        text-align: center;
+    }
 }
 
 .c-footer__social {
-    text-align: right;
+    @include media-breakpoint-up(md) {
+        text-align: right;
+    }
 
     ul {
         @extend %horizontal-list;
@@ -26,5 +32,11 @@
                 color: $Color-Dusty_Grey;
             }
         }
+    }
+}
+
+.c-footer__copyright {
+    @include media-breakpoint-down(ms) {
+        order: 2;
     }
 }

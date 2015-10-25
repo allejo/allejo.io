@@ -40,8 +40,10 @@
 }
 
 .c-post__footer__tags {
-    @include media-breakpoint-up(lg) {
-        text-align: right;
+    text-align: right;
+
+    @include media-breakpoint-down(ms) {
+        text-align: left;
     }
 }
 
