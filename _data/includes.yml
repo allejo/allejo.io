@@ -9,8 +9,8 @@ css:
     external: true
 
 js:
-  - url: /assets/js/main.js
-    external: false
   - url: >
       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
     external: true
+  - url: /assets/js/main.js
+    external: false

@@ -32,10 +32,16 @@
         @include make-columns(12);
 
         display: none;
+        margin-top: $Settings-Spacer_Small;
         text-align: left;
 
         li {
             display: block;
+            padding-left: $rocks-gutter / 2;
+
+            a {
+                margin-left: 0;
+            }
         }
     }
 }
