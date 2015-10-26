@@ -5,6 +5,8 @@ title:  "Introducing PhpSoda"
 date:   2015-06-10 00:00:00
 categories: projects
 tags: socrata php library api
+redirect_from:
+  - /projects/2015/06/09/Introducing-PhpSoda.html
 
 ---
 

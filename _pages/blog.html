@@ -1,0 +1,18 @@
+---
+
+layout: default
+title: "Blog"
+permalink: /blog/
+banner: coast
+
+---
+
+<main class="c-blog wrapper">
+    <section class="newsfeed">
+        {% for post in site.posts %}
+            {% include partials/post.html post=post summary=true %}
+        {% endfor %}
+
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </section>
+</main>

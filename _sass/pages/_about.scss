@@ -1,0 +1,62 @@
+.c-about__content {
+    font-family: $Font-Family-Roboto;
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-job {
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-job__header {
+    @extend %row;
+}
+
+.c-job__header__time {
+    @include make-columns(4);
+
+    margin-bottom: $Settings-Spacer_Mini;
+    text-align: right;
+
+    @include media-breakpoint-down(md) {
+        @include font-size(h6);
+        @include make-columns(12);
+
+        text-align: left;
+    }
+}
+
+.c-job__header__position {
+    @include make-columns(8);
+
+    margin-bottom: $Settings-Spacer_Mini;
+
+    @include media-breakpoint-down(md) {
+        @include make-columns(12);
+
+        margin-bottom: 0;
+    }
+
+    .title {
+        font-family: $Font-Family-FiraSans;
+        font-weight: 400;
+    }
+}
+
+.c-job__tags {
+    margin-bottom: $Settings-Spacer_Mini;
+}
+
+.c-job__tags__tag {
+    @include font-size(h6);
+
+    background-color: $Color-Catskill_White;
+    color: $Color-Waikawa_Gray;
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: $Settings-Spacer_Mini;
+    padding: 4px 7px;
+}
+
+.c-job__description {
+    font-family: $Font-Family-Roboto;
+}

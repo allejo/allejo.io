@@ -1,0 +1,39 @@
+scss_files: '_sass/**/*.scss'
+
+exclude:
+  - '_sass/vendor/*'
+  - '_sass/_reset.scss'
+
+linters:
+  ElsePlacement:
+    enabled: true
+    style: new_line
+
+  HexLength:
+    enabled: true
+    style: long
+
+  HexNotation:
+    style: uppercase
+
+  Indentation:
+    severity: warning
+    width: 4
+
+  LeadingZero:
+    style: include_zero
+
+  NameFormat:
+    enabled: false
+
+  NestingDepth:
+    max_depth: 4
+
+  SelectorDepth:
+    max_depth: 4
+
+  SelectorFormat:
+    enabled: false
+
+  SingleLinePerSelector:
+    allow_single_line_rule_sets: true

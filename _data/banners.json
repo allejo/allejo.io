@@ -1,0 +1,29 @@
+{
+    "coast": {
+        "name": "coast",
+        "file": "/assets/images/banners/coast.jpg",
+        "position": "center bottom",
+        "author": {
+            "name": "Viktor Hanacek",
+            "url": "http://www.viktorhanacek.com/"
+        }
+    },
+    "lake": {
+        "name": "lake",
+        "file": "/assets/images/banners/lake.jpg",
+        "position": "center",
+        "author": {
+            "name": "Viktor Hanacek",
+            "url": "http://www.viktorhanacek.com/"
+        }
+    },
+    "rocks": {
+        "name": "rocks",
+        "file": "/assets/images/banners/rocks.jpg",
+        "position": "center",
+        "author": {
+            "name": "Viktor Hanacek",
+            "url": "http://www.viktorhanacek.com/"
+        }
+    }
+}

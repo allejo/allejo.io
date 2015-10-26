@@ -1,0 +1,23 @@
+pre,
+code {
+    border: 1px solid $Color-Dusty_Grey;
+    border-radius: 3px;
+    background-color: #eef;
+    font-family: $Font-Family-Consolas;
+    font-size: 15px;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    overflow-x: scroll;
+    padding: 8px 12px;
+
+    > code {
+        border: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,8 @@
+a {
+    color: $Color-Azure_Radiance;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($Color-Azure_Radiance, 20%);
+    }
+}

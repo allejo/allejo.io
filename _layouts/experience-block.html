@@ -1,0 +1,18 @@
+<div class="c-job">
+    <header class="c-job__header">
+        <p class="c-job__header__position">
+            <span class="title">{{ page.position }}</span> | {{ page.location }}
+        </p>
+        <p class="c-job__header__time">{{ page.start | date: "%B %Y" }} - {{ page.end | date: "%B %Y" | default: "Present" }}</p>
+    </header>
+
+    <div class="c-job__tags">
+        {% for tag in page.tags %}
+            <span class="c-job__tags__tag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+
+    <section class="c-job__description">
+        {{ content }}
+    </section>
+</div>

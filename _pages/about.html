@@ -1,0 +1,32 @@
+---
+
+layout: default
+title: "About"
+permalink: /about/
+banner: rocks
+
+---
+
+<div class="c-about wrapper">
+    <section class="c-about__content">
+        {% capture content %}{% include content/about.md %}{% endcapture %}
+
+        {{ content | markdownify }}
+    </section>
+
+    <h2>Experience</h2>
+
+    {% assign jobs = site.experience | sort: "end" | where: "type", "experience" %}
+
+    {% for job in jobs %}
+        {{ job.output }}
+    {% endfor %}
+
+    <h2>Volunteer</h2>
+
+    {% assign volunteering = site.experience | sort: "end" | where: "type", "volunteer" %}
+
+    {% for volunteer in volunteering %}
+        {{ volunteer.output }}
+    {% endfor %}
+</div>

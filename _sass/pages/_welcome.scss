@@ -1,0 +1,33 @@
+.c-banner {
+    &.welcome {
+        height: 400px;
+
+        @include media-breakpoint-down(md) {
+            height: 200px;
+        }
+
+        .c-banner__image {
+            height: 400px;
+
+            @include media-breakpoint-down(md) {
+                height: 200px;
+            }
+        }
+    }
+}
+
+.c-welcome {
+    font-weight: 300;
+}
+
+.c-welcome__header {
+    @include font-size(h1);
+}
+
+.c-welcome__slug {
+    @include font-size(h3);
+}
+
+.c-welcome__content {
+    margin-top: $Settings-Spacer;
+}

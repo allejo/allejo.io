@@ -1,0 +1,111 @@
+.c-post {
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-post__meta,
+.c-post__title {
+    margin-bottom: $Settings-Spacer_Small;
+}
+
+.c-post__title {
+    @include font-size(h2);
+
+    font-family: $Font-Family-FiraSans;
+    font-weight: 300;
+
+    a {
+        color: $Color-Black;
+    }
+}
+
+.c-post__meta {
+    @include font-size(h5);
+
+    color: $Color-Dusty_Grey;
+}
+
+.c-post__content {
+    font-family: $Font-Family-Roboto;
+    font-weight: 300;
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-post__footer {
+    @extend %row;
+}
+
+.c-post__footer__tags,
+.c-post__footer__categories {
+    @extend %body-half;
+}
+
+.c-post__footer__tags {
+    text-align: right;
+
+    @include media-breakpoint-down(ms) {
+        text-align: left;
+    }
+}
+
+.c-post__tags {
+    @extend %horizontal-list;
+    @include font-size(h6);
+
+    li {
+        display: inline-table;
+
+        a,
+        span {
+            display: table-cell;
+        }
+
+        a {
+            background-color: $Tab-Background;
+            border: $Tab-Border_Width solid $Tab-Border_Color;
+            border-radius: $Tab-Border_Radius 0 0 $Tab-Border_Radius;
+            border-right-width: 0;
+            color: $Color-Dove_Gray;
+            padding: $Tab-Padding_X $Tab-Padding_Y;
+            text-decoration: none;
+        }
+
+        span {
+            border-radius: 0 $Tab-Border_Radius $Tab-Border_Radius 0;
+            border-style: solid;
+            border-width: $Tab-Border_Width;
+            color: $Color-White;
+            padding: $Tab-Padding_X $Tab-Padding_Alt;
+            position: relative;
+            text-align: center;
+
+            &:before {
+                border-radius: $Tab-Circle 0 0 $Tab-Circle;
+                border-style: solid;
+                border-width: $Tab-Border_Width 0 $Tab-Border_Width $Tab-Border_Width;
+                content: '';
+                height: $Tab-Circle;
+                left: -1 * ($Tab-Circle / 2) - $Tab_Border_Width;
+                margin-top: -1 * ($Tab-Circle / 2) - $Tab_Border_Width;
+                position: absolute;
+                top: 50%;
+                width: $Tab-Padding-Alt;
+            }
+
+            &:empty {
+                padding: 2px;
+            }
+
+            @each $name, $color in $Tab-Colors {
+                &.#{$name} {
+                    background-color: $color;
+                    border-color: darken($color, 5%);
+
+                    &:before {
+                        background-color: $color;
+                        border-color: darken($color, 5%);
+                    }
+                }
+            }
+        }
+    }
+}

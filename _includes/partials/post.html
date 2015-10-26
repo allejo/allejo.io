@@ -1,0 +1,42 @@
+<article class="c-post">
+    <header>
+        <h2 class="c-post__title">
+            <a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+        </h2>
+        <p class="c-post__meta">{{ include.post.date | date: "%b %-d, %Y" }}</p>
+    </header>
+
+    <section class="c-post__content">
+        {% if include.summary %}
+            {{ include.post.excerpt | markdownify | strip_html }}
+        {% else %}
+            {{ content }}
+        {% endif %}
+    </section>
+
+    {% unless include.summary %}
+        <footer class="c-post__footer">
+            <section class="c-post__footer__categories">
+                <ul class="c-post__tags">
+                    {% for category in page.categories %}
+                        <li>
+                            <a href="#">{{ category }}</a>
+                            <span class="blue"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="c-post__footer__tags">
+                <ul class="c-post__tags">
+                    {% for tag in page.tags %}
+                        <li>
+                            <a href="#">{{ tag }}</a>
+                            <span class="orange"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </footer>
+    {% endunless %}
+</article>

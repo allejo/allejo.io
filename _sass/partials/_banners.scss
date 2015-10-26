@@ -1,0 +1,26 @@
+.c-banner {
+    margin-bottom: $Settings-Spacer;
+}
+
+.c-banner__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+        height: 200px;
+    }
+}
+
+.c-banner__credit {
+    @include font-size(h6);
+
+    color: $Color-Dusty_Grey;
+    margin-top: $Settings-Spacer_Mini;
+    text-align: right;
+
+    a {
+        color: $Color-Dusty_Grey;
+    }
+}

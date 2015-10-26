@@ -1,0 +1,42 @@
+.c-footer {
+    @extend %row;
+
+    font-weight: 300;
+    padding: {
+        bottom: $Settings-Spacer;
+        top: $Settings-Spacer;
+    }
+}
+
+.c-footer__social,
+.c-footer__copyright {
+    @extend %body-half;
+
+    @include media-breakpoint-down(ms) {
+        text-align: center;
+    }
+}
+
+.c-footer__social {
+    @include media-breakpoint-up(md) {
+        text-align: right;
+    }
+
+    ul {
+        @extend %horizontal-list;
+
+        li {
+            margin-left: $Settings-Spacer_Mini;
+
+            a {
+                color: $Color-Dusty_Grey;
+            }
+        }
+    }
+}
+
+.c-footer__copyright {
+    @include media-breakpoint-down(ms) {
+        order: 2;
+    }
+}
