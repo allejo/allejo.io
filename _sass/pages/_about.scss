@@ -9,11 +9,13 @@
 
 .c-job__header {
     @extend %row;
-    margin-bottom: $Settings-Spacer_Tiny;
 
-    p {
-        margin-bottom: 0;
-    }
+    margin-bottom: $Settings-Spacer_Tiny;
+}
+
+.c-job__header__time,
+.c-job__header__position {
+    margin-bottom: 0;
 }
 
 .c-job__header__position {
@@ -21,7 +23,7 @@
     @include media-breakpoint-down(md) {
         @include make-columns(12);
 
-        margin-bottom: 0;
+        margin-bottom: $Settings-Spacer_Tiny;
     }
 
     .title {
