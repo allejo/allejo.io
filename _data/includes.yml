@@ -2,7 +2,7 @@ css:
   - url: /assets/css/main.css
     external: false
   - url: >
-      https://fonts.googleapis.com/css?family=Fira+Sans|Roboto:400,700|Bree+Serif|Open+Sans:300
+      https://fonts.googleapis.com/css?family=Bree+Serif|Lato
     external: true
   - url: >
       //maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css

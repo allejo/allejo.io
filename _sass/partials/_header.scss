@@ -35,16 +35,20 @@
 }
 
 .c-navigation {
+    font-family: $Font-Family-Lato;
+
     @include media-breakpoint-down(md) {
         @include make-columns(12);
 
         display: none;
         margin-top: $Settings-Spacer_Small;
         text-align: left;
+    }
 
-        li {
-            @include font-size(h4);
+    li {
+        font-size: 18px;
 
+        @include media-breakpoint-down(md) {
             display: block;
             margin-bottom: $Settings-Spacer_Small;
             padding-left: $rocks-gutter / 2;

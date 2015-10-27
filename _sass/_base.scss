@@ -7,11 +7,18 @@ $Color-Alto: #DDDDDD;
 $Color-Catskill_White: #CEDDE8;
 $Color-Waikawa_Gray: #597797;
 
+$Font-Family-Helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $Font-Family-Consolas: Consolas, monaco, monospace;
-$Font-Family-FiraSans: 'Fira Sans', sans-serif;
-$Font-Family-OpenSans: 'Open Sans', sans-serif;
-$Font-Family-Roboto: 'Roboto', sans-serif;
 $Font-Family-BreeSerif: 'Bree Serif', serif;
+$Font-Family-Lato: 'Lato', sans-serif;
+
+//$Font-Family-MuseoSlab: 'museo_slab500', serif;
+
+// For now, it's not being used but just in case
+//
+// Google Font name: PT+Serif
+//
+// $Font-Family-PT_Serif: 'PT Serif', serif;
 
 $Font-Size-Base: 16px;
 $Font-Sizes: (
@@ -24,12 +31,13 @@ $Font-Sizes: (
 );
 
 $Settings-Spacer: 30px;
-$Settings-Spacer_Small: $Settings-Spacer / 2;
-$Settings-Spacer_Mini: $Settings-Spacer / 6;
+$Settings-Spacer_Small: 15px;
+$Settings-Spacer_Mid: 10px;
+$Settings-Spacer_Tiny: 5px;
 
 $Tab-Colors: (
-  "orange": orange,
-  "blue": blue
+    "orange": orange,
+    "blue": blue
 );
 $Tab-Background: #FAFAFA;
 $Tab-Border_Color: #DADADA;

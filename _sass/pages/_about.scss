@@ -1,5 +1,5 @@
 .c-about__content {
-    font-family: $Font-Family-Roboto;
+    font-family: $Font-Family-Helvetica;
     margin-bottom: $Settings-Spacer;
 }
 
@@ -9,12 +9,29 @@
 
 .c-job__header {
     @extend %row;
+    margin-bottom: $Settings-Spacer_Tiny;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.c-job__header__position {
+    @include make-columns(8);
+    @include media-breakpoint-down(md) {
+        @include make-columns(12);
+
+        margin-bottom: 0;
+    }
+
+    .title {
+        font-size: 20px;
+    }
 }
 
 .c-job__header__time {
     @include make-columns(4);
 
-    margin-bottom: $Settings-Spacer_Mini;
     text-align: right;
 
     @include media-breakpoint-down(md) {
@@ -25,25 +42,18 @@
     }
 }
 
-.c-job__header__position {
-    @include make-columns(8);
+.c-job__description {
+    color: $Color-Dove_Gray;
+    font-family: $Font-Family-Helvetica;
+    font-size: 14px;
 
-    margin-bottom: $Settings-Spacer_Mini;
-
-    @include media-breakpoint-down(md) {
-        @include make-columns(12);
-
-        margin-bottom: 0;
-    }
-
-    .title {
-        font-family: $Font-Family-FiraSans;
-        font-weight: 400;
+    p:last-child {
+        margin-bottom: $Settings-Spacer_Tiny;
     }
 }
 
 .c-job__tags {
-    margin-bottom: $Settings-Spacer_Mini;
+    margin-bottom: $Settings-Spacer_Tiny;
 }
 
 .c-job__tags__tag {
@@ -52,11 +62,5 @@
     background-color: $Color-Catskill_White;
     color: $Color-Waikawa_Gray;
     display: inline-block;
-    font-weight: 400;
-    margin-bottom: $Settings-Spacer_Mini;
     padding: 4px 7px;
-}
-
-.c-job__description {
-    font-family: $Font-Family-Roboto;
 }

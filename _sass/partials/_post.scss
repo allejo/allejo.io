@@ -10,7 +10,7 @@
 .c-post__title {
     @include font-size(h2);
 
-    font-family: $Font-Family-FiraSans;
+    font-family: $Font-Family-Lato;
     font-weight: 300;
 
     a {
@@ -25,7 +25,7 @@
 }
 
 .c-post__content {
-    font-family: $Font-Family-Roboto;
+    font-family: $Font-Family-Helvetica;
     font-weight: 300;
     margin-bottom: $Settings-Spacer;
 }

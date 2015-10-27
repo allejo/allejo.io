@@ -14,5 +14,9 @@ ul {
 
     li {
         list-style: disc;
+
+        ul {
+            margin-bottom: 0;
+        }
     }
 }
