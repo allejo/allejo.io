@@ -10,7 +10,7 @@ tags: bzflag plugins development
 
 Throughout my time with BZFlag, I have written a large amount of plug-ins. Nowadays, I have adopted the API as my child. By this, I mean that I have started to contribute a lot to the API and documenting it for others to use. I have also shaped certain parts of it to my liking mainly so it benefits my plug-ins.
 
-The plug-in API was originally created by JeffM2501 with the release of BZFlag 2.0.0; such a long time ago, right? There have been many amazing plug-in authors but all of them have moved on to other projects; e.g. flying_popcorn, LouMan, JeffM2501, and sigonasr2. I've respected all of them very highly, especially flying_popcorn since he was the one who (patiently) taught me how to write plug-ins.
+The plug-in API was originally created by JeffM2501 with the release of BZFlag 2.0.0; such a long time ago, right? There have been many amazing plug-in authors but all of them have moved on to other projects; e.g. flying\_popcorn, LouMan, JeffM2501, and sigonasr2. I've respected all of them very highly, especially flying\_popcorn since he was the one who (patiently) taught me how to write plug-ins.
 
 With BZFlag activity being how it is, active plug-in developers are dwindling in the community. So, I would like to change that by sharing my knowledge of the API and write about how to write your own plug-in. To do that, I'm going to start a "BZFlag Plug-ins for Dummies" series. I will be explaining things in a manner so even a nontechnical person would be able to understand it; if you're a more advanced programmer who doesn't appreciate things being written in layman's terms, either bare with me or learn on your own because you're not my target audience.
 
