@@ -24,6 +24,7 @@ markdown: redcarpet
 gems:
   - jekyll-gist
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 sass:
   style: compressed
