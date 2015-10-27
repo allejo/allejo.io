@@ -1,6 +1,6 @@
 # Site settings
 title: allejo
-baseurl: "/medium"
+baseurl: ""
 url: "https://allejo.io"
 
 collections:
