@@ -1,0 +1,8 @@
+{% assign postName = include.path | split: '/' %}
+{% assign fileName = postName[1] | split: '.' %}
+
+{% capture filePath %}attachments/{{ fileName[0] }}/{{ include.filename }}{% endcapture %}
+
+```{{ include.lang }}
+{% include {{ filePath }} %}
+```

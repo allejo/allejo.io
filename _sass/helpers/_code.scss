@@ -1,10 +1,9 @@
 pre,
 code {
-    border: 1px solid $Color-Dusty_Grey;
-    border-radius: 3px;
-    background-color: #eef;
+    background-color: $Color-Gallery;
     font-family: $Font-Family-Consolas;
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.3em;
 }
 
 code {
