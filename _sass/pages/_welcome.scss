@@ -1,33 +1,55 @@
-.c-banner {
-    &.welcome {
-        height: 400px;
+.c-brag-cards {
+    margin-top: -1 * $Settings-Spacer;
+}
 
-        @include media-breakpoint-down(md) {
-            height: 200px;
+.c-brag-card {
+    padding: {
+        bottom: $Settings-Spacer;
+        top: $Settings-Spacer;
+    }
+
+    &:nth-child(even) {
+        background-color: #FBFBFB;
+
+        .c-brag-card__content {
+            order: 2;
         }
 
-        .c-banner__image {
-            height: 400px;
+        .c-brag-card__image {
+            order: 1;
+            padding-left: 0;
+            padding-right: $Settings-Spacer;
+        }
+    }
 
-            @include media-breakpoint-down(md) {
-                height: 200px;
-            }
+    .wrapper {
+        display: flex;
+
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
         }
     }
 }
 
-.c-welcome {
-    font-weight: 300;
+.c-brag-card__content {
+    h2 {
+        font-family: $Font-Family-Lato;
+        font-size: 28px;
+        font-weight: 300;
+    }
 }
 
-.c-welcome__header {
-    @include font-size(h1);
-}
+.c-brag-card__image {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding-left: $Settings-Spacer;
 
-.c-welcome__slug {
-    @include font-size(h3);
-}
-
-.c-welcome__content {
-    margin-top: $Settings-Spacer;
+    @include media-breakpoint-down(md) {
+        flex-basis: 100%;
+        order: -1;
+        padding: 0;
+        padding-bottom: $Settings-Spacer_Small;
+    }
 }

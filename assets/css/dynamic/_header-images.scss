@@ -1,7 +1,7 @@
 {% for data in site.data.banners %}
     {% assign banner = data[1] %}
 
-    .c-banner__image.{{ banner.name }} {
+    .c-page-header.{{ banner.name }} {
         background-image: url("{{ banner.file | prepend: site.baseurl }}");
         background-position: {{ banner.position | default: 'initial' }};
     }

@@ -1,4 +1,4 @@
-.c-header {
+.c-top-bar {
     @extend %row;
 
     align-items: center;
@@ -16,15 +16,66 @@
     }
 
     a {
-        color: $Color-Black;
+        color: $Color-White;
     }
 }
 
-.c-header__title {
+.c-top-bar__title {
     @include make-columns(3);
     @include font-size(h1);
 
     font-family: $Font-Family-BreeSerif;
+}
+
+.c-page-header {
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    height: 370px;
+    position: relative;
+}
+
+.c-page-header--large {
+    height: 460px;
+}
+
+.c-page-header__opaque {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.c-page-header__content,
+.c-page-header__navigation {
+    z-index: 10;
+}
+
+.c-page-header__content {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.c-page-header__content__container {
+    text-align: center;
+
+    h1,
+    h3 {
+        font-family: $Font-Family-Merriweather;
+        font-style: italic;
+    }
+
+    h1 {
+        margin-bottom: 7px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
 }
 
 .c-navigation,
@@ -78,4 +129,19 @@
 
 .c-navigation__pages__page {
     margin-left: $Settings-Spacer_Small;
+}
+
+.c-banner-credit {
+    @include font-size(h6);
+
+    color: $Color-Dusty_Grey;
+    margin: {
+        bottom: $Settings-Spacer;
+        top: $Settings-Spacer_Tiny;
+    }
+    text-align: right;
+
+    a {
+        color: $Color-Dusty_Grey;
+    }
 }

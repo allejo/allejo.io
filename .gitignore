@@ -3,6 +3,7 @@ _site
 .sass-cache
 node_modules
 .jekyll-metadata
+.idea
 
 # OS Generated Files
 .DS_Store

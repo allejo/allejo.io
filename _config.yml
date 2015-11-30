@@ -12,6 +12,7 @@ defaults:
       type: posts
     values:
       permalink: /blog/:title/
+      banner: coast
   - scope:
       path: ""
       type: experience
