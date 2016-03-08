@@ -29,4 +29,12 @@ banner: rocks
     {% for volunteer in volunteering %}
         {{ volunteer.output }}
     {% endfor %}
+
+    <h2>Accomplishments</h2>
+
+    {% assign accomplishments = site.experience | sort: "end" | where: "type", "accomplishment" %}
+
+    {% for accomplishment in accomplishments %}
+        {{ accomplishment.output }}
+    {% endfor %}
 </div>
