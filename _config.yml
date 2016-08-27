@@ -1,38 +1,18 @@
-# Site settings
-title: allejo
-baseurl: ""
-url: "https://allejo.io"
+# Stakx configuration
 
 collections:
-  - experience
+  - name: posts
+    folder: _posts
+  - name: experience
+    folder: _experience
+  - name: accomplishments
+    folder: _accomplishments
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      permalink: /blog/:title/
-  - scope:
-      path: ""
-      type: experience
-    values:
-      layout: experience-block
+data:
+  - _data
 
-# Build settings
-markdown: redcarpet
-
-gems:
-  - jekyll-gist
-  - jekyll-redirect-from
-  - jekyll-sitemap
-
-sass:
-  style: compressed
-
-include:
+pageviews:
   - _pages
 
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+theme: basics
+debug: true
