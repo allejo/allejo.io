@@ -48,13 +48,13 @@ gulp.task('server', function() {
     var express = require('express');
     var app = express();
     app.use(require('connect-livereload')({port: 35729}));
-    app.use(express.static("_site"));
+    app.use(express.static("../../_site"));
     app.listen(8000, '0.0.0.0');
 });
 
 gulp.task('watch', function() {
     gulp.watch(['assets/scss/**/*.scss'], ['sass']);
-    gulp.watch(['_site/**'], notifyLiveReload);
+    gulp.watch(['../../_site/**'], notifyLiveReload);
 });
 
 gulp.task('default', ['sass:dist', 'server', 'livereload', 'watch']);
