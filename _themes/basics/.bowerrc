@@ -1,0 +1,6 @@
+{
+    "resolvers": [
+        "bower-shrinkwrap-resolver"
+    ],
+    "directory": "assets/vendor/"
+}

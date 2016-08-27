@@ -1,0 +1,18 @@
+{
+  "name": "stakx-basics-theme",
+  "description": "A stakx theme create for allejo.io",
+  "main": "",
+  "authors": [
+    "Vladimir \"allejo\" Jimenez"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/allejo/allejo.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
