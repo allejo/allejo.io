@@ -14,5 +14,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "prefixfree": "prefix-free#^1.0.10",
+    "jquery": "^3.1.0",
+    "Stickyfill": "^1.1.4",
+    "font-awesome": "^4.6.3"
+  }
 }
