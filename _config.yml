@@ -11,6 +11,11 @@ collections:
 data:
   - _data
 
+exclude:
+  - README.md
+  - feed.xml
+  - stakx
+
 pageviews:
   - _pages
 

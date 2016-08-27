@@ -39,8 +39,8 @@ gulp.task("sass:lint", function() {
 
     return gulp.src([
             'sass/**/*.scss',
-            '!sass/vendor/**/*.scss']
-        )
+            '!sass/vendor/**/*.scss'
+        ])
         .pipe(postcss(processors, { syntax: syntax_scss }));
 });
 
