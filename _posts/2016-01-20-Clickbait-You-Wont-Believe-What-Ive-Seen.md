@@ -1,6 +1,5 @@
 ---
 
-layout: post
 title: Clickbait — You won't believe what I've seen!
 date: 2016-01-20 00:00:00
 categories: rants

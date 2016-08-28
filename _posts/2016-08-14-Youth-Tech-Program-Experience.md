@@ -1,6 +1,5 @@
 ---
 
-layout: post
 title: My Experience with the Youth Tech Program
 date: 2016-08-15 00:00:00
 categories: life

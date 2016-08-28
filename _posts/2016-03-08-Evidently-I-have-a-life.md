@@ -1,6 +1,5 @@
 ---
 
-layout: post
 title: Evidently I have a life
 date: 2016-03-08 00:00:00
 categories: life

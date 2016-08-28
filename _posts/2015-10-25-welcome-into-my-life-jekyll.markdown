@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title: "Welcome Into My Life, Jekyll"
-date: "2015-10-25"
+title: Welcome Into My Life, Jekyll
+date: 2015-10-25
 categories: announcements
 tags: jekyll
 

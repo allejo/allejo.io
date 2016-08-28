@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title: "Wufoo and DaPulse"
-date: "2015-11-07"
+title: Wufoo and DaPulse
+date: 2015-11-07
 categories: projects
 tags: dapulse zapier php silex
 

@@ -1,6 +1,5 @@
 ---
 
-layout: post
 title: "\"How did you learn all of this?\""
 date: 2015-11-21 00:00:00
 categories: rants

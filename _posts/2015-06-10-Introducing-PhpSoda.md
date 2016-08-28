@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title:  "Introducing PhpSoda"
-date:   2015-06-10 00:00:00
+title: Introducing PhpSoda
+date: 2015-06-10 00:00:00
 categories: projects
 tags: socrata php library api
 redirect_from:

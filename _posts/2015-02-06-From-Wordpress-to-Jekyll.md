@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title:  "From WordPress to Jekyll"
-date:   2015-02-06 22:45:50
+title: From WordPress to Jekyll
+date: 2015-02-06 22:45:50
 categories: blog announcements
 tags: jekyll wordpress
 redirect_from:

@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title:  "From Underachiever to Uhm..."
-date:   2015-03-13 02:10:00
+title: From Underachiever to Uhm...
+date: 2015-03-13 02:10:00
 categories: blog rants
 tags: csun compsci
 redirect_from:
