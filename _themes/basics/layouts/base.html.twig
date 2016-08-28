@@ -1,0 +1,59 @@
+{%- set pageWideCSS = "" -%}
+<!DOCTYPE html>
+<html class="js-disabled {{ pageWideCSS }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <title>{% spaceless %}{% block title %}{{ site.title }}{% endblock %}{% endspaceless %}</title>
+
+        <link rel="stylesheet" href="{{ url('assets/vendor/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+
+    <body>
+        {# ------------ Absolutely Positioned Elements ----------- #}
+        {# Elements that are positioned absolutely or fixed w/CSS should be placed here BEFORE the app-body container #}
+
+        <!--[if lte IE 9]>
+        <div class="c-system-alert">
+            <h1>You're using an unsupported browser</h1>
+            <p>You are browsing this website with an unsupported browser. Please consider updating your browser: <a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome</a>, Edge, <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, Internet Explorer 10+, or Safari.</p>
+        </div>
+        <![endif]-->
+
+        <noscript>
+            <div class="c-system-alert">
+                <h1>Javascript is not enabled</h1>
+                <p>This website works better with Javascript, please enable it to take full advantage of these features.</p>
+            </div>
+        </noscript>
+
+        {% if site.debug %}
+            <section class="c-screensize">
+                <div class="c-screensize--xl">xl</div>
+                <div class="c-screensize--lg">lg</div>
+                <div class="c-screensize--md">md</div>
+                <div class="c-screensize--sm">sm</div>
+                <div class="c-screensize--xs">xs</div>
+            </section>
+        {% endif %}
+        {# ----------------- Actual Page Content ----------------- #}
+
+        <div class="c-body">
+            {% block appbody %}
+            {% endblock %}
+        </div>
+
+        {# ------------ Everything Javascript Related ------------ #}
+
+        <script src="{{ url('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/prefixfree/prefixfree.js') }}"></script>
+
+        {% block javascript %}{% endblock %}
+
+        <script src="{{ url('assets/js/main.js') }}"></script>
+    </body>
+</html>

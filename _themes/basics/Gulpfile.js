@@ -23,7 +23,7 @@ gulp.task('livereload', function() {
 gulp.task('sass:dist', function () {
     var sass = require('gulp-sass');
 
-    gulp.src('assets/scss/main.scss')
+    gulp.src('sass/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./assets/css/'));
 });
@@ -53,7 +53,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['assets/scss/**/*.scss'], ['sass']);
+    gulp.watch(['sass/**/*.scss'], ['sass:dist']);
     gulp.watch(['../../_site/**'], notifyLiveReload);
 });
 

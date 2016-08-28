@@ -1,0 +1,17 @@
+{% extends '@theme/layouts/base.html.twig' %}
+
+{% block appbody %}
+    <div class="container">
+        <div class="row">
+            <aside class="c-sidebar col-md-4">
+                {% block sidebar %}
+                {% endblock %}
+            </aside>
+
+            <main class="c-page col-md-8">
+                {% block body %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+{% endblock %}

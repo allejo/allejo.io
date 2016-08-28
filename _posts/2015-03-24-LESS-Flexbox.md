@@ -1,8 +1,7 @@
 ---
 
-layout: post
-title:  "LESS Flexbox"
-date:   2015-03-24 00:00:00
+title: LESS Flexbox
+date: 2015-03-24 00:00:00
 categories: blog code
 tags: less flexbox css autoprefixer
 redirect_from:

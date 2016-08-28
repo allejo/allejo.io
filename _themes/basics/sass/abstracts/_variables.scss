@@ -4,41 +4,60 @@
 
 
 
+/// Logo font family
+/// @type List
+$font-stack-branding: 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+/// Header font family
+/// @type List
+$font-stack-header: 'Montserrat', sans-serif;
+
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$font-stack-text: 'Hind', sans-serif;
 
 /// Code (monospace) font family
 /// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+$font-stack-code: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
 
 
 
-/// Copy text color
+$palette-dark-grey: rgb(51, 51, 51);
+$palette-dark-blue: rgb(86, 99, 117);
+$palette-light-blue: rgb(100, 115, 135);
+$palette-cream: rgb(240, 240, 240);
+
+
+
+/// Text color when used on a light background
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$color-text: $palette-dark-grey;
 
-/// Main brand color
+/// Text color when used on a dark background
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$color-text-alt: $palette-cream;
 
-/// Light grey
+/// Color for headings
 /// @type Color
-$light-grey: rgb(237, 237, 237) !default;
+$color-header: $palette-dark-blue;
 
-/// Medium grey
+/// Dark background color
 /// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
+$color-background-dark: $palette-light-blue;
 
-/// Dark grey
+/// Light background color
 /// @type Color
-$dark-grey: rgb(68, 68, 68) !default;
+$color-background-light: $palette-cream;
+
+/// Hyperlink color
+/// @type Color
+$color-hyperlink: rgb(229, 0, 80);
 
 
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1180px !default;
+$max-width: 1200px;
 
 
 
@@ -46,10 +65,12 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
+    xs: 0,
+    sm: 480px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
 
 
 
@@ -57,4 +78,4 @@ $breakpoints: (
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+$base-url: '/assets/';

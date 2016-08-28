@@ -1,0 +1,6 @@
+.c-navigation ul {
+    @include ul-inline();
+
+    margin-bottom: 0;
+    margin-top: 0;
+}

@@ -1,0 +1,37 @@
+{% extends '@theme/layouts/page.html.twig' %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat" rel="stylesheet">
+{% endblock %}
+
+{% block sidebar %}
+    <div class="c-branding">
+        <a href="{{ url('/') }}" class="c-branding__logo">allejo</a>
+    </div>
+
+    <nav class="c-navigation">
+        <ul class="u-list-inline">
+            {% for item in menu | order('nav') %}
+                <li>
+                    <a href="{{ url(item.url) }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <footer>
+        <ul class="c-social u-list-inline">
+            {% for site in data.social %}
+                <li>
+                    <a href="{{ site.url }}" title="{{ site.slug }}">
+                        <i class="fa fa-{{ site.logo }}">
+                            <span class="sr-only">{{ site.slug }}</span>
+                        </i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
+    </footer>
+{% endblock %}

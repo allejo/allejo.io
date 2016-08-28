@@ -1,0 +1,21 @@
+---
+permalink: /blog/
+title: Blog
+nav: 2
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block body %}
+    {% for post in collections.posts | order('date', 'DESC') %}
+        <article class="c-blog-post">
+            <header class="c-blog-post__header">
+                <h1>{{ post.title }}</h1>
+            </header>
+
+            <section class="c-blog-post__body">
+                {{ post.content | truncate(300, true) }}
+            </section>
+        </article>
+    {% endfor %}
+{% endblock %}

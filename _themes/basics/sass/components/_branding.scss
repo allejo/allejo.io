@@ -1,0 +1,9 @@
+.c-branding__logo {
+    font-family: $font-stack-branding;
+    font-size: 80px;
+    font-weight: 100;
+
+    @include on-event() {
+        text-decoration: none;
+    }
+}
