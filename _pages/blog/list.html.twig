@@ -10,7 +10,7 @@ nav: 2
     {% for post in collections.posts | order('date', 'DESC') %}
         <article class="c-blog-post">
             <header class="c-blog-post__header">
-                <h1>{{ post.title }}</h1>
+                <h1><a href="{{ url(post.permalink) }}">{{ post.title }}</a></h1>
                 <p>{{ post.date | date('M d, Y') }}</p>
             </header>
 

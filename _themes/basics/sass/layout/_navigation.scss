@@ -1,6 +1,15 @@
 .c-navigation ul {
-    @include ul-inline();
-
     margin-bottom: 0;
     margin-top: 0;
+    text-transform: lowercase;
+
+    a {
+        margin-right: 15px;
+    }
+
+    li {
+        &:last-child a {
+            margin-right: 0;
+        }
+    }
 }

@@ -1,0 +1,42 @@
+---
+permalink: /about/
+title: About
+nav: 1
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block body %}
+    {% markdown %}
+        # About
+
+        Hi, I'm allejo
+        <br>
+        <small>(or allejome or allejo256 if someone has rudely taken "allejo" on a specific website)</small>
+
+        My name's Vladimir and I'm a computer science major; it's terribly boring. I take part in open source community by contributing to projects as I can. I have a wide range of interests and knowledge ranging from Linux server administration to development to graphic design. My jobs focus on web development and design but I continue to work on software in the open source community.
+
+        I began by joining the BZFlag community in 2008 and started contributing to it; I'm now a core contributor and run the largest game server. I've slowly branched out and have joined other open source communities such as:
+
+        - [Jekyll](http://jekyllrb.com/)
+        - [Socrata](http://dev.socrata.com/)
+        - [WordPress](https://wordpress.org/)
+
+        I'm socially awkward and sometimes I'm funny; I'm also notorious for breaking the build.
+
+        # Experience
+    {% endmarkdown %}
+
+    {% set jobs = collections.experience | where('type', '==', 'experience') | order('start', 'DESC') %}
+    {% for job in jobs %}
+        <article>
+            <h2>{{ job.title }}</h2>
+
+            <section>
+                {{ job.content }}
+            </section>
+        </article>
+    {% endfor %}
+
+    {% set volunteer = collections.experience | where('type', '==', 'volunteer') | order('start', 'DESC') %}
+{% endblock %}

@@ -1,5 +1,10 @@
 .c-blog-post__header {
-    h1 {
-        margin-top: 0;
+    a {
+        color: $color-header;
+        text-decoration: none;
+
+        @include on-event() {
+            text-decoration: underline;
+        }
     }
 }

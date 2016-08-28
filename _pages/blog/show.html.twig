@@ -1,0 +1,19 @@
+---
+permalink: /blog/%title/
+collection: posts
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block body %}
+    <article class="c-blog-post">
+        <header class="c-blog-post__header">
+            <h1>{{ this.title }}</h1>
+            <p>{{ this.date | date('M d, Y') }}</p>
+        </header>
+
+        <section class="c-blog-post__body">
+            {{ this.content }}
+        </section>
+    </article>
+{% endblock %}
