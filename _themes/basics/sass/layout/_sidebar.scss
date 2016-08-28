@@ -1,9 +1,11 @@
 .c-sidebar {
     background-color: $color-background-dark;
-    max-height: 100vh;
+    height: 100vh;
+    position: fixed;
     padding-bottom: 60px;
     padding-top: 60px;
     text-align: center;
+    width: $sidebar-width;
 
     &,
     a,

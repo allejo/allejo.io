@@ -55,9 +55,9 @@ $color-hyperlink: rgb(229, 0, 80);
 
 
 
-/// Container's maximum width
-/// @type Length
-$max-width: 1200px;
+/// The width of the sidebar on the desktop version of the site
+/// @type Integer
+$sidebar-width: 18em;
 
 
 

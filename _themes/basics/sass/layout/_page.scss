@@ -1,18 +1,5 @@
-body {
-    &::before {
-        background-color: $color-background-dark;
-        content: '';
-        height: 100vh;
-        position: fixed;
-        width: 50%;
-        z-index: -1;
-    }
-}
-
 .c-page {
     background-color: $color-background-light;
-    max-height: 100vh;
-    overflow: auto;
-    padding-left: 60px;
-    padding-top: 60px;
+    margin-left: $sidebar-width;
+    padding: 60px;
 }

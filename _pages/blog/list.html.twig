@@ -11,10 +11,11 @@ nav: 2
         <article class="c-blog-post">
             <header class="c-blog-post__header">
                 <h1>{{ post.title }}</h1>
+                <p>{{ post.date | date('M d, Y') }}</p>
             </header>
 
             <section class="c-blog-post__body">
-                {{ post.content | truncate(300, true) }}
+                {{ post.content | summary }}
             </section>
         </article>
     {% endfor %}
