@@ -30,7 +30,8 @@ nav: 1
     {% set jobs = collections.experience | where('type', '==', 'experience') | order('start', 'DESC') %}
     {% for job in jobs %}
         <article>
-            <h2>{{ job.title }}</h2>
+            <h2>{{ job.location }}</h2>
+            <h3>{{ job.position }}</h3>
 
             <section>
                 {{ job.content }}
