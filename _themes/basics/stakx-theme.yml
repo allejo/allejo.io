@@ -6,6 +6,7 @@ exclude:
     - "*.json"
 include:
     - assets/vendor/font-awesome/css/font-awesome.min.css
+    - assets/vendor/font-awesome/fonts/
     - assets/vendor/jquery/dist/jquery.min.js
     - assets/vendor/prefixfree/prefixfree.js
     - assets/vendor/Stickyfill/dist/stickyfill.js
