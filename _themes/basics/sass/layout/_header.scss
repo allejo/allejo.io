@@ -13,13 +13,23 @@
     @include respond-up(lg) {
         display: none;
     }
+}
 
-    .c-hamburger {
-        margin-left: 0;
-        transition: margin-left 0.35s;
+.c-hamburger {
+    @at-root {
+        .csstransitions & {
+            margin-left: 0;
+            transition: margin-left 0.35s;
+        }
 
-        &.is-active {
-            margin-left: 208px;
+        .csscalc & {
+            &.is-active {
+                margin-left: calc(#{$sidebar-width} - #{($hamburger-width + 15px)});
+
+                @include respond-up(sm) {
+                    margin-left: calc(#{$sidebar-width} - #{($hamburger-width + 30px)});
+                }
+            }
         }
     }
 }
