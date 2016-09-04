@@ -5,6 +5,7 @@ var reporter    = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint   = require('stylelint');
 var tinylr      = require('tiny-lr')();
+var uglify      = require('gulp-uglify');
 
 function notifyLiveReload(event) {
     var fileName = require('path').relative(__dirname, event.path);
@@ -15,6 +16,32 @@ function notifyLiveReload(event) {
         }
     });
 }
+
+gulp.task('modernizr', function () {
+    var modernizr = require('gulp-modernizr');
+
+    gulp.src('assets/js/*.js')
+        .pipe(modernizr({
+            "crawl": true,
+            "customTests": [],
+            "tests": [
+                "canvas",
+                "canvastext",
+                "svg",
+                "cssanimations",
+                "csscalc",
+                "csstransforms",
+                "csstransitions",
+                "cssvhunit",
+                "inlinesvg"
+            ],
+            "options": [
+                "setClasses"
+            ]
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/vendor/modernizr/js/'))
+});
 
 gulp.task('livereload', function() {
     tinylr.listen(35729);

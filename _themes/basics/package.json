@@ -4,7 +4,9 @@
     "bower-installer": "^1.2.0",
     "bower-shrinkwrap-resolver": "^0.4.1",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   },
   "devDependencies": {
     "connect-livereload": "^0.5.4",
