@@ -6,9 +6,12 @@
 }
 
 .c-page-header {
+    $_spacing: 15px;
+
     border-bottom: 1px solid $palette-light-blue;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    height: $hamburger-height + $_spacing;
+    margin-bottom: $_spacing;
+    padding-bottom: $_spacing;
 
     @include respond-up(lg) {
         display: none;
@@ -18,17 +21,15 @@
 .c-hamburger {
     @at-root {
         .csstransitions & {
-            margin-left: 0;
-            transition: margin-left 0.35s;
+            transition: left $hamburger-transistion-duration;
         }
 
         .csscalc & {
-            &.is-active {
-                margin-left: calc(#{$sidebar-width} - #{($hamburger-width + 15px)});
+            left: 0;
 
-                @include respond-up(sm) {
-                    margin-left: calc(#{$sidebar-width} - #{($hamburger-width + 30px)});
-                }
+            &.is-active {
+                left: calc(#{$sidebar-width} - #{$hamburger-width});
+                position: fixed;
             }
         }
     }

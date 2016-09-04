@@ -37,11 +37,13 @@
 {% endblock %}
 
 {% block body %}
-    {#<div class="mobile-page-header">#}
-        {#<button class="c-hamburger c-hamburger--htx">#}
-            {#<span>toggle menu</span>#}
-        {#</button>#}
-    {#</div>#}
+    <div class="c-page-header">
+        <button class="c-hamburger c-hamburger--htx">
+            <span></span>
+
+            <p class="sr-only__text">toggle menu</p>
+        </button>
+    </div>
 
     {% block content %}{% endblock %}
 {% endblock %}
