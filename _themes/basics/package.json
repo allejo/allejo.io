@@ -1,9 +1,10 @@
 {
   "dependencies": {
-      "bower": "^1.7.9",
-      "bower-shrinkwrap-resolver": "^0.4.1",
-      "gulp": "^3.9.1",
-      "gulp-sass": "^2.3.2"
+    "bower": "^1.7.9",
+    "bower-installer": "^1.2.0",
+    "bower-shrinkwrap-resolver": "^0.4.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
   },
   "devDependencies": {
     "connect-livereload": "^0.5.4",

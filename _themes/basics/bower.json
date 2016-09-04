@@ -20,5 +20,25 @@
     "jquery": "^3.1.0",
     "Stickyfill": "^1.1.4",
     "font-awesome": "^4.6.3"
+  },
+  "install": {
+    "base": "assets/vendor",
+    "path" : {
+       "js": "{name}/js",
+       "css": "{name}/css",
+       "eot": "{name}/fonts",
+       "svg": "{name}/fonts",
+       "ttf": "{name}/fonts",
+       "woff": "{name}/fonts"
+    },
+    "sources": {
+      "prefixfree": "bower_components/prefixfree/prefixfree.js",
+      "jquery": "bower_components/jquery/dist/jquery.min.js",
+      "Stickyfill": "bower_components/Stickyfill/dist/stickyfill.min.js",
+      "font-awesome": [
+        "bower_components/font-awesome/css/font-awesome.css",
+        "bower_components/font-awesome/fonts/*"
+      ]
+    }
   }
 }
