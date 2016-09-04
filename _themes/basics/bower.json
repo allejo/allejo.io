@@ -27,16 +27,18 @@
        "js": "{name}/js",
        "css": "{name}/css",
        "eot": "{name}/fonts",
+       "otf": "{name}/fonts",
        "svg": "{name}/fonts",
        "ttf": "{name}/fonts",
-       "woff": "{name}/fonts"
+       "woff": "{name}/fonts",
+       "woff2": "{name}/fonts"
     },
     "sources": {
       "prefixfree": "bower_components/prefixfree/prefixfree.js",
       "jquery": "bower_components/jquery/dist/jquery.min.js",
       "Stickyfill": "bower_components/Stickyfill/dist/stickyfill.min.js",
       "font-awesome": [
-        "bower_components/font-awesome/css/font-awesome.css",
+        "bower_components/font-awesome/css/font-awesome.min.css",
         "bower_components/font-awesome/fonts/*"
       ]
     }
