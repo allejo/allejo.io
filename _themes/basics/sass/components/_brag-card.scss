@@ -4,8 +4,11 @@
 
 .c-bragcard__heading-1,
 .c-bragcard__heading-2 {
-    display: inline-block;
     margin: 0;
+
+    @include respond-up(md) {
+        display: inline-block;
+    }
 }
 
 .c-bragcard__heading-1 {
@@ -15,7 +18,17 @@
 .c-bragcard__heading-2 {
     font-size: 18px;
 
-    border-left: 1px solid $palette-dark-blue;
-    margin-left: 5px;
-    padding-left: 5px;
+    @include respond-up(md) {
+        border-left: 1px solid $palette-dark-blue;
+        margin-left: 5px;
+        padding-left: 5px;
+    }
+}
+
+.c-bragcard__meta {
+    font-style: italic;
+
+    @include respond-up(md) {
+        font-style: normal;
+    }
 }
