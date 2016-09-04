@@ -1,19 +1,13 @@
-(function() {
-
+$(function () {
     "use strict";
 
-    var toggles = document.querySelectorAll(".c-hamburger");
+    $(".c-hamburger").click(function (e) {
+        e.preventDefault();
 
-    for (var i = toggles.length - 1; i >= 0; i--) {
-        var toggle = toggles[i];
-        toggleHandler(toggle);
-    }
+        var $this = $(this);
+        var $sidebar = $(".c-sidebar");
 
-    function toggleHandler(toggle) {
-        toggle.addEventListener( "click", function(e) {
-            e.preventDefault();
-            (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-        });
-    }
-
-})();
+        ($this.hasClass("is-active")) ? $this.removeClass("is-active") : $this.addClass("is-active");
+        ($sidebar.hasClass("is-active")) ? $sidebar.removeClass("is-active") : $sidebar.addClass("is-active");
+    });
+});

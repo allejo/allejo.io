@@ -1,5 +1,6 @@
 .c-page {
     background-color: $color-background-light;
+    padding: 0 30px;
 
     @include respond-up(lg) {
         margin-left: $sidebar-width;

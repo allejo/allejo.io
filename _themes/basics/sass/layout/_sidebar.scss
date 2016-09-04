@@ -1,11 +1,21 @@
 .c-sidebar {
     background-color: $color-background-dark;
     height: 100vh;
+    left: -1 * $sidebar-width;
     position: fixed;
     padding-bottom: 60px;
     padding-top: 60px;
     text-align: center;
+    transition: left 0.3s;
     width: $sidebar-width;
+
+    @include respond-up(lg) {
+        left: 0;
+    }
+
+    &.is-active {
+        left: 0;
+    }
 
     &,
     a,

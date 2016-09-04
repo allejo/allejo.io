@@ -6,4 +6,20 @@
 }
 
 .c-page-header {
+    border-bottom: 1px solid $palette-light-blue;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    @include respond-up(lg) {
+        display: none;
+    }
+
+    .c-hamburger {
+        margin-left: 0;
+        transition: margin-left 0.35s;
+
+        &.is-active {
+            margin-left: 208px;
+        }
+    }
 }
