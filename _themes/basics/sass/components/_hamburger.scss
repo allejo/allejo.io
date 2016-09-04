@@ -2,37 +2,27 @@
 // Courtesy of, http://callmenick.com/post/animating-css-only-hamburger-menu-icons
 //
 
-$button-color: $palette-light-blue;
-$button-color-active: $palette-dark-blue;
-
-$button-width: 50px;                    // The width of the button area
-$button-height: 50px;                   // The height of the button area
-$bar-thickness: 4px;                    // The thickness of the button bars
-$button-pad: 10px;                      // The left/right padding between button area and bars.
-$button-bar-space: 6px;                 // The spacing between button bars
-$button-transistion-duration: 0.3s;     // The transition duration
-
 .c-hamburger {
     display: block;
     position: relative;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    width: $button-width;
-    height: $button-height;
+    width: $hamburger-width;
+    height: $hamburger-height;
     border-radius: 0;
     border: none;
     cursor: pointer;
-    transition: background $button-transistion-duration;
+    transition: background $hamburger-transistion-duration;
 }
 
 .c-hamburger span {
     display: block;
     position: absolute;
-    top: ($button-height / 2) - ($bar-thickness / 2);
-    left: $button-pad;
-    right: $button-pad;
-    height: $bar-thickness;
+    top: ($hamburger-height / 2) - ($hamburger-bar-thickness / 2);
+    left: $hamburger-padding;
+    right: $hamburger-padding;
+    height: $hamburger-bar-thickness;
     background: white;
 }
 
@@ -42,33 +32,33 @@ $button-transistion-duration: 0.3s;     // The transition duration
     display: block;
     left: 0;
     width: 100%;
-    height: $bar-thickness;
+    height: $hamburger-bar-thickness;
     background-color: #fff;
     content: "";
 }
 
 .c-hamburger span::before {
-    top: -$bar-thickness - $button-bar-space;
+    top: -$hamburger-bar-thickness - $hamburger-bar-padding;
 }
 
 .c-hamburger span::after {
-    bottom: -$bar-thickness - $button-bar-space;
+    bottom: -$hamburger-bar-thickness - $hamburger-bar-padding;
 }
 
 // Hamburger to "x"
 
 .c-hamburger--htx {
-    background-color: $button-color;
+    background-color: $hamburger-color;
 }
 
 .c-hamburger--htx span {
-    transition: background 0s $button-transistion-duration;
+    transition: background 0s $hamburger-transistion-duration;
 }
 
 .c-hamburger--htx span::before,
 .c-hamburger--htx span::after {
-    transition-duration: $button-transistion-duration, $button-transistion-duration;
-    transition-delay: $button-transistion-duration, 0s;
+    transition-duration: $hamburger-transistion-duration, $hamburger-transistion-duration;
+    transition-delay: $hamburger-transistion-duration, 0s;
 }
 
 .c-hamburger--htx span::before {
@@ -82,7 +72,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
 /* active state, i.e. menu open */
 
 .c-hamburger--htx.is-active {
-    background-color: $button-color-active;
+    background-color: $hamburger-color-active;
 }
 
 .c-hamburger--htx.is-active span {
@@ -101,5 +91,5 @@ $button-transistion-duration: 0.3s;     // The transition duration
 
 .c-hamburger--htx.is-active span::before,
 .c-hamburger--htx.is-active span::after {
-    transition-delay: 0s, $button-transistion-duration;
+    transition-delay: 0s, $hamburger-transistion-duration;
 }

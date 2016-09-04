@@ -1,8 +1,12 @@
-// -----------------------------------------------------------------------------
+// =============================================================================
 // This file contains all application-wide Sass variables.
+// =============================================================================
+
+
+
 // -----------------------------------------------------------------------------
-
-
+// Font families
+// -----------------------------------------------------------------------------
 
 /// Logo font family
 /// @type List
@@ -21,6 +25,10 @@ $font-stack-text: 'Hind', sans-serif;
 $font-stack-code: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
 
 
+
+// -----------------------------------------------------------------------------
+// Our color palette
+// -----------------------------------------------------------------------------
 
 $palette-dark-grey: rgb(51, 51, 51);
 $palette-dark-blue: rgb(86, 99, 117);
@@ -79,3 +87,25 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/';
+
+
+
+// =============================================================================
+// Component Settings
+// =============================================================================
+
+
+
+// -----------------------------------------------------------------------------
+// Hamburger Icon Settings
+// -----------------------------------------------------------------------------
+
+$hamburger-color: $palette-light-blue;
+$hamburger-color-active: $palette-dark-blue;
+
+$hamburger-width: 50px;                 // The width of the button area
+$hamburger-height: $hamburger-width;    // The height of the button area
+$hamburger-bar-thickness: 4px;          // The thickness of the button bars
+$hamburger-padding: 10px;               // The left/right padding between button area and bars.
+$hamburger-bar-padding: 6px;            // The spacing between button bars
+$hamburger-transistion-duration: 0.3s;  // The transition duration
