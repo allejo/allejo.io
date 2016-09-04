@@ -6,17 +6,45 @@ nav: 1
 
 {% extends '_layouts/page.html.twig' %}
 
+{% macro brag_card(experience) %}
+    <article class="c-bragcard">
+        <header class="c-bragcard__header">
+            <div class="c-bragcard__title">
+                <p class="c-bragcard__heading-1">{{ experience.position }}</p>
+                <p class="c-bragcard__heading-2">{{ experience.location }}</p>
+            </div>
+            <div class="c-bragcard__meta">
+                {{ experience.start | date('M Y') }} - {{ (experience.end) ? (experience.end | date('M Y')) : 'Current' }}
+            </div>
+        </header>
+
+        <section class="c-bragcard__body">
+            {{ experience.content }}
+        </section>
+
+        <footer class="c-bragcard__footer">
+            {% if experience.tags %}
+                <ul class="c-tags u-list-inline">
+                    {% for tag in experience.tags %}
+                        <li>{{ tag }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </footer>
+    </article>
+{% endmacro %}
+
 {% block body %}
     {% markdown %}
         # About
 
         Hi, I'm allejo
         <br>
-        <small>(or allejome or allejo256 if someone has rudely taken "allejo" on a specific website)</small>
+        <small>(or "allejome" or "allejo256" if someone has rudely taken "allejo" on a specific website)</small>
 
         My name's Vladimir and I'm a computer science major; it's terribly boring. I take part in open source community by contributing to projects as I can. I have a wide range of interests and knowledge ranging from Linux server administration to development to graphic design. My jobs focus on web development and design but I continue to work on software in the open source community.
 
-        I began by joining the BZFlag community in 2008 and started contributing to it; I'm now a core contributor and run the largest game server. I've slowly branched out and have joined other open source communities such as:
+        I began by joining the [BZFlag](http://bzflag.org/) community in 2008 and started contributing to it; I'm now a core contributor and run the largest game server. I've slowly branched out and have joined other open source communities,
 
         - [Jekyll](http://jekyllrb.com/)
         - [Socrata](http://dev.socrata.com/)
@@ -29,15 +57,13 @@ nav: 1
 
     {% set jobs = collections.experience | where('type', '==', 'experience') | order('start', 'DESC') %}
     {% for job in jobs %}
-        <article>
-            <h2>{{ job.location }}</h2>
-            <h3>{{ job.position }}</h3>
-
-            <section>
-                {{ job.content }}
-            </section>
-        </article>
+        {{ _self.brag_card(job) }}
     {% endfor %}
 
-    {% set volunteer = collections.experience | where('type', '==', 'volunteer') | order('start', 'DESC') %}
+    <h1>Volunteer</h1>
+
+    {% set volunteering = collections.experience | where('type', '==', 'volunteer') | order('start', 'DESC') %}
+    {% for volunteer in volunteering %}
+        {{ _self.brag_card(volunteer) }}
+    {% endfor %}
 {% endblock %}
