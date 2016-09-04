@@ -35,3 +35,13 @@
         <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
     </footer>
 {% endblock %}
+
+{% block body %}
+    {#<div class="mobile-page-header">#}
+        {#<button class="c-hamburger c-hamburger--htx">#}
+            {#<span>toggle menu</span>#}
+        {#</button>#}
+    {#</div>#}
+
+    {% block content %}{% endblock %}
+{% endblock %}

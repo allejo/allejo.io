@@ -34,7 +34,16 @@ nav: 1
     </article>
 {% endmacro %}
 
-{% block body %}
+{% block content %}
+    <div class="c-page-header">
+        <button class="c-hamburger c-hamburger--htx">
+            <span></span>
+
+            <p class="sr-only__text">toggle menu</p>
+        </button>
+    </div>
+
+
     {% markdown %}
         # About
 

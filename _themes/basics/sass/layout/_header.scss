@@ -1,3 +1,9 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+// Don't display the header if JS is disabled
+.no-js {
+    .c-page-header {
+        display: none;
+    }
+}
+
+.c-page-header {
+}

@@ -6,7 +6,7 @@ nav: 2
 
 {% extends '_layouts/page.html.twig' %}
 
-{% block body %}
+{% block content %}
     {% for post in collections.posts | order('date', 'DESC') %}
         <article class="c-blog-post">
             <header class="c-blog-post__header">
