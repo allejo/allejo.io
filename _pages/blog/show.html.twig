@@ -8,8 +8,8 @@ collection: posts
 {% block content %}
     <article class="c-blog-post">
         <header class="c-blog-post__header">
-            <h1>{{ this.title }}</h1>
-            <p>{{ this.date | date('M d, Y') }}</p>
+            <h1 class="c-blog-post__title">{{ this.title }}</h1>
+            <p class="c-blog-post__date">{{ this.date | date('M d, Y') }}</p>
         </header>
 
         <section class="c-blog-post__body">
