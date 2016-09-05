@@ -2,7 +2,7 @@
 
 title: From WordPress to Jekyll
 date: 2015-02-06 22:45:50
-categories: blog announcements
+categories: announcements
 tags: jekyll wordpress
 redirect_from:
   - /blog/announcements/2015/02/06/From-Wordpress-to-Jekyll.html
@@ -28,9 +28,7 @@ Since I just started using Jekyll here are some immediate pros and cons:
 
 - Lack of server side processing
     - I am unable to have any dynamically generated content; I will be forced to create my own API and use other APIs to generate some dynamic content. On the bright side, I will be able to practice my JavaScript more
-- URL Routes require a lot of folders
-    - This is one of the biggest issues I have with Jekyll but I understand. Because everything is static, there are a lot of folders needed to create pretty URLs which I don't really mind since they're automatically generated but it still bugs me.
 
-So so far, I'm satisfied with Jekyll and I'm hoping I'll be able to continue using it and hacking on it by writing my own Jekyll plug-ins.
+So far, I'm satisfied with Jekyll and I'm hoping I'll be able to continue using it and hacking on it by writing my own Jekyll plug-ins.
 
 Also, there are a lot of shit designs out there for Jekyll websites. I do have to say, mine is pretty awesome in comparison.

@@ -3,11 +3,11 @@
 title: Wufoo and DaPulse
 date: 2015-11-07
 categories: projects
-tags: dapulse zapier php silex
+tags: dapulse zapier php silex wufoo
 
 ---
 
-At one of my jobs, we have recently moved from [Asana](https://asana.com/) to [DaPulse](https://dapulse.com/) for task management and collaboration. I'm not part of either's marketing team nor am I sponsored by either of them so I won't advocate for either or say one's better than the other. We also use [Wufoo](http://www.wufoo.com/) for forms and we used to use [Zapier](https://zapier.com/) to automatically create entries in Asana and assign them to my coworkers and myself based on the entries. Zapier falls unbelievably short with their support of DaPulse to the point where it's actually quite embarrassing and they shouldn't even be offering it in the first place.
+At one of my jobs, we have recently moved from [Asana](https://asana.com/) to [DaPulse](https://dapulse.com/) for task management and collaboration. I'm not part of either's marketing team nor am I sponsored by either of them so I won't advocate for either or say one's better than the other. We also use [Wufoo](http://www.wufoo.com/) for forms and we used to use [Zapier](https://zapier.com/) to automatically create entries in Asana and assign them to my coworkers and myself based on the entries. At the time of writing this, Zapier falls unbelievably short with their support of DaPulse to the point where it's actually quite embarrassing and they shouldn't even be offering it in the first place.
 
 > Somedays, you just just need Wufoo and DaPulse to work together, but the native integration either a) doesn't exist or b) doesn't do what you want.
 >

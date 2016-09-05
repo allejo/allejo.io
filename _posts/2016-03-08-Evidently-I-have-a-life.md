@@ -2,8 +2,8 @@
 
 title: Evidently I have a life
 date: 2016-03-08 00:00:00
-categories: life
-tags: life
+categories: rants
+tags: bzflag stakx
 
 ---
 
