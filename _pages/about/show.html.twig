@@ -6,32 +6,38 @@ nav: 1
 
 {% extends '_layouts/page.html.twig' %}
 
-{% macro brag_card(experience) %}
-    <article class="c-bragcard">
-        <header class="c-bragcard__header">
-            <div class="c-bragcard__title">
-                <p class="c-bragcard__heading-1">{{ experience.position }}</p>
-                <p class="c-bragcard__heading-2">{{ experience.location }}</p>
-            </div>
-            <div class="c-bragcard__meta">
-                {{ experience.start | date('M Y') }} - {{ (experience.end) ? (experience.end | date('M Y')) : 'Current' }}
-            </div>
-        </header>
+{% macro brag_repeater(cards) %}
+    {% for card in cards %}
+        <article class="c-bragcard">
+            <header class="c-bragcard__header">
+                <div class="c-bragcard__title">
+                    <p class="c-bragcard__heading-1">{{ card.title }}</p>
+                    <p class="c-bragcard__heading-2">{{ card.slug }}</p>
+                </div>
+                <div class="c-bragcard__meta">
+                    {% if card.event_date %}
+                        {{ card.event_date | date ('M Y') }}
+                    {% else %}
+                        {{ card.start | date('M Y') }} - {{ (card.end) ? (card.end | date('M Y')) : 'Current' }}
+                    {% endif %}
+                </div>
+            </header>
 
-        <section class="c-bragcard__body">
-            {{ experience.content }}
-        </section>
+            <section class="c-bragcard__body">
+                {{ card.content }}
+            </section>
 
-        <footer class="c-bragcard__footer">
-            {% if experience.tags %}
-                <ul class="c-tags u-list-inline">
-                    {% for tag in experience.tags %}
-                        <li>{{ tag }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </footer>
-    </article>
+            <footer class="c-bragcard__footer">
+                {% if card.tags %}
+                    <ul class="c-tags u-list-inline">
+                        {% for tag in card.tags %}
+                            <li>{{ tag }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </footer>
+        </article>
+    {% endfor %}
 {% endmacro %}
 
 {% block content %}
@@ -55,15 +61,14 @@ nav: 1
         # Experience
     {% endmarkdown %}
 
-    {% set jobs = collections.experience | where('type', '==', 'experience') | order('start', 'DESC') %}
-    {% for job in jobs %}
-        {{ _self.brag_card(job) }}
-    {% endfor %}
+    {% set active_jobs     = collections.experience | where('end', '==', null) | order('start', 'DESC') %}
+    {% set old_jobs        = collections.experience | where('end', '!=', null) | order('start', 'DESC') %}
+    {% set accomplishments = collections.accomplishments | order('data', 'DESC') %}
 
-    <h1>Volunteer</h1>
+    {{ _self.brag_repeater(active_jobs) }}
+    {{ _self.brag_repeater(old_jobs) }}
 
-    {% set volunteering = collections.experience | where('type', '==', 'volunteer') | order('start', 'DESC') %}
-    {% for volunteer in volunteering %}
-        {{ _self.brag_card(volunteer) }}
-    {% endfor %}
+    <h2>Accomplishments</h2>
+
+    {{ _self.brag_repeater(accomplishments) }}
 {% endblock %}
