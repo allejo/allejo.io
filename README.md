@@ -1,12 +1,11 @@
-allejo's Personal Site
-===
+# allejo's Personal Site
 
-The Jekyll project used for my personal website [https://allejo.io](https://allejo.io).
 
-License
----
+The Stakx project used for my personal website [https://allejo.io](https://allejo.io).
+
+## License
 
 My website consists of several different things and here the licenses for the respective areas:
 
 - All of my blog posts are licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/).
-- The actual theme of my Jekyll site isn't available for public usage; I'm retaining all rights for the theme.
+- The actual theme of my Stakx site isn't available for public usage; I'm retaining all rights for the theme.
