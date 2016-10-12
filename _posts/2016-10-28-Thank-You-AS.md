@@ -34,5 +34,6 @@ In my three years with AS, I have made a lot of friends and have learned so much
 - Playing Cards Against Humanity after-hours
 - Changing the browser's default font to Comic Sans on one of the graphic designer's computer
 - Going to Disneyland for an office retreat
+- Printing out a flight ticket on our large poster printer (on accident)
 
 I still have some time before I graduate and leave AS but as I was reflecting on my college experience, AS has definitely changed me for the better. I'm thankful to my boss and all of my coworkers who have made this experience all the more fun.
