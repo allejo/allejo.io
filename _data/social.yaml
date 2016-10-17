@@ -1,18 +1,24 @@
 - logo: instagram
   url: https://instagram.com/allejome/
   color: "#125688"
+  slug: Follow me on Instagram
 - logo: twitter
   url: https://twitter.com/allejome
   color: "#55ACEE"
+  slug: Follow me on Twitter
 - logo: linkedin
   url: https://www.linkedin.com/in/allejo
   color: "#0077B5"
+  slug: Add me on LinkedIn
 - logo: github
   url: http://github.com/allejo
   color: "#181717"
+  slug: Check out my open source projects
 - logo: codepen
   url: http://codepen.io/allejo/
   color: "#000000"
+  slug: Find me obscure creations
 - logo: stack-overflow
   url: http://stackoverflow.com/users/1239484/allejo
   color: "#F48024"
+  slug: Find me on Stack Overflow

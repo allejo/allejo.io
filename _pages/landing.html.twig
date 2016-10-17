@@ -1,0 +1,33 @@
+---
+permalink: /
+---
+
+{% extends '@theme/layouts/base.html.twig' %}
+
+{% import '_layouts/utilities.html.twig' as utils %}
+
+{% block appbody %}
+    <div class="row s-homepage">
+        <div class="col-md-6 c-navigation-side">
+            <div class="c-flex">
+                <nav>
+                    <ul class="c-navigation u-list-inline">
+                        {{ utils.navigation() }}
+                    </ul>
+
+                    <ul class="c-social u-list-inline">
+                        {{ utils.social() }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-6 c-dark-side">
+            <div class="c-flex">
+                <div class="c-logo">
+                    <div class="c-branding__logo">allejo</div>
+                    <div class="c-branding__slogan">i pretend to know what I'm doing</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

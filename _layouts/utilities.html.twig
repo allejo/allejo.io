@@ -1,0 +1,19 @@
+{% macro navigation() %}
+    {% for item in menu | order('nav') if item.url != '//' %}
+        <li>
+            <a href="{{ url(item.url) }}">{{ item.title }}</a>
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% macro social() %}
+    {% for site in data.social %}
+        <li>
+            <a href="{{ site.url }}" title="{{ site.slug }}">
+                <i class="fa fa-{{ site.logo }}">
+                    <span class="sr-only">{{ site.slug }}</span>
+                </i>
+            </a>
+        </li>
+    {% endfor %}
+{% endmacro %}

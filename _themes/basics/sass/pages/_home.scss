@@ -1,3 +1,106 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+.s-homepage {
+    height: 100vh;
+    text-align: center;
+
+    a {
+        color: $color-header;
+        text-decoration: none;
+    }
+
+    .col-md-6 {
+        padding: 0;
+    }
+
+    .c-navigation-side {
+        order: 2;
+
+        @include respond-up(md) {
+            order: 1;
+        }
+    }
+
+    .c-dark-side {
+        background-color: $color-background-dark;
+        order: 1;
+
+        @include respond-up(md) {
+            order: 2;
+        }
+    }
+
+    .c-flex {
+        align-items: center;
+        display: flex;
+        height: 50vh;
+        justify-content: center;
+    }
+
+    .c-branding__slogan,
+    .c-branding__logo {
+        color: $color-text-alt;
+    }
+
+    .c-logo {
+        display: inline-block;
+        margin-top: -20px;
+        position: relative;
+    }
+
+    .c-branding__logo {
+        font-size: 60px;
+        padding-left: 170px;
+
+        @include respond-up(sm) {
+            font-size: 100px;
+            padding-left: 230px;
+        }
+    }
+
+    .c-branding__slogan {
+        bottom: -5px;
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        position: absolute;
+
+        @include respond-up(sm) {
+            bottom: -10px;
+            font-family: $font-stack-branding;
+            font-size: 24px;
+            font-weight: 100;
+        }
+    }
+
+    .c-navigation {
+        font-size: 20px;
+        text-transform: lowercase;
+
+        @include respond-up(md) {
+            font-size: 24px;
+        }
+
+        li {
+            padding-right: 30px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .c-social {
+        font-size: 28px;
+
+        li {
+            padding-right: 15px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
