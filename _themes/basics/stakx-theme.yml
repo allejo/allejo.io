@@ -3,4 +3,4 @@ exclude:
     - layouts/
     - bower_components/
     - Gulpfile.js
-    - "*.json"
+    - /.json$/
