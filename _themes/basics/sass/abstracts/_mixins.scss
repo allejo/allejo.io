@@ -32,3 +32,23 @@
         display: inline;
     }
 }
+
+@mixin position($pos, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin margin-center() {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin size($size) {
+    height: $size;
+    width: $size;
+}

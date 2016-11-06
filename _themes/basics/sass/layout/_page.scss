@@ -2,6 +2,11 @@
     background-color: $color-background-light;
     padding: 0 15px;
 
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
     @include respond-up(sm) {
         padding: 0 30px;
     }
