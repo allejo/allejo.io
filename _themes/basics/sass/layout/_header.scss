@@ -1,3 +1,8 @@
+// -----------------------------------------------------------------------------
+// The header component is only visible to mobile devices and is intended to
+// only house the mobile responsive hamburger icon
+// -----------------------------------------------------------------------------
+
 // Don't display the header if JS is disabled
 .no-js {
     .c-page-header {

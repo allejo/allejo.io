@@ -19,7 +19,6 @@
 @import 'layout/header';
 @import 'layout/sidebar';
 @import 'layout/navigation';
-@import 'layout/footer';
 @import 'layout/page';
 
 // 5. Components
@@ -29,13 +28,10 @@
 @import 'components/brag-card';
 @import 'components/button';
 @import 'components/code-block';
-@import 'components/debug';
-@import 'components/display-grid';
 @import 'components/hamburger';
+@import 'components/portfolio-grid';
+@import 'components/screen-size';
 @import 'components/tags';
 
 // 6. Page-specific styles
 @import 'pages/home';
-
-// 7. Themes
-@import 'themes/default';
