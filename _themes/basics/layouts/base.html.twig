@@ -2,6 +2,33 @@
 <!DOCTYPE html>
 <html class="no-js {{ pageWideCSS }}">
     <head>
+        {# ========================================================================================================== #}
+        {#  Open Graph Markup  #}
+        {#    reference: https://developers.facebook.com/docs/sharing/webmasters #}
+        {# ========================================================================================================== #}
+
+        {# If no Open Graph data is defined, let's define some default information #}
+        {%- if opengraph is not defined -%}
+            {% set opengraph = {
+                url: site.url ~ url(this.permalink),
+                type: 'website',
+                title: block('title') | trim,
+                description: '',
+                image: site.url ~ url('assets/images/open-graph.jpg')
+            } %}
+        {%- endif -%}
+
+        {# Required attributes: url, type, title, description, image #}
+        {%- for attr in opengraph | keys -%}
+            <meta property="og:{{ attr }}" content="{{ opengraph[attr] }}">
+        {% endfor -%}
+
+
+
+        {# ========================================================================================================== #}
+        {#  Generic information for this page  #}
+        {# ========================================================================================================== #}
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
@@ -41,11 +68,11 @@
                 <div class="c-screensize--xs">xs</div>
             </section>
         {% endif %}
+
         {# ----------------- Actual Page Content ----------------- #}
 
         <div class="c-body">
-            {% block appbody %}
-            {% endblock %}
+            {% block appbody %}{% endblock %}
         </div>
 
         {# ------------ Everything Javascript Related ------------ #}

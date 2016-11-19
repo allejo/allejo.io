@@ -5,6 +5,14 @@ collection: posts
 
 {% extends '_layouts/page.html.twig' %}
 
+{% set opengraph = {
+    url: site.url ~ url(this.permalink),
+    type: 'article',
+    title: this.title,
+    description: this.content | summary | striptags,
+    image: site.url ~ url('assets/images/open-graph.jpg')
+} %}
+
 {% block content %}
     <article class="c-blog-post">
         <header class="c-blog-post__header">

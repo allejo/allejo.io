@@ -20,7 +20,7 @@ pageviews:
   - _pages
 
 theme: basics
-debug: true
 
 # Site Configuration
 title: allejo.io | A developer pretending to know what he's doing
+url: https://allejo.io
