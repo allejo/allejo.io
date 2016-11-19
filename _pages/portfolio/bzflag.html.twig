@@ -1,0 +1,25 @@
+---
+permalink: /projects/bzflag/
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block body %}
+    <h1>BZFlag</h1>
+
+    <p>I've been very active in the BZFlag community, to the point where the majority of my work has been dedicated to providing projects for this community. These are my more significant projects I've worked on and still maintain to this day.</p>
+
+    {% set projects = collections.projects | where('category', '==', 'bzflag') %}
+
+    {% for project in projects %}
+        <article>
+            <h2>{{ project.name }}</h2>
+            <section>
+                {{ project.content }}
+            </section>
+            <p>
+                <a href="https://github.com/{{ project.github }}">GitHub</a> | <a href="{{ project.website }}">Website</a>
+            </p>
+        </article>
+    {% endfor %}
+{% endblock %}
