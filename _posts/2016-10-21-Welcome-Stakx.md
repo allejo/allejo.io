@@ -7,9 +7,9 @@ tags: stakx
 
 A [while back]({{ url(collections.posts['2016-03-08-Evidently-I-have-a-life'].permalink) }}), I mentioned that I was working on my own [static website generator](https://github.com/stakx-io/stakx) and that I was going to post about it later. For the past 6 months, I've been working on Stakx on and off and I've finally reached a point where I can easily and efficiently build a website with Stakx.
 
-My personal website is actually the third website I've built with Stakx; the first website was the [Associated Students' Sustainability Center website](http://csunas.org/sustainabilitycenter/). I've been wanting to redesign my website and continue building upon it so it could serve as my portfolio for my work for quite some time now, so in honor of Stakx becoming usable, I'd like to introduce my completely redesigned website! In addition to the new design, I've gone back through my previous posts and have updated them to work Stakx or removed some of the more sillier posts; not that many people read my posts or would care.
+My personal website is actually the third website I've built with Stakx; the first website was the [Associated Students' Sustainability Center website](http://csunas.org/sustainabilitycenter/). I've been wanting to redesign my website and continue building upon it so it could serve as my portfolio for my work for quite some time now, so in honor of Stakx becoming usable, I'd like to introduce my completely redesigned website! In addition to the new design, I've gone back through my previous posts and have updated them to work with Stakx or removed some of the more sillier posts; not that many people read my posts or would care.
 
-So why exactly did I build yet another static website generator? Well of all the more popular generators out there, each one that I've tried has had shortcomings whether it's the template engine or the organization the generator expects. I didn't write Stakx as a tool that will replace Jekyll in my life, but more so as an alternative to the available tools already out there. I wanted a tool that used a powerful template engine, doesn't require a package manager to build a website, and can be distributed as just a single binary.
+So why exactly did I build yet another static website generator? Well of all the more popular generators out there, each one that I've tried has had shortcomings whether it's the template engine or the organization the generator expects. I didn't write Stakx as a tool that will replace Jekyll in my life, but more so as an alternative to the available tools already out there. I wanted a tool that used a powerful template engine, doesn't require a package manager to build a website, and can be distributed as just a single executable.
 
 ## Stakx vs Jekyll
 
@@ -17,7 +17,7 @@ I'll be writing a more in-depth document regarding the differences between Stakx
 
 ### No `{% raw %}{% post_url %}{% endraw %}` tag
 
-Jekyll has this Liquid tag available to reference other posts, but Stakx does not have this and it's not an oversight on my part when I was designing it. A link to another collection item can easily be achieved with Twig alone. In addition, you're not limited to just accessing other posts and their links, you can access any Content Item from any Collection and access all of their attributes.
+Jekyll has this Liquid tag available to reference other posts, but Stakx does not have this and it's not an oversight on my part when I was designing it. A link to another collection item can be achieved with Twig alone. In addition, you're not limited to just accessing other posts and their links, you can access any Content Item from any Collection and access all of their attributes.
 
 ```twig
 {% raw %}{{ url(collections.posts['file-name-without-extension'].permalink) }}{% endraw %}
@@ -49,7 +49,7 @@ I do have plans for supporting custom Twig filters and tags by adding support fo
   Probably.
 
 - **Will these become part of Stakx core?**  
-  Doubtful. I want the Stakx core to remain as light as possible and these are just conveniences.
+  Possibly, being able to reference other Content Items is important and it should be an easy task for users
 
 ## Moving Forward
 
