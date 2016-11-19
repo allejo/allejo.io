@@ -1,5 +1,5 @@
 {% macro navigation() %}
-    {% for item in menu if item.url != '//' %}
+    {% for item in menu if item.nav is defined %}
         <li>
             <a href="{{ url(item.url) }}">{{ item.title }}</a>
         </li>

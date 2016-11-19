@@ -1,6 +1,6 @@
 ---
 title: Welcome Stakx
-date: 2016-10-23 00:00:00.00 -8
+date: 2016-11-18 00:00:00.00 -8
 categories: projects
 tags: stakx
 ---

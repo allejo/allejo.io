@@ -17,6 +17,7 @@ exclude:
   - README.md
   - feed.xml
   - stakx
+  - yarn.lock
 
 pageviews:
   - _pages
