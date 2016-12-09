@@ -1,0 +1,63 @@
+---
+permalink: /sitemap.xml
+sitemap:
+    exclude: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in collections.posts %}
+        {% if not post.draft %}
+            <url>
+                <loc>{{ site.url }}{{ post.permalink }}</loc>
+                {% if post.sitemap.lastmod %}
+                    <lastmod>{{ post.sitemap.lastmod | date("%Y-%m-%d") }}</lastmod>
+                {% elseif post.date %}
+                    <lastmod>{{ post.date | date(constant('DateTime::ISO8601')) }}</lastmod>
+                {% else %}
+                    <lastmod>{{ site.time | date(constant('DateTime::ISO8601')) }}</lastmod>
+                {% endif %}
+
+                {% if post.sitemap.changefreq %}
+                    <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+                {% else %}
+                    <changefreq>monthly</changefreq>
+                {% endif %}
+
+                {% if post.sitemap.priority %}
+                    <priority>{{ post.sitemap.priority }}</priority>
+                {% else %}
+                    <priority>0.5</priority>
+                {% endif %}
+            </url>
+        {% endif %}
+    {% endfor %}
+
+    {#{% for page in site.pages %}#}
+        {#{% if not page.sitemap.exclude %}#}
+            {#<url>#}
+                {#<loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>#}
+                {#{% if page.sitemap.lastmod %}#}
+                    {#<lastmod>{{ page.sitemap.lastmod | date("%Y-%m-%d") }}</lastmod>#}
+                {#{% else if page.date %}#}
+                    {#<lastmod>{{ page.date | date_to_xmlschema }}</lastmod>#}
+                {#{% else %}#}
+                    {#<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>#}
+                {#{% endif %}#}
+
+                {#{% if page.sitemap.changefreq %}#}
+                    {#<changefreq>{{ page.sitemap.changefreq }}</changefreq>#}
+                {#{% else %}#}
+                    {#<changefreq>monthly</changefreq>#}
+                {#{% endif %}#}
+
+                {#{% if page.sitemap.priority %}#}
+                    {#<priority>{{ page.sitemap.priority }}</priority>#}
+                {#{% else %}#}
+                    {#<priority>0.3</priority>#}
+                {#{% endif %}#}
+            {#</url>#}
+        {#{% endif %}#}
+    {#{% endfor %}#}
+</urlset>
+
