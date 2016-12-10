@@ -11,11 +11,11 @@ sitemap:
             <url>
                 <loc>{{ site.url }}{{ post.permalink }}</loc>
                 {% if post.sitemap.lastmod %}
-                    <lastmod>{{ post.sitemap.lastmod | date("%Y-%m-%d") }}</lastmod>
+                    <lastmod>{{ post.sitemap.lastmod | date("Y-m-d") }}</lastmod>
                 {% elseif post.date %}
-                    <lastmod>{{ post.date | date(constant('DateTime::ISO8601')) }}</lastmod>
+                    <lastmod>{{ post.date | date("Y-m-d") }}</lastmod>
                 {% else %}
-                    <lastmod>{{ site.time | date(constant('DateTime::ISO8601')) }}</lastmod>
+                    <lastmod>{{ site.time | date("Y-m-d") }}</lastmod>
                 {% endif %}
 
                 {% if post.sitemap.changefreq %}
