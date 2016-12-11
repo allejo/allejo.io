@@ -6,7 +6,11 @@ nav: 3
 
 {% extends '_layouts/page.html.twig' %}
 
-{% macro entry(classes, name, description, links) %}
+{% block title %}
+    Portfolio | allejo.io
+{% endblock %}
+
+{% macro entry(classes, name, description, links, simpleUrl) %}
     <div class="{{ classes }}">
         <article class="c-portfolio__category">
             <header>
@@ -22,7 +26,8 @@ nav: 3
             <footer>
                 <ul class="u-list-inline">
                     {% for link in links %}
-                        <li><a href="#">{{ link }}</a></li>
+                        {% set targetUrl %}projects/{{ name | lower | replace(' ', '-') }}{% if not simpleUrl %}/{{ link | lower }}/{% endif %}{% endset %}
+                        <li><a href="{{ url(targetUrl) }}">{{ link }}</a></li>
                     {% endfor %}
                 </ul>
             </footer>
@@ -40,31 +45,36 @@ nav: 3
             'col-md-7',
             'BZFlag',
             "I'm a developer for the project, server host, map designer, and an administrator for the competitive league in the community.",
-            ['Maps', 'Plug-ins', 'Projects']
+            ['Maps', 'Plug-ins', 'Projects'],
+            false
         ) }}
         {{ _self.entry(
             'col-md-5',
             'Jekyll',
             "I work on a lot of Jekyll websites, build themes, and develop plugins.",
-            ['Themes']
+            ['Themes'],
+            false
         ) }}
         {{ _self.entry(
             'col-md-5',
             'Libraries',
             "I work on a number of open source libraries for different services.",
-            ['Libraries']
+            ['Libraries'],
+            true
         ) }}
         {{ _self.entry(
             'col-md-7',
             'Stakx',
             "I started this project as an alternative to Jekyll to make use of a more powerful template engine and a different language.",
-            ['Projects']
+            ['Projects'],
+            true
         ) }}
         {{ _self.entry(
             'col-md-12',
             'Web Design',
             "I do a lot of front-end web design, including the actual design of mockups and building the website from the ground up.",
-            ['Websites']
+            ['Websites'],
+            true
         ) }}
     </div>
 {% endblock %}

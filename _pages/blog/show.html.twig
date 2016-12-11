@@ -13,6 +13,10 @@ collection: posts
     image: site.url ~ url('assets/images/open-graph.jpg')
 } %}
 
+{% block title %}
+    {{ this.title }} | allejo.io
+{% endblock %}
+
 {% block content %}
     <article class="c-blog-post">
         <header class="c-blog-post__header">

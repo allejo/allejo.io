@@ -6,6 +6,10 @@ nav: 2
 
 {% extends '_layouts/page.html.twig' %}
 
+{% block title %}
+    Blog | allejo.io
+{% endblock %}
+
 {% block content %}
     {% for post in collections.posts | order('date', 'DESC') %}
         <article class="c-blog-post">

@@ -6,6 +6,10 @@ nav: 1
 
 {% extends '_layouts/page.html.twig' %}
 
+{% block title %}
+    About | allejo.io
+{% endblock %}
+
 {% macro brag_repeater(cards) %}
     {% for card in cards %}
         <article class="c-bragcard">
