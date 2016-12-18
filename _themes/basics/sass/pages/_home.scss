@@ -54,6 +54,18 @@
         position: relative;
     }
 
+    .c-branding__hat {
+        @include position(absolute, 10px, -20px);
+
+        width: 60px;
+
+        @include respond-up(sm) {
+            top: 30px;
+            right: -25px;
+            width: 86px;
+        }
+    }
+
     .c-branding__logo {
         font-size: 60px;
         padding-left: 170px;
