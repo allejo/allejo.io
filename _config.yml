@@ -27,3 +27,9 @@ theme: basics
 # Site Configuration
 title: allejo.io | A developer pretending to know what he's doing
 url: https://allejo.io
+
+social:
+  opengraph:
+    image: assets/images/open-graph.jpg
+  twitter:
+    username: allejome

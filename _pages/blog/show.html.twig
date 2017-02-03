@@ -6,11 +6,9 @@ collection: posts
 {% extends '_layouts/page.html.twig' %}
 
 {% set opengraph = {
-    url: site.url ~ url(this.permalink),
-    type: 'article',
-    title: this.title,
-    description: this.content | summary | striptags,
-    image: site.url ~ url('assets/images/open-graph.jpg')
+    'og:type': 'article',
+    'og:title': this.title,
+    'og:description': this.content | summary | striptags | truncate(200)
 } %}
 
 {% block title %}

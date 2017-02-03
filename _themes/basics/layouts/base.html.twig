@@ -1,26 +1,38 @@
-{%- set pageWideCSS = "" -%}
 <!DOCTYPE html>
-<html class="no-js {{ pageWideCSS }}">
+<html class="no-js {{ pageWideCSS | default('') }}">
     <head>
         {# ========================================================================================================== #}
         {#  Open Graph Markup  #}
+        {#    reference: https://dev.twitter.com/cards/types/summary #}
         {#    reference: https://developers.facebook.com/docs/sharing/webmasters #}
         {# ========================================================================================================== #}
 
         {# If no Open Graph data is defined, let's define some default information #}
-        {%- if opengraph is not defined -%}
-            {% set opengraph = {
-                url: site.url ~ url(this.permalink),
-                type: 'website',
-                title: block('title') | trim,
-                description: '',
-                image: site.url ~ url('assets/images/open-graph--xmas.jpg')
-            } %}
-        {%- endif -%}
+        {%- set opengraph_default = {
+            'og:url': site.url ~ url(this.permalink),
+            'og:type': 'website',
+            'og:title': block('title') | trim,
+            'og:description': '',
+            'og:image': site.url ~ url(site.social.opengraph.image),
+            'twitter:card': 'summary',
+            'twitter:site': site.social.twitter.username
+        } -%}
+        {%- set opengraph_fallbacks = {
+            'twitter:title': 'og:title',
+            'twitter:image': 'og:image',
+            'twitter:description': 'og:description'
+        } -%}
 
-        {# Required attributes: url, type, title, description, image #}
-        {%- for attr in opengraph | keys -%}
-            <meta property="og:{{ attr }}" content="{{ opengraph[attr] }}">
+        {%- set og_attrs = opengraph_default | merge(opengraph | default({})) -%}
+        {%- set og_fallbacks = opengraph_fallbacks | merge(fallbacks | default({})) -%}
+
+        {# This attributes will take the same value as their OpenGraph fallbacks #}
+        {%- for attr in og_fallbacks | keys -%}
+            {%- set og_attrs = og_attrs | merge({ (attr): og_attrs[og_fallbacks[attr]] }) -%}
+        {%- endfor -%}
+
+        {%- for attr in og_attrs | keys -%}
+            <meta property="{{ attr }}" content="{{ og_attrs[attr] | raw }}">
         {% endfor -%}
 
 
