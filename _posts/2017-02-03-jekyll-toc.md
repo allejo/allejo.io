@@ -8,7 +8,7 @@ So on Tuesday, I was on #jekyll like any other day and a user by the name of mis
 1. A Jekyll plugin will not run GitHub pages
 1. A JavaScript solution is slow and useless if the user doesn't have JavaScript enabled
 
-Now I've been working Liquid for a while and from first hand experience, I've come to realize that this quote accurately describes my experience with Liquid.
+Now I've been working with Liquid for a while and from first hand experience, I've come to realize that this quote accurately describes my experience with Liquid.
 
 > ...like all things liquid - where there's a will, and ~36 hours to spare, there's usually a/some way
 >
