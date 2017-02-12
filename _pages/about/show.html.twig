@@ -67,7 +67,7 @@ nav: 1
 
     {% set active_jobs     = collections.experience | where('end', '==', null) | order('start', 'ASC') %}
     {% set old_jobs        = collections.experience | where('end', '!=', null) | order('start', 'DESC') %}
-    {% set accomplishments = collections.accomplishments | order('data', 'DESC') %}
+    {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
 
     {{ _self.brag_repeater(active_jobs) }}
     {{ _self.brag_repeater(old_jobs) }}

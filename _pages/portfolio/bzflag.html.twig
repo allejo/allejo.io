@@ -11,15 +11,31 @@ permalink: /projects/bzflag/
 
     {% set projects = collections.projects | where('category', '==', 'bzflag') %}
 
-    {% for project in projects %}
-        <article>
-            <h2>{{ project.name }}</h2>
-            <section>
-                {{ project.content }}
-            </section>
-            <p>
-                <a href="https://github.com/{{ project.github }}">GitHub</a> | <a href="{{ project.website }}">Website</a>
-            </p>
-        </article>
-    {% endfor %}
+    <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4">
+                <article class="c-tile c-project-card">
+                    <header>
+                        <h3>{{ project.name }}</h3>
+                    </header>
+
+                    <section>
+                        {{ project.content }}
+                    </section>
+
+                    <footer>
+                        <ul class="u-list-inline u-list-horizontal-separator">
+                            {% if project.github %}
+                                <li><a href="https://github.com/{{ project.github }}">GitHub</a></li>
+                            {% endif %}
+
+                            {% if project.website %}
+                                <li><a href="{{ project.website }}">Website</a></li>
+                            {% endif %}
+                        </ul>
+                    </footer>
+                </article>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

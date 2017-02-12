@@ -33,6 +33,19 @@
     }
 }
 
+@mixin ul-horizontal-separator() {
+    li {
+        border-left: 1px solid tint($color-text, 50%);
+        display: inline-block;
+        margin-left: 10px;
+        padding-left: 10px;
+
+        &:first-child {
+            border-left: 0;
+        }
+    }
+}
+
 @mixin position($pos, $top: null, $right: null, $bottom: null, $left: null) {
     position: $pos;
     top: $top;

@@ -13,7 +13,7 @@ menu: false
 
 {% macro entry(classes, name, description, links, simpleUrl) %}
     <div class="{{ classes }}">
-        <article class="c-portfolio__category">
+        <article class="c-tile c-portfolio__category">
             <header>
                 {% set fileName = name | lower | replace({' ': ''}) %}
                 {{ file('../../assets/images/' ~ fileName ~ '.svg') }}
@@ -25,7 +25,7 @@ menu: false
             </div>
 
             <footer>
-                <ul class="u-list-inline">
+                <ul class="u-list-inline u-list-horizontal-separator">
                     {% for link in links %}
                         {% set targetUrl %}projects/{{ name | lower | replace(' ', '-') }}{% if not simpleUrl %}/{{ link | lower }}/{% endif %}{% endset %}
                         <li><a href="{{ url(targetUrl) }}">{{ link }}</a></li>

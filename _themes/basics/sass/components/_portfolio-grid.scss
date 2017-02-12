@@ -5,12 +5,6 @@
 }
 
 .c-portfolio__category {
-    background-color: shade(#F0F0F0, 3%);
-    border-top: 5px solid $color-background-dark;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 15px;
     text-align: center;
 
     svg {
@@ -41,21 +35,5 @@
 
     footer {
         margin-top: auto;
-
-        .u-list-inline {
-            li {
-                &::after {
-                    content: '|';
-                    margin: 0 5px 0 10px;
-                }
-
-                &:last-child {
-                    &::after {
-                        content: '';
-                        margin: 0;
-                    }
-                }
-            }
-        }
     }
 }

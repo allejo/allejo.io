@@ -1,0 +1,24 @@
+.c-project-card {
+    text-align: left;
+
+    header,
+    footer {
+        flex-grow: 0;
+    }
+
+    header {
+        h3 {
+            margin-top: 0;
+        }
+    }
+
+    section {
+        flex-grow: 1;
+    }
+
+    footer {
+        align-self: flex-end;
+        text-align: right;
+        width: 100%;
+    }
+}

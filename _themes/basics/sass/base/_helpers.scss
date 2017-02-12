@@ -42,3 +42,7 @@
 .u-list-inline {
     @include ul-inline();
 }
+
+.u-list-horizontal-separator {
+    @include ul-horizontal-separator();
+}
