@@ -1,15 +1,23 @@
 ---
-permalink: /projects/bzflag/
+permalink: /projects/bzflag/%categories/
+categories:
+  - maps
+  - plug-ins
+  - projects
+descriptions:
+  maps: Beside my development work for BZFlag, I explore my creative side on occassion and design some maps.
+  'plug-ins': A lot of my work for BZFlag goes to the game server code and the plug-in API. These are the plug-ins that I have written and still actively maintain and support.
+  projects: I actively contribute to the community in the form of third-party projects unaffiliated with the official project.
 ---
 
 {% extends '_layouts/page.html.twig' %}
 
 {% block body %}
-    <h1>BZFlag</h1>
+    <h1>BZFlag {{ this.iterators.categories | title }}</h1>
 
-    <p>I've been very active in the BZFlag community, to the point where the majority of my work has been dedicated to providing projects for this community. These are my more significant projects I've worked on and still maintain to this day.</p>
+    <p>{{ this.descriptions[this.iterators.categories] }}</p>
 
-    {% set projects = collections.projects | where('category', '==', 'bzflag') %}
+    {% set projects = collections.projects | where('category', '==', 'bzflag') | where('subcategory', '==', this.iterators.categories) %}
 
     <div class="row">
         {% for project in projects %}

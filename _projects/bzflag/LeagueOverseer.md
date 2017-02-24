@@ -1,10 +1,9 @@
 ---
 name: League Overseer
 category: bzflag
-subcategory: plugins
+subcategory: plug-ins
 
 github: allejo/LeagueOverseer
-website: http://projects.allejo.io/LeagueOverseer
 ---
 
-League Overseer is a plug-in used by leagues to automatically report matches to their respective league websites and also show players' team affiliation in their mottos. Prior to this plug-in, players would report the match results to a referee who would then manually enter the results on the website.
+League Overseer is the plug-in used by servers to automatically report match results to respective websites, whether it's a league affiliated server or a server with regular fun matches. Prior to this plug-in, players would report the match results to a referee who would then manually enter the results.

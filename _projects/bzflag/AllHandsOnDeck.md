@@ -1,7 +1,7 @@
 ---
 name: All Hands On Deck
 category: bzflag
-subcategory: plugins
+subcategory: plug-ins
 
 github: allejo/AllHandsOnDeck
 ---
