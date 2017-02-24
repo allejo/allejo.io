@@ -11,6 +11,7 @@ descriptions:
 ---
 
 {% extends '_layouts/page.html.twig' %}
+{% import '_includes/project-repeater.html.twig' as proj_helper %}
 
 {% block body %}
     <h1>BZFlag {{ this.iterators.categories | title }}</h1>
@@ -18,32 +19,5 @@ descriptions:
     <p>{{ this.descriptions[this.iterators.categories] }}</p>
 
     {% set projects = collections.projects | where('category', '==', 'bzflag') | where('subcategory', '==', this.iterators.categories) %}
-
-    <div class="row">
-        {% for project in projects %}
-            <div class="col-md-4">
-                <article class="c-tile c-project-card">
-                    <header>
-                        <h3>{{ project.name }}</h3>
-                    </header>
-
-                    <section>
-                        {{ project.content }}
-                    </section>
-
-                    <footer>
-                        <ul class="u-list-inline u-list-horizontal-separator">
-                            {% if project.github %}
-                                <li><a href="https://github.com/{{ project.github }}">GitHub</a></li>
-                            {% endif %}
-
-                            {% if project.website %}
-                                <li><a href="{{ project.website }}">Website</a></li>
-                            {% endif %}
-                        </ul>
-                    </footer>
-                </article>
-            </div>
-        {% endfor %}
-    </div>
+    {{ proj_helper.project_repeater(projects) }}
 {% endblock %}
