@@ -20,5 +20,9 @@
         align-self: flex-end;
         text-align: right;
         width: 100%;
+
+        ul {
+            margin-bottom: 0;
+        }
     }
 }
