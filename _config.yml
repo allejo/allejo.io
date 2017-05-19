@@ -18,11 +18,12 @@ exclude:
   - feed.xml
   - stakx
   - yarn.lock
+  - bower_components/
+  - Gulpfile.js
+  - Makefile
 
 pageviews:
   - _pages
-
-theme: basics
 
 # Site Configuration
 title: allejo.io | A developer pretending to know what he's doing

@@ -50,7 +50,7 @@ gulp.task('livereload', function() {
 gulp.task('sass:dist', function () {
     var sass = require('gulp-sass');
 
-    gulp.src('sass/main.scss')
+    gulp.src('_sass/main.scss')
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
@@ -67,8 +67,8 @@ gulp.task("sass:lint", function() {
     ];
 
     return gulp.src([
-            'sass/**/*.scss',
-            '!sass/vendor/**/*.scss'
+            '_sass/**/*.scss',
+            '!_sass/vendor/**/*.scss'
         ])
         .pipe(postcss(processors, { syntax: syntax_scss }));
 });
@@ -77,15 +77,15 @@ gulp.task('server', function() {
     var express = require('express');
     var app = express();
     app.use(require('connect-livereload')({port: 35729}));
-    app.use(express.static("../../_site"));
+    app.use(express.static("_site"));
     app.listen(8000, '0.0.0.0');
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['sass/**/*.scss'], ['sass:dist']);
-    gulp.watch(['../../_site/**'], notifyLiveReload);
+    gulp.watch(['_sass/**/*.scss'], ['sass:dist']);
+    gulp.watch(['_site/**'], notifyLiveReload);
 });
 
 gulp.task('default', ['sass:dist', 'server', 'livereload', 'watch']);
 gulp.task('travis', ['sass:lint']);
-gulp.task('deploy', ['sass:dist']);
+gulp.task('deploy', ['sass:dist', 'modernizr']);

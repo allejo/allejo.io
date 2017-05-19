@@ -1,4 +1,4 @@
-{% extends '@theme/layouts/page.html.twig' %}
+{% extends '_layouts/base.html.twig' %}
 
 {% import '_layouts/utilities.html.twig' as utils %}
 
@@ -6,37 +6,39 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat" rel="stylesheet">
 {% endblock %}
 
-{% block sidebar %}
-    <div class="c-branding c-branding--xmas">
-        <a href="{{ url('/') }}" class="c-branding__logo">allejo</a>
-        {# <img src="{{ url('/assets/images/logo-hat-xmas.png') }}" class="c-branding__hat" aria-hidden="true" /> #}
-    </div>
+{% block appbody %}
+    <aside class="c-sidebar">
+        <div class="c-branding c-branding--xmas">
+            <a href="{{ url('/') }}" class="c-branding__logo">allejo</a>
+            {# <img src="{{ url('/assets/images/logo-hat-xmas.png') }}" class="c-branding__hat" aria-hidden="true" /> #}
+        </div>
 
-    <nav class="c-navigation">
-        <ul class="u-list-inline">
-            {{ utils.navigation() }}
-        </ul>
-    </nav>
+        <nav class="c-navigation">
+            <ul class="u-list-inline">
+                {{ utils.navigation() }}
+            </ul>
+        </nav>
 
-    <footer>
-        <ul class="c-social u-list-inline">
-            {{ utils.social() }}
-        </ul>
+        <footer>
+            <ul class="c-social u-list-inline">
+                {{ utils.social() }}
+            </ul>
 
-        <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
-    </footer>
-{% endblock %}
+            <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
+        </footer>
+    </aside>
+    
+    <main class="c-page">
+        <div class="c-page-header">
+            <button class="c-hamburger c-hamburger--htx">
+                <span></span>
 
-{% block body %}
-    <div class="c-page-header">
-        <button class="c-hamburger c-hamburger--htx">
-            <span></span>
-
-            <p class="sr-only__text">toggle menu</p>
-        </button>
-    </div>
-
-    {% block content %}{% endblock %}
+                <p class="sr-only__text">toggle menu</p>
+            </button>
+        </div>
+    
+        {% block content %}{% endblock %}
+    </main>
 {% endblock %}
 
 {% block javascript %}
