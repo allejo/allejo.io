@@ -21,6 +21,9 @@ exclude:
   - bower_components/
   - Gulpfile.js
   - Makefile
+  - bower.json
+  - bower-shrinkwrap.json
+  - package.json
 
 pageviews:
   - _pages
