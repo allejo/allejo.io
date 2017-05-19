@@ -1,3 +1,3 @@
-[submodule "_themes/basics/sass/vendor/OnTheRocks"]
-	path = _themes/basics/sass/vendor/OnTheRocks
+[submodule "_sass/vendor/OnTheRocks"]
+	path = _sass/vendor/OnTheRocks
 	url = https://github.com/allejo/OnTheRocks.git
