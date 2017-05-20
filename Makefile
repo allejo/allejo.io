@@ -4,7 +4,7 @@ theme:
 
 site:
 	git submodule update --init;
-	wget -O stakx https://github.com/stakx-io/stakx/releases/download/v0.1.1/stakx-0.1.1.phar;
+	wget -O stakx http://tacobeam.me/stakx-nightly.phar;
 	chmod +x stakx;
 	./stakx build;
 
