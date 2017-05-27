@@ -2,10 +2,6 @@
 
 {% import '_layouts/utilities.html.twig' as utils %}
 
-{% block stylesheets %}
-    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat" rel="stylesheet">
-{% endblock %}
-
 {% block appbody %}
     <aside class="c-sidebar">
         <div class="c-branding c-branding--xmas">
@@ -27,7 +23,7 @@
             <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
         </footer>
     </aside>
-    
+
     <main class="c-page">
         <div class="c-page-header">
             <button class="c-hamburger c-hamburger--htx">
@@ -36,7 +32,7 @@
                 <p class="sr-only__text">toggle menu</p>
             </button>
         </div>
-    
+
         {% block content %}{% endblock %}
     </main>
 {% endblock %}
