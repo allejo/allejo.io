@@ -71,25 +71,27 @@
 
 /* active state, i.e. menu open */
 
-.c-hamburger--htx.is-active {
-    background-color: $hamburger-color-active;
-}
+.u-nav-open {
+    .c-hamburger--htx {
+        background-color: $hamburger-color-active;
 
-.c-hamburger--htx.is-active span {
-    background: none;
-}
+        span {
+            background: none;
+        }
+    }
 
-.c-hamburger--htx.is-active span::before {
-    top: 0;
-    transform: rotate(45deg);
-}
+    .c-hamburger--htx span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
 
-.c-hamburger--htx.is-active span::after {
-    bottom: 0;
-    transform: rotate(-45deg);
-}
+    .c-hamburger--htx span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
 
-.c-hamburger--htx.is-active span::before,
-.c-hamburger--htx.is-active span::after {
-    transition-delay: 0s, $hamburger-transistion-duration;
+    .c-hamburger--htx span::before,
+    .c-hamburger--htx span::after {
+        transition-delay: 0s, $hamburger-transistion-duration;
+    }
 }

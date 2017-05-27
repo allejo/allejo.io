@@ -13,10 +13,6 @@
         left: 0;
     }
 
-    &.is-active {
-        left: 0;
-    }
-
     &,
     a,
     h1 {
@@ -47,5 +43,11 @@
     .c-copyright {
         font-size: 14px;
         margin-bottom: 0;
+    }
+}
+
+.u-nav-open {
+    .c-sidebar {
+        left: 0;
     }
 }

@@ -1,13 +1,11 @@
 $(function () {
     "use strict";
 
-    $(".c-hamburger").click(function (e) {
+    $('.c-hamburger').click(function (e) {
         e.preventDefault();
 
-        var $this = $(this);
-        var $sidebar = $(".c-sidebar");
+        var $body = $('.c-body');
 
-        ($this.hasClass("is-active")) ? $this.removeClass("is-active") : $this.addClass("is-active");
-        ($sidebar.hasClass("is-active")) ? $sidebar.removeClass("is-active") : $sidebar.addClass("is-active");
+        $body.toggleClass('u-nav-open');
     });
 });
