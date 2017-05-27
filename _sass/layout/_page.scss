@@ -1,15 +1,6 @@
-.c-body {
-    padding: 0 1%;
-}
-
 .c-page {
     background-color: $color-background-light;
     padding: 0 15px;
-
-    img {
-        display: block;
-        max-width: 100%;
-    }
 
     @include respond-up(sm) {
         padding: 0 30px;
@@ -19,6 +10,20 @@
         margin-left: $sidebar-width;
         max-width: 1170px;
         padding: 60px;
-        text-align: justify;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    h1 {
+        &:not(:first-of-type) {
+            margin-top: 1rem;
+
+            @include respond-up(md) {
+                margin-top: 2rem;
+            }
+        }
     }
 }

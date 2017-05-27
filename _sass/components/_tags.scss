@@ -4,9 +4,11 @@
 
 .c-tags {
     li {
-        background-color: $color-background-dark;
-        color: $color-text-alt;
+        border: 1px solid $color-background-dark;
+        border-radius: 50px;
+        color: $color-header;
         font-size: 14px;
-        padding: 2px 7px;
+        line-height: 2rem;
+        padding: 0 2em;
     }
 }

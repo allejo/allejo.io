@@ -18,6 +18,12 @@ h6 {
 }
 
 h1 {
-  font-size: 1.7em;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   margin-top: 0;
+
+  @include respond-up(sm) {
+      font-size: 3.25rem;
+      font-weight: 100;
+  }
 }
