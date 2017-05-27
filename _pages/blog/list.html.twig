@@ -11,16 +11,18 @@ nav: 2
 {% endblock %}
 
 {% block content %}
-    {% for post in collections.posts | order('date', 'DESC') %}
-        <article class="c-blog-post">
-            <header class="c-blog-post__header">
-                <h2 class="c-blog-post__title"><a href="{{ url(post.permalink) }}">{{ post.title }}</a></h2>
-                <p class="c-blog-post__date">{{ post.date | date('M d, Y') }}</p>
-            </header>
+    <div class="c-blog">
+        {% for post in collections.posts | order('date', 'DESC') %}
+            <article class="c-blog-post">
+                <header class="c-blog-post__header">
+                    <h2 class="c-blog-post__title"><a href="{{ url(post.permalink) }}">{{ post.title }}</a></h2>
+                    <p class="c-blog-post__date">{{ post.date | date('M d, Y') }}</p>
+                </header>
 
-            <section class="c-blog-post__body">
-                {{ post.content | summary }}
-            </section>
-        </article>
-    {% endfor %}
+                <section class="c-blog-post__body">
+                    {{ post.content | summary }}
+                </section>
+            </article>
+        {% endfor %}
+    </div>
 {% endblock %}
