@@ -139,9 +139,9 @@ Now, let's break things down further.
 
 #### Step 1
 
-If we want information regarding an individual player, we'll often need to create a [player record](https://wiki.bzflag.org/Bz_BasePlayerRecord) with the [bz_getPlayerIndex()](https://wiki.bzflag.org/Bz_getPlayerByIndex) function, which returns a pointer (so we'll need to free pointer this in step 3). In this case, we want to create a record for the player who sent the message and as we can tell from our handy documentation, `data->from` is the player ID who sent the message.
+If we want information regarding an individual player, we'll often need to create a [player record](https://wiki.bzflag.org/Bz_BasePlayerRecord) with the [bz_getPlayerIndex()](https://wiki.bzflag.org/Bz_getPlayerByIndex) function, which returns a pointer (meaning we'll need to free this pointer in step 3). In this case, we want to create a record for the player who sent the message and as we can tell from our handy documentation, `data->from` is the player ID who sent the message.
 
-The player ID is not a universally unique ID for the player across all servers but it's unique to the player during their current session. Once a player leaves and someone else joins, the new player will likely take on this ID. If you'd like to uniquely identify **registered** players, use `pr->bzID`. You may also use `pr->ipAddress` to identify players uniquely to some extent (e.g. players on the same Wi-Fi network would share the same IP).
+The player ID is not a universally unique ID for the player across all servers but it's unique to the player during their current session. Once a player leaves and someone else joins, the new player will likely take on this ID. Also if the player rejoins, they'll like get a new ID too. If you'd like to uniquely identify **registered** players, use `pr->bzID`. You may also use `pr->ipAddress` to identify players uniquely to some extent but it isn't always reliable (e.g. players on the same Wi-Fi network would share the same IP).
 
 #### Step 2
 
