@@ -1,0 +1,31 @@
+---
+permalink: /anthologies/
+title: Writing
+nav: 4
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block title %}
+    Anthologies | allejo.io
+{% endblock %}
+
+{% block content %}
+    {% markdown %}
+        # Anthologies
+
+        I'll be writing articles/tutorials that belong together more than just being about the same topic but in fact are directly tied to each other. For this reason, I'll be classifying them as anthologies and I've listed them below.
+    {% endmarkdown %}
+
+    {% set anthologies = collections.posts | group('anthology') %}
+
+    {% for title in anthologies | keys %}
+        <h2 id="{{ title | lower | replace({' ': '-'}) }}">{{ title }}</h2>
+
+        <ul>
+            {% for article in anthologies[title] | order('date', 'ASC') %}
+                <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
