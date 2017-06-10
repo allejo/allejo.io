@@ -1,10 +1,9 @@
 ---
-
 title: "My New Series: BZFlag Plug-ins for Dummies"
 date: 2015-10-25 00:00:00
+anthology: BZFlag Plug-ins for Dummies
 categories: tutorials
 tags: bzflag plugins development
-
 ---
 
 Throughout my time with BZFlag, I have written a large amount of plug-ins. Nowadays, I have adopted the API as my child. By this, I mean that I have started to contribute a lot to the API and documenting it for others to use. I have also shaped certain parts of it to my liking mainly so it benefits my plug-ins.
