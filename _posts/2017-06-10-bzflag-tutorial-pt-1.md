@@ -2,12 +2,18 @@
 title: "BZFlag Plug-ins for Dummies: Chapter 1"
 date: 2017-06-10 00:00:00.00 -8
 anthology: BZFlag Plug-ins for Dummies
-tags: bzflag plugins development
+categories:
+  - development
+  - tutorial
+tags:
+  - bzflag
+  - plugins
+  - development
 ---
 
-[Back in 2015]({{ url(collections.posts['2015-10-25-My-New-Series-BZFlag-Plugins-for-Dummies']) }}), I said I'd write this series. Well, here it is. Better late than never. Right?
+[Back in 2015]({{ url(collections.posts['2015-10-25-My-New-Series-BZFlag-Plugins-for-Dummies']) }}), I said I'd write this series. Well, here it is. Better late than never. Right? In this first chapter, I'll be going over the structure of a plug-in while building our first sample plug-in.
 
-BZFlag plug-ins are written in C++ and each plug-in is a class which extends the `bz_Plugin` base class. Moving forward in this tutorial, when the word "plug-in" is used, it refers to the class that defines the plug-in's functionality. For example, when I say there are three functions each plug-in must define I mean there are three functions that the plug-in's class must define. This should make sense as you continue to read further in this tutorial.
+[BZFlag](http://bzflag.org) plug-ins are written in C++ and each plug-in is a class which extends the `bz_Plugin` base class. Moving forward in this tutorial, when the word "plug-in" is used, it refers to the class that defines the plug-in's functionality. For example, when I say there are three functions each plug-in must define I mean there are three functions that the plug-in's class must define. This should make sense as you continue to read further in this tutorial.
 
 I have a built an [(opinionated) generator](https://bz-plugin-starter.projects.allejo.io/), which will build the skeleton of your plugin and will take care of all the configuration of everything. For the rest of this tutorial, I'll be relying heavily on this generator.
 
