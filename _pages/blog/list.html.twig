@@ -6,12 +6,16 @@ nav: 2
 
 {% extends '_layouts/page.html.twig' %}
 
+{% set pageWideCSS = 's-blog' %}
 {% block title %}
     Blog | allejo.io
 {% endblock %}
 
 {% block content %}
-    <div class="c-blog">
+    <h1 id="blog">Blog</h1>
+    <p>I randomly write articles where I attempt to share my knowledge and some times I go on rants about the most trivial of things. Occasionally, I tell stories and am funny.</p>
+
+    <div>
         {% for post in collections.posts | order('date', 'DESC') %}
             <article class="c-blog-post">
                 <header class="c-blog-post__header">
