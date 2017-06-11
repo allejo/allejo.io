@@ -1,0 +1,21 @@
+.c-anthology {
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.c-anthology__meta {
+    span {
+        &::after {
+            content: '\2022';
+            margin-right: 5px;
+            padding-left: 10px;
+        }
+
+        &:last-child {
+            &::after {
+                content: '';
+            }
+        }
+    }
+}

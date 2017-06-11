@@ -20,12 +20,26 @@ nav: 4
     {% set anthologies = collections.posts | group('anthology') %}
 
     {% for title in anthologies | keys %}
-        <h2 id="{{ title | lower | replace({' ': '-'}) }}">{{ title }}</h2>
+        {%- set info = data.anthologies | where('name', '==', title) | first -%}
 
-        <ul>
-            {% for article in anthologies[title] | order('date', 'ASC') %}
-                <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <article class="c-anthology">
+            <header>
+                <h2 id="{{ title | lower | replace({' ': '-'}) }}">{{ title }}</h2>
+                <small class="c-anthology__meta">
+                    <span>updates: <em>{{ info.updates }}</em></span>
+                    <span>status: <em>{{ info.status }}</em></span>
+                </small>
+            </header>
+
+            <section class="c-anthology__description">
+                {{ info.description | markdown }}
+
+                <ul>
+                    {% for article in anthologies[title] | order('date', 'ASC') %}
+                        <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </article>
     {% endfor %}
 {% endblock %}
