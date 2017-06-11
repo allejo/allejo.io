@@ -14,6 +14,12 @@
         margin-left: auto;
         margin-right: auto;
 
+        &#svg-stakx .border {
+            fill: none;
+            stroke: $color-background-dark;
+            stroke-width: 2;
+        }
+
         &#svg-library {
             rect {
                 stroke: $color-background-dark;
