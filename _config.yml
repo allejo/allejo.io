@@ -32,6 +32,10 @@ pageviews:
 title: allejo.io | A developer pretending to know what he's doing
 url: https://allejo.io
 
+author:
+  name: Vladimir Jimenez
+  email: me@allejo.io
+
 social:
   opengraph:
     image: assets/images/open-graph.jpg

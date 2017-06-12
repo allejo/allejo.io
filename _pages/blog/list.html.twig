@@ -14,6 +14,12 @@ nav: 2
 {% block content %}
     <h1 id="blog">Blog</h1>
     <p>I randomly write articles where I attempt to share my knowledge and some times I go on rants about the most trivial of things. Occasionally, I tell stories and am funny.</p>
+    <p>
+        <i class="fa fa-rss" aria-hidden="true"></i>
+        <a href="{{ url('/atom.xml') }}">Atom</a> 
+        &bull; 
+        <a href="{{ url('feed.json') }}">JSON</a>
+    </p>
 
     <div>
         {% for post in collections.posts | order('date', 'DESC') %}
