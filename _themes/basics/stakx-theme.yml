@@ -1,6 +1,0 @@
-exclude:
-    - sass/
-    - layouts/
-    - bower_components/
-    - Gulpfile.js
-    - /.json$/
