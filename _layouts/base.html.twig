@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js {{ pageWideCSS | default('') }}">
+<html class="no-js {{ pageWideCSS | default('') }}" lang="en">
     <head>
         {# ========================================================================================================== #}
         {#  Open Graph Markup  #}
@@ -53,6 +53,7 @@
 
         <link rel="alternate" title="{{ site.title }}" type="application/json" href="{{ url('/feed.json', absolute = true) }}" />
         <link rel="alternate" title="{{ site.title }}" type="application/atom+xml" href="{{ url('/atom.xml', absolute = true) }}" />
+        <link rel="alternate" href="{{ url('/', absolute = true) }}" hreflang="en" />
 
         {% block stylesheets %}{% endblock %}
     </head>
