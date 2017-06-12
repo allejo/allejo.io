@@ -25,6 +25,20 @@ collection: posts
         <section class="c-blog-post__body">
             {{ this.content }}
         </section>
+
+        <footer class="c-blog-post__footer">
+            {% if this.categories %}
+                <div>
+                    <i class="fa fa-fw fa-folder" aria-hidden="true"></i> {{ this.categories | join(', ') | title }}
+                </div>
+            {% endif %}
+
+            {% if this.tags %}
+                <div>
+                    <i class="fa fa-fw fa-tags" aria-hidden="true"></i> {{ this.tags | join(', ') }}
+                </div>
+            {% endif %}
+        </footer>
     </article>
 
     <!-- Disqus Setup -->

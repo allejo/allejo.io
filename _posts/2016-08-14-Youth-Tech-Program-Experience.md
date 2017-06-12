@@ -6,7 +6,8 @@ categories:
 tags:
   - ytp
   - youthtech
-  - sm
+  - youth tech program
+  - santa monica
 ---
 
 I've been wanting to write about the [Santa Monica Youth Tech Program](http://www.santamonicayouthtech.com/) (YTP) for quite some time and what my experience was like as a participant in 2012 and now as a staff member. After searching for posts regarding YTP, all I could find were articles written by program partners and guest presenters.

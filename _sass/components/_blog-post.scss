@@ -29,3 +29,19 @@
         padding-left: 30px;
     }
 }
+
+.c-blog-post__footer {
+    margin-bottom: 1em;
+
+    div {
+        margin-right: 1em;
+
+        @include respond-up(md) {
+            display: inline;
+        }
+    }
+
+    .fa {
+        color: $color-background-dark;
+    }
+}

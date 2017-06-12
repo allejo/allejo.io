@@ -16,8 +16,8 @@ nav: 2
     <p>I randomly write articles where I attempt to share my knowledge and some times I go on rants about the most trivial of things. Occasionally, I tell stories and am funny.</p>
     <p>
         <i class="fa fa-rss" aria-hidden="true"></i>
-        <a href="{{ url('/atom.xml') }}">Atom</a> 
-        &bull; 
+        <a href="{{ url('/atom.xml') }}">Atom</a>
+        &bull;
         <a href="{{ url('feed.json') }}">JSON</a>
     </p>
 
@@ -32,6 +32,14 @@ nav: 2
                 <section class="c-blog-post__body">
                     {{ post.content | summary }}
                 </section>
+
+                <footer class="c-blog-post__footer">
+                    {% if post.categories %}
+                        <div>
+                            <i class="fa fa-fw fa-folder" aria-hidden="true"></i> {{ post.categories | join(', ') | title }}
+                        </div>
+                    {% endif %}
+                </footer>
             </article>
         {% endfor %}
     </div>
