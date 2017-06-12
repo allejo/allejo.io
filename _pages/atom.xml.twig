@@ -1,0 +1,29 @@
+---
+permalink: /atom.xml
+menu: false
+sitemap:
+  exclude: true
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ site.title }}</title>
+    <link href="{{ url('atom.xml', absolute = true) }}" rel="self"/>
+    <link href="{{ url('/', absolute = true) }}"/>
+    <updated>{{ 'now' | date(constant('\DateTime::RFC3339')) }}</updated>
+    <id>{{ url('/', absolute = true) }}</id>
+    <author>
+        <name>{{ site.author.name }}</name>
+        <email>{{ site.author.email }}</email>
+    </author>
+
+    {% for post in collections.posts | order('date', 'DESC') %}
+        <entry>
+            <title>{{ post.title }}</title>
+            <link href="{{ url(post, absolute = true) }}"/>
+            <updated>{{ post.date | date(constant('\DateTime::RFC3339')) }}</updated>
+            <id>{{ url(post, absolute = true) | sha1 }}</id>
+            <content type="html">{{ post.content }}</content>
+        </entry>
+    {% endfor %}
+</feed>
