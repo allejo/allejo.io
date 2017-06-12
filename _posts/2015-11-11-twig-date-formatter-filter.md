@@ -1,10 +1,13 @@
 ---
-
 title: Twig Date Parser Filter
 date: 2015-11-12 00:00:00
-categories: tutorials
-tags: php twig symfony silex
-
+categories: 
+  - tutorials
+tags:
+  - php
+  - twig 
+  - symfony 
+  - silex
 ---
 
 I've recently been working with [joining Wufoo and DaPulse together happily in marriage]({{ url(collections.posts['2015-11-07-wufoo-and-dapulse'].permalink) }}) and have made solid progress. However, one problem I encountered was the lack of consistency between Wufoo's POST data and API responses for their date fields. For example, I would get dates formatted as `YYYYMMDD` from the POST data received from their webhooks but I'd get `YYYY-MM-DD` whenever I sent an API request.

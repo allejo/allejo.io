@@ -1,8 +1,10 @@
 ---
 title: Welcome Stakx
 date: 2016-11-18 00:00:00.00 -8
-categories: projects
-tags: stakx
+categories: 
+  - projects
+tags: 
+  - stakx
 ---
 
 A [while back]({{ url(collections.posts['2016-03-08-Evidently-I-have-a-life'].permalink) }}), I mentioned that I was working on my own [static website generator](https://github.com/stakx-io/stakx) and that I was going to post about it later. For the past 6 months, I've been working on Stakx on and off and I've finally reached a point where I can easily and efficiently build a website with Stakx.

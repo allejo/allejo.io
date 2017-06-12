@@ -1,12 +1,13 @@
 ---
-
 title: Introducing PhpSoda
 date: 2015-06-10 00:00:00
-categories: projects
-tags: socrata php library api
-redirect_from:
-  - /projects/2015/06/09/Introducing-PhpSoda.html
-
+categories:
+  - projects
+tags:
+  - socrata
+  - php
+  - library
+  - api
 ---
 
 I'm very proud to announce the birth of a new project and its [first release](https://github.com/allejo/PhpSoda/releases/tag/v0.1.0)! It's called [PhpSoda](https://github.com/allejo/PhpSoda) and it's not for the type of soda that you drink (even though I *love* soda), it's actually an acronym for the [Socrata Open Data API](http://dev.socrata.com/). What's [Socrata](http://socrata.com/)? Well they're a pretty neat company that hosts a lot of open data for governments. They host open data for the [US Federal Government](http://www.socrata.com/industries/open-data-federal-governments/) and for local governments like the [City of Santa Monica](https://data.smgov.net/), where I work at the time of writing this.

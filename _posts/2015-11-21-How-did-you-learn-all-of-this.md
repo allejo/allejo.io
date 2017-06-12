@@ -1,9 +1,8 @@
 ---
-
 title: "\"How did you learn all of this?\""
 date: 2015-11-21 00:00:00
-categories: rants
-
+categories: 
+  - rants
 ---
 
 Since I've started taking more computer related classes and have met some pretty cool people, the most common question I keep getting is: "how did you learn all of this?" As a friend pointed out a few days ago, I've been fooling around with code and technology for almost a decade now; I'm not entirely satisfied with the progress I've made, since I wish I had time to learn so much more.

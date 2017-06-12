@@ -1,12 +1,11 @@
 ---
-
 title: From Underachiever to Uhm...
 date: 2015-03-13 02:10:00
-categories: rants
-tags: college compsci
-redirect_from:
-  - /blog/rants/2015/03/12/Underachiever.html
-
+categories:
+  - rants
+tags:
+  - college
+  - compsci
 ---
 
 A really long time ago I posted that I was an underachiever and sorry to disappoint but I still am. Well... Sorta. Maybe. Mostly.

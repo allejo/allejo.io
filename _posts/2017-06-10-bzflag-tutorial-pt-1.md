@@ -4,10 +4,9 @@ date: 2017-06-10 00:00:00.00 -8
 anthology: BZFlag Plug-ins for Dummies
 categories:
   - development
-  - tutorial
+  - tutorials
 tags:
   - bzflag
-  - plugins
   - development
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: I hate Fridays
 date: 2017-03-31 00:00:00.00 -8
+categories:
+  - rants
 ---
 
 So Fridays are typically my days off from work and school; they're awesome and I'm always looking forward to them. However, this morning I woke up to a not so awesome Friday. Everything on my computer had crapped out.

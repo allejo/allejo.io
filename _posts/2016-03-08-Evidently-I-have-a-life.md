@@ -1,10 +1,11 @@
 ---
-
 title: Evidently I have a life
 date: 2016-03-08 00:00:00
-categories: rants
-tags: bzflag stakx
-
+categories: 
+  - rants
+tags: 
+  - bzflag 
+  - stakx
 ---
 
 I have spring break coming up in about 2 weeks; while that would typically have me excited, I'm too distracted and drained for any unnecessary emotions. I've been in a rather odd slump the past few months with where I'm at.

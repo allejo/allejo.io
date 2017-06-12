@@ -1,6 +1,10 @@
 ---
 title: It's 2017
 date: 2017-01-15 00:00:00.00 -8
+categories:
+  - projects
+tags:
+  - bzflag
 ---
 
 Welcome to a new year. Only 15 days late but, whatever. Looking back at 2016, it was a pretty awesome year for me with regards to all of the projects I participated in. Here are some of my projects and accomplishments for 2016:

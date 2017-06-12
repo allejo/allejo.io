@@ -1,6 +1,8 @@
 ---
 title: Thank You, AS
 date: 2016-11-19 00:00:00.00 -8
+categories:
+  - projects
 ---
 
 I'm often curious to see other people's personal websites and am disappointed when I notice that their websites are dated or unmaintained. The pot calling the kettle black, huh? My personal website has become the most neglected project I maintain but I plan on changing that. I intend on writing more often, hence this post.

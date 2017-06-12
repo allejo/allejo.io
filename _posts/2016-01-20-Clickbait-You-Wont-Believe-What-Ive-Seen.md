@@ -1,10 +1,11 @@
 ---
-
 title: Clickbait — You won't believe what I've seen!
 date: 2016-01-20 00:00:00
-categories: rants
-tags: satire linkedin clickbait
-
+categories:
+  - rants
+tags:
+  - linkedin 
+  - clickbait
 ---
 
 For those of you who don't know me, my sense of humor is quite cynical, sarcastic, and satirical at times. The number one thing I absolutely **loathe** when scrolling through my newsfeed—whether it be Facebook, LinkedIn, or Twitter—is seeing clickbait. Ok, on Facebook or Twitter it's to be expected but on LinkedIn also? These are three titles of articles I saw on LinkedIn before I quit my browser:
