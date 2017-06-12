@@ -19,9 +19,9 @@
     "stylelint-scss": "^1.3.4",
     "tiny-lr": "^0.2.1"
   },
-  "name": "stakx-basics-theme",
+  "name": "allejo-io",
   "version": "1.0.0",
-  "description": "A stakx theme create for allejo.io",
+  "description": "The stakx source for allejo.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/allejo/allejo.io.git"
