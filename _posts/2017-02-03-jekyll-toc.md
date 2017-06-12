@@ -5,7 +5,9 @@ categories:
   - tutorials
 tags:
   - jekyll
+  - toc
   - table of contents
+  - github pages
 ---
 
 So on Tuesday, I was on #jekyll like any other day and a user by the name of misty came in asking about using `{:toc}` in a Jekyll layout instead of a markdown file. It makes sense, on large websites with a lot of markdown files, you don't want to make sure you include `{:toc}` in each document and if you do manage that, you're restricted with where it will be rendered—alongside the content. There's another problem with `{:toc}`, it won't work separately from the markdown file because Jekyll doesn't give Liquid the raw markdown so you can't prepend `{:toc}` and markdownify the combination nor can you combine `{:toc}` with HTML. I'm well aware that there are several [Jekyll plugins](https://github.com/dafi/jekyll-toc-generator) out there and [JavaScript solutions](https://github.com/ghiculescu/jekyll-table-of-contents) to this problem but there are two problems with each:
