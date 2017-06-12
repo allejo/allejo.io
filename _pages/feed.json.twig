@@ -1,0 +1,37 @@
+---
+permalink: /feed.json
+menu: false
+sitemap:
+  exclude: true
+---
+
+{%- set items = [] -%}
+{%- set feed = {
+    version: 'https://jsonfeed.org/version/1',
+    title: site.title,
+    home_page_url: url('/', absolute=true),
+    feed_url: url('/feed.json', absolute=true),
+    description: site.description,
+    icon: url('/apple-touch-icon.png', absolute=true),
+    favicon: url('/favicon.ico', absolute=true),
+    author: {
+        name: site.author.name
+    }
+    expired: false
+} -%}
+
+{%- for post in collections.posts | order('date', 'DESC') -%}
+    {%- set items = items | merge([{
+        id: url(post, absolute = true) | sha1,
+        title: post.title,
+        summary: post.content | summary | striptags,
+        content_text: post.content | striptags,
+        url: url(post, absolute = true),
+        date_published: post.date | date(constant('\DateTime::RFC3339')),
+        date_modified: post.date | date(constant('\DateTime::RFC3339')),
+    }]) -%}
+{%- endfor -%}
+
+{%- set feed = feed | merge({'items': items}) -%}
+
+{{- feed | json_encode(constant('JSON_UNESCAPED_SLASHES')) -}}
