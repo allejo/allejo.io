@@ -6,4 +6,8 @@ blockquote {
     @include respond-up(md) {
         margin-left: 20px;
     }
+
+    @media print {
+        page-break-inside: avoid;
+    }
 }

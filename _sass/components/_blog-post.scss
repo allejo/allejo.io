@@ -1,3 +1,18 @@
+.s-blog-view {
+    .c-blog-post {
+        @media print {
+            page-break-after: always;
+
+            h2 {
+                page-break-before: always;
+            }
+            h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+    }
+}
+
 .c-blog-post__header {
     a {
         color: $color-header;
@@ -17,6 +32,10 @@
     font-size: 2.1em;
     font-weight: normal;
     margin-bottom: 0;
+
+    @media print {
+        font-size: 1.7em;
+    }
 }
 
 .c-blog-post__date {

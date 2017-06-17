@@ -26,4 +26,9 @@ h1 {
       font-size: 3.25rem;
       font-weight: 100;
   }
+
+  @media print {
+      font-size: 30px;
+      font-weight: normal;
+  }
 }

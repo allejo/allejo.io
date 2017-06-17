@@ -15,6 +15,10 @@ pre {
     white-space: pre;
     width: 100%;
     word-wrap: normal; // horizontal scrolling
+
+    @media print {
+        page-break-inside: avoid;
+    }
 }
 
 pre code {
@@ -28,4 +32,8 @@ pre code {
     overflow-y: hidden;
     white-space: pre;
     word-wrap: normal;
+
+    @media print {
+        white-space: pre-wrap;
+    }
 }

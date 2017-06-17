@@ -33,6 +33,33 @@
     @include respond-up(lg) {
         display: none;
     }
+
+    @media print {
+        display: none;
+    }
+}
+
+.c-print-header {
+    border-bottom: 1px solid $palette-cream;
+    display: none;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+
+    @media print {
+        display: block;
+    }
+}
+
+.c-print-header__title {
+    font-family: $font-stack-header;
+    font-size: 60px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.c-print-header__slogan {
+    margin-bottom: 0;
+    margin-top: -7px;
 }
 
 .u-nav-open {

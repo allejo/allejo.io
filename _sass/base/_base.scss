@@ -38,4 +38,8 @@ a {
 
 body {
   background-color: $color-background-light;
+
+  @media print {
+      background-color: transparent;
+  }
 }
