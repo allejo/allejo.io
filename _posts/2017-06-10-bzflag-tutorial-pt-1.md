@@ -12,21 +12,21 @@ tags:
 
 [Back in 2015]({{ url(collections.posts['2015-10-25-My-New-Series-BZFlag-Plugins-for-Dummies']) }}), I said I'd write this series. Well, here it is. Better late than never. Right? In this first chapter, I'll be going over the structure of a plug-in while building our first sample plug-in.
 
-[BZFlag](http://bzflag.org) plug-ins are written in C++ and each plug-in is a class which extends the `bz_Plugin` base class. Moving forward in this tutorial, when the word "plug-in" is used, it refers to the class that defines the plug-in's functionality. For example, when I say there are three functions each plug-in must define I mean there are three functions that the plug-in's class must define. This should make sense as you continue to read further in this tutorial.
+[BZFlag](http://bzflag.org) plug-ins are written in C++ and each plug-in is a class which extends the `bz_Plugin` base class. Moving forward in this tutorial, when the word "plug-in" is used, it refers to the class that defines the plug-in's functionality. For example, when I say there are three methods each plug-in must define I mean there are three methods that the plug-in's class must define. This should make sense as you continue to read further in this tutorial.
 
 I have a built an [(opinionated) generator](https://bz-plugin-starter.projects.allejo.io/), which will build the skeleton of your plugin and will take care of all the configuration of everything. For the rest of this tutorial, I'll be relying heavily on this generator.
 
 ## Plug-in Core + Setup
 
-The four functions that each plug-in must define are the following:
+The four methods that each plug-in must define are the following:
 
 ### `virtual const char* Name ();`
 
-This function defines the name of the plugin and what will be returned in debug messages and when `/listplugins` is run.
+This method defines the name of the plugin and what will be returned in debug messages and when `/listplugins` is run.
 
 ### `virtual void Init (const char* config);`
 
-This function is where all of the plug-in configuration is done and is the function that is called when the plug-in is loaded. In this function, we will need to do the following:
+This method is where all of the plug-in configuration is done and is the method that is called when the plug-in is loaded. In this method, we will need to do the following:
 
 - Register which events we'll be listening to
 - Register custom flags
@@ -35,18 +35,18 @@ This function is where all of the plug-in configuration is done and is the funct
 
 ### `virtual void Cleanup ();`
 
-This function is called whenever the plug-in is unloaded and is where you need to:
+This method is called whenever the plug-in is unloaded and is where you need to:
 
 - Call the `Flush();` function (to unregister your event callbacks)
 - Remove custom flags
 - Remove custom slash commands
 - Remove custom map objects
 
-This function has a default implementation that calls `Flush();` automatically, however it's a good idea to always create this implementation so you don't forget remove custom registrations if you add any in the future of your plug-in development.
+This method has a default implementation that calls `Flush();` automatically, however it's a good idea to always create this implementation so you don't forget remove custom registrations if you add any in the future of your plug-in development.
 
 ### `virtual void Event (bz_EventData* eventData);`
 
-This function is where the main behavior (our callbacks) of the plug-in is written.
+This method is where the main behavior (our callbacks) of the plug-in is written.
 
 ## API Events
 
@@ -77,7 +77,7 @@ const char* ChatNotifier::Name ()
 
 ### 2. Registering Events
 
-The first step in building the plug-in is to notify the server which events we'll be listening to when the plug-in is loaded. We do this in the `Init()` function and will register the events we want to listen to using the `Register()` function.
+The first step in building the plug-in is to notify the server which events we'll be listening to when the plug-in is loaded. We do this in the `Init()` method and will register the events we want to listen to using the `Register()` function.
 
 For this plug-in, we'll be listening to `bz_eRawChatMessageEvent`, which is called every time a player sends a message before any filtering and permission checks occur.
 
@@ -90,9 +90,9 @@ void ChatNotifier::Init (const char* config)
 
 ### 3. Defining Behavior
 
-After we've specified to the server that we want to listen to this event, we now have to define what needs to happen when that event is triggered; we do this in the `Event()` function. In this function, we'll be defining the behavior for **all** of the events we're listening to so I'll be using a switch block to handle the behavior for each event (only one event in this plug-in's case) but I can also use an if statement.
+After we've specified to the server that we want to listen to this event, we now have to define what needs to happen when that event is triggered; we do this in the `Event()` method. In this method, we'll be defining the behavior for **all** of the events we're listening to so I'll be using a switch block to handle the behavior for each event (only one event in this plug-in's case) but I can also use an if statement.
 
-Using the plug-in generator, here's what I've got as the definition for our `Event()` function. For each event, we're given a `bz_EventData` object that we can cast into more specific objects based on the event. Some events are used for notification purposes only and do not have any objects you can cast `bz_EventData` to; for `bz_eRawChatMessageEvent`, we're given `bz_ChatEventData_V2`.
+Using the plug-in generator, here's what I've got as the definition for our `Event()` method. For each event, we're given a `bz_EventData` object that we can cast into more specific objects based on the event. Some events are used for notification purposes only and do not have any objects you can cast `bz_EventData` to; for `bz_eRawChatMessageEvent`, we're given `bz_ChatEventData_V2`.
 
 ```cpp
 void ChatNotifier::Event (bz_EventData* eventData)
