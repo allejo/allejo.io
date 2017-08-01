@@ -25,7 +25,7 @@ Shortly after, I got the following response.
 
 > Yes, it was!!! I misspelled your name and accidentally erased it rather than correct it.
 
-Sigh... After knowing and working with Kevin for 3 years, I can look back at this and know for a fact, that this totally something he would do.
+Sigh... After knowing and working with Kevin for 3 years, I can look back at this and know for a fact, that this is totally something he would do.
 
 In my three years with AS, I have made a lot of friends and have learned so much from my coworkers. Working in an office with graphic designers has taught me so much about what makes a good design and I've been able to apply that knowledge to designs I've worked on myself. I've also been able to experiment a lot with different projects and learn what's best without being too worried about breaking everything. What sucks the most is that I've been in the office for so long that I've seen many people come and go; frankly, I miss a lot of them (some more than others) and all the fond memories I have with them.
 
