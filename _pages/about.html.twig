@@ -11,7 +11,7 @@ nav: 1
 {% endblock %}
 
 {% macro brag_repeater(cards) %}
-    {% for card in cards %}
+    {%- for card in cards -%}
         <article class="c-bragcard">
             <header class="c-bragcard__header">
                 <div class="c-bragcard__title">
@@ -31,48 +31,62 @@ nav: 1
                 {{ card.content }}
             </section>
 
-            <footer class="c-bragcard__footer">
-                {% if card.tags %}
-                    <ul class="c-tags u-list-inline">
-                        {% for tag in card.tags %}
-                            <li>{{ tag }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </footer>
+            {#<footer class="c-bragcard__footer">#}
+                {#{% if card.tags %}#}
+                    {#<ul class="c-tags u-list-inline">#}
+                        {#{% for tag in card.tags %}#}
+                            {#<li>{{ tag }}</li>#}
+                        {#{% endfor %}#}
+                    {#</ul>#}
+                {#{% endif %}#}
+            {#</footer>#}
         </article>
-    {% endfor %}
+    {%- endfor -%}
 {% endmacro %}
 
 {% block content %}
     {% markdown %}
         # About
 
-        Hi, I'm allejo
-        <br>
-        <small>(or "allejome" or "allejo256" if someone has rudely taken "allejo" on a specific website)</small>
+        My name's Vladimir and on the Internet, I go by "allejo."
 
-        My name's Vladimir and I'm a computer science major with a minor in GIS; the CS part is terribly boring. I spend a lot of time around the open source community and contribute to projects as I can. I specialize in web design but I do a lot of work with Linux server administration, development, and graphic design.
+        I'm just another boring developer pretending to know what he's doing in Los Angeles, California. I enjoy late night food runs, eating wings, staring at my desktop legion, and occasionally playing on my PS4.
 
-        I joined the [BZFlag](http://bzflag.org/) community in 2008 and started submitting patches along with writing plug-ins; I'm now part of the development team and run the largest game server. I've slowly branched out and have joined other open source communities in different manners.
+        When I'm not building on BZFlag related projects or working on open source projects, I work as a web developer for the Associated Students at my college. On any given day, I could be designing a front-end, maintaining open source projects, or maintaining content in a <abbr title="Content Management System">CMS</abbr>.
 
-        - [18F](https://github.com/18f) - I spend time around their GitHub projects helping out other developers in issues and occasionally send them pull requests.
-        - [Jekyll](http://jekyllrb.com/) - I hang around [#jekyll](irc://irc.freenode.net/jekyll) on Freenode and help out users. In addition, I've started writing plug-ins and themes that I use internally but intend on releasing them as open source.
-        - [Socrata](http://dev.socrata.com/) - I hang around [#socrata-soda](irc://irc.freenode.net/socrata-soda) on Freenode, help provide support for PHP users, and have written [PhpSoda](http://github.com/allejo/PhpSoda) as an alternative to their official library.
+        ## Communities
 
-        I'm socially awkward and sometimes I'm funny; I'm also notorious for breaking the build.
+        Since I'm not busy enough and am an advocate for open source projects, these are the projects/communities that I'm actively involved in and dedicate a lot of my spare time towards.
 
-        # Experience
+        - **[BZFlag](http://bzflag.org)** &mdash; One of the first online games I discovered and have been a part of the community since 2007. I am a part of the development team, host the largest game server, write server plug-ins, and help run the competitive league within the community.
+        - **[Jekyll](https://jekyllrb.com)** &mdash; I hang around [#jekyll](irc://irc.freenode.net/jekyll) on Freenode and help out users. I additionally have started to work on plug-ins and themes that I plan on releasing as open source in the near future.
+        - **[Socrata](https://dev.socrata.com)** &mdash; I spend time on [#socrata-soda](irc://irc.freenode.net/socrata-soda) on Freenode, help provide support for PHP users, and have written [PhpSoda](http://github.com/allejo/PhpSoda) as an alternative to the official library.
+
+        ## Places I've Worked
     {% endmarkdown %}
 
-    {% set active_jobs     = collections.experience | where('end', '==', null) | order('start', 'ASC') %}
-    {% set old_jobs        = collections.experience | where('end', '!=', null) | order('start', 'DESC') %}
-    {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
+    {% set active_jobs = collections.experience | where('end', '==', null) | order('start', 'ASC') %}
+    {% set old_jobs    = collections.experience | where('end', '!=', null) | order('start', 'DESC') %}
 
     {{ _self.brag_repeater(active_jobs) }}
     {{ _self.brag_repeater(old_jobs) }}
 
-    <h1 id="accomplishments">Accomplishments</h1>
+    {% markdown %}
+        ## Accomplishments
 
+        I occasionally take part in code related competitions whenever I'm invited to do so. Here are some notable mentions of competitions I've participated in and the work I did during the said competitions.
+    {% endmarkdown %}
+
+    {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
     {{ _self.brag_repeater(accomplishments) }}
+
+    {% markdown %}
+        ## How to Support Me
+
+        I do the majority of my open source work for fun because I enjoy it. If you've found any of my projects useful and want to support its development, here are a few ways you can.
+
+        1. Star the project on GitHub.
+        1. Subscribe to one of my feeds.
+        1. Send a donation via [PayPal](https://www.paypal.me/allejo) or [Square Cash](https://cash.me/$allejo).
+    {% endmarkdown %}
 {% endblock %}
