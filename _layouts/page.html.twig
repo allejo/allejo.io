@@ -15,13 +15,13 @@
             </ul>
         </nav>
 
-        <footer>
+        <section>
             <ul class="c-social u-list-inline">
                 {{ utils.social() }}
             </ul>
 
             <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
-        </footer>
+        </section>
     </aside>
 
     <main class="c-page">
@@ -39,6 +39,13 @@
         </div>
 
         {% block content %}{% endblock %}
+
+        <footer class="c-site-footer">
+            <ul class="u-list-inline">
+                <li><a href="{{ url('/contact/') }}">Contact</a></li>
+                <li><a href="{{ url('/about/') }}#how-to-support-me">Support Me</a></li>
+            </ul>
+        </footer>
     </main>
 {% endblock %}
 

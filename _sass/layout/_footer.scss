@@ -1,0 +1,17 @@
+.c-site-footer {
+    border-top: 1px solid $palette-light-grey;
+    margin-top: 30px;
+    padding-top: 30px;
+
+    a {
+        color: $palette-dark-blue;
+    }
+
+    ul {
+        margin: 0;
+
+        li {
+            margin-right: 30px;
+        }
+    }
+}
