@@ -1,0 +1,39 @@
+label {
+    &.required {
+        &::after {
+            color: $palette-red;
+            content: '*';
+            margin-left: 5px;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+    }
+
+    textarea,
+    input[type=text] {
+        border: 1px solid $palette-light-grey;
+        display: block;
+        padding: 0.25rem;
+        width: 100%;
+    }
+}
+
+.c-button {
+    background-color: transparent;
+    border: 1px solid $palette-light-blue;
+    border-radius: 50px;
+    color: $palette-light-blue;
+    cursor: pointer;
+    padding: 10px 30px;
+
+    &:hover {
+        background-color: $palette-light-blue;
+        color: $palette-white;
+    }
+}

@@ -1,0 +1,50 @@
+---
+permalink: /contact/
+title: Contact
+menu: false
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block title %}
+    Contact | allejo.io
+{% endblock %}
+
+{% block content %}
+    <h1>Contact</h1>
+
+    <p>I hang around Freenode's IRC network as <em>allejo</em>. For quick help, find me on IRC or send me a quick message on <a href="https://twitter.com/allejome">Twitter</a>. If you have a longer or more detailed message, here are some things to keep in mind.</p>
+
+    <ul>
+        <li>If you're contacting me with questions or corrections regarding a blog post, the comment section of the respective post is better suited.</li>
+        <li>If you'd like to report a bug, request a feature, or ask for help regarding one of my open source projects, the "Issues" section of the respective GitHub repository is better suited.</li>
+    </ul>
+
+    <p>Chances are, other people may have the same question or issue as you, so it's best to let Google index that public knowledge. There are obviously exceptions to this (e.g. security, privacy, etc.), so use your best judgement.</p>
+
+    <form name="contact" action="thank-you" data-netlify="true">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="required">Email address <small>(will remain private)</small></label>
+            <input type="text" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message" class="required">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="find-me">How'd you find me?</label>
+            <input type="text" id="find-me" name="find-me">
+        </div>
+
+        <div>
+            <button class="c-button" type="submit">Send</button>
+        </div>
+    </form>
+{% endblock %}
