@@ -1,7 +1,12 @@
 .c-site-footer {
     border-top: 1px solid $palette-light-grey;
     margin-top: 30px;
+    padding-bottom: 30px;
     padding-top: 30px;
+
+    @include respond-up(lg) {
+        padding-bottom: 0;
+    }
 
     a {
         color: $palette-dark-blue;
