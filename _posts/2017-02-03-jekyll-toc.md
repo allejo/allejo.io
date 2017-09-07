@@ -114,7 +114,7 @@ Lastly, now that we have a markdown version of the TOC with the correct indentat
 
 ## Project Repository
 
-I originally shared this code as a GitHub Gist, however I made a promise months ago regarding this code. If I got bored enough, I'd move the code to it's own repository; and so I have: [allejo/jekyll-toc](https://github.com/allejo/jekyll-toc). Heck, I even added unit tests to show sample usage and make sure that it works as intended. Don't worry, the snippet's still under BSD-3.
+I originally shared this code as a GitHub Gist, however I made a promise months ago regarding this code. If I got bored enough, I'd move the code to its own repository; and so I have: [allejo/jekyll-toc](https://github.com/allejo/jekyll-toc). Heck, I even added unit tests to show sample usage and make sure that it works as intended. Don't worry, the snippet's still under BSD-3.
 
 **Updates**
 
