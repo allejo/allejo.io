@@ -23,7 +23,7 @@ sitemap:
             <link href="{{ url(post, absolute = true) }}"/>
             <updated>{{ post.date | date(constant('\DateTime::RFC3339')) }}</updated>
             <id>{{ url(post, absolute = true) | sha1 }}</id>
-            <content type="html">{{ post.content }}</content>
+            <content type="html">{{ post.content | escape('xml') }}</content>
         </entry>
     {% endfor %}
 </feed>
