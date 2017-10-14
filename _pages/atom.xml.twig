@@ -20,7 +20,7 @@ sitemap:
     {% for post in collections.posts | order('date', 'DESC') %}
         <entry>
             <title>{{ post.title }}</title>
-            <link href="{{ url(post, absolute = true) }}" rel="alternate" type="text/html" title="{{ post.title }}" />
+            <link href="{{ url(post, absolute = true) }}" rel="alternate" type="text/html" title="{{ post.title | escape('html_attr') }}" />
             <updated>{{ post.date | date(constant('\DateTime::RFC3339')) }}</updated>
             <id>{{ url(post, absolute = true) | sha1 }}</id>
             <content type="html" xml:base="{{ url(post, absolute = true) }}">{{ post.content | escape }}</content>
