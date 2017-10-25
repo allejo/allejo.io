@@ -188,17 +188,17 @@ for (unsigned int i = 0; i < data->data.size(); i++)
 
     // Step 4
     bz_APIStringList nubs;
-    nubs->tokenize(line.c_str(), " ", 0, true);
+    nubs.tokenize(line.c_str(), " ", 0, true);
 
-    if (nubs->size() > 0)
+    if (nubs.size() > 0)
     {
         // Step 5
-        std::string key = bz_toupper(nubs->get(0).c_str());
+        std::string key = bz_toupper(nubs.get(0).c_str());
 
         // Step 5.1
-        if (key == "TAKE" && nubs->size() > 1)
+        if (key == "TAKE" && nubs.size() > 1)
         {
-            newZone.forbiddenFlags.push_back(nubs->get(1).c_str());
+            newZone.forbiddenFlags.push_back(nubs.get(1).c_str());
         }
     }
     else
@@ -345,15 +345,15 @@ bool FlagTakeZonePlugin::MapObject (bz_ApiString object, bz_CustomMapObjectInfo 
         std::string line = data->data.get(i).c_str();
 
         bz_APIStringList nubs;
-        nubs->tokenize(line.c_str(), " ", 0, true);
+        nubs.tokenize(line.c_str(), " ", 0, true);
 
-        if (nubs->size() > 0)
+        if (nubs.size() > 0)
         {
-            std::string key = bz_toupper(nubs->get(0).c_str());
+            std::string key = bz_toupper(nubs.get(0).c_str());
 
-            if (key == "TAKE" && nubs->size() > 1)
+            if (key == "TAKE" && nubs.size() > 1)
             {
-                newZone.forbiddenFlags.push_back(nubs->get(1).c_str());
+                newZone.forbiddenFlags.push_back(nubs.get(1).c_str());
             }
         }
         else
