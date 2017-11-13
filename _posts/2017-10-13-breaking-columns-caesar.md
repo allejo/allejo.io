@@ -14,7 +14,7 @@ It only took until I reached my final year in college to finally find a class I 
 
 When I was first given this assignment, I searched the internet to see if anyone had already solved this. That's how code works, right? (I'm looking at you, [left-pad](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm)). Unfortunately, I wasn't able to find anything. I say "unfortunately" but looking back at this, I'm really glad I didn't find anything or else I wouldn't have been able to challenge myself to figure this out.
 
-There were several in my class that couldn't solve this assignment so I'll posting this for future readers. However, I highly recommend that if you find cryptography interesting, to skim through this post at most. It's more fun to do it on your own, trust me.
+There were several in my class that couldn't solve this assignment so I'll be posting this for future readers. However, I highly recommend that if you find cryptography interesting, to skim through this post at most. It's more fun to do it on your own, trust me.
 
 ## Let's Get Started
 
@@ -129,7 +129,7 @@ import itertools
 permutations = itertools.permutations('01234567')
 ```
 
-Now that we have every possible permutation, 40,320 to be exact, or 8[!](https://en.wikipedia.org/wiki/Factorial), we need to undo the columnar transposition of the cipher text with each permutation and save it.
+Now that we have every possible permutation, 40,320 to be exact, or [8!](https://en.wikipedia.org/wiki/Factorial), we need to undo the columnar transposition of the cipher text with each permutation and save it.
 
 ```python
 from pycipher import ColTrans
@@ -145,7 +145,7 @@ def brute_columnar_transposition(text, keyword):
     return columnPositions
 ```
 
-With this function, we'll be getting every possible arrangement of the cipher's columns. But that's still 42,320 combinations. Unless you are _really_ bored to do it manually, it's necessary to use a dictionary attack on all of these combinations and then find which version has the most English words.
+With this function, we'll be getting every possible arrangement of the cipher's columns. But that's still 40,320 combinations. Unless you are _really_ bored to do it manually, it's necessary to use a dictionary attack on all of these combinations and then find which version has the most English words.
 
 I highly recommend you do **not** use your OS' dictionary if you're on Unix. Why?
 
