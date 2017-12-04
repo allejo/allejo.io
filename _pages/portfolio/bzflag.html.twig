@@ -13,7 +13,7 @@ descriptions:
 {% extends '_layouts/page.html.twig' %}
 {% import '_includes/project-repeater.html.twig' as proj_helper %}
 
-{% block body %}
+{% block content %}
     <h1>BZFlag {{ this.iterators.categories | title }}</h1>
 
     <p>{{ this.descriptions[this.iterators.categories] }}</p>

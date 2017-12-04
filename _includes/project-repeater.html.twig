@@ -1,7 +1,7 @@
 {% macro project_repeater(projects) %}
-    <div class="row">
+    <div>
         {% for project in projects %}
-            <div class="col-md-4">
+            <div>
                 <article class="c-tile c-project-card">
                     <header>
                         <h3>{{ project.name }}</h3>
@@ -14,11 +14,25 @@
                     <footer>
                         <ul class="u-list-inline u-list-horizontal-separator">
                             {% if project.github %}
-                                <li><a href="https://github.com/{{ project.github }}">GitHub</a></li>
+                                <li>
+                                    <i class="fa fa-star"></i> 45
+                                </li>
+                                <li>
+                                    <i class="fa fa-code-fork"></i> 2
+                                </li>
+                                <li>
+                                    <a href="https://github.com/{{ project.github }}">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                </li>
                             {% endif %}
 
                             {% if project.website %}
-                                <li><a href="{{ project.website }}">Website</a></li>
+                                <li>
+                                    <a href="{{ project.website }}">
+                                        <i class="fa fa-url"></i> Website
+                                    </a>
+                                </li>
                             {% endif %}
                         </ul>
                     </footer>
