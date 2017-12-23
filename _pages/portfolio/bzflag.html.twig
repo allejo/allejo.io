@@ -1,12 +1,12 @@
 ---
 permalink: /projects/bzflag/%categories/
 categories:
-  - maps
+  #- maps
   - plug-ins
   - projects
 descriptions:
-  maps: Beside my development work for BZFlag, I explore my creative side on occassion and design some maps.
-  'plug-ins': A lot of my work for BZFlag goes to the game server code and the plug-in API. These are the plug-ins that I have written and still actively maintain and support.
+  #maps: Beside my development work for BZFlag, I explore my creative side on occassion and design some maps.
+  'plug-ins': A lot of my work for BZFlag goes to the game server code and the plug-in API. These are some of the plug-ins that I have written and continue to actively maintain and support.
   projects: I actively contribute to the community in the form of third-party projects unaffiliated with the official project.
 ---
 
@@ -18,6 +18,6 @@ descriptions:
 
     <p>{{ this.descriptions[this.iterators.categories] }}</p>
 
-    {% set projects = collections.projects | where('category', '==', 'bzflag') | where('subcategory', '==', this.iterators.categories) %}
+    {% set projects = collections['projects'] | where('category', '==', 'bzflag') | where('subcategory', '==', this.iterators.categories) %}
     {{ proj_helper.project_repeater(projects) }}
 {% endblock %}

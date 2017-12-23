@@ -24,6 +24,7 @@ exclude:
   - bower.json
   - bower-shrinkwrap.json
   - package.json
+  - .idea/
 
 pageviews:
   - _pages
