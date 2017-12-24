@@ -2,6 +2,7 @@
 name: BZBBAuthenticationBundle
 category: bzflag
 subcategory: projects
+website: https://packagist.org/packages/allejo/bzbb-authentication-bundle
 github: allejo/BZBBAuthenticationBundle
 ---
 

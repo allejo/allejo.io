@@ -1,0 +1,24 @@
+{% extends '_layouts/page.html.twig' %}
+
+{% from '_includes/project-repeater.html.twig' import project_repeater %}
+
+{% block content %}
+    <h1>
+        {{ this.category }}
+        {% if this.iterators %} {{ this.iterators.categories | title }} {% endif %}
+    </h1>
+
+    {% if this.iterators %}
+        <p>{{ this.descriptions[this.iterators.categories] | markdown }}</p>
+    {% else %}
+        <p>{{ this.descriptions | markdown }}</p>
+    {% endif %}
+
+    {% set projects = collections['projects'] | where('category', '==', (this.category | lower)) %}
+
+    {% if this.iterators %}
+        {% set projects = projects | where('subcategory', '==', this.iterators.categories) %}
+    {% endif %}
+
+    {{ project_repeater(projects) }}
+{% endblock %}
