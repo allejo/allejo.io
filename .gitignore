@@ -81,3 +81,4 @@ bower_components
 *.css.map
 *.css
 
+package-lock.json
