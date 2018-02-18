@@ -46,3 +46,7 @@
 .u-list-horizontal-separator {
     @include ul-horizontal-separator();
 }
+
+.u-hide-me {
+    display: none;
+}

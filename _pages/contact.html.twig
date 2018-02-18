@@ -23,20 +23,27 @@ description: I hang around Freenode's IRC network as allejo. For quick help, fin
 
     <p>Chances are, other people may have the same question or issue as you, so it's best to let Google index that public knowledge. There are obviously exceptions to this (e.g. security, privacy, etc.), so use your best judgement.</p>
 
-    <form name="contact" action="thank-you" data-netlify="true">
+    <form name="contact" action="thank-you" netlify-honeypot="website" netlify>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" name="name">
         </div>
 
         <div class="form-group">
             <label for="email" class="required">Email address <small>(will remain private)</small></label>
-            <input type="text" id="email" required>
+            <input type="text" id="email" name="email" required>
         </div>
 
         <div class="form-group">
             <label for="message" class="required">Message</label>
             <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+        </div>
+
+        <div class="u-hide-me">
+            <label>
+                Feel free to ignore this field
+                <input type="text" name="website">
+            </label>
         </div>
 
         <div class="form-group">
