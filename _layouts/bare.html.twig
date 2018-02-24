@@ -9,7 +9,7 @@
 
         {# If no Open Graph data is defined, let's define some default information #}
         {%- set opengraph_default = {
-            'og:url': site.url ~ url(this.permalink),
+            'og:url': url(this.permalink, absolute=true),
             'og:type': 'website',
             'og:title': block('title') | trim,
             'og:description': '',

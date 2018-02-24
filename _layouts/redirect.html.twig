@@ -3,6 +3,7 @@
 {% set targetDocument = collections.posts | where('permalink', '==', this.redirect) | first %}
 {% if targetDocument is defined %}
     {% set opengraph = {
+        'og:url': url(targetDocument, absolute=true),
         'og:type': 'article',
         'og:title': targetDocument.title,
         'og:description': targetDocument.content | summary | striptags | truncate(200)
