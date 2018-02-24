@@ -29,6 +29,9 @@ exclude:
 pageviews:
   - _pages
 
+templates:
+  redirect: _layouts/redirect.html.twig
+
 # Site Configuration
 title: allejo.io | A developer pretending to know what he's doing
 url: https://allejo.io

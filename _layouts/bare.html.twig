@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js {{ pageWideCSS | default('') }}" lang="en">
+    <head>
+        {# ========================================================================================================== #}
+        {#  Open Graph Markup  #}
+        {#    reference: https://dev.twitter.com/cards/types/summary #}
+        {#    reference: https://developers.facebook.com/docs/sharing/webmasters #}
+        {# ========================================================================================================== #}
+
+        {# If no Open Graph data is defined, let's define some default information #}
+        {%- set opengraph_default = {
+            'og:url': site.url ~ url(this.permalink),
+            'og:type': 'website',
+            'og:title': block('title') | trim,
+            'og:description': '',
+            'og:image': site.url ~ url(site.social.opengraph.image),
+            'twitter:card': 'summary',
+            'twitter:site': site.social.twitter.username
+        } -%}
+        {%- set opengraph_fallbacks = {
+            'twitter:title': 'og:title',
+            'twitter:image': 'og:image',
+            'twitter:description': 'og:description'
+        } -%}
+
+        {%- set og_attrs = opengraph_default | merge(opengraph | default({})) -%}
+        {%- set og_fallbacks = opengraph_fallbacks | merge(fallbacks | default({})) -%}
+
+        {# This attributes will take the same value as their OpenGraph fallbacks #}
+        {%- for attr in og_fallbacks | keys -%}
+            {%- set og_attrs = og_attrs | merge({ (attr): og_attrs[og_fallbacks[attr]] }) -%}
+        {%- endfor -%}
+
+        {%- for attr in og_attrs | keys -%}
+            <meta property="{{ attr }}" content="{{ og_attrs[attr] | raw }}">
+        {% endfor -%}
+
+
+
+        {# ========================================================================================================== #}
+        {#  Generic information for this page  #}
+        {# ========================================================================================================== #}
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

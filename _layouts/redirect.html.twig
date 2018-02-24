@@ -1,0 +1,18 @@
+{% extends '_layouts/bare.html.twig' %}
+
+{% set targetDocument = collections.posts | where('permalink', '==', this.redirect) %}
+{% if targetDocument is defined %}
+    {% set opengraph = {
+        'og:type': 'article',
+        'og:title': targetDocument.title,
+        'og:description': targetDocument.content | summary | striptags | truncate(200)
+    } %}
+{% endif %}
+
+{% block head %}
+    <meta http-equiv="refresh" content="0;URL='{{ this.redirect }}'" />
+{% endblock %}
+
+{% block body %}
+    <p>This page has moved to a <a href="{{ this.redirect }}">new location</a>.</p>
+{% endblock %}
