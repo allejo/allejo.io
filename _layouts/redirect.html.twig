@@ -1,6 +1,6 @@
 {% extends '_layouts/bare.html.twig' %}
 
-{% set targetDocument = collections.posts | where('permalink', '==', this.redirect) %}
+{% set targetDocument = collections.posts | where('permalink', '==', this.redirect) | first %}
 {% if targetDocument is defined %}
     {% set opengraph = {
         'og:type': 'article',
