@@ -1,0 +1,22 @@
+---
+title: One Year of jekyll-toc
+date: 2018-04-21 00:00:00.00 -8
+categories:
+  - projects
+tags:
+  - jekyll
+---
+
+Over a year ago, I [wrote a table of contents generator for Jekyll websites, on a whim, using nothing but Liquid]({{ url(collections.posts['2017-02-03-jekyll-toc']) }}). There was a need for being able to generate table of contents for pages from a layout without relying on a plugin or JavaScript and without having to include `{:toc}` in every single markdown file. I never had a need for this feature, it was one of Docker's employees who was asking if a solution existed. I was intrigued by the problem and so I wrote my solution on a whim as a proof of concept; I really just wanted to know if I could achieve the same thing by using *just* Liquid.
+
+It took me [a few tries](https://gist.github.com/allejo/a83bcef99a9e0a6f481fce01e492efff/revisions) to actually figure out a robust solution to the problem but I succeeded; it got Docker's docs team's seal of approval. 🎉 I felt proud that I had done a thing! So I wrote up a blog post to feel important and that was the end of it. Or so I thought. A few months later, a developer from the UK Ministry of Justice showed up on IRC asking about this same problem. I linked him to my blog post and that's how [I got my name in the UK Ministry of Justice's License file](https://github.com/ministryofjustice/technical-guidance/blob/f8378bdce3682c1b68a726ab32c88124e27a42a0/LICENCE#L31). Pretty damn awesome, am I right?
+
+I got curious and looked into my site's analytics and did some Googling to see how common this problem was. Turns out, there were enough people having this problem to motivate me to move the snippet I wrote into [its own GitHub repository](https://github.com/allejo/jekyll-toc/commit/ed3838d29bac9dc64bdb5cf45eac092ace228fde). Heck, I even [added unit tests](https://github.com/allejo/jekyll-toc/commit/2a53d7c8c03792c2b24969c5520afc58e4a8bd0c) to the repository and [connected Travis CI](https://travis-ci.org/allejo/jekyll-toc) with notifications to ensure that if I made changes to the Liquid snippet, that it'd still work.
+
+I wanted to make sure that my effort of moving this into a repository wasn't wasted, so I did some searching on GitHub to see if I could shamelessly advertise my project; I found [issue #1222 on the minimal-mistakes repository](https://github.com/mmistakes/minimal-mistakes/issues/1222). Minimal Mistakes is one of the more popular Jekyll themes out there and I was able to get my project incorporated into that theme. How cool is that?! Thanks [Michael Rose (@mmistakes)](https://mademistakes.com/)!
+
+I was satisfied with this venture. It sated my desire for spreading my project. A few months passed and I had started getting a steady amount of traffic to my GitHub repository from my blog post and Google. I even got some feature requests and bug reports! Heck, even [Bootstrap want(ed/s) to use it](https://github.com/twbs/bootstrap/pull/25838)! (_There have been a number of separate attempts for using this snippet on the official Bootstrap website but none of them have been merged, yet._)
+
+Fast forward to now. I get @mentioned in issues/PRs every so often giving me credit for jekyll-toc and that's freaking awesome! Don't stop! I enjoy seeing where you're all using my project. Besides getting mentioned, I search GitHub on occasion to see how far my snippet has gone and I'm never disappointed. Just last month, I discovered that Apache is using it in some of their Jekyll sites. And just a few days ago, I discovered that [JetBrains is using it in their new Jekyll theme](https://github.com/JetBrains/oss-site-jekyll-theme/commit/ff779cfa2ebc2c34f0d1e194a1d6a27a748f0c96)! JetBrains has always had a special place in my heart because of their awesome IDEs and now, they're using something of mine! If only you could see my inner Jonah Hill fangirl squeeing right now.
+
+Besides my code seeing the light of day in the United Kingdom, it has even [made it to Japan as well](https://kotet.github.io/2018/04/11/toc-on-github-pages.html)! This is honestly a lot of fun for me and I'm really proud; the repository doesn't have hundreds of stars, nor does it need to have that many. I'm flattered by the reach this project has gotten. Thank you to everyone who has used or shared my little jekyll-toc project! Don't stop @mentioning me in your issues, PRs, or commit messages! Like I said, I love to see where jekyll-toc goes next!
