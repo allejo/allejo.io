@@ -24,7 +24,7 @@ In this chapter, we'll be building a plug-in that introduces a custom flag. When
 
 ## Registering Custom Flags
 
-Planet MoFo is known for its custom flags, so let's first explain how we create those custom flags. The BZFS API has a `bz_RegisterCustomFlag()` function, which is used for defining our flag's definition. Once the flag is defined and the plug-in is loaded, map makers and server owners can simple use `+f` to add those flags to a map.
+Planet MoFo is known for its custom flags, so let's first explain how we create those custom flags. The BZFS API has a `bz_RegisterCustomFlag()` function, which is used for defining our flag's definition. Once the flag is defined and the plug-in is loaded, map makers and server owners can simply use `+f` to add those flags to a map.
 
 ```cpp
 bz_RegisterCustomFlag(const char* abbr, const char* name, const char* helpString, bz_eShotType shotType, bz_eFlagQuality quality)
@@ -47,7 +47,7 @@ Now that we've registered our custom flag, let's figure out what this actually m
 - `shotType` is an enum but it was never implemented in the API, so just use `0`
 - `quality` is whether the flag is an `eGoodFlag` or an `eBadFlag`
 
-At this point, our brand new Cascade flag can be added to maps! However, it's as useful as the Useless flag. We will now need to implement the behavior we want. Going back to our specification, we want something to happen if someone shoots a tank with the flag and then shoot a shockwave at their location of death. If you've guess that we're going to listen to the player death event, you're right!
+At this point, our brand new Cascade flag can be added to maps! However, it's as useful as the Useless flag. We will now need to implement the behavior we want. Going back to our specification, we want something to happen if someone shoots a tank with the flag and then shoot a shockwave at their location of death. If you guessed that we're going to listen to the player death event, you're right!
 
 ## Implementing Custom Flags' Behavior
 
@@ -157,7 +157,7 @@ void CascadeFlag::Event (bz_EventData* eventData)
 
 ### Step 3
 
-Let's make use of the fact that shots can store arbitrary information. Let's store two pieces of information: the "owner" of the shot (the player carrying the Cascade flag) and the "type" of flag. By storing these two pieces of information, we'll be able to know who credit for the kill and avoid any conflicts with multiple world weapon shots from different flag types.
+Let's make use of the fact that shots can store arbitrary information. Let's store two pieces of information: the "owner" of the shot (the player carrying the Cascade flag) and the "type" of flag. By storing these two pieces of information, we'll be able to know who to credit for the kill and avoid any conflicts with multiple world weapon shots from different flag types.
 
 ### Step 4
 
