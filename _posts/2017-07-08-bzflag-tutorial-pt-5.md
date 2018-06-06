@@ -81,7 +81,7 @@ void Messenger::loadConfiguration (const char* configPath)
     PluginConfig config = PluginConfig(configPath);
     std::string section = "messenger";
 
-    if (!config.errors)
+    if (config.errors)
     {
         bz_debugMessage(0, "Your configuration file has errors");
         return;
@@ -191,7 +191,7 @@ void Messenger::loadConfiguration (const char* configPath)
     PluginConfig config = PluginConfig(configPath);
     std::string section = "messenger";
 
-    if (!config.errors)
+    if (config.errors)
     {
         bz_debugMessage(0, "Your configuration file has errors");
         return;
