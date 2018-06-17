@@ -3,10 +3,12 @@
 collections:
   - name: posts
     folder: _posts
-  - name: experience
-    folder: _experience
   - name: accomplishments
-    folder: _accomplishments
+    folder: _about/accomplishments
+  - name: communities
+    folder: _about/communities
+  - name: experience
+    folder: _about/experience
   - name: projects
     folder: _projects
 

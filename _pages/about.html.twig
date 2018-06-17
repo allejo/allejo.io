@@ -6,6 +6,7 @@ description: I'm just another boring developer pretending to know what he's doin
 ---
 
 {% extends '_layouts/page.html.twig' %}
+{% from _self import brag_display, brag_repeater %}
 
 {% block title %}
     About | allejo.io
@@ -16,8 +17,15 @@ description: I'm just another boring developer pretending to know what he's doin
         <article class="c-bragcard">
             <header class="c-bragcard__header">
                 <div class="c-bragcard__title">
-                    <p class="c-bragcard__heading-1">{{ card.title }}</p>
-                    <p class="c-bragcard__heading-2">{{ card.slug }}</p>
+                    <p class="c-bragcard__heading-1">
+                        {% if card.url %}<a href="{{ card.url }}">{% endif %}
+                        {{ card.title }}
+                        {% if card.url %}</a>{% endif %}
+                    </p>
+
+                    {% if card.slug %}
+                        <p class="c-bragcard__heading-2">{{ card.slug }}</p>
+                    {% endif %}
                 </div>
                 <div class="c-bragcard__meta">
                     {% if card.event_date %}
@@ -45,6 +53,16 @@ description: I'm just another boring developer pretending to know what he's doin
     {%- endfor -%}
 {% endmacro %}
 
+{% macro brag_display(collection) %}
+    {% from _self import brag_repeater %}
+
+    {% set active = collection | where('end', '==', null) | order('start', 'ASC') %}
+    {% set former = collection | where('end', '!=', null) | order('end', 'DESC') %}
+
+    {{ brag_repeater(active) }}
+    {{ brag_repeater(former) }}
+{% endmacro %}
+
 {% block content %}
     {% markdown %}
         # About
@@ -53,24 +71,22 @@ description: I'm just another boring developer pretending to know what he's doin
 
         I pretend to know what I'm doing as a developer solely because I can't live out my dream of taking part in interstellar space travel. I enjoy late night food runs, eating wings, staring at my desktop legion, and occasionally playing on my PS4.
 
-        When I'm not building on BZFlag related projects or working on open source projects, I work as a web developer for the Associated Students at my college. On any given day, I could be designing a front-end, maintaining open source projects, or maintaining content in a <abbr title="Content Management System">CMS</abbr>.
+        When I'm not building on BZFlag related projects or working on open source projects, I work as a web developer for California State University, Northridge. On any given day, I could be designing a front-end, maintaining open source projects, teaching profanity to a chat bot, or working on a <abbr title="Content Management System">CMS</abbr>.
 
         ## Communities
 
         Since I'm not busy enough and am an advocate for open source projects, these are the projects/communities that I'm actively involved in and dedicate a lot of my spare time towards.
-
-        - **[BZFlag](http://bzflag.org)** &mdash; One of the first online games I discovered and have been a part of the community since 2007. I am a part of the development team, host the largest game server, write server plug-ins, and help run the competitive league within the community.
-        - **[Jekyll](https://jekyllrb.com)** &mdash; I hang around [#jekyll](irc://irc.freenode.net/jekyll) on Freenode and help out users. I additionally have started to work on plug-ins and themes that I plan on releasing as open source in the near future.
-        - **[Socrata](https://dev.socrata.com)** &mdash; I spend time on [#socrata-soda](irc://irc.freenode.net/socrata-soda) on Freenode, help provide support for PHP users, and have written [PhpSoda](http://github.com/allejo/PhpSoda) as an alternative to the official library.
-
-        ## Places I've Worked
     {% endmarkdown %}
 
-    {% set active_jobs = collections.experience | where('end', '==', null) | order('start', 'ASC') %}
-    {% set old_jobs    = collections.experience | where('end', '!=', null) | order('start', 'DESC') %}
+    {{ brag_display(collections.communities) }}
 
-    {{ _self.brag_repeater(active_jobs) }}
-    {{ _self.brag_repeater(old_jobs) }}
+    {% markdown %}
+        ## Places I've Worked
+
+        It's not all just open source and games for me; just like most people, I have bills to pay too. These are the awesome companies and organizations that have helped me do so over the years.
+    {% endmarkdown %}
+
+    {{ brag_display(collections.experience) }}
 
     {% markdown %}
         ## Accomplishments
@@ -79,7 +95,7 @@ description: I'm just another boring developer pretending to know what he's doin
     {% endmarkdown %}
 
     {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
-    {{ _self.brag_repeater(accomplishments) }}
+    {{ brag_repeater(accomplishments) }}
 
     {% markdown %}
         ## How to Support Me
