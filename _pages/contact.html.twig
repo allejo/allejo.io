@@ -23,36 +23,45 @@ description: I hang around Freenode's IRC network as allejo. For quick help, fin
 
     <p>Chances are, other people may have the same question or issue as you, so it's best to let Google index that public knowledge. There are obviously exceptions to this (e.g. security, privacy, etc.), so use your best judgement.</p>
 
-    {# <form name="contact" action="thank-you" netlify-honeypot="website" netlify>
+    <form accept-charset="UTF-8" action="https://allejo.wufoo.com/forms/z1cawajh0hc506w/" autocomplete="off" class="wufoo topLabel page1" enctype="multipart/form-data" id="form1" method="post" name="form1" novalidate="">
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-        </div>
-
-        <div class="form-group">
-            <label for="email" class="required">Email address <small>(will remain private)</small></label>
-            <input type="text" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="message" class="required">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
-        </div>
-
-        <div class="u-hide-me">
-            <label>
-                Feel free to ignore this field
-                <input type="text" name="website">
+            <label for="Field1" class="sr-only">
+                Name
+                <span class="req" id="req_1">*</span>
             </label>
+            <input id="Field1" maxlength="255" name="Field1" placeholder="Name" required="true" type="text" value="" />
         </div>
-
         <div class="form-group">
-            <label for="find-me">How'd you find me?</label>
-            <input type="text" id="find-me" name="find-me">
+            <label for="Field3" class="sr-only">
+                Email address
+                <span class="req" id="req_3">*</span>
+            </label>
+            <input id="Field3" maxlength="255" name="Field3" placeholder="Email address (will remain private)" required="true" spellcheck="false" type="email" value="" />
         </div>
-
-        <div>
-            <button class="c-button" type="submit">Send</button>
+        <div class="form-group">
+            <label for="Field4" class="sr-only">
+                How'd you hear about my website?
+            </label>
+            <input id="Field8" maxlength="255" name="Field8" placeholder="How'd you hear about my website?" type="text" value="" />
         </div>
-    </form> #}
+        <div class="form-group">
+            <label for="Field6" class="sr-only">
+                Message
+                <span class="req" id="req_6">*</span>
+            </label>
+            <textarea id="Field6" name="Field6" placeholder="Message" required="true" cols="50" rows="10" spellcheck="true"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="c-button" id="saveForm" name="saveForm" type="submit">
+                Send Message
+            </button>
+        </div>
+        <div class="u-hide-me">
+            <label for="comment">
+                Do Not Fill This Out
+            </label>
+            <textarea cols="1" id="comment" name="comment" rows="1"></textarea>
+            <input id="idstamp" name="idstamp" type="hidden" value="{{ site.api.wufoo }}"/>
+        </div>
+    </form>
 {% endblock %}
