@@ -1,4 +1,7 @@
 - name: BZFlag Plug-ins for Dummies
   status: on hiatus
   updates: N/A
-  description: A collection of articles on learning how to build BZFlag plug-ins.
+  description: |
+    An opinionated series about how to write plug-ins for BZFlag servers. This
+    series expects that you have a general grasp of C++ and programming that
+    you'll be able to understand its concepts.

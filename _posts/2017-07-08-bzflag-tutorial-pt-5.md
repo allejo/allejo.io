@@ -1,7 +1,11 @@
 ---
 title: "BZFlag Plug-ins for Dummies: Chapter 5"
 date: 2017-07-08 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: chapter
+  chapter: 5
+  summary: Configuration Files
 categories:
   - tutorials
 tags:

@@ -1,7 +1,11 @@
 ---
 title: "BZFlag Plug-ins for Dummies: Chapter 7"
 date: 2017-08-19 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: chapter
+  chapter: 7
+  summary: Custom Map Objects
 categories:
   - tutorials
 tags:

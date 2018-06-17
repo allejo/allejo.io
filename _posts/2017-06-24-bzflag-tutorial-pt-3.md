@@ -1,7 +1,11 @@
 ---
 title: "BZFlag Plug-ins for Dummies: Chapter 3"
 date: 2017-06-24 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: chapter
+  chapter: 3
+  summary: Custom Slash Commands
 categories:
   - tutorials
 tags:

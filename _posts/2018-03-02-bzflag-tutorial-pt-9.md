@@ -1,7 +1,11 @@
 ---
 title: "BZFlag Plug-ins for Dummies: Chapter 9"
 date: 2018-03-02 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: chapter
+  chapter: 9
+  summary: Custom Flags & World Weapons
 categories:
   - tutorials
 tags:

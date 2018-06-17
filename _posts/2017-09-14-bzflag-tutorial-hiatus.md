@@ -1,7 +1,10 @@
 ---
 title: "BZFlag Plug-ins for Dummies on Hiatus"
 date: 2017-09-14 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: announcement
+  summary: Series On Hiatus
 tags:
   - bzflag
   - plugins

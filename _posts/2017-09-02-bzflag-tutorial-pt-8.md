@@ -1,7 +1,11 @@
 ---
 title: "BZFlag Plug-ins for Dummies: Chapter 8"
 date: 2017-09-02 00:00:00.00 -8
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: chapter
+  chapter: 8
+  summary: Custom Time Events
 categories:
   - tutorials
 tags:

@@ -1,7 +1,10 @@
 ---
 title: "My New Series: BZFlag Plug-ins for Dummies"
 date: 2015-10-25 00:00:00
-anthology: BZFlag Plug-ins for Dummies
+anthology:
+  name: BZFlag Plug-ins for Dummies
+  type: prologue
+  title: Series Announcement
 categories:
   - tutorials
 tags: 

@@ -18,14 +18,15 @@ description: I'll be writing articles/tutorials that belong together more than j
         I'll be writing articles/tutorials that belong together more than just being about the same topic but in fact are directly tied to each other. For this reason, I'll be classifying them as anthologies and I've listed them below.
     {% endmarkdown %}
 
-    {% set anthologies = collections.posts | group('anthology') %}
+    {% set anthologies = collections.posts | group('anthology.name') %}
 
     {% for title in anthologies | keys %}
         {%- set info = data.anthologies | where('name', '==', title) | first -%}
+        {%- set slug = title | lower | replace({' ': '-'}) -%}
 
         <article class="c-anthology">
             <header>
-                <h2 id="{{ title | lower | replace({' ': '-'}) }}">{{ title }}</h2>
+                <h2 id="{{ slug }}">{{ title }}</h2>
                 <small class="c-anthology__meta">
                     <span>updates: <em>{{ info.updates }}</em></span>
                     <span>status: <em>{{ info.status }}</em></span>
@@ -35,9 +36,32 @@ description: I'll be writing articles/tutorials that belong together more than j
             <section class="c-anthology__description">
                 {{ info.description | markdown }}
 
+                {% set articles = anthologies[title] | group('anthology.type') %}
+
+                {% if articles['announcement'] %}
+                    <h3 id="{{ slug }}-announcements">
+                        <small><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i></small>
+                        Announcements
+                    </h3>
+
+                    <ul>
+                        {% for article in articles['announcement'] %}
+                            <li>{{ article.date | date('M Y') }} - <a href="{{ url(article) }}">{{ article.anthology.summary }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <h3 id="{{ slug }}-chapters">
+                    <small><i class="fa fa-fw fa-book" aria-hidden="true"></i></small>
+                    Chapters
+                </h3>
                 <ul>
-                    {% for article in anthologies[title] | order('date', 'ASC') %}
-                        <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
+                    {% for article in articles['prologue'] | order('date', 'ASC') %}
+                        <li><a href="{{ url(article) }}">Prologue: {{ article.anthology.title }}</a></li>
+                    {% endfor %}
+
+                    {% for article in articles['chapter'] | order('date', 'ASC') %}
+                        <li><a href="{{ url(article) }}">Chapter {{ article.anthology.chapter }}: {{ article.anthology.summary }}</a></li>
                     {% endfor %}
                 </ul>
             </section>
