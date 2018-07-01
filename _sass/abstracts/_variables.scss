@@ -77,10 +77,10 @@ $sidebar-width: 18em;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
     xs: 0,
-    sm: 480px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px
+    sm: 0,
+    md: 40em,
+    lg: 64em,
+    xl: 75em
 );
 
 

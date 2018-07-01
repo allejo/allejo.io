@@ -1,5 +1,5 @@
 ### OSX ###
-*.DS_Store
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -36,7 +36,8 @@ Temporary Items
 _site/
 .sass-cache/
 .stakx-cache/
-vendor
+vendor/
+!_sass/vendor/
 
 
 ### Node ###

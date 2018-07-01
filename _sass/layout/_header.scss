@@ -3,13 +3,6 @@
 // only house the mobile responsive hamburger icon
 // -----------------------------------------------------------------------------
 
-// Don't display the header if JS is disabled
-.no-js {
-    .c-page-header {
-        display: none;
-    }
-}
-
 .c-page-header {
     $_spacing: 15px;
 
@@ -68,19 +61,15 @@
     }
 }
 
-.c-hamburger {
-    @at-root {
-        .csstransitions & {
-            transition: left $hamburger-transistion-duration;
-        }
+.csstransitions .c-hamburger {
+    transition: left $hamburger-transistion-duration;
+}
 
-        .csscalc & {
-            left: 0;
-        }
+.csscalc .c-hamburger {
+    left: 0;
+}
 
-        .csscalc .u-nav-open & {
-            left: calc(#{$sidebar-width} - #{$hamburger-width});
-            position: fixed;
-        }
-    }
+.csscalc .u-nav-open .c-hamburger {
+    left: calc(#{$sidebar-width} - #{$hamburger-width});
+    position: fixed;
 }
