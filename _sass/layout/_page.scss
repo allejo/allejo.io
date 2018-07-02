@@ -1,7 +1,7 @@
 .c-page {
     padding: 0 15px;
 
-    @include respond-up(sm) {
+    @include respond-up(md) {
         padding: 0 30px;
     }
 
