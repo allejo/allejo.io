@@ -1,11 +1,34 @@
-$(function () {
-    "use strict";
+"use strict";
 
-    $('.c-hamburger').click(function (e) {
-        e.preventDefault();
+/**
+ * Toggle a class for an element.
+ *
+ * @param {Element} element
+ * @param {string} toggleClass
+ *
+ * @link https://stackoverflow.com/a/25544148
+ */
+function toggleClass(element, toggleClass){
+    var currentClass = element.className;
+    var newClass;
 
-        var $body = $('.c-body');
+    if (currentClass.split(' ').indexOf(toggleClass) > -1) {
+        newClass = currentClass.replace(new RegExp('\\b' + toggleClass + '\\b', 'g'), '')
+    } else {
+        newClass = currentClass + ' ' + toggleClass;
+    }
 
-        $body.toggleClass('u-nav-open');
+    element.className = newClass.trim();
+}
+
+var hamburger = document.getElementsByClassName('c-hamburger');
+
+if (hamburger.length) {
+    hamburger[0].addEventListener('click', function (ev) {
+        ev.preventDefault();
+
+        var body = document.getElementsByClassName('c-body');
+
+        toggleClass(body[0], 'u-nav-open');
     });
-});
+}

@@ -1,0 +1,47 @@
+---
+permalink: /support-me/
+title: Support Me
+menu: false
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block title %}
+    Support Me | allejo.io
+{% endblock %}
+
+{% block content %}
+    {% markdown %}
+        # Support Me
+
+        I do the majority of my open source work for fun because I enjoy it. If you've found any of my projects useful and want to support its development, here are a few ways you can.
+
+        ## Send a Donation
+
+        If you'd like to send a donation my way as encouragement or thanks for any of the free content I've created, I accept PayPal and Square Cash.
+
+        <div>
+            <a href="https://www.paypal.me/allejo" class="c-button"><i class="fa fa-fw fa-paypal" aria-hidden="true"></i> Send PayPal Money</a>
+            <a href="https://cash.me/$allejo" class="c-button"><i class="fa fa-fw fa-usd-square" aria-hidden="true"></i> Send Square Cash</a>
+        </div>
+
+        ## Follow Me on Social Media
+
+        I'm not very active on social media but I do occasionally post with regards to stuff I build or have learned; having followers makes me feel popular. Oh, let's not forget about my several attempts at being funny.
+
+        - [GitHub](https://github.com/allejo)
+        - [Instagram](https://www.instagram.com/allejome/)
+        - [Twitter](https://twitter.com/allejome)
+
+        ## Spread the Word
+
+        While I may not be active on social media, you probably are. So if you like any of the content you found on my website or on my GitHub, consider sharing it on your social media too.
+
+        ## Subscribe to Feeds
+
+        Subscribe to one of my feeds to keep up to date with every worthless piece I may write.
+
+        - [Atom Feed]({{ url('/atom.xml') }})
+        - [JSON Feed]({{ url('/feed.json') }})
+    {% endmarkdown %}
+{% endblock %}

@@ -16,24 +16,11 @@ label {
     }
 
     textarea,
+    input[type=email],
     input[type=text] {
         border: 1px solid $palette-light-grey;
         display: block;
-        padding: 0.25rem;
+        padding: 0.5rem;
         width: 100%;
-    }
-}
-
-.c-button {
-    background-color: transparent;
-    border: 1px solid $palette-light-blue;
-    border-radius: 50px;
-    color: $palette-light-blue;
-    cursor: pointer;
-    padding: 10px 30px;
-
-    &:hover {
-        background-color: $palette-light-blue;
-        color: $palette-white;
     }
 }

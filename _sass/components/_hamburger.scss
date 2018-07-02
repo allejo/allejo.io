@@ -6,6 +6,7 @@
     display: block;
     position: relative;
     overflow: hidden;
+    left: 0;
     margin: 0;
     padding: 0;
     width: $hamburger-width;
@@ -13,7 +14,7 @@
     border-radius: 0;
     border: none;
     cursor: pointer;
-    transition: background $hamburger-transistion-duration;
+    transition: background $hamburger-transistion-duration, left $hamburger-transistion-duration;
 }
 
 .c-hamburger span {

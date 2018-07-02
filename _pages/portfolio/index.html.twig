@@ -7,6 +7,8 @@ nav: 3
 
 {% extends '_layouts/page.html.twig' %}
 
+{% from _self import entry %}
+
 {% block title %}
     Portfolio | allejo.io
 {% endblock %}
@@ -41,37 +43,37 @@ nav: 3
 
     <p>I work on a lot of different projects and all of my open source projects are available on my <a href="https://github.com/allejo">GitHub</a>.</p>
 
-    <div class="row c-portfolio">
-        {{ _self.entry(
-            'col-md-7',
+    <div class="grid-x grid-margin-x grid-margin-y c-portfolio">
+        {{ entry(
+            'cell medium-7',
             'BZFlag',
             "I'm a developer for the project, server host, map designer, and a leader for the competitive league in the community.",
             ['Plug-ins', 'Projects'],
             false
         ) }}
-        {{ _self.entry(
-            'col-md-5',
+        {{ entry(
+            'cell medium-5',
             'Jekyll',
             "I work on a lot of Jekyll websites, build themes, and develop plugins.",
             ['Projects', 'Themes'],
             false
         ) }}
-        {{ _self.entry(
-            'col-md-5',
+        {{ entry(
+            'cell medium-5',
             'Libraries',
             "I work on a number of open source libraries for different services.",
             ['Libraries'],
             true
         ) }}
-        {{ _self.entry(
-            'col-md-7',
+        {{ entry(
+            'cell medium-7',
             'stakx',
             "I started this project as an alternative to Jekyll to make use of a more powerful template engine and a different language.",
             ['Projects'],
             true
         ) }}
-        {{ _self.entry(
-            'col-md-12',
+        {{ entry(
+            'cell medium-12',
             'Web Design',
             "I do a lot of front-end web design, including the actual design of mockups and building the website from the ground up.",
             ['Websites'],

@@ -9,8 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat:100,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('assets/vendor/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/hljs/github.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
 
     <link rel="alternate" title="{{ site.title }}" type="application/json" href="{{ url('/feed.json', absolute = true) }}" />
     <link rel="alternate" title="{{ site.title }}" type="application/atom+xml" href="{{ url('/atom.xml', absolute = true) }}" />
@@ -54,10 +53,6 @@
     </div>
 
     {# ------------ Everything Javascript Related ------------ #}
-
-    <script src="{{ url('assets/vendor/jquery/js/jquery.min.js') }}"></script>
-    <script src="{{ url('assets/vendor/prefixfree/js/prefixfree.js') }}"></script>
-    <script src="{{ url('assets/vendor/modernizr/js/modernizr.js') }}"></script>
 
     {% block javascript %}{% endblock %}
 

@@ -1,13 +1,18 @@
+---
+permalink: /assets/css/styles.css
+---
+
 @charset 'UTF-8';
 
 // 1. Configuration and helpers
 @import 'abstracts/variables';
+@import 'abstracts/breakpoints';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 
 // 2. Vendors
-@import 'vendor/normalize';
-@import 'vendor/OnTheRocks/scss/rocks';
+@import 'vendor/foundation';
+@import 'vendor/hljs/github';
 
 // 3. Base stuff
 @import 'base/base';
@@ -31,11 +36,11 @@
 @import 'components/blog-post';
 @import 'components/branding';
 @import 'components/brag-card';
+@import 'components/button';
 @import 'components/code-block';
 @import 'components/hamburger';
 @import 'components/portfolio-grid';
 @import 'components/project-card';
-@import 'components/screen-size';
 @import 'components/tags';
 @import 'components/tile';
 

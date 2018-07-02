@@ -1,0 +1,7 @@
+@mixin respond-up($breakpoint) {
+    $width: map-get($breakpoints, $breakpoint);
+
+    @media print, screen and (min-width: $width) {
+        @content;
+    }
+}

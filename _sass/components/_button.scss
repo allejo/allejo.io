@@ -1,0 +1,13 @@
+.c-button {
+    background-color: transparent;
+    border: 1px solid $palette-light-blue;
+    border-radius: 50px;
+    display: inline-block;
+    color: $palette-light-blue;
+    cursor: pointer;
+    padding: 10px 30px;
+    &:hover {
+        background-color: $palette-light-blue;
+        color: $palette-white;
+    }
+}
