@@ -61,15 +61,7 @@
     }
 }
 
-.csstransitions .c-hamburger {
-    transition: left $hamburger-transistion-duration;
-}
-
-.csscalc .c-hamburger {
-    left: 0;
-}
-
-.csscalc .u-nav-open .c-hamburger {
+.u-nav-open .c-hamburger {
     left: calc(#{$sidebar-width} - #{$hamburger-width});
     position: fixed;
 }

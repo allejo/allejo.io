@@ -1,51 +1,17 @@
-### OSX ###
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-
-### JetBrains ###
-
 .idea/
-
-
-### stakx ###
 _site/
 .sass-cache/
 .stakx-cache/
 vendor/
+
 !_sass/vendor/
 !assets/vendor/
 
+.DS_Store
+._*
 logs
 *.log
 npm-debug.log*
-# Dependency directories
 node_modules
 bower_components
-*.css.map
-
 package-lock.json

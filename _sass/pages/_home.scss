@@ -11,14 +11,10 @@
         text-decoration: none;
     }
 
-    .col-md-6 {
-        padding: 0;
-    }
-
     .c-navigation-side {
         order: 2;
 
-        @include respond-up(md) {
+        @include respond-up(lg) {
             order: 1;
         }
     }
@@ -27,7 +23,7 @@
         background-color: $color-background-dark;
         order: 1;
 
-        @include respond-up(md) {
+        @include respond-up(lg) {
             order: 2;
         }
     }
@@ -38,7 +34,7 @@
         height: 50vh;
         justify-content: center;
 
-        @include respond-up(md) {
+        @include respond-up(lg) {
             height: 100vh;
         }
     }

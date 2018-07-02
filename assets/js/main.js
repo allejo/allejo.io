@@ -23,10 +23,12 @@ function toggleClass(element, toggleClass){
 
 var hamburger = document.getElementsByClassName('c-hamburger');
 
-hamburger[0].addEventListener('click', function (ev) {
-    ev.preventDefault();
+if (hamburger.length) {
+    hamburger[0].addEventListener('click', function (ev) {
+        ev.preventDefault();
 
-    var body = document.getElementsByClassName('c-body');
+        var body = document.getElementsByClassName('c-body');
 
-    toggleClass(body[0], 'u-nav-open');
-});
+        toggleClass(body[0], 'u-nav-open');
+    });
+}
