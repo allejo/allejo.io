@@ -81,9 +81,8 @@
 
         @include respond-up(sm) {
             bottom: -10px;
-            font-family: $font-stack-branding;
             font-size: 24px;
-            font-weight: 100;
+            font-weight: 300;
         }
     }
 
@@ -96,7 +95,11 @@
         }
 
         li {
-            padding-right: 30px;
+            padding-right: 15px;
+
+            @include respond-up(md) {
+                padding-right: 30px;
+            }
 
             &:last-child {
                 padding-right: 0;

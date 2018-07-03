@@ -10,7 +10,7 @@
 
 /// Logo font family
 /// @type List
-$font-stack-branding: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Open Sans', 'Arial', sans-serif;
+$font-stack-branding: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', 'Open Sans', 'Arial', sans-serif;
 
 /// Header font family
 /// @type List
@@ -77,7 +77,7 @@ $sidebar-width: 18em;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
     xs: 0,
-    sm: 0,
+    sm: 30em,
     md: 40em,
     lg: 64em,
     xl: 75em

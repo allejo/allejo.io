@@ -1,7 +1,12 @@
 @mixin respond-up($breakpoint) {
     $width: map-get($breakpoints, $breakpoint);
 
-    @media print, screen and (min-width: $width) {
+    @if $width == 0 {
         @content;
+    }
+    @else {
+        @media print, screen and (min-width: $width) {
+            @content;
+        }
     }
 }
