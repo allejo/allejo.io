@@ -39,7 +39,7 @@ Taking steps 1 through 6 from the [previous post]({{ url(collections.posts['2017
 
 First, we build an anchor tag manually as a string by setting the `href` attribute along with `class` and `title`. So at this point, we'll have the following:
 
-```text
+```
 href="#some-id" class="my-class permalink" title="click me!"
 ```
 
