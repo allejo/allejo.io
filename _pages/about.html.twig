@@ -96,14 +96,4 @@ description: I'm just another boring developer pretending to know what he's doin
 
     {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
     {{ brag_repeater(accomplishments) }}
-
-    {% markdown %}
-        ## How to Support Me
-
-        I do the majority of my open source work for fun because I enjoy it. If you've found any of my projects useful and want to support its development, here are a few ways you can.
-
-        1. Star the project on GitHub.
-        1. Subscribe to one of my feeds.
-        1. Send a donation via [PayPal](https://www.paypal.me/allejo) or [Square Cash](https://cash.me/$allejo).
-    {% endmarkdown %}
 {% endblock %}
