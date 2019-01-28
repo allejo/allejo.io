@@ -1,7 +1,8 @@
 ---
 name: PhpSoda
 category: libraries
-
+languages:
+  - PHP
 github: allejo/PhpSoda
 website: http://docs.allejo.io/PhpSoda/
 ---
