@@ -11,6 +11,11 @@
   display: table;
 }
 
+.c-skip-content:focus {
+  color: $palette-white;
+  padding: 15px;
+}
+
 /**
  * Hide text while making it readable for screen readers
  * 1. Needed in WebKit-based browsers because of an implementation bug;
@@ -37,6 +42,15 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.sr-only__focus:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  width: auto;
+  z-index: 10;
 }
 
 .u-list-inline {

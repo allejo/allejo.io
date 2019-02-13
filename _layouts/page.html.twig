@@ -3,6 +3,8 @@
 {% import '_layouts/utilities.html.twig' as utils %}
 
 {% block appbody %}
+    <a href="#main-content" class="sr-only__element sr-only__focus c-skip-content">Skip to Content</a>
+
     <aside class="c-sidebar">
         <div class="c-branding c-branding--xmas">
             <a href="{{ url('/') }}" class="c-branding__logo">allejo</a>
@@ -25,6 +27,8 @@
     </aside>
 
     <main class="c-page">
+        <span id="main-content"></span>
+
         <div class="c-page-header">
             <button class="c-hamburger c-hamburger--htx">
                 <span></span>
