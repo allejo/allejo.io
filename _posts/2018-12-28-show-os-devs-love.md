@@ -7,7 +7,7 @@ categories:
 
 I've been lurking around the open source community for about a decade now. I say lurking because I feel like I lurk more than I actually contribute. Though, judging by the little squares on [my GitHub profile](https://github.com/allejo), I am by definition: fairly active. My favorite time of the year is Hacktoberfest because I do my best to find a community I don't typically hang around and see if I can contribute. Sure, I could always go to those "we'll accept any PR during Hacktoberfest" repositories, but where's the fun in that?
 
-In the past, I really enjoyed making random apperances in the [Docker Docs repository](https://github.com/docker/docker.github.io) in unexpected ways.
+In the past, I really enjoyed making random appearances in the [Docker Docs repository](https://github.com/docker/docker.github.io) in unexpected ways.
 
 - I wrote an [insane Liquid-only TOC generator for them](https://github.com/docker/docker.github.io/pull/1474) that later became [its own project](https://github.com/allejo/jekyll-toc) that's now become my legacy...
 - I won [second place in their 2017 Docker Docs Hackathon](https://docs.docker.com/hackathon/#overall-winners) by contributing a [complete rewrite of the site sidebars](https://github.com/docker/docker.github.io/pull/2860)
@@ -18,7 +18,7 @@ So if you're browsing the Docker Docs site and enjoy how smoothly the sidebars w
 
 I loved the Docker Docs team at the time. I wasn't in any way affiliated with Docker, but they'd reach out to me from time to time with questions. I loved it. I was in college, so I needed something to keep me busy during my mundane classes and they gave me just that. Heck, they even [sent me some free swag](https://www.instagram.com/p/BSClaRZAfwU/); thanks Misty!
 
-As with anything in life, things change. My favorite docs team members left to other companies; good for them! I figured I'd continue to make apperances regardless so back in April 2018, I submitted [a PR to take down the GitHub pages hosted version of the site](https://github.com/docker/docker.github.io/pull/6433); something [they'd been asking for help with](https://github.com/docker/docker.github.io/issues/6101). At the time of writing this, the PR remains open and mostly untouched.
+As with anything in life, things change. My favorite docs team members left to other companies; good for them! I figured I'd continue to make appearances regardless so back in April 2018, I submitted [a PR to take down the GitHub pages hosted version of the site](https://github.com/docker/docker.github.io/pull/6433); something [they'd been asking for help with](https://github.com/docker/docker.github.io/issues/6101). At the time of writing this, the PR remains open and mostly untouched.
 
 For Hacktoberfest, I looked through the PRs to see if the one I had created in April had finally been merged or closed. Maybe I missed the notification? Nope. Untouched since April. A few days later, it was bumped on the 4th. I thought to myself, "Ok, I guess taking down the GH version of the site might take some _long_ internal discussion." I work for the government, I'm used to slowness in decision making. In the spirit of Hacktoberfest, I decided I'd try fixing some site bugs. I submitted [PR #7496](https://github.com/docker/docker.github.io/pull/7496), which would fix the [browser history spam you'd get as you scrolled through __any__ page](https://github.com/docker/docker.github.io/issues/6299). Fast forward 2 months. Untouched. No comments. No labels. No assignments.
 
