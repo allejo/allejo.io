@@ -4,37 +4,84 @@ description: I'm an active open source developer pretending to know what he's do
 ---
 
 {% extends '_layouts/base.html.twig' %}
+
 {% import '_layouts/utilities.html.twig' as utils %}
+
+{% set pageWideCSS = 's-homepage' %}
 
 {% block stylesheets %}
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat|Open+Sans:300" rel="stylesheet">
 {% endblock %}
 
 {% block appbody %}
-    <div class="grid-x s-homepage">
-        <div class="cell large-6 c-navigation-side">
-            <div class="c-flex">
-                <nav>
-                    <ul class="c-navigation u-list-inline">
-                        {{ utils.navigation() }}
-                    </ul>
-
-                    <ul class="c-social u-list-inline">
-                        {{ utils.social() }}
-                    </ul>
-                </nav>
+    <div class="grid-x picture-row">
+        <div class="cell large-6 u-background-light">
+            <div class="container">
+                <ul class="c-navigation u-list-inline">
+                    {{ utils.navigation() }}
+                </ul>
             </div>
         </div>
-        <div class="cell large-6 c-dark-side">
-            <div class="c-flex">
-                <div class="c-logo">
-                    {# <img src="{{ url('/assets/images/logo-hat-xmas.png') }}" class="c-branding__hat" aria-hidden="true" /> #}
-                    <div class="c-branding__logo">allejo</div>
-                    <div class="c-branding__slogan">i pretend to know what i'm doing</div>
+        <div class="cell large-6 u-background-dark">
+            <div class="container">
+                <div class="c-thumbnail">
+                    <img
+                        src="https://www.gravatar.com/avatar/{{ site.author.email | md5 }}?s=200"
+                        alt="allejo's profile picture"
+                    >
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="bio-row u-background-white text-center">
+        <h1>allejo</h1>
+        <p>
+            interstellar space pirate extraordinaire
+        </p>
+
+        <ul class="c-social u-list-inline">
+            {{ utils.social() }}
+        </ul>
+    </div>
+
+    <div class="grid-x">
+        <div class="cell large-6 u-background-dark">
+            <div class="container">
+                {% set latest_article = collections.posts | order('date', 'DESC') | first %}
+
+                <h3>{{ latest_article.title }}</h3>
+                <p>
+                    {{ latest_article.content | summary }}
+                </p>
+            </div>
+        </div>
+
+        <div class="cell large-6 u-background-light">
+            <div class="container">
+                <h2>Want to support what I do?</h2>
+
+                <p>
+                    Everything I do is out of sheer unbearable boredom where I'd go crazy if I didn't keep myself occupied. In turn, you get to benefit from the random things I build. So if you want to support me, here's a few ways how.
+                </p>
+
+                <div>
+                    <a href="#" class="c-button">
+                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                        Buy me a coffee
+                    </a>
+                    <a href="#" class="c-button">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        Feed my wing addiction
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="padding-vertical-1 u-background-white">
+        <span>copyright &copy; {{ 'now' | date('Y') }}</span>
+    </footer>
 {% endblock %}
 
 {% block javascript %}

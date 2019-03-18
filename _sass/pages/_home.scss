@@ -3,119 +3,33 @@
 // -----------------------------------------------------------------------------
 
 .s-homepage {
-    height: 100vh;
-    text-align: center;
+  .picture-row {
+    .c-thumbnail {
+      transform: translateX(calc(-50% - 60px));
+    }
+  }
 
-    a {
-        color: $color-header;
-        text-decoration: none;
+  .container {
+    width: $max-width / 2;
+  }
+
+  .cell {
+    padding: 60px 0;
+
+    // Left side
+    &:nth-child(odd) {
+      .container {
+        margin-left: auto;
+        padding-right: 60px;
+      }
     }
 
-    .c-navigation-side {
-        order: 2;
-
-        @include respond-up(lg) {
-            order: 1;
-        }
+    // Right side
+    &:nth-child(even) {
+      .container {
+        margin-right: auto;
+        padding-left: 60px;
+      }
     }
-
-    .c-dark-side {
-        background-color: $color-background-dark;
-        order: 1;
-
-        @include respond-up(lg) {
-            order: 2;
-        }
-    }
-
-    .c-flex {
-        align-items: center;
-        display: flex;
-        height: 50vh;
-        justify-content: center;
-
-        @include respond-up(lg) {
-            height: 100vh;
-        }
-    }
-
-    .c-branding__slogan,
-    .c-branding__logo {
-        color: $color-text-alt;
-    }
-
-    .c-logo {
-        display: inline-block;
-        margin-top: -20px;
-        position: relative;
-    }
-
-    .c-branding__hat {
-        @include position(absolute, 10px, -20px);
-
-        width: 60px;
-
-        @include respond-up(sm) {
-            top: 30px;
-            right: -25px;
-            width: 86px;
-        }
-    }
-
-    .c-branding__logo {
-        font-size: 60px;
-        padding-left: 170px;
-
-        @include respond-up(sm) {
-            font-size: 100px;
-            padding-left: 230px;
-        }
-    }
-
-    .c-branding__slogan {
-        bottom: -5px;
-        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        position: absolute;
-
-        @include respond-up(sm) {
-            bottom: -10px;
-            font-size: 24px;
-            font-weight: 300;
-        }
-    }
-
-    .c-navigation {
-        font-size: 20px;
-        text-transform: lowercase;
-
-        @include respond-up(md) {
-            font-size: 24px;
-        }
-
-        li {
-            padding-right: 15px;
-
-            @include respond-up(md) {
-                padding-right: 30px;
-            }
-
-            &:last-child {
-                padding-right: 0;
-            }
-        }
-    }
-
-    .c-social {
-        font-size: 28px;
-
-        li {
-            padding-right: 15px;
-
-            &:last-child {
-                padding-right: 0;
-            }
-        }
-    }
+  }
 }
