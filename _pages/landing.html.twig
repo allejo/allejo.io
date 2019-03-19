@@ -47,14 +47,26 @@ description: I'm an active open source developer pretending to know what he's do
 
     <div class="grid-x">
         <div class="cell large-6 u-background-dark">
-            <div class="container">
+            <article class="container">
                 {% set latest_article = collections.posts | order('date', 'DESC') | first %}
 
-                <h3>{{ latest_article.title }}</h3>
-                <p>
+                <h3>
+                    <a href="{{ url(latest_article) }}">
+                        {{ latest_article.title }}
+                    </a>
+                </h3>
+
+                <div class="s-markdown">
                     {{ latest_article.content | summary }}
-                </p>
-            </div>
+                </div>
+
+                <footer class="text-right">
+                    <a href="{{ url(latest_article) }}" class="c-button">
+                        <i class="fa fa-fw fa-glasses" aria-hidden="true"></i>
+                        Read full post
+                    </a>
+                </footer>
+            </article>
         </div>
 
         <div class="cell large-6 u-background-light">
@@ -67,11 +79,11 @@ description: I'm an active open source developer pretending to know what he's do
 
                 <div>
                     <a href="#" class="c-button">
-                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-coffee" aria-hidden="true"></i>
                         Buy me a coffee
                     </a>
                     <a href="#" class="c-button">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-utensils" aria-hidden="true"></i>
                         Feed my wing addiction
                     </a>
                 </div>
@@ -79,7 +91,7 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </div>
 
-    <footer class="padding-vertical-1 u-background-white">
+    <footer class="u-background-white">
         <span>copyright &copy; {{ 'now' | date('Y') }}</span>
     </footer>
 {% endblock %}

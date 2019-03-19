@@ -1,0 +1,17 @@
+a {
+  text-decoration: none;
+
+  @include on-event() {
+    color: $color-text;
+    text-decoration: underline;
+  }
+}
+
+.u-background-light a,
+.u-background-white a {
+  color: $color-hyperlink;
+}
+
+.u-background-dark a {
+  color: $color-text-alt;
+}

@@ -1,13 +1,33 @@
 .c-button {
-    background-color: transparent;
-    border: 1px solid $palette-light-blue;
-    border-radius: 50px;
-    display: inline-block;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 30px;
+
+  @include on-event(true) {
+    text-decoration: none;
+  }
+}
+
+.u-background-dark .c-button {
+  border-color: $palette-cream;
+  color: $palette-cream;
+
+  @include on-event() {
+    background-color: $palette-cream;
     color: $palette-light-blue;
-    cursor: pointer;
-    padding: 10px 30px;
-    &:hover {
-        background-color: $palette-light-blue;
-        color: $palette-white;
-    }
+  }
+}
+
+.u-background-white .c-button,
+.u-background-light .c-button {
+  border-color: $palette-light-blue;
+  color: $palette-light-blue;
+
+  @include on-event() {
+    background-color: $palette-light-blue;
+    color: $palette-white;
+  }
 }
