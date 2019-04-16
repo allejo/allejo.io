@@ -86,7 +86,7 @@ Now, I split each node at the `</h` and only keep what's on the left side of the
 
 ```
 [
-    ' id="heading-1">Heading 1'. 
+    ' id="heading-1">Heading 1',
     ' id="hello">Hello'
 ]
 ```
