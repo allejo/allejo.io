@@ -35,7 +35,8 @@ templates:
   redirect: _layouts/redirect.html.twig
 
 # Site Configuration
-title: allejo.io | A developer pretending to know what he's doing
+title: allejo.io
+motto: interstellar space pirate extraordinaire
 url: https://allejo.io
 
 author:

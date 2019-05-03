@@ -1,4 +1,5 @@
 ---
+title: Atom Feed
 permalink: /atom.xml
 menu: false
 sitemap:
@@ -7,7 +8,7 @@ sitemap:
 
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{ site.title }}</title>
+    <title>{{ site.title }} | {{ site.motto }}</title>
     <link href="{{ url('atom.xml', absolute = true) }}" rel="self"/>
     <link href="{{ url('/', absolute = true) }}"/>
     <updated>{{ 'now' | date(constant('\DateTime::RFC3339')) }}</updated>

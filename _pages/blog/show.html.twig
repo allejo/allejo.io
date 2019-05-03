@@ -12,10 +12,6 @@ collection: posts
     'og:description': this.content | summary | striptags | truncate(200)
 } %}
 
-{% block title %}
-    {{ this.title }} | allejo.io
-{% endblock %}
-
 {% block content %}
     <article class="c-blog-post">
         <header class="c-blog-post__header">
