@@ -8,20 +8,16 @@ description: I'm an active open source developer pretending to know what he's do
 
 {% set pageWideCSS = 's-homepage' %}
 
-{% block stylesheets %}
-    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat|Open+Sans:300" rel="stylesheet">
-{% endblock %}
-
 {% block body %}
-    <div class="grid-x picture-row">
-        <div class="cell large-6 u-background-light">
+    <div class="row picture-row">
+        <div class="col-lg-6 u-background-light">
             <div class="container">
                 <ul class="c-navigation u-list-inline">
                     {% include '_includes/navigation.html.twig' %}
                 </ul>
             </div>
         </div>
-        <div class="cell large-6 u-background-dark">
+        <div class="col-lg-6 u-background-dark">
             <div class="container">
                 <div class="c-thumbnail">
                     <img
@@ -44,8 +40,8 @@ description: I'm an active open source developer pretending to know what he's do
         </ul>
     </div>
 
-    <div class="grid-x">
-        <div class="cell large-6 u-background-dark">
+    <div class="row">
+        <div class="col-lg-6 u-background-dark">
             <article class="container">
                 {% set latest_article = collections.posts | order('date', 'DESC') | first %}
 
@@ -68,7 +64,7 @@ description: I'm an active open source developer pretending to know what he's do
             </article>
         </div>
 
-        <div class="cell large-6 u-background-light">
+        <div class="col-lg-6 u-background-light">
             <div class="container">
                 <h2>Want to support what I do?</h2>
 

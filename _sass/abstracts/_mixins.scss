@@ -35,7 +35,7 @@
 
 @mixin ul-horizontal-separator() {
     li {
-        border-left: 1px solid tint($color-text, 50%);
+        border-left: 1px solid tint($color-text-light-bg, 50%);
         display: inline-block;
         margin-left: 10px;
         padding-left: 10px;

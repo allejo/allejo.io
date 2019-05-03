@@ -15,7 +15,7 @@
 
 .c-blog-post__header {
     a {
-        color: $color-header;
+        color: $color-header-background-light;
         text-decoration: none;
 
         @include on-event() {

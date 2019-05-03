@@ -1,51 +1,46 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass functions.
-// -----------------------------------------------------------------------------
-
+///
 /// Native `url(..)` function wrapper
+///
 /// @access public
+///
 /// @param {String} $base - base URL for the asset
 /// @param {String} $type - asset type folder (e.g. `fonts/`)
 /// @param {String} $path - asset path
+///
 /// @return {Url}
+///
 @function asset($base, $type, $path) {
   @return url($base + $type + $path);
 }
 
+///
 /// Returns URL to an image based on its path
+///
 /// @access public
+///
 /// @param {String} $path - image path
 /// @param {String} $base [$base-url] - base URL
+///
 /// @return {Url}
+///
 /// @require $base-url
+///
 @function image($path, $base: $base-url) {
   @return asset($base, 'images/', $path);
 }
 
+///
 /// Returns URL to a font based on its path
+///
 /// @access public
+///
 /// @param {String} $path - font path
 /// @param {String} $base [$base-url] - base URL
+///
 /// @return {Url}
+///
 /// @require $base-url
+///
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
-}
-
-/// Slightly lighten a color
-/// @access public
-/// @param {Color} $color - color to tint
-/// @param {Number} $percentage - percentage of `$color` in returned color
-/// @return {Color}
-@function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
-}
-
-/// Slightly darken a color
-/// @access public
-/// @param {Color} $color - color to shade
-/// @param {Number} $percentage - percentage of `$color` in returned color
-/// @return {Color}
-@function shade($color, $percentage) {
-    @return mix(black, $color, $percentage);
 }

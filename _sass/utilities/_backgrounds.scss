@@ -8,16 +8,16 @@
   h4,
   h5,
   h6 {
-    color: $color-text-alt;
+    color: $color-text-dark-bg;
   }
 }
 
 .u-background-light {
   background-color: $color-background-light;
-  color: $color-text;
+  color: $color-text-light-bg;
 }
 
 .u-background-white {
-  background-color: $palette-white;
-  color: $color-header;
+  background-color: $color-white;
+  color: $color-header-background-light;
 }

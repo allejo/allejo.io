@@ -21,7 +21,7 @@
 
 .c-bragcard__heading-2 {
     @include respond-up(md) {
-        border-left: 1px solid $palette-dark-blue;
+        border-left: 1px solid $color-blue-dark;
         margin-left: 7px;
         padding-left: 7px;
     }

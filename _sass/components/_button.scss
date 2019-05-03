@@ -12,22 +12,22 @@
 }
 
 .u-background-dark .c-button {
-  border-color: $palette-cream;
-  color: $palette-cream;
+  border-color: $color-cream;
+  color: $color-cream;
 
   @include on-event() {
-    background-color: $palette-cream;
-    color: $palette-light-blue;
+    background-color: $color-cream;
+    color: $color-blue-light;
   }
 }
 
 .u-background-white .c-button,
 .u-background-light .c-button {
-  border-color: $palette-light-blue;
-  color: $palette-light-blue;
+  border-color: $color-blue-light;
+  color: $color-blue-light;
 
   @include on-event() {
-    background-color: $palette-light-blue;
-    color: $palette-white;
+    background-color: $color-blue-light;
+    color: $color-white;
   }
 }

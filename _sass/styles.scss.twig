@@ -4,17 +4,21 @@ permalink: /assets/css/styles.css
 
 @charset 'UTF-8';
 
-// 1. Configuration and helpers
+@import 'abstracts/functions/color';
+@import 'abstracts/functions/math';
+
 @import 'abstracts/variables';
-@import 'abstracts/breakpoints';
-@import 'abstracts/functions';
+
+@import 'abstracts/functions/assets';
+@import 'abstracts/mixins/a11y';
+@import 'abstracts/mixins/breakpoints';
+@import 'abstracts/mixins/spacing';
 @import 'abstracts/mixins';
 
-// 2. Vendors
-@import 'vendor/foundation';
+@import 'vendor/bootstrap-reboot';
+@import 'vendor/bootstrap';
 @import 'vendor/hljs/github';
 
-// 3. Base stuff
 @import 'base/base';
 @import 'base/anchors';
 @import 'base/fonts';
@@ -24,7 +28,6 @@ permalink: /assets/css/styles.css
 @import 'base/helpers';
 @import 'base/tables';
 
-// 4. Layout-related sections
 @import 'layout/header';
 @import 'layout/sidebar';
 @import 'layout/navigation';
@@ -32,7 +35,6 @@ permalink: /assets/css/styles.css
 @import 'layout/footer';
 @import 'layout/markdown';
 
-// 5. Components
 @import 'components/anthology';
 @import 'components/blockquote';
 @import 'components/blog-post';
@@ -47,9 +49,9 @@ permalink: /assets/css/styles.css
 @import 'components/thumbnail';
 @import 'components/tile';
 
-// 6. Page-specific styles
 @import 'pages/blog';
 @import 'pages/home';
 
-// 7. Utility based styles
 @import 'utilities/backgrounds';
+@import 'utilities/spacing';
+@import 'utilities/visibility';

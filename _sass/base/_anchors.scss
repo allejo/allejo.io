@@ -2,16 +2,17 @@ a {
   text-decoration: none;
 
   @include on-event() {
-    color: $color-text;
+    color: $color-text-light-bg;
     text-decoration: underline;
   }
 }
 
 .u-background-light a,
 .u-background-white a {
-  color: $color-hyperlink;
+  color: $color-hyperlink-background-light;
 }
 
 .u-background-dark a {
-  color: $color-text-alt;
+  color: $color-hyperlink-background-dark;
+  text-decoration: dotted;
 }

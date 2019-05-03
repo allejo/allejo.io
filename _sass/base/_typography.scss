@@ -1,5 +1,5 @@
 body {
-  color: $color-text;
+  color: $color-text-light-bg;
   font-family: $font-stack-text;
   font-size: 16px;
   font-weight: normal;
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-header;
+  color: $color-header-background-light;
   font-family: $font-stack-header;
   font-weight: 400;
 }
