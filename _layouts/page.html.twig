@@ -1,25 +1,20 @@
 {% extends '_layouts/base.html.twig' %}
 
-{% import '_layouts/utilities.html.twig' as utils %}
-
-{% block appbody %}
-    <a href="#main-content" class="sr-only__element sr-only__focus c-skip-content">Skip to Content</a>
-
+{% block body %}
     <aside class="c-sidebar u-background-dark">
-        <div class="c-branding c-branding--xmas">
-            <a href="{{ url('/') }}" class="c-branding__logo">allejo</a>
-            {# <img src="{{ url('/assets/images/logo-hat-xmas.png') }}" class="c-branding__hat" aria-hidden="true" /> #}
+        <div class="c-branding">
+            <a href="{{ url(pages['Home']) }}" class="c-branding__logo">allejo</a>
         </div>
 
         <nav class="c-navigation">
             <ul class="u-list-inline">
-                {{ utils.navigation() }}
+                {% include '_includes/navigation.html.twig' %}
             </ul>
         </nav>
 
         <section>
             <ul class="c-social u-list-inline">
-                {{ utils.social() }}
+                {% include '_includes/social-media.html.twig' %}
             </ul>
 
             <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
@@ -33,7 +28,7 @@
             <button class="c-hamburger c-hamburger--htx">
                 <span></span>
 
-                <p class="sr-only__text">toggle menu</p>
+                <span class="sr-only__text">toggle menu</span>
             </button>
         </div>
 
@@ -46,20 +41,9 @@
 
         <footer class="c-site-footer">
             <ul class="u-list-inline">
-                <li><a href="{{ url('/contact/') }}">Contact</a></li>
-                <li><a href="{{ url('/support-me/') }}">Support Me</a></li>
+                <li><a href="{{ url(pages['Contact']) }}">Contact</a></li>
+                <li><a href="{{ url(pages['Support Me']) }}">Support Me</a></li>
             </ul>
         </footer>
     </main>
-{% endblock %}
-
-{% block javascript %}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-59480871-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 {% endblock %}

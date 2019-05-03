@@ -1,4 +1,4 @@
-{% extends '_layouts/bare.html.twig' %}
+{% extends '_layouts/base.html.twig' %}
 
 {% set targetDocument = collections.posts | where('permalink', '==', this.redirect) | first %}
 {% if targetDocument is defined %}
