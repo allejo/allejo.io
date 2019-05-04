@@ -5,7 +5,9 @@
 .s-homepage {
   .picture-row {
     .c-thumbnail {
-      transform: translateX(-50%);
+      @include respond-up(lg) {
+        transform: translateX(-50%);
+      }
     }
   }
 
