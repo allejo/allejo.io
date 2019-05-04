@@ -11,16 +11,6 @@
   }
 }
 
-.u-background-dark .c-button {
-  border-color: $color-cream;
-  color: $color-cream;
-
-  @include on-event() {
-    background-color: $color-cream;
-    color: $color-blue-light;
-  }
-}
-
 .u-background-white .c-button,
 .u-background-light .c-button {
   border-color: $color-blue-light;
@@ -29,5 +19,15 @@
   @include on-event() {
     background-color: $color-blue-light;
     color: $color-white;
+  }
+}
+
+.u-background-dark .c-button {
+  border-color: $color-cream;
+  color: $color-cream;
+
+  @include on-event() {
+    background-color: $color-cream;
+    color: $color-blue-light;
   }
 }
