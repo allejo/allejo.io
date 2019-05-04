@@ -8,4 +8,21 @@
       transform: translateX(-50%);
     }
   }
+
+  .latest-post {
+    display: flex;
+
+    .post-title {
+      @include font-size(h2);
+
+      order: 2;
+    }
+
+    .post-date {
+      @include margin(r, 3);
+
+      text-align: center;
+      order: 1;
+    }
+  }
 }

@@ -1,0 +1,32 @@
+.c-calendar {
+  border: 1px solid rgba($color-white, 0.4);
+  position: relative;
+  width: 60px;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.c-calendar__wrapper {
+  @include position(absolute, 50%, null, null, 50%);
+
+  transform: translate(-50%, -50%);
+}
+
+.c-calendar__day,
+.c-calendar__month {
+  display: block;
+  line-height: 1;
+}
+
+.c-calendar__day {
+  @include font-size(h3);
+}
+
+.c-calendar__month {
+  @include font-size(h5);
+  @include margin(b, 1);
+}

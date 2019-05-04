@@ -6,12 +6,14 @@ description: I'm an active open source developer pretending to know what he's do
 
 {% extends '_layouts/base.html.twig' %}
 
+{% from '_macros/calendar.html.twig' import calendar %}
+
 {% set pageWideCSS = 's-homepage u-background-white' %}
 
 {% block body %}
     <div class="c-split-container row no-gutters picture-row">
         <div class="col-lg-6 u-background-light py-5">
-            <div class="c-split-container__left px-4 h5">
+            <div class="c-split-container__left px-5 h5">
                 {% include '_includes/navigation.html.twig' %}
             </div>
         </div>
@@ -40,16 +42,22 @@ description: I'm an active open source developer pretending to know what he's do
 
     <div class="c-split-container row no-gutters">
         <div class="col-lg-6 u-background-dark">
-            <article class="c-split-container__left px-4 py-5">
+            <article class="c-split-container__left p-5">
                 {% set latest_article = collections.posts | order('date', 'DESC') | first %}
 
-                <h3>
-                    <a href="{{ url(latest_article) }}">
-                        {{ latest_article.title }}
-                    </a>
-                </h3>
+                <div class="latest-post mb-4">
+                    <h3 class="post-title">
+                        <a href="{{ url(latest_article) }}">
+                            {{ latest_article.title }}
+                        </a>
+                    </h3>
 
-                <div class="s-markdown">
+                    <div class="post-date">
+                        {{ calendar(latest_article.date) }}
+                    </div>
+                </div>
+
+                <div class="s-markdown mb-4">
                     {{ latest_article.content | summary }}
                 </div>
 

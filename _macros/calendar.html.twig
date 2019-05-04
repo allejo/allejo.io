@@ -1,0 +1,14 @@
+{% macro calendar(_date) %}
+    {% set description %}Posted on {{ _date | date('M d, Y') }}{% endset %}
+
+    <div class="c-calendar" title="{{ description }}">
+        <div class="c-calendar__wrapper">
+            <div class="c-calendar__month">
+                {{- _date | date('M') -}}
+            </div>
+            <div class="c-calendar__day">
+                {{- _date | date('d') -}}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
