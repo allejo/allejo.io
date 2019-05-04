@@ -19,25 +19,10 @@
         color: $color-text-dark-bg;
     }
 
-    .c-social,
     .c-branding,
-    .c-copyright,
-    .c-navigation {
+    .c-copyright {
         margin-bottom: 60px;
         margin-top: 0;
-    }
-
-    .c-social {
-        font-size: 20px;
-
-        li {
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-
-        a {
-            text-decoration: none;
-        }
     }
 
     .c-copyright {
