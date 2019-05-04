@@ -1,0 +1,6 @@
+@each $level, $size in $font-sizes {
+  #{$level},
+  .#{$level} {
+    font-size: $size;
+  }
+}
