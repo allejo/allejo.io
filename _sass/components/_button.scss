@@ -4,10 +4,16 @@
   border-radius: 50px;
   display: inline-block;
   cursor: pointer;
-  padding: 10px 30px;
+  padding: 10px 20px;
 
   @include on-event(true) {
     text-decoration: none;
+  }
+
+  .fa,
+  .fas,
+  .fab {
+    margin-right: 5px;
   }
 }
 
