@@ -48,6 +48,10 @@ social:
     image: assets/images/open-graph.jpg
   twitter:
     username: allejome
+  kofi:
+    username: allejo
+  coffee:
+    username: allejo
 
 api:
   wufoo: "AES6LivHXygHJs7HoWzs5P4VV3fZYvKQvUmhXp9li0s="
