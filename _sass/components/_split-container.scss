@@ -1,0 +1,28 @@
+.c-split-container {
+
+}
+
+.c-split-container__left,
+.c-split-container__right {
+  @include respond-up(lg) {
+    width: #{map-get($breakpoints, lg) / 2};
+  }
+
+  @include respond-up(xl) {
+    width: #{map-get($breakpoints, xl) / 2};
+  }
+}
+
+.c-split-container__left {
+  @include respond-up(lg) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.c-split-container__right {
+  @include respond-up(lg) {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}

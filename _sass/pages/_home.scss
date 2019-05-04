@@ -5,35 +5,7 @@
 .s-homepage {
   .picture-row {
     .c-thumbnail {
-      transform: translateX(calc(-50% - 60px));
-    }
-  }
-
-  .bio-row {
-    padding: 30px 0;
-  }
-
-  .container {
-    max-width: $max-width / 2;
-  }
-
-  .cell {
-    padding: 60px 0;
-
-    // Left side
-    &:nth-child(odd) {
-      .container {
-        margin-left: auto;
-        padding-right: 60px;
-      }
-    }
-
-    // Right side
-    &:nth-child(even) {
-      .container {
-        margin-right: auto;
-        padding-left: 60px;
-      }
+      transform: translateX(-50%);
     }
   }
 }
