@@ -1,13 +1,14 @@
 ul.c-navigation {
+  @include margin(y, 0);
+
   list-style: none;
-  margin-bottom: 0;
-  margin-top: 0;
   padding-left: 0;
   text-transform: lowercase;
 
   li {
+    @include margin(r, 2);
+
     display: inline-block;
-    margin-right: 15px;
 
     &:last-child {
       margin-right: 0;
