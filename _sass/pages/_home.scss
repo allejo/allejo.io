@@ -1,27 +1,47 @@
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the home page.
-// -----------------------------------------------------------------------------
-
 .s-homepage {
   .picture-row {
     .c-thumbnail {
       @include respond-up(lg) {
         transform: translateX(-50%);
       }
+
+      img {
+        width: 150px;
+
+        @include respond-up(lg) {
+          width: auto;
+        }
+      }
     }
+  }
+
+  .site-title {
+    font-size: 3rem;
+    font-weight: 300;
   }
 
   .latest-post {
     display: flex;
+    flex-direction: column;
+
+    @include respond-up(sm) {
+      flex-direction: row;
+    }
 
     .post-title {
       @include font-size(h2);
 
+      margin-bottom: 0;
       order: 2;
     }
 
     .post-date {
-      @include margin(r, 3);
+      @include margin(x, auto);
+      @include margin(b, 3);
+
+      @include margin(x, 0, sm);
+      @include margin(b, 0, sm);
+      @include margin(r, 3, sm);
 
       text-align: center;
       order: 1;

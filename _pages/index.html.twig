@@ -12,12 +12,12 @@ description: I'm an active open source developer pretending to know what he's do
 
 {% block body %}
     <div class="c-split-container row no-gutters picture-row">
-        <div class="col-lg-6 u-background-light py-5">
-            <div class="c-split-container__left px-5 h5">
+        <div class="col-lg-6 u-background-light py-3 py-lg-5">
+            <div class="c-split-container__left text-center text-lg-left px-3 px-sm-5 h5">
                 {% include '_includes/navigation.html.twig' %}
             </div>
         </div>
-        <div class="col-lg-6 u-background-dark py-5">
+        <div class="col-lg-6 u-background-dark py-3 py-sm-5">
             <div class="c-split-container__right text-center text-lg-left">
                 <div class="c-thumbnail">
                     <img
@@ -29,11 +29,9 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </div>
 
-    <div class="u-background-white py-5 text-center">
-        <h1>allejo</h1>
-        <p>
-            {{ site.motto }}
-        </p>
+    <div class="u-background-white py-4 py-lg-5 text-center">
+        <h1 class="site-title">allejo</h1>
+        <p>{{- site.motto -}}</p>
 
         <div class="h3 m-0">
             {% include '_includes/social-media.html.twig' %}
@@ -42,7 +40,7 @@ description: I'm an active open source developer pretending to know what he's do
 
     <div class="c-split-container row no-gutters">
         <div class="col-lg-6 u-background-dark">
-            <article class="c-split-container__left p-5">
+            <article class="c-split-container__left px-3 py-4 p-sm-5">
                 {% set latest_article = collections.posts | order('date', 'DESC') | first %}
 
                 <div class="latest-post mb-4">
@@ -61,7 +59,7 @@ description: I'm an active open source developer pretending to know what he's do
                     {{ latest_article.content | summary }}
                 </div>
 
-                <footer class="text-right">
+                <footer class="text-lg-right">
                     <a href="{{ url(latest_article) }}" class="c-button">
                         <i class="fa fa-fw fa-glasses" aria-hidden="true"></i>
                         Read full post
@@ -71,14 +69,14 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
 
         <div class="col-lg-6 u-background-light">
-            <div class="c-split-container__right p-5">
+            <div class="c-split-container__right px-3 py-4 p-sm-5">
                 <h2 class="mb-4">Want to support what I do?</h2>
 
                 <p class="mb-4">
                     Everything I do is out of sheer unbearable boredom where I'd go crazy if I didn't keep myself occupied. In turn, you get to benefit from the random things I build. So if you want to support me, here's a few ways how.
                 </p>
 
-                <div>
+                <div class="c-button-container">
                     <a href="https://buymeacoffee.com/{{ site.social.coffee.username }}" class="c-button">
                         <i class="fa fa-fw fa-coffee" aria-hidden="true"></i>
                         Buy me a coffee
@@ -92,7 +90,7 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </div>
 
-    <footer class="u-background-white text-center py-5">
+    <footer class="u-background-white text-center py-4 py-sm-5">
         <span>copyright &copy; {{ 'now' | date('Y') }}</span>
     </footer>
 {% endblock %}

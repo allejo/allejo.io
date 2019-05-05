@@ -37,3 +37,23 @@
     color: $color-blue-light;
   }
 }
+
+.c-button-container {
+  .c-button {
+    @include margin(b, 2);
+
+    text-align: center;
+    width: 100%;
+
+    @include respond-up(sm) {
+      @include margin(r, 2);
+
+      text-align: left;
+      width: auto;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
