@@ -30,7 +30,9 @@
 
         <div class="c-print-header">
             <p class="c-print-header__title">allejo</p>
-            <p class="c-print-header__slogan">A developer pretending to know what he's doing &bull; <a href="{{ site.url }}">{{ site.url }}</a></p>
+            <p class="c-print-header__slogan">
+                {{ site.motto }} &bull; <a href="{{ site.url }}">{{ site.url }}</a>
+            </p>
         </div>
 
         {% block content %}{% endblock %}
