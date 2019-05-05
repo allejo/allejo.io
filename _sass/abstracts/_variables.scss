@@ -69,10 +69,7 @@ $breakpoints: (
   xl: 1200px
 );
 
-/// The width of the sidebar on the desktop version of the site
-/// @type Number
-$sidebar-width: 18em;
-$max-width: 1200px;
+$width-sidebar: 18em;
 
 // -----------------------------------------------------------------------------
 // Hamburger Icon Settings

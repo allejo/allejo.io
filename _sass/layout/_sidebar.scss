@@ -3,11 +3,11 @@
 
   background-color: $color-background-dark;
   height: 100vh;
-  left: -1 * $sidebar-width;
+  left: -1 * $width-sidebar;
   position: fixed;
   text-align: center;
   transition: left 0.3s;
-  width: $sidebar-width;
+  width: $width-sidebar;
 
   @media print {
     display: none;

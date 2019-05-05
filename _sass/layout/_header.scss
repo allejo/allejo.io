@@ -62,6 +62,6 @@
 }
 
 .u-nav-open .c-hamburger {
-    left: calc(#{$sidebar-width} - #{$hamburger-width});
+    left: calc(#{$width-sidebar} - #{$hamburger-width});
     position: fixed;
 }
