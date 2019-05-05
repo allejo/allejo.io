@@ -9,6 +9,10 @@
   transition: left 0.3s;
   width: $sidebar-width;
 
+  @media print {
+    display: none;
+  }
+
   @include respond-up(lg) {
     left: 0;
   }
