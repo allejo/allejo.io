@@ -1,38 +1,27 @@
 .c-sidebar {
-    background-color: $color-background-dark;
-    height: 100vh;
-    left: -1 * $sidebar-width;
-    position: fixed;
-    padding-bottom: 60px;
-    padding-top: 60px;
-    text-align: center;
-    transition: left 0.3s;
-    width: $sidebar-width;
+  @include padding(y, 5);
 
-    @include respond-up(lg) {
-        left: 0;
-    }
+  background-color: $color-background-dark;
+  height: 100vh;
+  left: -1 * $sidebar-width;
+  position: fixed;
+  text-align: center;
+  transition: left 0.3s;
+  width: $sidebar-width;
 
-    &,
-    a,
-    h1 {
-        color: $color-text-dark-bg;
-    }
+  @include respond-up(lg) {
+    left: 0;
+  }
 
-    .c-branding,
-    .c-copyright {
-        margin-bottom: 60px;
-        margin-top: 0;
-    }
-
-    .c-copyright {
-        font-size: 14px;
-        margin-bottom: 0;
-    }
+  &,
+  a,
+  h1 {
+    color: $color-text-dark-bg;
+  }
 }
 
 .u-nav-open {
-    .c-sidebar {
-        left: 0;
-    }
+  .c-sidebar {
+    left: 0;
+  }
 }

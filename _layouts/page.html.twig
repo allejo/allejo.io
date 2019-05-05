@@ -2,21 +2,19 @@
 
 {% block body %}
     <aside class="c-sidebar u-background-dark">
-        <div class="c-branding">
+        <div class="c-branding mb-3">
             <a href="{{ url(pages['Home']) }}" class="c-branding__logo">allejo</a>
         </div>
 
-        <nav class="c-navigation">
+        <nav class="c-navigation mb-3">
             {% include '_includes/navigation.html.twig' %}
         </nav>
 
-        <section>
-            <ul class="c-social u-list-inline">
-                {% include '_includes/social-media.html.twig' %}
-            </ul>
+        <div class="h5 mb-5">
+            {% include '_includes/social-media.html.twig' %}
+        </div>
 
-            <p class="c-copyright">Copyright &copy; {{ 'now' | date('Y') }}</p>
-        </section>
+        <p>Copyright &copy; {{ 'now' | date('Y') }}</p>
     </aside>
 
     <main class="c-page u-background-light">
