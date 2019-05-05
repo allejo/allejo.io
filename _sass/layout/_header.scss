@@ -1,10 +1,5 @@
-// -----------------------------------------------------------------------------
-// The header component is only visible to mobile devices and is intended to
-// only house the mobile responsive hamburger icon
-// -----------------------------------------------------------------------------
-
 .c-page-header {
-    $_spacing: 15px;
+    $_spacing: map-get($spacing, 3);
 
     background-color: $hamburger-color;
     height: $hamburger-height;
