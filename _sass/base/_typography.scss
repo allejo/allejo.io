@@ -12,7 +12,7 @@ h4,
 h5,
 h6 {
   @include margin(b, 3);
-  @include margin(t, 5);
+  @include margin(t, 4);
 
   color: $color-header-background-light;
   font-family: $font-stack-header;
