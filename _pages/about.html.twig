@@ -6,6 +6,7 @@ description: I'm just another boring developer pretending to know what he's doin
 ---
 
 {% extends '_layouts/page.html.twig' %}
+
 {% from _self import brag_display, brag_repeater %}
 
 {% block title %}
@@ -59,8 +60,10 @@ description: I'm just another boring developer pretending to know what he's doin
     {% set active = collection | where('end', '==', null) | order('start', 'ASC') %}
     {% set former = collection | where('end', '!=', null) | order('end', 'DESC') %}
 
-    {{ brag_repeater(active) }}
-    {{ brag_repeater(former) }}
+    <div class="c-bragcard__container">
+        {{ brag_repeater(active) }}
+        {{ brag_repeater(former) }}
+    </div>
 {% endmacro %}
 
 {% block content %}

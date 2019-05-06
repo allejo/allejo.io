@@ -12,9 +12,16 @@ h4,
 h5,
 h6 {
   @include margin(b, 3);
+  @include margin(t, 5);
 
   color: $color-header-background-light;
   font-family: $font-stack-header;
   font-weight: 300;
   line-height: 1;
+}
+
+h1 {
+  &:first-of-type {
+    margin-top: 0;
+  }
 }

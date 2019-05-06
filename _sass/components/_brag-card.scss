@@ -1,9 +1,17 @@
-// -----------------------------------------------------------------------------
 // A "brag card" is the component used on the About page for each entry
-// -----------------------------------------------------------------------------
+
+.c-bragcard__container {
+}
 
 .c-bragcard {
-    margin-bottom: 30px;
+  @include margin(b, 4);
+  @include padding(t, 4);
+
+  border-top: 1px solid $color-grey-light;
+}
+
+.c-bragcard__header {
+  @include margin(b, 2);
 }
 
 .c-bragcard__heading-1,
