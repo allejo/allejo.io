@@ -7,6 +7,8 @@ description: I randomly write articles where I attempt to share my knowledge and
 
 {% extends '_layouts/page.html.twig' %}
 
+{% from '_macros/blog-post.html.twig' import blog_post %}
+
 {% set pageWideCSS = 's-blog' %}
 
 {% block content %}
@@ -21,24 +23,7 @@ description: I randomly write articles where I attempt to share my knowledge and
 
     <div>
         {% for post in collections.posts | order('date', 'DESC') %}
-            <article class="c-blog-post">
-                <header class="c-blog-post__header">
-                    <h2 class="c-blog-post__title"><a href="{{ url(post.permalink) }}">{{ post.title }}</a></h2>
-                    <p class="c-blog-post__date">{{ post.date | date('M d, Y') }}</p>
-                </header>
-
-                <section class="c-blog-post__body">
-                    {{ post.content | summary }}
-                </section>
-
-                <footer class="c-blog-post__footer">
-                    {% if post.categories %}
-                        <div>
-                            <i class="fa fa-fw fa-folder" aria-hidden="true"></i> {{ post.categories | join(', ') | title }}
-                        </div>
-                    {% endif %}
-                </footer>
-            </article>
+            {{ blog_post(post, true) }}
         {% endfor %}
     </div>
 {% endblock %}
