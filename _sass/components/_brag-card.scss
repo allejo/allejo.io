@@ -5,9 +5,10 @@
 
 .c-bragcard {
   @include margin(b, 4);
-  @include padding(t, 4);
+  @include padding(null, 3);
 
-  border-top: 1px solid $color-grey-light;
+  background: #E9E9E9;
+  border-left: 4px solid $color-blue-light;
 }
 
 .c-bragcard__header {
