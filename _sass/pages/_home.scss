@@ -30,8 +30,8 @@
 
     .post-title {
       @include font-size(h2);
+      @include margin(y, 0);
 
-      margin-bottom: 0;
       order: 2;
     }
 
