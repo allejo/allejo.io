@@ -15,7 +15,7 @@ nav: 3
 
 {% macro entry(classes, name, description, links, simpleUrl) %}
     <div class="{{ classes }}">
-        <article class="c-tile c-portfolio__category">
+        <article class="c-card c-portfolio__category">
             <header>
                 {% set fileName = name | lower | replace({' ': ''}) %}
                 {{ file('../../assets/images/' ~ fileName ~ '.svg') }}
