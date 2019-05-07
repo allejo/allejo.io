@@ -1,4 +1,5 @@
 ---
+title: JSON Feed
 permalink: /feed.json
 menu: false
 sitemap:
@@ -8,7 +9,7 @@ sitemap:
 {%- set items = [] -%}
 {%- set feed = {
     version: 'https://jsonfeed.org/version/1',
-    title: site.title,
+    title: site.title ~ ' | ' ~ site.motto,
     home_page_url: url('/', absolute=true),
     feed_url: url('/feed.json', absolute=true),
     description: site.description,

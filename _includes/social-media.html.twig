@@ -1,0 +1,11 @@
+<ul class="c-social">
+    {% for site in data.social %}
+        <li>
+            <a href="{{ site.url }}" title="{{ site.slug }}">
+                <i class="fab fa-fw fa-{{ site.logo }}">
+                    <span class="sr-only">{{ site.slug }}</span>
+                </i>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

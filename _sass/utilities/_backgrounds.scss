@@ -1,0 +1,23 @@
+.u-background-dark {
+  background-color: $color-background-dark;
+
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-text-dark-bg;
+  }
+}
+
+.u-background-light {
+  background-color: $color-background-light;
+  color: $color-text-light-bg;
+}
+
+.u-background-white {
+  background-color: $color-white;
+  color: $color-header-background-light;
+}

@@ -35,7 +35,8 @@ templates:
   redirect: _layouts/redirect.html.twig
 
 # Site Configuration
-title: allejo.io | A developer pretending to know what he's doing
+title: allejo.io
+motto: interstellar space pirate extraordinaire
 url: https://allejo.io
 
 author:
@@ -47,6 +48,12 @@ social:
     image: assets/images/open-graph.jpg
   twitter:
     username: allejome
+  kofi:
+    username: allejo
+  coffee:
+    username: allejo
+  paypal:
+    username: allejo
 
 api:
   wufoo: "AES6LivHXygHJs7HoWzs5P4VV3fZYvKQvUmhXp9li0s="

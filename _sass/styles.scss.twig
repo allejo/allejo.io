@@ -4,46 +4,58 @@ permalink: /assets/css/styles.css
 
 @charset 'UTF-8';
 
-// 1. Configuration and helpers
+@import 'abstracts/functions/color';
+@import 'abstracts/functions/math';
+
 @import 'abstracts/variables';
-@import 'abstracts/breakpoints';
-@import 'abstracts/functions';
+
+@import 'abstracts/functions/assets';
+@import 'abstracts/mixins/a11y';
+@import 'abstracts/mixins/breakpoints';
+@import 'abstracts/mixins/spacing';
+@import 'abstracts/mixins/typography';
 @import 'abstracts/mixins';
 
-// 2. Vendors
-@import 'vendor/foundation';
+@import 'vendor/bootstrap-reboot';
+@import 'vendor/bootstrap';
 @import 'vendor/hljs/github';
 
-// 3. Base stuff
 @import 'base/base';
-@import 'base/fonts';
+@import 'base/anchors';
 @import 'base/forms';
 @import 'base/lists';
 @import 'base/typography';
 @import 'base/helpers';
 @import 'base/tables';
 
-// 4. Layout-related sections
 @import 'layout/header';
 @import 'layout/sidebar';
-@import 'layout/navigation';
 @import 'layout/page';
 @import 'layout/footer';
+@import 'layout/markdown';
 
-// 5. Components
 @import 'components/anthology';
 @import 'components/blockquote';
 @import 'components/blog-post';
 @import 'components/branding';
 @import 'components/brag-card';
 @import 'components/button';
+@import 'components/calendar';
+@import 'components/card';
 @import 'components/code-block';
 @import 'components/hamburger';
-@import 'components/portfolio-grid';
+@import 'components/navigation';
 @import 'components/project-card';
+@import 'components/social';
+@import 'components/split-container';
+@import 'components/svg-icon';
 @import 'components/tags';
-@import 'components/tile';
+@import 'components/thumbnail';
 
-// 6. Page-specific styles
 @import 'pages/blog';
 @import 'pages/home';
+
+@import 'utilities/backgrounds';
+@import 'utilities/spacing';
+@import 'utilities/typography';
+@import 'utilities/visibility';

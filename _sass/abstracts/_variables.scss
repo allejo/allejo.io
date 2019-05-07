@@ -1,110 +1,78 @@
-// =============================================================================
-// This file contains all application-wide Sass variables.
-// =============================================================================
-
-
-
-// -----------------------------------------------------------------------------
-// Font families
-// -----------------------------------------------------------------------------
-
-/// Logo font family
-/// @type List
-$font-stack-branding: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', 'Open Sans', 'Arial', sans-serif;
-
-/// Header font family
-/// @type List
-$font-stack-header: 'Montserrat', sans-serif;
-
-/// Regular font family
-/// @type List
-$font-stack-text: 'Hind', sans-serif;
-
-/// Code (monospace) font family
-/// @type List
-$font-stack-code: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
-
-
-
-// -----------------------------------------------------------------------------
-// Our color palette
-// -----------------------------------------------------------------------------
-
-$palette-dark-grey: rgb(51, 51, 51);
-$palette-light-grey: rgb(210, 210, 210);
-$palette-dark-blue: rgb(86, 99, 117);
-$palette-light-blue: rgb(100, 115, 135);
-$palette-cream: rgb(240, 240, 240);
-$palette-white: rgb(247, 247, 247);
-$palette-red: rgb(186, 0, 0);
-
-
-
-/// Text color when used on a light background
-/// @type Color
-$color-text: $palette-dark-grey;
-
-/// Text color when used on a dark background
-/// @type Color
-$color-text-alt: $palette-cream;
-
-/// Color for headings
-/// @type Color
-$color-header: $palette-dark-blue;
-
-/// Dark background color
-/// @type Color
-$color-background-dark: $palette-light-blue;
-
-/// Light background color
-/// @type Color
-$color-background-light: $palette-cream;
-
-/// Hyperlink color
-/// @type Color
-$color-hyperlink: rgb(229, 0, 80);
-
-
-
-/// The width of the sidebar on the desktop version of the site
-/// @type Number
-$sidebar-width: 18em;
-
-
-
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-    xs: 0,
-    sm: 30em,
-    md: 40em,
-    lg: 64em,
-    xl: 75em
-);
-
-
-
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/';
 
+$color-grey-dark: rgb(51, 51, 51);
+$color-grey-light: rgb(210, 210, 210);
+$color-blue-dark: rgb(86, 99, 117);
+$color-blue-light: rgb(100, 115, 135);
+$color-cream: rgb(240, 240, 240);
+$color-white: rgb(247, 247, 247);
+$color-red: rgb(229, 0, 80);
 
+$color-background-light: $color-cream;     // The light background color
+$color-background-dark: $color-blue-light; // The dark background color
 
-// =============================================================================
-// Component Settings
-// =============================================================================
+$color-text-light-bg: $color-grey-dark;    // Text color when used on a light background
+$color-text-dark-bg: $color-cream;         // Text color when used on a dark background
 
+$color-header-background-light: $color-blue-dark;
+$color-hyperlink-background-light: $color-red;
+$color-hyperlink-background-dark: $color-text-dark-bg;
 
+$font-stack-branding: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', 'Open Sans', 'Arial', sans-serif;
+$font-stack-header: 'Montserrat', sans-serif;
+$font-stack-text: 'Hind', sans-serif;
+$font-stack-code: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+$spacing: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+  auto: auto
+);
+
+$spacing_types: (
+  m: margin,
+  p: padding,
+);
+
+$spacing_directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: (left, right),
+  y: (top, bottom)
+);
+
+$font-sizes: (
+  h1: em(40px),
+  h2: em(30px),
+  h3: em(26px),
+  h4: em(22px),
+  h5: em(18px),
+  h6: em(16px),
+  small: 0.85em,
+);
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$width-sidebar: 18em;
 
 // -----------------------------------------------------------------------------
 // Hamburger Icon Settings
 // -----------------------------------------------------------------------------
 
-$hamburger-color: $palette-light-blue;
-$hamburger-color-active: $palette-dark-blue;
+$hamburger-color: $color-blue-light;
+$hamburger-color-active: $color-blue-dark;
 
 $hamburger-width: 40px;                 // The width of the button area
 $hamburger-height: $hamburger-width;    // The height of the button area

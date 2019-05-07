@@ -1,0 +1,12 @@
+{% macro calendar(_date) %}
+    <time
+        class="c-calendar"
+        datetime="{{ _date | date('c') }}"
+        title="Posted on {{ _date | date('M d, Y') }}"
+    >
+        <span class="c-calendar__wrapper">
+            <strong class="c-calendar__month">{{- _date | date('F') -}}</strong>
+            <span class="c-calendar__day">{{- _date | date('d') -}}</span>
+        </span>
+    </time>
+{% endmacro %}

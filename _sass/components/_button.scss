@@ -1,13 +1,59 @@
 .c-button {
-    background-color: transparent;
-    border: 1px solid $palette-light-blue;
-    border-radius: 50px;
-    display: inline-block;
-    color: $palette-light-blue;
-    cursor: pointer;
-    padding: 10px 30px;
-    &:hover {
-        background-color: $palette-light-blue;
-        color: $palette-white;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+
+  @include on-event(true) {
+    text-decoration: none;
+  }
+
+  .fa,
+  .fas,
+  .fab {
+    margin-right: 5px;
+  }
+}
+
+.u-background-white .c-button,
+.u-background-light .c-button {
+  border-color: $color-blue-light;
+  color: $color-blue-light;
+
+  @include on-event() {
+    background-color: $color-blue-light;
+    color: $color-white;
+  }
+}
+
+.u-background-dark .c-button {
+  border-color: $color-cream;
+  color: $color-cream;
+
+  @include on-event() {
+    background-color: $color-cream;
+    color: $color-blue-light;
+  }
+}
+
+.c-button-container {
+  .c-button {
+    @include margin(b, 2);
+
+    text-align: center;
+    width: 100%;
+
+    @include respond-up(sm) {
+      @include margin(r, 2);
+
+      text-align: left;
+      width: auto;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
+  }
 }

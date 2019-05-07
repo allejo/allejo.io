@@ -1,0 +1,36 @@
+{% macro blog_post(post, summary) %}
+    <article class="c-blog-post">
+        <header class="c-blog-post__header">
+            <h1 class="c-blog-post__title">
+                {% if summary %}<a href="{{ url(post) }}">{% endif %}
+                {{ post.title }}
+                {% if summary %}</a>{% endif %}
+            </h1>
+            <p class="c-blog-post__date">{{ post.date | date('M d, Y') }}</p>
+        </header>
+
+        <section class="c-blog-post__body">
+            {% if summary %}
+                {{ post.content | summary }}
+            {% else %}
+                {{ post.content }}
+            {% endif %}
+        </section>
+
+        <footer class="c-blog-post__footer">
+            {% if post.categories %}
+                <div>
+                    <i class="fa fa-fw fa-folder" aria-hidden="true"></i> {{ post.categories | join(', ') | title }}
+                </div>
+            {% endif %}
+
+            {% if not summary %}
+                {% if post.tags %}
+                    <div>
+                        <i class="fa fa-fw fa-tags" aria-hidden="true"></i> {{ post.tags | join(', ') }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </footer>
+    </article>
+{% endmacro %}

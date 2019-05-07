@@ -6,6 +6,7 @@ description: I'm just another boring developer pretending to know what he's doin
 ---
 
 {% extends '_layouts/page.html.twig' %}
+
 {% from _self import brag_display, brag_repeater %}
 
 {% block title %}
@@ -14,20 +15,20 @@ description: I'm just another boring developer pretending to know what he's doin
 
 {% macro brag_repeater(cards) %}
     {%- for card in cards -%}
-        <article class="c-bragcard">
-            <header class="c-bragcard__header">
-                <div class="c-bragcard__title">
-                    <p class="c-bragcard__heading-1">
+        <article class="c-card c-card--left mb-4 p-3">
+            <header class="mb-2">
+                <div>
+                    <p class="c-brag-card__heading-1">
                         {% if card.url %}<a href="{{ card.url }}">{% endif %}
                         {{ card.title }}
                         {% if card.url %}</a>{% endif %}
                     </p>
 
                     {% if card.slug %}
-                        <p class="c-bragcard__heading-2">{{ card.slug }}</p>
+                        <p class="c-brag-card__heading-2">{{ card.slug }}</p>
                     {% endif %}
                 </div>
-                <div class="c-bragcard__meta">
+                <div class="c-brag-card__meta">
                     {% if card.event_date %}
                         {{ card.event_date | date ('M Y') }}
                     {% else %}
@@ -36,19 +37,9 @@ description: I'm just another boring developer pretending to know what he's doin
                 </div>
             </header>
 
-            <section class="c-bragcard__body">
+            <section class="s-markdown">
                 {{ card.content }}
             </section>
-
-            {#<footer class="c-bragcard__footer">#}
-                {#{% if card.tags %}#}
-                    {#<ul class="c-tags u-list-inline">#}
-                        {#{% for tag in card.tags %}#}
-                            {#<li>{{ tag }}</li>#}
-                        {#{% endfor %}#}
-                    {#</ul>#}
-                {#{% endif %}#}
-            {#</footer>#}
         </article>
     {%- endfor -%}
 {% endmacro %}

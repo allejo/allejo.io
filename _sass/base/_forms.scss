@@ -1,7 +1,7 @@
 label {
     &.required {
         &::after {
-            color: $palette-red;
+            color: $color-red;
             content: '*';
             margin-left: 5px;
         }
@@ -18,7 +18,7 @@ label {
     textarea,
     input[type=email],
     input[type=text] {
-        border: 1px solid $palette-light-grey;
+        border: 1px solid $color-grey-light;
         display: block;
         padding: 0.5rem;
         width: 100%;

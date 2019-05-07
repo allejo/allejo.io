@@ -1,28 +1,21 @@
 .c-page {
-    padding: 0 15px;
+  @include padding(x, 3);
+  @include padding(null, 5, lg);
 
-    @include respond-up(md) {
-        padding: 0 30px;
+  @include respond-up(lg) {
+    margin-left: $width-sidebar;
+    max-width: 1000px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  h1 {
+    &:not(:first-of-type) {
+      @include margin(t, 3);
+      @include margin(t, 4, md);
     }
-
-    @include respond-up(lg) {
-        margin-left: $sidebar-width;
-        max-width: 1000px;
-        padding: 60px;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-    }
-
-    h1 {
-        &:not(:first-of-type) {
-            margin-top: 1rem;
-
-            @include respond-up(md) {
-                margin-top: 2rem;
-            }
-        }
-    }
+  }
 }

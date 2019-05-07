@@ -7,77 +7,80 @@ nav: 3
 
 {% extends '_layouts/page.html.twig' %}
 
-{% from _self import entry %}
-
 {% block title %}
     Portfolio | allejo.io
 {% endblock %}
-
-{% macro entry(classes, name, description, links, simpleUrl) %}
-    <div class="{{ classes }}">
-        <article class="c-tile c-portfolio__category">
-            <header>
-                {% set fileName = name | lower | replace({' ': ''}) %}
-                {{ file('../../assets/images/' ~ fileName ~ '.svg') }}
-                <h3>{{ name }}</h3>
-            </header>
-
-            <div class="c-portfolio__category__content">
-                <p>{{ description }}</p>
-            </div>
-
-            <footer>
-                <ul class="u-list-inline u-list-horizontal-separator">
-                    {% for link in links %}
-                        {% set targetUrl %}projects/{{ name | lower | replace(' ', '-') }}{% if not simpleUrl %}/{{ link | lower }}{% endif %}/{% endset %}
-                        <li><a href="{{ url(targetUrl) }}">{{ link }}</a></li>
-                    {% endfor %}
-                </ul>
-            </footer>
-        </article>
-    </div>
-{% endmacro %}
 
 {% block content %}
     <h1>Portfolio</h1>
 
     <p>I work on a lot of different projects and all of my open source projects are available on my <a href="https://github.com/allejo">GitHub</a>.</p>
 
-    <div class="grid-x grid-margin-x grid-margin-y c-portfolio">
-        {{ entry(
-            'cell medium-7',
-            'BZFlag',
-            "I'm a developer for the project, server host, map designer, and a leader for the competitive league in the community.",
-            ['Plug-ins', 'Projects'],
-            false
-        ) }}
-        {{ entry(
-            'cell medium-5',
-            'Jekyll',
-            "I work on a lot of Jekyll websites, build themes, and develop plugins.",
-            ['Projects', 'Themes'],
-            false
-        ) }}
-        {{ entry(
-            'cell medium-5',
-            'Libraries',
-            "I work on a number of open source libraries for different services.",
-            ['Libraries'],
-            true
-        ) }}
-        {{ entry(
-            'cell medium-7',
-            'stakx',
-            "I started this project as an alternative to Jekyll to make use of a more powerful template engine and a different language.",
-            ['Projects'],
-            true
-        ) }}
-        {{ entry(
-            'cell medium-12',
-            'Web Design',
-            "I do a lot of front-end web design, including the actual design of mockups and building the website from the ground up.",
-            ['Websites'],
-            true
-        ) }}
+    {% set categories = [
+        {
+            classes: 'col-md-7',
+            name: 'BZFlag',
+            description: "I'm a developer for the project, server host, map designer, and a leader for the competitive league in the community.",
+            links: ['Plug-ins', 'Projects'],
+            simple_url: false
+        },
+        {
+            classes: 'col-md-5',
+            name: 'Jekyll',
+            description: "I work on a lot of Jekyll websites, build themes, and develop plugins.",
+            links: ['Projects', 'Themes'],
+            simple_url: false
+        },
+        {
+            classes: 'col-md-5',
+            name: 'Libraries',
+            description: "I work on a number of open source libraries for different services.",
+            links: ['Libraries'],
+            simple_url: true
+        },
+        {
+            classes: 'col-md-7',
+            name: 'stakx',
+            description: "I started this project as an alternative to Jekyll to make use of a more powerful template engine and a different language.",
+            links: ['Projects'],
+            simple_url: true
+        },
+        {
+            classes: 'col-md-12',
+            name: 'Web Design',
+            description: "I do a lot of front-end web design, including the actual design of mockups and building the website from the ground up.",
+            links: ['Websites'],
+            simple_url: true
+        },
+    ] %}
+
+    <div class="row">
+        {% for category in categories %}
+            <div class="{{ category.classes }}">
+                <article class="c-card mb-3 text-center">
+                    <header>
+                        <div class="c-svg-icon" aria-hidden="true">
+                            {%- set fileName = category.name | lower | replace({' ': ''}) -%}
+                            {{ file('../../assets/images/' ~ fileName ~ '.svg') }}
+                        </div>
+
+                        <h3>{{ category.name }}</h3>
+                    </header>
+
+                    <div class="c-portfolio__category__content">
+                        <p>{{ category.description }}</p>
+                    </div>
+
+                    <footer>
+                        <ul class="u-list-inline u-list-horizontal-separator mb-0">
+                            {% for link in category.links %}
+                                {% set targetUrl %}projects/{{ category.name | lower | replace(' ', '-') }}{% if not category.simple_url %}/{{ link | lower }}{% endif %}/{% endset %}
+                                <li><a href="{{ url(targetUrl) }}">{{ link }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </footer>
+                </article>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

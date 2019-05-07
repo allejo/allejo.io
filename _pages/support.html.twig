@@ -1,6 +1,6 @@
 ---
-permalink: /support-me/
 title: Support Me
+permalink: /support-me/
 menu: false
 ---
 
@@ -20,15 +20,18 @@ menu: false
 
         If you'd like to send a donation my way as encouragement or thanks for any of the free content I've created, here are ways for you to support me.
 
-        <div>
-            <a href="https://www.buymeacoff.ee/allejo" class="c-button">
-                <i class="fa fa-fw fa-coffee" aria-hidden="true"></i> Buy me a Coffee
+        <div class="c-button-container">
+            <a href="https://buymeacoffee.com/{{ site.social.coffee.username }}" class="c-button">
+                <i class="fa fa-fw fa-coffee" aria-hidden="true"></i>
+                Buy me a coffee
             </a>
-            <a href="https://ko-fi.com/allejo" class="c-button">
-                <i class="fa fa-fw fa-heart" aria-hidden="true"></i> Support me on Ko-fi
+            <a href="https://ko-fi.com/{{ site.social.kofi.username }}" class="c-button">
+                <i class="fas fa-fw fa-utensils" aria-hidden="true"></i>
+                Feed my sushi addiction
             </a>
-            <a href="https://www.paypal.me/allejo" class="c-button">
-                <i class="fa fa-fw fa-paypal" aria-hidden="true"></i> Send PayPal Money
+            <a href="https://ko-fi.com/{{ site.social.paypal.username }}" class="c-button">
+                <i class="fab fa-fw fa-paypal" aria-hidden="true"></i>
+                Send PayPal Money
             </a>
         </div>
 
@@ -48,7 +51,7 @@ menu: false
 
         Subscribe to one of my feeds to keep up to date with every worthless piece I may write.
 
-        - [Atom Feed]({{ url('/atom.xml') }})
-        - [JSON Feed]({{ url('/feed.json') }})
+        - [Atom Feed]({{ url(pages['Atom Feed']) }})
+        - [JSON Feed]({{ url(pages['JSON Feed']) }})
     {% endmarkdown %}
 {% endblock %}

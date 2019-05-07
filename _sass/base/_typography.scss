@@ -1,7 +1,6 @@
 body {
-  color: $color-text;
+  color: $color-text-light-bg;
   font-family: $font-stack-text;
-  font-size: 16px;
   font-weight: normal;
   line-height: 1.4;
 }
@@ -12,23 +11,17 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-header;
+  @include margin(b, 3);
+  @include margin(t, 4);
+
+  color: $color-header-background-light;
   font-family: $font-stack-header;
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 1;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  margin-top: 0;
-
-  @include respond-up(sm) {
-      font-size: 3.25rem;
-      font-weight: 100;
-  }
-
-  @media print {
-      font-size: 30px;
-      font-weight: normal;
+  &:first-of-type {
+    margin-top: 0;
   }
 }

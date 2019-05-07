@@ -5,6 +5,8 @@ collection: posts
 
 {% extends '_layouts/page.html.twig' %}
 
+{% from '_macros/blog-post.html.twig' import blog_post %}
+
 {% set pageWideCSS = 's-blog-view' %}
 {% set opengraph = {
     'og:type': 'article',
@@ -12,33 +14,6 @@ collection: posts
     'og:description': this.content | summary | striptags | truncate(200)
 } %}
 
-{% block title %}
-    {{ this.title }} | allejo.io
-{% endblock %}
-
 {% block content %}
-    <article class="c-blog-post">
-        <header class="c-blog-post__header">
-            <h1 class="c-blog-post__title">{{ this.title }}</h1>
-            <p class="c-blog-post__date">{{ this.date | date('M d, Y') }}</p>
-        </header>
-
-        <section class="c-blog-post__body">
-            {{ this.content }}
-        </section>
-
-        <footer class="c-blog-post__footer">
-            {% if this.categories %}
-                <div>
-                    <i class="fa fa-fw fa-folder" aria-hidden="true"></i> {{ this.categories | join(', ') | title }}
-                </div>
-            {% endif %}
-
-            {% if this.tags %}
-                <div>
-                    <i class="fa fa-fw fa-tags" aria-hidden="true"></i> {{ this.tags | join(', ') }}
-                </div>
-            {% endif %}
-        </footer>
-    </article>
+    {{ blog_post(this, false) }}
 {% endblock %}

@@ -1,10 +1,5 @@
-// -----------------------------------------------------------------------------
-// The header component is only visible to mobile devices and is intended to
-// only house the mobile responsive hamburger icon
-// -----------------------------------------------------------------------------
-
 .c-page-header {
-    $_spacing: 15px;
+    $_spacing: map-get($spacing, 3);
 
     background-color: $hamburger-color;
     height: $hamburger-height;
@@ -33,7 +28,7 @@
 }
 
 .c-print-header {
-    border-bottom: 1px solid $palette-cream;
+    border-bottom: 1px solid $color-cream;
     display: none;
     margin-bottom: 30px;
     padding-bottom: 15px;
@@ -62,6 +57,6 @@
 }
 
 .u-nav-open .c-hamburger {
-    left: calc(#{$sidebar-width} - #{$hamburger-width});
+    left: calc(#{$width-sidebar} - #{$hamburger-width});
     position: fixed;
 }

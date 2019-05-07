@@ -1,60 +1,120 @@
-{% extends '_layouts/bare.html.twig' %}
+<!DOCTYPE html>
+<html class="no-js {{ pageWideCSS | default('') }}" lang="en">
+    <head>
+        {# ========================================================================================================== #}
+        {#  Open Graph Markup  #}
+        {#    reference: https://dev.twitter.com/cards/types/summary #}
+        {#    reference: https://developers.facebook.com/docs/sharing/webmasters #}
+        {# ========================================================================================================== #}
 
-{% block head %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ this.description | default(this.content | summary | striptags | truncate(250)) }}">
+        {# If no Open Graph data is defined, let's define some default information #}
+        {%- set opengraph_default = {
+            'og:url': url(this.permalink, absolute=true),
+            'og:type': 'website',
+            'og:title': block('title') | trim,
+            'og:description': '',
+            'og:image': site.url ~ url(site.social.opengraph.image),
+            'twitter:card': 'summary',
+            'twitter:site': site.social.twitter.username
+        } -%}
+        {%- set opengraph_fallbacks = {
+            'twitter:title': 'og:title',
+            'twitter:image': 'og:image',
+            'twitter:description': 'og:description'
+        } -%}
 
-    <title>{% spaceless %}{% block title %}{{ site.title }}{% endblock %}{% endspaceless %}</title>
+        {%- set og_attrs = opengraph_default | merge(opengraph | default({})) -%}
+        {%- set og_fallbacks = opengraph_fallbacks | merge(fallbacks | default({})) -%}
 
-    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat:100,400" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('assets/vendor/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
+        {# This attributes will take the same value as their OpenGraph fallbacks #}
+        {%- for attr in og_fallbacks | keys -%}
+            {%- set og_attrs = og_attrs | merge({ (attr): og_attrs[og_fallbacks[attr]] }) -%}
+        {%- endfor -%}
 
-    <link rel="alternate" title="{{ site.title }}" type="application/json" href="{{ url('/feed.json', absolute = true) }}" />
-    <link rel="alternate" title="{{ site.title }}" type="application/atom+xml" href="{{ url('/atom.xml', absolute = true) }}" />
-    <link rel="alternate" href="{{ url('/', absolute = true) }}" hreflang="en" />
+        {%- for attr in og_attrs | keys -%}
+            <meta property="{{ attr }}" content="{{ og_attrs[attr] | raw }}">
+        {% endfor -%}
 
-    {% block stylesheets %}{% endblock %}
-{% endblock %}
+        {# ========================================================================================================== #}
+        {#  Generic information for this page  #}
+        {# ========================================================================================================== #}
 
-{% block body %}
-    {# ------------ Absolutely Positioned Elements ----------- #}
-    {# Elements that are positioned absolutely or fixed w/CSS should be placed here BEFORE the app-body container #}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{{ this.description | default(this.content | summary | striptags | truncate(250)) }}">
 
-    <!--[if lte IE 9]>
-    <div class="c-system-alert">
-        <h1>You're using an unsupported browser</h1>
-        <p>You are browsing this website with an unsupported browser. Please consider updating your browser: <a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome</a>, Edge, <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, Internet Explorer 10+, or Safari.</p>
-    </div>
-    <![endif]-->
+        {% block head %}{% endblock %}
 
-    {# <noscript> #}
-        {# <div class="c-system-alert"> #}
-            {# <h1>Javascript is not enabled</h1> #}
-            {# <p>This website works better with Javascript, please enable it to take full advantage of these features.</p> #}
-        {# </div> #}
-    {# </noscript> #}
+        <title>
+            {%- block title -%}
+                {%- if this.title -%}
+                    {{- this.title }} | {{ site.title }}
+                {%- else -%}
+                    {{- site.title -}} | {{ site.motto }}
+                {%- endif -%}
+            {%- endblock -%}
+        </title>
 
-    {% if site.debug %}
-        <section class="c-screensize">
-            <div class="c-screensize--xl">xl</div>
-            <div class="c-screensize--lg">lg</div>
-            <div class="c-screensize--md">md</div>
-            <div class="c-screensize--sm">sm</div>
-            <div class="c-screensize--xs">xs</div>
-        </section>
-    {% endif %}
+        <link href="https://fonts.googleapis.com/css?family=Hind:300,400,700|Montserrat:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url('assets/vendor/font-awesome/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
 
-    {# ----------------- Actual Page Content ----------------- #}
+        <link
+            rel="alternate"
+            title="{{ site.title }} | {{ site.motto }}"
+            type="application/json"
+            href="{{ url(pages['JSON Feed'], absolute = true) }}"
+        />
+        <link
+            rel="alternate"
+            title="{{ site.title }} | {{ site.motto }}"
+            type="application/atom+xml"
+            href="{{ url(pages['Atom Feed'], absolute = true) }}"
+        />
+        <link
+            rel="alternate"
+            href="{{ url(pages['Home'], absolute = true) }}"
+            hreflang="en"
+        />
 
-    <div class="c-body">
-        {% block appbody %}{% endblock %}
-    </div>
+        {% block stylesheets %}{% endblock %}
+    </head>
 
-    {# ------------ Everything Javascript Related ------------ #}
+    <body>
+        {# ------------ Absolutely Positioned Elements ----------- #}
+        {# Elements that are positioned absolutely or fixed w/CSS should be placed here BEFORE the app-body container #}
 
-    {% block javascript %}{% endblock %}
+        <!--[if lte IE 9]>
+        <div class="c-system-alert">
+            <h1>You're using an unsupported browser</h1>
+            <p>You are browsing this website with an unsupported browser. Please consider updating your browser: <a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome</a>, Edge, <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, Internet Explorer 10+, or Safari.</p>
+        </div>
+        <![endif]-->
 
-    <script src="{{ url('assets/js/main.js') }}"></script>
-{% endblock %}
+        <a href="#main-content" class="sr-only__element sr-only__focus c-skip-content">Skip to Content</a>
+
+        {% if site.debug %}
+            <section class="c-screensize">
+                <div class="c-screensize--xl">xl</div>
+                <div class="c-screensize--lg">lg</div>
+                <div class="c-screensize--md">md</div>
+                <div class="c-screensize--sm">sm</div>
+                <div class="c-screensize--xs">xs</div>
+            </section>
+        {% endif %}
+
+        {# ----------------- Actual Page Content ----------------- #}
+
+        <div class="c-body">
+            {% block body %}{% endblock %}
+        </div>
+
+        {# ------------ Everything Javascript Related ------------ #}
+
+        {% include '_includes/google-analytics.html.twig' %}
+
+        {% block javascript %}{% endblock %}
+
+        <script src="{{ url('assets/js/main.js') }}"></script>
+    </body>
+</html>

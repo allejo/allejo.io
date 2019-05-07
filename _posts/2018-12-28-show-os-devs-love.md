@@ -28,13 +28,13 @@ Since I make it a personal goal to contribute to new communities during Hacktobe
 
 A few days later after my PR was merged, I get pinged on Twitter by the Kong account thanking me for adding the auto-TOC feature to their site. Then much much later, I get pinged once again telling me about how [they mentioned me in their blog post](https://konghq.com/blog/hacktoberfest-kong-community-delivers/). Kong gave me more attention than my parents ever did; it's such a nice feeling to be loved.
 
-<div class="grid-x grid-margin-x">
-  <div class="cell medium-6">
+<div class="row">
+  <div class="col-md-6">
     <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Huge thank you to <a href="https://twitter.com/allejome?ref_src=twsrc%5Etfw">@allejome</a>, who added automatic table-of-contents generation to our documentation as part of <a href="https://twitter.com/hashtag/Hacktoberfest?src=hash&amp;ref_src=twsrc%5Etfw">#Hacktoberfest</a>! Contributors like you are the stars of <a href="https://twitter.com/hashtag/OpenSource?src=hash&amp;ref_src=twsrc%5Etfw">#OpenSource</a>! Wondering what to work on to earn a contributor t-shirt?👕🎃🦍<a href="https://t.co/Rt1JBSl7kP">https://t.co/Rt1JBSl7kP</a></p>&mdash; Kong (@thekonginc) <a href="https://twitter.com/thekonginc/status/1053738625807081473?ref_src=twsrc%5Etfw">October 20, 2018</a></blockquote>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
-  <div class="cell medium-6">
+  <div class="col-md-6">
     <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Really feeling the love, <a href="https://twitter.com/thekonginc?ref_src=twsrc%5Etfw">@thekonginc</a> 🥰 thanks for the mention in this! <a href="https://t.co/hoVNFuTZI9">https://t.co/hoVNFuTZI9</a></p>&mdash; Vladimir Jimenez 🇨🇦🧐 (@allejome) <a href="https://twitter.com/allejome/status/1070503389543321600?ref_src=twsrc%5Etfw">December 6, 2018</a></blockquote>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>

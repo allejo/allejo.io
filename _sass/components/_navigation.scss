@@ -1,0 +1,17 @@
+ul.c-navigation {
+  @include margin(y, 0);
+
+  list-style: none;
+  padding-left: 0;
+  text-transform: lowercase;
+
+  li {
+    @include margin(r, 2);
+
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
