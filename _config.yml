@@ -52,6 +52,8 @@ social:
     username: allejo
   coffee:
     username: allejo
+  paypal:
+    username: allejo
 
 api:
   wufoo: "AES6LivHXygHJs7HoWzs5P4VV3fZYvKQvUmhXp9li0s="
