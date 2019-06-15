@@ -1,6 +1,6 @@
 {% macro project_repeater(projects) %}
     <div>
-        {% for project in projects %}
+        {% for project in projects | order('name', case_insensitive=true) %}
             <article class="c-card c-project-card">
                 <header>
                     <h3>{{ project.name }}</h3>
