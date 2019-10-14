@@ -2,6 +2,12 @@
 
 {% from '_includes/project-repeater.html.twig' import project_repeater %}
 
+{% block title %}
+    {{ this.category }}
+    {% if this.iterators %} {{ this.iterators.categories | title }} {% endif %} |
+    {{ site.title }}
+{% endblock %}
+
 {% block content %}
     <h1>
         {{ this.category }}
