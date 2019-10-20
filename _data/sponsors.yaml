@@ -1,0 +1,12 @@
+# Template for this file
+#
+# - name: OT John Doe
+#   url: https://google.com
+#   one-time: true
+# - name: Ongoing Doe
+#   url: https://google.com
+#   start: 2019-10-01
+# - name: Doe of Sponsor Past
+#   url: https://google.com
+#   start: 2019-10-01
+#   end: 2019-10-15
