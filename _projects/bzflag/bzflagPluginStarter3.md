@@ -1,8 +1,8 @@
 ---
-name: BZFlag Plug-in Starter 2
+name: BZFlag Plug-in Starter 3
 category: bzflag
 subcategory: projects
-github: allejo/bzflagPluginStarter2
+github: allejo/bzflagPluginStarter3
 website: https://bz-plugin-starter.projects.allejo.io/
 ---
 
