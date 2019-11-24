@@ -1,12 +1,7 @@
 .s-blog-view {
   .c-blog-post {
     @media print {
-      page-break-after: always;
-
-      h2 {
-        page-break-before: always;
-      }
-
+      h2,
       h3,
       h4,
       h5,
