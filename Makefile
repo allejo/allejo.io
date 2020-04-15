@@ -1,5 +1,5 @@
 site:
-	wget -O stakx http://tacobeam.me/stakx-nightly.phar;
+	wget -O stakx http://sujevo.com/stakx-nightly.phar;
 	chmod +x stakx;
 	./stakx build;
 
