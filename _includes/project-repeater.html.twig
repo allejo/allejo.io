@@ -10,24 +10,36 @@
                     {{ project.content }}
                 </section>
 
-                <footer>
-                    <ul class="u-list-inline u-list-horizontal-separator">
+                <footer class="row">
+                    <div class="col-sm-6 mb-2 mb-sm-0">
                         {% if project.github %}
-                            <li>
-                                <a href="https://github.com/{{ project.github }}">
-                                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
-                                </a>
-                            </li>
+                            <img
+                                aria-hidden="true"
+                                src="https://img.shields.io/github/v/release/{{ project.github }}?include_prereleases&label=latest%20release&logo=github&style=flat-square"
+                                alt="Latest release of {{ project.name }}"
+                            />
                         {% endif %}
+                    </div>
 
-                        {% if project.website %}
-                            <li>
-                                <a href="{{ project.website }}">
-                                    <i class="fas fa-link" aria-hidden="true"></i> Website
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
+                    <div class="col-sm-6 text-sm-right">
+                        <ul class="u-list-inline u-list-horizontal-separator mb-0">
+                            {% if project.github %}
+                                <li>
+                                    <a href="https://github.com/{{ project.github }}">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            {% if project.website %}
+                                <li>
+                                    <a href="{{ project.website }}">
+                                        <i class="fas fa-link" aria-hidden="true"></i> Website
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </footer>
             </article>
         {% endfor %}
