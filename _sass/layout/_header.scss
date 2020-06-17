@@ -5,6 +5,7 @@
     height: $hamburger-height;
     margin: 0 (-1 * $_spacing) $_spacing;
     padding: 0 $_spacing;
+    position: relative;
     transition: background-color $hamburger-transistion-duration;
 
     @include respond-up(sm) {
@@ -59,4 +60,5 @@
 .u-nav-open .c-hamburger {
     left: calc(#{$width-sidebar} - #{$hamburger-width});
     position: fixed;
+    z-index: 15;
 }

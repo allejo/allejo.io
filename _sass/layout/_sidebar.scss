@@ -8,6 +8,7 @@
   text-align: center;
   transition: left 0.3s;
   width: $width-sidebar;
+  z-index: 10;
 
   @media print {
     display: none;
