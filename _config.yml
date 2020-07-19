@@ -11,6 +11,8 @@ collections:
     folder: _about/experience
   - name: projects
     folder: _projects
+  - name: talks
+    folder: _about/talks
 
 data:
   - _data
