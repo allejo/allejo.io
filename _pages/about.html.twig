@@ -6,52 +6,81 @@ description: I'm just another boring developer pretending to know what he's doin
 ---
 
 {% extends '_layouts/page.html.twig' %}
-
 {% from _self import brag_display, brag_repeater %}
 
-{% block title %}
-    About | allejo.io
-{% endblock %}
+{% block title %}About | allejo.io{% endblock %}
 
-{% macro brag_repeater(cards) %}
-    {%- for card in cards -%}
-        <article class="c-card c-card--left mb-4 p-3">
-            <header class="mb-2">
-                <div>
-                    <p class="c-brag-card__heading-1">
-                        {% if card.url %}<a href="{{ card.url }}">{% endif %}
-                        {{ card.title }}
-                        {% if card.url %}</a>{% endif %}
-                    </p>
-
-                    {% if card.slug %}
-                        <p class="c-brag-card__heading-2">{{ card.slug }}</p>
-                    {% endif %}
-                </div>
-                <div class="c-brag-card__meta">
-                    {% if card.event_date %}
-                        {{ card.event_date | date ('M Y') }}
-                    {% else %}
-                        {{ card.start | date('M Y') }} - {{ (card.end) ? (card.end | date('M Y')) : 'Current' }}
-                    {% endif %}
-                </div>
-            </header>
-
-            <section class="s-markdown">
-                {{ card.content }}
-            </section>
-        </article>
-    {%- endfor -%}
+{% macro linkable_text(text, url) %}
+    {% if url %}<a href="{{ url }}">{% endif %}
+    {{- text -}}
+    {% if url %}</a>{% endif %}
 {% endmacro %}
 
-{% macro brag_display(collection) %}
+{% macro brag_card(heading, heading_url, subheading, subheading_url, start_date, end_date, pre_content, content) %}
+    {% from _self import linkable_text %}
+
+    {% set end_date = end_date | default(false) %}
+
+    <article class="c-card c-card--left mb-4 p-3">
+        <header class="mb-2">
+            <div>
+                <p class="c-brag-card__heading-1">
+                    {{- linkable_text(heading, heading_url) -}}
+                </p>
+
+                {% if subheading %}
+                    <p class="c-brag-card__heading-2">
+                        {{- linkable_text(subheading, subheading_url) -}}
+                    </p>
+                {% endif %}
+            </div>
+            <div class="c-brag-card__meta">
+                {{- start_date | date ('M Y') -}}
+
+                {%- if end_date is not same as(false) %}
+                    -
+                    {% if end_date is same as("Current") -%}
+                        {{- end_date -}}
+                    {%- else -%}
+                        {{- end_date | date('M Y') -}}
+                    {%- endif -%}
+                {%- endif -%}
+            </div>
+        </header>
+
+        {{ pre_content }}
+
+        <section class="s-markdown">
+            {{ content }}
+        </section>
+    </article>
+{% endmacro %}
+
+{% macro brag_repeater(cards, mapping) %}
+    {% from _self import brag_card %}
+
+    {% for i, card in cards ~%}
+        {{ brag_card(
+            card[mapping['heading']],
+            card[mapping['heading_url']],
+            card[mapping['subheading']],
+            card[mapping['subheading_url']],
+            card[mapping['start_date']],
+            card[mapping['end_date']],
+            card[mapping['pre_content']],
+            card[mapping['content']]
+        ) | spaceless }}
+    {%~ endfor %}
+{% endmacro %}
+
+{% macro brag_display(collection, mapping) %}
     {% from _self import brag_repeater %}
 
-    {% set active = collection | where('end', '==', null) | order('start', 'ASC') %}
-    {% set former = collection | where('end', '!=', null) | order('end', 'DESC') %}
+    {% set active = collection | where('end', '==', false) | order('start', 'ASC') %}
+    {% set former = collection | where('end', '!=', false) | order('end', 'DESC') %}
 
-    {{ brag_repeater(active) }}
-    {{ brag_repeater(former) }}
+    {{ brag_repeater(active, mapping) }}
+    {{ brag_repeater(former, mapping) }}
 {% endmacro %}
 
 {% block content %}
@@ -67,24 +96,59 @@ description: I'm just another boring developer pretending to know what he's doin
         ## Communities
 
         Since I'm not busy enough and am an advocate for open source projects, these are the projects/communities that I'm actively involved in and dedicate a lot of my spare time towards.
-    {% endmarkdown %}
 
-    {{ brag_display(collections.communities) }}
+        {{ brag_display(
+            collections.communities,
+            {
+                heading: 'title',
+                heading_url: 'url',
+                start_date: 'start',
+                end_date: 'end',
+                content: 'content',
+            }
+        ) }}
 
-    {% markdown %}
         ## Places I've Worked
 
         It's not all just open source and games for me; just like most people, I have bills to pay too. These are the awesome companies and organizations that have helped me do so over the years.
-    {% endmarkdown %}
 
-    {{ brag_display(collections.experience) }}
+        {{ brag_display(
+            collections.experience,
+            {
+                heading: 'title',
+                subheading: 'company',
+                start_date: 'start',
+                end_date: 'end',
+                content: 'content',
+            }
+        ) }}
 
-    {% markdown %}
+        ## Talks
+
+        Even though hearing the sound of my own voice weirds me out, other people like hearing me talk about things I've managed to accomplish.
+
+        {{ brag_display(
+            collections.talks,
+            {
+                heading: 'title',
+                subheading: 'conference',
+                start_date: 'date',
+                content: 'content',
+            }
+        ) }}
+
         ## Accomplishments
 
         I occasionally take part in code related competitions whenever I'm invited to do so. Here are some notable mentions of competitions I've participated in and the work I did during the said competitions.
-    {% endmarkdown %}
 
-    {% set accomplishments = collections.accomplishments | order('event_date', 'DESC') %}
-    {{ brag_repeater(accomplishments) }}
+        {{ brag_repeater(
+            collections.accomplishments | order('event_date', 'DESC'),
+            {
+                heading: 'title',
+                subheading: 'position',
+                start_date: 'event_date',
+                content: 'content',
+            }
+        ) }}
+    {% endmarkdown %}
 {% endblock %}

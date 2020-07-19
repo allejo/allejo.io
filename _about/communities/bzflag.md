@@ -2,7 +2,7 @@
 title: BZFlag
 url: https://bzflag.org
 start: 2007-11-01
-end: null
+end: false
 ---
 
 One of the first online games I discovered. I joined the community as a player and stayed as a developer.
