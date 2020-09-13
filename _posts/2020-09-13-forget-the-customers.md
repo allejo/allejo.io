@@ -1,6 +1,6 @@
 ---
 title: Wait, We Have Customers?
-date: 2020-09-12 00:00:00.00 -8
+date: 2020-09-13 00:00:00.00 -8
 categories:
   - rants
 ---
@@ -27,7 +27,7 @@ Listen to yourself. Let that sink in. Colleges are literally publishing what the
 
 > Those published charts are _literally_ standardization of what is being taught. That's why colleges have those charts.
 
-It's cute you think that. Have you ever read a syllabus at the beginning of a semester and thought to yourself, "wow! That sounds so cool! I'm going to learn so much in this class." but by the end of the semester, you realize that everything on the syllabus was either a lie or blown out of proportion.
+It's cute you think that. Have you ever read a syllabus at the beginning of a semester and thought to yourself, "wow! That sounds so cool! I'm going to learn so much in this class," but by the end of the semester, you realize that everything on the syllabus was either a lie or blown out of proportion?
 
 It's these syllabi that are agreed upon between campuses. This is why making changes to them are very painful because they need to be "reevaluated" by other colleges and other colleges need to change their own syllabi to teach the same material or reject it and no longer accept transfer credits.
 
@@ -47,7 +47,7 @@ The vast majority of the tools I work on are intended to be used internally by c
 
 All of these tools build on top of each other and can be expanded on their own! aclovis can be expanded to support other languages. bzfPluginGen can be updated to generate a new C++ syntax. BZFlag Plug-in Starter can be updated to have an entirely different design. It may seem like overkill but they all live in their own separate projects with a single purpose in mind. I have plenty more examples on GitHub but the point is, many of my tools at work are this modular.
 
-There are plenty of tools that my colleagues have built as well that can be useful to other departments if shared! It's this type of sharing that is currently discouraged. Wait what? _Dis_-couraged? Yes. This is one of many reasons why our current culture is toxic. We are forcing everyone to work in silos because nobody wants to take responsibility for maintaining shared tools.
+There are plenty of tools that my colleagues have built as well that can be useful to other departments if shared! It's this type of sharing that is currently discouraged. Wait what? _Dis_-couraged? Yes. This is one of many reasons why I consider our current culture is toxic. We are forcing everyone to work in silos because nobody wants to take responsibility for maintaining shared tools.
 
 > If we release it to other teams and they find a bug, do we have to drop everything and fix it for them?
 
