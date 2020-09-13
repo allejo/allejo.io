@@ -13,7 +13,10 @@
             {% if summary %}
                 {{ post.content | summary }}
             {% else %}
-                {{ post.content }}
+                {{ post.content | anchors(
+                    anchorBody='<span class="sr-only">Permalink to "{heading}" section</span>',
+                    anchorClass='c-blog-post__body__anchor'
+                ) }}
             {% endif %}
         </section>
 
