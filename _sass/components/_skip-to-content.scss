@@ -1,0 +1,14 @@
+a.c-skip-content:focus {
+  color: $color-white;
+  left: 0;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+
+  @at-root {
+    .s-homepage & {
+      color: $color-text-light-bg;
+    }
+  }
+}
