@@ -6,6 +6,6 @@
 ///
 /// @return {Number} The corresponding em value
 ///
-@function em($pixels, $base-size: 16px) {
-  @return ($pixels / $base-size) * 1em;
+@function rem($pixels, $base-size: 16px) {
+  @return ($pixels / $base-size) * 1rem;
 }
