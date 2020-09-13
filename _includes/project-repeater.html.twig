@@ -12,7 +12,7 @@
 
                 <footer class="row">
                     <div class="col-sm-6 mb-2 mb-sm-0">
-                        {% if project.github %}
+                        {% if project.github and project.no_release != true %}
                             <img
                                 aria-hidden="true"
                                 src="https://img.shields.io/github/v/release/{{ project.github }}?include_prereleases&label=latest%20release&logo=github&style=flat-square"
