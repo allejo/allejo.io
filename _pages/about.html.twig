@@ -84,7 +84,7 @@ description: I'm just another boring developer pretending to know what he's doin
 {% endmacro %}
 
 {% block content %}
-    {% markdown %}
+    {% set page_content %}{% markdown %}
         *[CMS]: Content Management System
 
         # About
@@ -152,5 +152,12 @@ description: I'm just another boring developer pretending to know what he's doin
                 content: 'content',
             }
         ) }}
-    {% endmarkdown %}
+    {% endmarkdown %}{% endset %}
+
+    <div class="s-markdown">
+        {{ page_content | anchors(
+            anchorBody='<span class="sr-only">Permalink to "{heading}" section</span>',
+            anchorClass='c-heading-anchor'
+        ) }}
+    </div>
 {% endblock %}

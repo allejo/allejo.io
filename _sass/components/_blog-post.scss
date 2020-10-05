@@ -42,35 +42,6 @@
 }
 
 .c-blog-post__body {
-  h1, h2, h3,
-  h4, h5, h6 {
-    align-items: center;
-    display: flex;
-    width: 100%;
-
-    .c-blog-post__body__anchor {
-      @include margin(l, 2);
-
-      opacity: 0;
-      font-size: 0.75em;
-      text-decoration: none;
-
-      &::after {
-        content: '\00B6';
-      }
-
-      &:focus {
-        opacity: 1;
-      }
-    }
-
-    &:hover {
-      .c-blog-post__body__anchor {
-        opacity: 1;
-      }
-    }
-  }
-
   ul {
     @include padding(l, 4);
   }

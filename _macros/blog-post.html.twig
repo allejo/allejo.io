@@ -9,13 +9,13 @@
             <p class="c-blog-post__date">{{ post.date | date('M d, Y') }}</p>
         </header>
 
-        <section class="c-blog-post__body">
+        <section class="c-blog-post__body s-markdown">
             {% if summary %}
                 {{ post.content | summary }}
             {% else %}
                 {{ post.content | anchors(
                     anchorBody='<span class="sr-only">Permalink to "{heading}" section</span>',
-                    anchorClass='c-blog-post__body__anchor'
+                    anchorClass='c-heading-anchor'
                 ) }}
             {% endif %}
         </section>
