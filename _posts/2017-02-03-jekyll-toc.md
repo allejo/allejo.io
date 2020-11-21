@@ -51,7 +51,7 @@ What if you **want to** configure this snippet from your `_config.yml` or front 
 {% assign my_min = page.toc_min | default: site.toc_min | default: 1 %}
 {% assign my_max = page.toc_max | default: site.toc_max | default: 3 %}
 
-{% include toc_pure_liquid.html html=content sanitize=true h_min=my_min h_max=my_max %}
+{% include toc.html html=content sanitize=true h_min=my_min h_max=my_max %}
 {% endraw %}
 ```
 
