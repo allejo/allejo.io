@@ -305,6 +305,15 @@ At this point, we've determined that our player is inside our zone, is carrying 
 ```cpp
 #include "bzfsAPI.h"
 
+class FlagZone : public bz_CustomZoneObject
+{
+public:
+    FlagZone() : bz_CustomZoneObject() {}
+
+    bool rogueOnly;
+    std::vector<std::string> forbiddenFlags;
+};
+
 class FlagTakeZonePlugin : public bz_Plugin, public bz_CustomMapObjectHandler
 {
     virtual const char* Name ();
