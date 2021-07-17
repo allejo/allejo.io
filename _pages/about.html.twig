@@ -130,7 +130,7 @@ description: I'm just another boring developer pretending to know what he's doin
         Even though hearing the sound of my own voice weirds me out, other people like hearing me talk about things I've managed to accomplish.
 
         {{ brag_display(
-            collections.talks,
+            collections.talks | order('date', 'DESC'),
             {
                 heading: 'title',
                 subheading: 'conference',
