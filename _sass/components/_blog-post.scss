@@ -48,6 +48,7 @@
 }
 
 .c-blog-post__footer {
+  @include margin(t, 2);
   @include margin(b, 3);
 
   div {
