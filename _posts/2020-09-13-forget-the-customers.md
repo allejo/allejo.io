@@ -11,7 +11,7 @@ For those of you who know me, I'm excruciatingly honest and rarely ever filter m
 
 ## Describing a College Campus
 
-As much as I would love to air all of the dirty laundry I'm privy to about the college campus I work on, that's considered taboo. I'm sorry, let's call it "whistleblowing" instead. Sounds worse, am I right? Everyone has different opinions about what's ethical and what's not. Is tell something that whistleblowing is the same as "career suicide" ethical? Depends on who you ask. But I digress.
+As much as I would love to air all of the dirty laundry I'm privy to about the college campus I work on, that's considered taboo. I'm sorry, let's call it "whistleblowing" instead. Sounds worse, am I right? Everyone has different opinions about what's ethical and what's not. Is telling someone that whistleblowing is the same as "career suicide" ethical? Depends on who you ask. But I digress.
 
 The college campus I work at is huge; it's got enough employees to populate a small town. I'm a developer, so of course, I work for the IT department. But wait. Which one? Practically every department on campus has its own IT team and then, of course, we have the central IT department in charge of maintaining the core infrastructure for the campus (that's where I work). Our separate IT teams on campus work together as well as the "checks and balances" system of the US government: it's nice in theory but terrible in practice. Sorry, third graders, that was a spoiler.
 
@@ -29,9 +29,9 @@ Listen to yourself. Let that sink in. Colleges are literally publishing what the
 
 It's cute you think that. Have you ever read a syllabus at the beginning of a semester and thought to yourself, "wow! That sounds so cool! I'm going to learn so much in this class," but by the end of the semester, you realize that everything on the syllabus was either a lie or blown out of proportion?
 
-It's these syllabi that are agreed upon between campuses. This is why making changes to them are very painful because they need to be "reevaluated" by other colleges and other colleges need to change their own syllabi to teach the same material or reject it and no longer accept transfer credits.
+It's these syllabi that are agreed upon between campuses. This is why making changes to them is very painful because they need to be "reevaluated" by other colleges and other colleges need to change their own syllabi to teach the same material or reject it and no longer accept transfer credits.
 
-If you were at Starbucks being thrown so many obstacles, you wouldn't accept this atrocious mess. So then why do people accept it as "the norm" for colleges treating their students like they don't matter? Students are the reason we are getting paid. We should not be making their lives incredibly difficult and wasting their time.
+Why do people accept it as "the norm" for colleges treating their students like they don't matter? Students are the reason we are getting paid. We should not be making their lives incredibly difficult and wasting their time.
 
 ## A Sharing Development Culture
 
