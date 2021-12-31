@@ -19,7 +19,7 @@ So on Tuesday, I was on #jekyll like any other day and a user by the name of mis
 
 ## TL;DR
 
-The code is available on GitHub: [allejo/jekyll-toc](https://github.com/allejo/jekyll-toc).
+Drag and drop the code snippet that is available on GitHub into your repository: [allejo/jekyll-toc](https://github.com/allejo/jekyll-toc).
 
 ## Overview
 
@@ -58,6 +58,19 @@ What if you **want to** configure this snippet from your `_config.yml` or front 
 Yup! You can daisy chain `default` filters to ensure you get *some* value. In this case, we're looking for a front matter value of `toc_min` first and if that's not set, use the `toc_min` defined in your `_config.yml` and if *that's* not defined, just use 1.
 
 ## How It Works
+
+<section class="c-alert c-alert--warning">
+  <header class="c-alert__header">
+    <p>
+      <i class="fas fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
+      Technical Information
+    </p>
+  </header>
+
+  <p>
+    The rest of this article explains how the <strong>jekyll-toc</strong> project works at a fundamental level. It is not designed as a step-by-step tutorial for how to use the above snippet; see the <a href="https://github.com/allejo/jekyll-toc#usage">GitHub README</a> for that.
+  </p>
+</section>
 
 This snippet is designed to work with markdownify-ed HTML given to us by Jekyll. Due to the way Jekyll was designed, you can't access the unrendered markdown of a document and are stuck with HTML.
 
@@ -101,6 +114,19 @@ Now that I have the heading level and the ID, it's time to extract the actual he
 
 ### Step 7
 
+<section class="c-alert c-alert--warning">
+  <header class="c-alert__header">
+    <p>
+      <i class="fas fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
+      Outdated Information
+    </p>
+  </header>
+
+  <p>
+    This project has since been rewritten to use a new algorithm (the same one stakx uses internally), making it more robust. Steps 7 and 8 remain here for historical purposes but the current version of the project no longer uses the approach explained in these steps.
+  </p>
+</section>
+
 Now that we have all the necessary information, all we have to do is actually build the TOC. Here's the trick, we build our TOC using markdown (e.g. `- [text](#id)`). I take the heading level for the current node, and subtract one. I then take that value (X) and repeat 2 spaces X times; this serves as our indentation.
 
 For example, for our `h2` becomes `2 - 1 = 1`. Then I repeat 2 spaces 1 time. So our generated markdown would look like this:
@@ -120,4 +146,5 @@ I originally shared this code as a GitHub Gist, however I made a promise months 
 
 **Updates**
 
+- <small>2021-12-30 - Updated post with notices about outdated information and it not being a "how to" tutorial</small>
 - <small>2017-09-07 - Updated post with an overview of how the code works and updated links to the new GitHub repository</small>

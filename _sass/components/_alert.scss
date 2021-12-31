@@ -1,0 +1,19 @@
+.c-alert {
+  border-top: 5px solid transparent;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.c-alert--warning {
+  background-color: #ffff84;
+  border-top-color: #bdbd00;
+}
+
+.c-alert__header {
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  p {
+    margin-bottom: 0;
+  }
+}
