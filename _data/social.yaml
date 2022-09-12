@@ -14,10 +14,10 @@
   url: https://github.com/allejo
   color: "#181717"
   slug: Check out my open source projects
-- logo: patreon
-  url: https://patreon.com/allejo
-  color: "#E85A46"
-  slug: Support me on Patreon
+# - logo: patreon
+#   url: https://patreon.com/allejo
+#   color: "#E85A46"
+#   slug: Support me on Patreon
 - logo: stack-overflow
   url: https://stackoverflow.com/users/1239484/allejo
   color: "#F48024"
