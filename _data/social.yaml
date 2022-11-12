@@ -6,6 +6,11 @@
   url: https://twitter.com/allejome
   color: "#55ACEE"
   slug: Follow me on Twitter
+- logo: mastodon
+  url: https://mastodon.social/@allejo
+  color: "#595AFF"
+  slug: Follow me on Mastodon
+  rel: me
 - logo: linkedin
   url: https://www.linkedin.com/in/allejo
   color: "#0077B5"
