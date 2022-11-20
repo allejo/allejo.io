@@ -1,0 +1,43 @@
+—
+title: Joining Stack Overflow
+date: 2022-11-21 00:00:00.00 -8
+categories:
+  - life-updates
+—
+
+It’s been radio silence on my site for almost two years. Since my last post, I got hired by one of my dream companies: Stack Overflow. I have always enjoyed building tools to make the developer experience easier for everyone, so it should be no surprise that working at Stack Overflow has always been a dream of mine. I have actually applied to Stack Overflow twice in my life; the first time, I didn’t even make it to the phone screening. The second time, I got hired. If at first you don’t succeed, give up. Or something like that, right?
+
+## Leaving the Public Sector
+
+Since I started working professionally at 19, I have always been working in the public sector: local government (City of Santa Monica) then state government (California State University, Northridge). I enjoyed it, I loved the thought of contributing to building things that would benefit the public and not be done for a profit. I loved working for a university because I wanted to build things for students and make their lives better. I had hired student developers and was mentoring them to build production level applications. Despite upper management thinking I was unreasonable for expecting good code from students, I had faith that with a bit of direction they’d be able to write clean code. Turns out, I was right. I felt like I was making a difference in the lives of others and I was ecstatic. But I wasn’t feeling fulfilled or appreciated.
+
+Any time I put forward ideas to improve the lives of the student population, I’d get told that it wasn’t a priority. Employee appreciation and fun was in the form of seasonal parties where each employee would pitch in ~$20 so that we could have a budget. As a taxpayer-funded entity, we had to be mindful of how we spent our money. However, there was no shortage of sessions with “job coaches” for our directors to help them improve their management skills. We had monthly birthday celebrations with a giant cake from Costco, where we were reminded of the directors’ generousity by pitching in to get us this cake.
+
+So I left.
+
+## Interviewing at Stack Overflow
+
+[Stack Overflow is incredibly open about its hiring process](https://stackoverflow.blog/2020/07/03/how-stack-overflow-hires-engineers/) and following in that spirit, I’d like to talk about my experience. Firstly, my interviewing experience was incredibly nerve-racking at almost every step of the way and I’ll explain why.
+
+1. The very first time I applied to Stack Overflow was on July 3rd, 2020 and I promptly received a rejection email on July 10, 2020. I got rejected in 7 days. Thank you for letting me know! There’s nothing worse than receiving a rejection email months after you even remember applying. I was disheartened by the rejection email but thankful they told me I had gotten rejected.
+1. As I mentioned, it was my second time applying to Stack Overflow. I applied on January 1st, 2021. New year, new job? Am I right? Ha. Because the first time I applied I got an update on my application status after a week, I had hoped the same would be true this time around. A week passed. Two weeks. Three... I just assumed I had gotten rejected. It wasn’t until March 8th that I got an email from Stack Overflow apologizing that they hadn’t been able to process all their applications in a timely manner and that if I was still interested in applying, to click a link to resubmit. My dream company? Apologizing? Yes, of course I forgive you! (Sell-out, I know). On March 10th, a recruiter from Stack Overflow reached out to me asking to schedule an interview. It’s happening, y’all!
+1. The initial screening happened and at this point, the recruiter asked me some basic questions about my experience, my salary expectations, what I was looking for, etc. The recruiter and I ended up bonding over the GIS Stack Exchange; what are the odds? But, I did it! I had **an** interview at my dream company! I was feeling pretty happy at this moment.
+1. The recruiter reached out to schedule a code screen interview! AKA “the hiring manager interview” because as the name suggests, he became my manager. It started off being a terrifying interview as he asked me about an algorithm that I had never heard of. I guess he saw the panic in my face as he proceeded to tell me he hadn’t heard of it either until he joined Stack. He described to me what the algorithm had to do and then I proceeded to write the code. At the end of the interview, I felt pretty good with my implementation but of course, I had to confirm. So I rewrote my code and tested to see if it would work and... it didn’t! I was horrified. I was close but made a mistake with my logic and I thought I had failed that step of the interview.
+1. You can imagine my surprise when I got an email from the recruiter telling me I had moved on to the next step and to schedule my Algorithm and Architecture interviews with Stack developers. After each of these interviews, I felt the exact same feeling where I thought I had failed each time because I would work through the problem a second time after the interview and see how I did. Each time, I made minor mistakes in my code and my solution would be off since during these interviews, we didn’t run the code I wrote (spoiler: I wrote my code in Google Docs). I was honestly expecting to receive an email from the recruiter thanking me for my time and better luck next time.
+1. I couldn’t believe it. I had received an email from the recruiter asking to schedule an interview with a VP. Despite me making mistakes in my code during the interviews, I still passed and moved forward. This would turn out to be my last interview before I received an offer. In actuality, this wasn’t so much an interview than a casual chat with the VP about Stack Overflow as a company and what it’s like working there.
+
+Then on April 13, 2021 and I received an email from the recruiter. It was an update, “the fun kind.” It was an email to schedule a call for an official offer, which obviously, I accepted.
+
+## About the Interviews
+
+A few months after getting hired, I was shadowing my colleagues performing interviews and shortly after, I was interviewing other candidates myself. The way interviews are done at Stack Overflow are a bit different from other companies, I feel. I’ve seen companies ask Leet Code style questions or CS heavy questions (e.g. invert a binary tree). Most statistics on the internet are made up but I think it’s safe to say that unless you’d be working on low-level stuff like a language/compiler, you’ll rarely ever need in-depth knowledge of algorithms that haven’t already been implemented in an existing library or language runtime. Asking these types of questions introduces a huge disadvantage to self-taught developers, career switchers, bootcamp participants, and many others that never had a college CS education.
+
+So what’s different about the interviews we give at Stack? We focus largely on realistic problem solving; we give candidates real life scenarios and have them write code to solve those problems. For example, a completely hypothetical interview prompt we’d give is — given a CSV file you should write code that will accept the extracted contents, aggregate some stuff, and finally output the contents of the new data to standard out. In my opinion, it’s realistic problem solving rather than memorizing certain algorithms that you’ll never use in your day to day.
+
+## What’s it like?
+
+Amazing and lots of fun. Despite being in open source for years, I am very early on in my professional career and still lack a lot of experience for things at the scale of Stack Overflow. Since starting there, I can honestly say that there hasn’t been a day where I haven’t learned something new. It’s an absolutely amazing feeling to have so many brilliant people be my coworkers, teachers, and mentors.
+
+I started on the Community Products - Engagement team, which was originally tasked with maintaining the Stack Overflow Jobs board and Developer Story. We were later tasked with killing it, much to the disappointment of several in our community.
+
+Recently, I have moved to the Community Enablement team, which focuses largely on building, improving, and managing moderator tools. The Stack Exchange network could not exist without the community members and its moderators keeping everything alive and in good shape. We’re a new team and I’m looking forward to the things that will be coming out of this team.
