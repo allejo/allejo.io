@@ -1,9 +1,9 @@
-—
+---
 title: Joining Stack Overflow
 date: 2022-11-21 00:00:00.00 -8
 categories:
   - life-updates
-—
+---
 
 It’s been radio silence on my site for almost two years. Since my last post, I got hired by one of my dream companies: Stack Overflow. I have always enjoyed building tools to make the developer experience easier for everyone, so it should be no surprise that working at Stack Overflow has always been a dream of mine. I have actually applied to Stack Overflow twice in my life; the first time, I didn’t even make it to the phone screening. The second time, I got hired. If at first you don’t succeed, give up. Or something like that, right?
 
