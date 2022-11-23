@@ -26,7 +26,7 @@ So I left.
 1. You can imagine my surprise when I got an email from the recruiter telling me I had moved on to the next step and to schedule my Algorithm and Architecture interviews with Stack developers. After each of these interviews, I felt the exact same feeling where I thought I had failed each time because I would work through the problem a second time after the interview and see how I did. Each time, I made minor mistakes in my code and my solution would be off since during these interviews, we didn’t run the code I wrote (spoiler: I wrote my code in Google Docs). I was honestly expecting to receive an email from the recruiter thanking me for my time and better luck next time.
 1. I couldn’t believe it. I had received an email from the recruiter asking to schedule an interview with a VP. Despite me making mistakes in my code during the interviews, I still passed and moved forward. This would turn out to be my last interview before I received an offer. In actuality, this wasn’t so much an interview than a casual chat with the VP about Stack Overflow as a company and what it’s like working there.
 
-Then on April 13, 2021 and I received an email from the recruiter. It was an update, “the fun kind.” It was an email to schedule a call for an official offer, which obviously, I accepted.
+Then on April 13, 2021, I received an email from the recruiter. It was an update, “the fun kind.” It was an email to schedule a call for an official offer, which obviously, I accepted.
 
 ## About the Interviews
 
