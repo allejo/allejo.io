@@ -14,7 +14,7 @@ tags:
   - development
 ---
 
-Happy new year! ...in March. It's a new year and I come bearing gifts as your resident BZFlag Santa Claus from beautiful Los Angeles, California: the place with a Starbucks in every corner and misspelled names on coffee cups in every trashcan. I'm here to bring you a surprise new chapter for _BZFlag Plug-ins for Dummies_ covering world weapons, custom flags, and the latest improvements to the world weapon API.
+Happy new year! ...in March. It's a new year and I come bearing gifts as your resident BZFlag Santa Claus from beautiful Southern California: the place with a Starbucks in every corner and misspelled names on coffee cups in every trashcan. I'm here to bring you a surprise new chapter for _BZFlag Plug-ins for Dummies_ covering world weapons, custom flags, and the latest improvements to the world weapon API.
 
 What are world weapons? They are shots that are fired by the server instead of by tanks. Technically, the world and server are separate so they should be called "server shots" because it's actually the server shooting them but... They were dubbed world weapons so the name stuck. If you've played on Urban Jungle, Clay Hills, or Planet MoFo's Apocalypse, you've seen world weapons. They are those shock waves that happen when you drive over a mine and they are all those extra shots that exist on MoFo with flags like "Death Barrel" or "Triple Barrel."
 
