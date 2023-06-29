@@ -1,0 +1,10 @@
+.c-equal-grid {
+  display: grid;
+  grid-gap: 2rem;
+  overflow: hidden;
+  list-style: none;
+
+  &.c-equal-grid__3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

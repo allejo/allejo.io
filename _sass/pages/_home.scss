@@ -20,31 +20,20 @@
     font-weight: 300;
   }
 
-  .latest-post {
+  .community-contribution {
     display: flex;
     flex-direction: column;
+  }
 
-    @include respond-up(sm) {
-      flex-direction: row;
-    }
+  .community-contribution__logo {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: center;
 
-    .post-title {
-      @include font-size(h2);
-      @include margin(y, 0);
-
-      order: 2;
-    }
-
-    .post-date {
-      @include margin(x, auto);
-      @include margin(b, 3);
-
-      @include margin(x, 0, sm);
-      @include margin(b, 0, sm);
-      @include margin(r, 3, sm);
-
-      text-align: center;
-      order: 1;
+    svg {
+      fill: $color-blue-light;
+      max-height: 100px;
     }
   }
 }

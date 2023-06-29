@@ -6,13 +6,3 @@ a {
     text-decoration: underline;
   }
 }
-
-.u-background-light a,
-.u-background-white a {
-  color: $color-hyperlink-background-light;
-}
-
-.u-background-dark a {
-  color: $color-hyperlink-background-dark;
-  text-decoration: dotted;
-}

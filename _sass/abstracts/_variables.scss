@@ -1,7 +1,7 @@
 $base-url: '/assets/';
 
 $color-grey-dark: rgb(51, 51, 51);
-$color-grey-light: rgb(210, 210, 210);
+$color-grey-light: rgb(195, 195, 195);
 $color-blue-dark: rgb(86, 99, 117);
 $color-blue-light: rgb(100, 115, 135);
 $color-cream: rgb(240, 240, 240);
@@ -13,6 +13,7 @@ $color-background-dark: $color-blue-light; // The dark background color
 
 $color-text-light-bg: $color-grey-dark;    // Text color when used on a light background
 $color-text-dark-bg: $color-cream;         // Text color when used on a dark background
+$color-text-muted: $color-grey-light;
 
 $color-header-background-light: $color-blue-dark;
 $color-hyperlink-background-light: $color-red;

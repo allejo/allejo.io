@@ -23,7 +23,7 @@ description: I'm an active open source developer pretending to know what he's do
                     <img
                         src="https://www.gravatar.com/avatar/{{ site.author.email | md5 }}?s=200"
                         alt="allejo's profile picture"
-                    >
+                    />
                 </div>
             </div>
         </div>
@@ -38,66 +38,128 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </div>
 
-    <div class="c-split-container row no-gutters">
-        <div class="col-lg-6 u-background-dark">
-            <article class="c-split-container__left px-3 py-4 p-sm-5">
-                {% set latest_article = collections.posts | order('date', 'DESC') | first %}
+    <div class="u-background-dark py-5">
+        <div class="container">
+            <p class="h4 line-height-1 mb-4 text-center">
+                i'm a senior full-stack software developer
+                <br />
+                <small class="h6 font-italic">who has helped build...</small>
+            </p>
 
-                <div class="latest-post mb-4">
-                    <h3 class="post-title">
-                        <a href="{{ url(latest_article) }}">
-                            {{ latest_article.title }}
-                        </a>
-                    </h3>
+            {% set sites = [
+                {
+                    image: 'site-stackoverflow-com.jpg',
+                    url: 'https://stackoverflow.com',
+                    name: 'Stack Overflow',
+                    company: 'Stack Overflow, Inc.',
+                },
+                {
+                    image: 'site-highlightjs-org.jpg',
+                    url: 'https://highlightjs.org',
+                    name: 'highlightjs.org',
+                    company: 'Open Source',
+                },
+                {
+                    image: 'site-bigbluebus-com.jpg',
+                    url: 'https://bigbluebus.com',
+                    name: 'Big Blue Bus',
+                    company: 'City of Santa Monica',
+                }
+            ] %}
+            <ul class="row u-list-inline">
+                {% for site in sites %}
+                    <li class="col-md-4">
+                        <div class="c-picture-frame mb-4">
+                            <img
+                                src="{{ url('/assets/images/' ~ site.image) }}"
+                                alt="Screenshot of {{ site.name }}"
+                            />
+                        </div>
+                        <div class="u-background-darker p-3">
+                            <p class="h3 mb-0 font-weight-bold line-height-1">{{ site.name }}</p>
+                            <p class="m-0">
+                                <a href="{{ site.url }}" target="_blank" rel="noreferrer nofollow">
+                                    {{ site.url | replace({'https://': '', 'http://': ''}) }}
+                                </a>
+                            </p>
+                            <p class="mb-0 mt-3 font-weight-bold small text-muted">
+                                {{ site.company }}
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
 
-                    <div class="post-date">
-                        {{ calendar(latest_article.date) }}
-                    </div>
-                </div>
-
-                <div class="s-markdown mb-4">
-                    {{ latest_article.content | summary | striptags }}
-                </div>
-
-                <footer class="text-lg-right">
-                    <a href="{{ url(latest_article) }}" class="c-button">
-                        <i class="fa fa-fw fa-glasses" aria-hidden="true"></i>
-                        Read full post
-                    </a>
-                </footer>
-            </article>
+            <div class="mt-5 text-center">
+                <a href="{{ url(pages['Projects']) }}" class="c-button">
+                    <i class="fa fa-fw fa-images" aria-hidden="true"></i>
+                    See my portfolio
+                </a>
+            </div>
         </div>
+    </div>
 
-        <div class="col-lg-6 u-background-light">
-            <div class="c-split-container__right px-3 py-4 p-sm-5">
-                <h2 class="mt-0 mb-4">Want to support what I do?</h2>
+    <div class="u-background-light py-5">
+        <div class="container">
+            <p class="h4 line-height-1 mb-4 text-center">
+                and contributor to many open source communities
+                <br />
+                <small class="h6 font-italic">you may know me from...</small>
+            </p>
 
-                <p>
-                    Everything I do is out of sheer unbearable boredom where I'd go crazy if I didn't keep myself occupied. In turn, you get to benefit from the random things I build. Here are some of the roles I'm most known for:
-                </p>
-                <ul>
-                    <li><a href="https://www.bzflag.org">BZFlag</a> core developer</li>
-                    <li><a href="https://highlightjs.org/">highlight.js</a> core team</li>
-                    <li><a href="https://github.com/scrivo/highlight.php">highlight.php</a> maintainer</li>
-                    <li>Creator of <a href="https://github.com/allejo/jekyll-toc">jekyll-toc</a> and <a href="https://github.com/allejo/jekyll-anchor-headings">jekyll-anchor-headings</a></li>
-                    <li>developer for WordPress' <a href="https://github.com/westonruter/syntax-highlighting-code-block">Syntax-highlighting Code Block plugin</a></li>
-                    <li><a href="https://github.com/bovigo/vfsStream">vfsStream</a> co-maintainer</li>
-                    <li><a href="https://github.com/maciejczyzewski/bottomline">bottomline (PHP's lodash equivalent)</a> co-maintainer</li>
-                </ul>
-                <p class="mb-4">
-                    If any of my projects or work has saved you or your company any money, time, headaches, or effort, or has brought you any joy, please consider supporting me and my ventures!
-                </p>
+            {% set communities = [
+                {
+                    logo: 'logo-bzflag',
+                    description: "Free multi-player 3D tank battle game for Windows, Linux, and macOS. I'm a core developer for the project and community.",
+                    project: 'bzflag',
+                },
+                {
+                    logo: 'logo-highlightjs',
+                    description: "A syntax highlighting library written in JavaScript. I'm a core team member for the project.",
+                    project: 'highlightjs',
+                },
+                {
+                    logo: 'logo-jekyll',
+                    description: "A static site generator written in Ruby. My Liquid snippets power a lot of the most popular Jekyll themes.",
+                    project: 'jekyll',
+                },
+                {
+                    logo: 'logo-php',
+                    description: "A popular programming language. I maintain a number of PHP libraries used throughout the entire PHP ecosystem.",
+                    project: 'php',
+                }
+            ] %}
 
-                <div class="c-button-container">
-                    <a href="{{ url(pages['Supporters']) }}" class="c-button">
-                        <i class="fa fa-fw fa-heart" aria-hidden="true"></i>
-                        View my Supporters
-                    </a>
-                    <a href="{{ url(pages['Support Me']) }}" class="c-button">
-                        <i class="fa fa-fw fa-arrow-right" aria-hidden="true"></i>
-                        Support Me
-                    </a>
-                </div>
+            <ul class="c-equal-grid c-equal-grid__3 pl-0">
+                {% for community in communities %}
+                    <li class="community-contribution">
+                        <div class="community-contribution__logo my-4">
+                            {{ file('../assets/images/' ~ community.logo ~ '.svg') }}
+                        </div>
+                        <div class="community-contribution__desc u-background-darker mt-4 mb-auto p-3">
+                            <p class="m-0">{{ community.description }}</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="{{ url('/projects/' ~ community.project) }}" class="c-button">
+                                <i class="fa fa-fw fa-code" aria-hidden="true"></i>
+                                See my contributions
+                                <span class="sr-only"> to {{ community.project }}</span>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="mt-5 text-center">
+                <a href="#" class="c-button mr-2">
+                    <i class="fa fa-fw fa-folder" aria-hidden="true"></i>
+                    See my other projects
+                </a>
+
+                <a href="#" class="c-button ml-2">
+                    <i class="fa fa-fw fa-heart" aria-hidden="true"></i>
+                    See my sponsors
+                </a>
             </div>
         </div>
     </div>

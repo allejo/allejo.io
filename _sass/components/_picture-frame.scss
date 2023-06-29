@@ -1,0 +1,9 @@
+.c-picture-frame {
+  border: 5px solid $color-grey-dark;
+  box-shadow: 9px 11px 4px 0 rgba(0, 0, 0, 0.25);
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
