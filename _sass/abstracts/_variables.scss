@@ -8,6 +8,16 @@ $color-cream: rgb(240, 240, 240);
 $color-white: rgb(247, 247, 247);
 $color-red: rgb(229, 0, 80);
 
+:root {
+  --stx-color-grey-dark: rgb(51, 51, 51);
+  --stx-color-grey-light: rgb(195, 195, 195);
+  --stx-color-blue-dark: rgb(86, 99, 117);
+  --stx-color-blue-light: rgb(100, 115, 135);
+  --stx-color-cream: rgb(240, 240, 240);
+  --stx-color-white: rgb(247, 247, 247);
+  --stx-color-red: rgb(229, 0, 80);
+}
+
 $color-background-light: $color-cream;     // The light background color
 $color-background-dark: $color-blue-light; // The dark background color
 

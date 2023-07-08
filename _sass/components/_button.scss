@@ -1,43 +1,3 @@
-.c-button {
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 50px;
-  display: inline-block;
-  cursor: pointer;
-  padding: 10px 20px;
-
-  @include on-event(true) {
-    text-decoration: none;
-  }
-
-  .fa,
-  .fas,
-  .fab {
-    margin-right: 5px;
-  }
-}
-
-.u-background-white .c-button,
-.u-background-light .c-button {
-  border-color: $color-blue-light;
-  color: $color-blue-light;
-
-  @include on-event() {
-    background-color: $color-blue-light;
-    color: $color-white;
-  }
-}
-
-.u-background-dark .c-button {
-  border-color: $color-cream;
-  color: $color-cream;
-
-  @include on-event() {
-    background-color: $color-cream;
-    color: $color-blue-light;
-  }
-}
-
 .c-button-container {
   .c-button {
     @include margin(b, 2);
@@ -54,6 +14,64 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+}
+
+.c-button {
+  --_stx-button-background: transparent;
+  --_stx-button-border: var(--stx-color-blue-light);
+  --_stx-button-font-color: var(--_stx-button-primary);
+
+  background-color: var(--_stx-button-background);
+  border: 1px solid var(--_stx-button-border);
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+
+  &,
+  a& {
+    color: var(--_stx-button-font-color);
+  }
+
+  @include on-event(true) {
+    text-decoration: none;
+  }
+
+  .fa,
+  .fas,
+  .fab {
+    margin-right: 5px;
+  }
+}
+
+.u-background-light,
+.u-background-white {
+  .c-button {
+    --_stx-button-border: var(--stx-color-blue-light);
+    --_stx-button-font-color: var(--stx-color-blue-light);
+
+    @include on-event() {
+      --_stx-button-background: var(--stx-color-blue-light);
+      --_stx-button-font-color: var(--stx-color-white);
+    }
+  }
+
+  .c-button--filled {
+    --_stx-button-background: var(--stx-color-blue-light);
+    --_stx-button-font-color: var(--stx-color-white);
+  }
+}
+
+.u-background-dark {
+  .c-button {
+    --_stx-button-border: var(--stx-color-cream);
+    --_stx-button-font-color: var(--stx-color-cream);
+
+    @include on-event() {
+      background-color: var(--stx-color-cream);
+      color: var(--stx-color-blue-light);
     }
   }
 }
