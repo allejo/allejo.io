@@ -46,21 +46,26 @@
   }
 }
 
+@mixin make-filled-button-variants {
+  @include on-event() {
+    @content;
+  }
+
+  &.c-button--filled {
+    @content;
+  }
+}
+
 .u-background-light,
 .u-background-white {
   .c-button {
     --_stx-button-border: var(--stx-color-blue-light);
     --_stx-button-font-color: var(--stx-color-blue-light);
 
-    @include on-event() {
+    @include make-filled-button-variants {
       --_stx-button-background: var(--stx-color-blue-light);
       --_stx-button-font-color: var(--stx-color-white);
     }
-  }
-
-  .c-button--filled {
-    --_stx-button-background: var(--stx-color-blue-light);
-    --_stx-button-font-color: var(--stx-color-white);
   }
 }
 
@@ -69,9 +74,9 @@
     --_stx-button-border: var(--stx-color-cream);
     --_stx-button-font-color: var(--stx-color-cream);
 
-    @include on-event() {
-      background-color: var(--stx-color-cream);
-      color: var(--stx-color-blue-light);
+    @include make-filled-button-variants() {
+      --_stx-button-background: var(--stx-color-cream);
+      --_stx-button-font-color: var(--stx-color-blue-light);
     }
   }
 }

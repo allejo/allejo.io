@@ -68,7 +68,7 @@ description: I'm an active open source developer pretending to know what he's do
             ] %}
             <ul class="row u-list-inline">
                 {% for site in sites %}
-                    <li class="col-md-4">
+                    <li class="col-sm-6 col-lg-4 mb-lg-0 {{ loop.last and loop.index % 2 == 1 ? 'mb-0 offset-sm-3 offset-lg-0' : 'mb-5' }}">
                         <div class="c-picture-frame mb-4">
                             <img
                                 src="{{ url('/assets/images/' ~ site.image) }}"
@@ -91,7 +91,7 @@ description: I'm an active open source developer pretending to know what he's do
             </ul>
 
             <div class="mt-5 text-center">
-                <a href="{{ url(pages['Projects']) }}" class="c-button">
+                <a href="{{ url(pages['Projects']) }}" class="c-button c-button--filled">
                     <i class="fa fa-fw fa-images" aria-hidden="true"></i>
                     See my portfolio
                 </a>
@@ -99,9 +99,9 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </div>
 
-    <div class="u-background-light py-5">
+    <section class="u-background-light py-5">
         <div class="container">
-            <p class="h4 line-height-1 mb-4 text-center text-highlight">
+            <p class="h4 line-height-1 mb-5 text-center text-highlight">
                 and contributor to many open source communities
                 <br />
                 <small class="h6 font-italic">you may know me from...</small>
@@ -130,39 +130,47 @@ description: I'm an active open source developer pretending to know what he's do
                 }
             ] %}
 
-            <ul class="c-equal-grid c-equal-grid__3 pl-0">
-                {% for community in communities %}
-                    <li class="community-contribution">
-                        <div class="community-contribution__logo my-4">
-                            {{ file('../assets/images/' ~ community.logo ~ '.svg') }}
-                        </div>
-                        <div class="community-contribution__desc u-background-darker mt-4 mb-auto p-3">
-                            <p class="m-0">{{ community.description }}</p>
-                        </div>
-                        <div class="mt-4 text-center">
-                            <a href="{{ url('/projects/' ~ community.project) }}" class="c-button">
-                                <i class="fa fa-fw fa-code" aria-hidden="true"></i>
-                                See my contributions
-                                <span class="sr-only"> to {{ community.project }}</span>
-                            </a>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+            <div class="community-contributions mb-5">
+                {% set smCounter = 0 %}
+                {% set smColCount = 2 %}
+                {% set lgColCount = 4 %}
 
-            <div class="mt-5 text-center">
-                <a href="#" class="c-button mr-2">
+                {% for community in communities %}
+                    {% set smImageCount = loop.index + smCounter %}
+                    {% set lgImageCount = loop.index %}
+
+                    <div class="community-contributions__image order-sm-{{ smImageCount }} order-lg-{{ lgImageCount }}">
+                        {{ file('../assets/images/' ~ community.logo ~ '.svg') }}
+                    </div>
+                    <div class="community-contributions__desc p-3 u-background-darker order-sm-{{ smImageCount + smColCount }} order-lg-{{ lgImageCount + lgColCount }}">
+                        <p class="mb-4">{{ community.description }}</p>
+
+                        <a href="{{ url('/projects/' ~ community.project) }}" class="mt-auto text-center">
+                            <i class="fa fa-fw fa-code" aria-hidden="true"></i>
+                            See my contributions
+                            <span class="sr-only"> to {{ community.project }}</span>
+                        </a>
+                    </div>
+
+                    {% if loop.index % 2 == 0 %}
+                        {% set smCounter = smCounter + 2 %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="c-button-container text-center">
+                <a href="{{ url(pages['Projects']) }}" class="c-button c-button--filled">
                     <i class="fa fa-fw fa-folder" aria-hidden="true"></i>
                     See my other projects
                 </a>
 
-                <a href="#" class="c-button ml-2">
+                <a href="{{ url(pages['Supporters']) }}" class="c-button c-button--filled">
                     <i class="fa fa-fw fa-heart" aria-hidden="true"></i>
                     See my sponsors
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
     <footer class="u-background-white text-center py-4 py-sm-5">
         <span>copyright &copy; {{ 'now' | date('Y') }}</span>

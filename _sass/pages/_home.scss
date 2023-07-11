@@ -20,20 +20,33 @@
     font-weight: 300;
   }
 
-  .community-contribution {
-    display: flex;
-    flex-direction: column;
-  }
+  .community-contributions {
+    display: grid;
+    gap: 3rem 1rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
 
-  .community-contribution__logo {
-    align-items: center;
-    display: flex;
-    height: 90px;
-    justify-content: center;
+    @include respond-up(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond-up(lg) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 
     svg {
-      fill: $color-blue-light;
+      fill: var(--stx-color-blue-light);
       max-height: 100px;
+    }
+
+    .community-contributions__image {
+      align-self: center;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .community-contributions__desc {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
