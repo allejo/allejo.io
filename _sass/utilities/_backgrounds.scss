@@ -10,11 +10,19 @@
   h6 {
     color: $color-text-dark-bg;
   }
+
+  .u-background-darker {
+    background-color: $color-blue-dark;
+  }
 }
 
 .u-background-light {
   background-color: $color-background-light;
   color: $color-text-light-bg;
+
+  .u-background-darker {
+    background-color: $color-grey-light;
+  }
 }
 
 .u-background-white {

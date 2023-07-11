@@ -4,3 +4,24 @@
     font-size: $size;
   }
 }
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.u-background-light,
+.u-background-white {
+  .text-highlight {
+    color: $color-blue-dark;
+  }
+}
+
+.u-background-dark {
+  .text-highlight {
+    color: $color-text-dark-bg;
+  }
+}
+
+.text-muted {
+  color: $color-text-muted;
+}
