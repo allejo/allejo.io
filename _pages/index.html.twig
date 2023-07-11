@@ -217,15 +217,15 @@ description: I'm an active open source developer pretending to know what he's do
 
     <footer class="u-background-dark text-center py-4 py-sm-5">
         <div class="container">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center flex-column flex-md-row">
                 <div>
                     <span>copyright &copy; {{ 'now' | date('Y') }}</span>
                 </div>
-                <div class="ml-auto">
-                    <ul class="u-list-inline m-0">
-                        <li class="ml-4"><a href="{{ url(pages['Support Me']) }}">Support Me</a></li>
-                        <li class="ml-4"><a href="{{ url(pages['Supporters']) }}">Sponsors</a></li>
-                        <li class="ml-4"><a href="{{ url(pages['Contact']) }}">Contact</a></li>
+                <div class="ml-md-auto">
+                    <ul class="u-list-inline d-flex mt-3 m-md-0" style="gap: 2rem">
+                        <li><a href="{{ url(pages['Support Me']) }}">Support Me</a></li>
+                        <li><a href="{{ url(pages['Supporters']) }}">Sponsors</a></li>
+                        <li><a href="{{ url(pages['Contact']) }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
