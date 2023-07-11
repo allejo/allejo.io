@@ -152,11 +152,11 @@ description: I'm an active open source developer pretending to know what he's do
                     <div class="community-contributions__desc p-3 u-background-darker order-sm-{{ smImageCount + smColCount }} order-lg-{{ lgImageCount + lgColCount }}">
                         <p class="mb-4">{{ community.description }}</p>
 
-                        <a href="{{ url('/projects/' ~ community.project) }}" class="mt-auto text-center">
-                            <i class="fa fa-fw fa-code" aria-hidden="true"></i>
-                            See my contributions
-                            <span class="sr-only"> to {{ community.project }}</span>
-                        </a>
+                        {# <a href="{{ url('/projects/' ~ community.project) }}" class="mt-auto text-center"> #}
+                        {#     <i class="fa fa-fw fa-code" aria-hidden="true"></i> #}
+                        {#     See my contributions #}
+                        {#     <span class="sr-only"> to {{ community.project }}</span> #}
+                        {# </a> #}
                     </div>
 
                     {% if loop.index % 2 == 0 %}
@@ -168,7 +168,7 @@ description: I'm an active open source developer pretending to know what he's do
             <div class="c-button-container text-center">
                 <a href="{{ url(pages['Projects']) }}" class="c-button c-button--filled">
                     <i class="fa fa-fw fa-folder" aria-hidden="true"></i>
-                    See my other projects
+                    See my projects
                 </a>
 
                 <a href="{{ url(pages['Supporters']) }}" class="c-button c-button--filled">
