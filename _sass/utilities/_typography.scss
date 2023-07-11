@@ -9,16 +9,16 @@
   line-height: 1;
 }
 
-.u-background-dark {
-  .text-highlight {
-    color: $color-text-dark-bg;
-  }
-}
-
 .u-background-light,
 .u-background-white {
   .text-highlight {
     color: $color-blue-dark;
+  }
+}
+
+.u-background-dark {
+  .text-highlight {
+    color: $color-text-dark-bg;
   }
 }
 

@@ -7,6 +7,15 @@ description: I'm an active open source developer pretending to know what he's do
 {% extends '_layouts/base.html.twig' %}
 
 {% from '_macros/calendar.html.twig' import calendar %}
+{% from _self import section_heading %}
+
+{% macro section_heading(title, subtitle) %}
+    <p class="h4 line-height-1 mb-4 text-center text-highlight">
+        {{ title }}
+        <br />
+        <small class="h6 font-italic">{{ subtitle }}</small>
+    </p>
+{% endmacro %}
 
 {% set pageWideCSS = 's-homepage u-background-white' %}
 
@@ -40,11 +49,10 @@ description: I'm an active open source developer pretending to know what he's do
 
     <div class="u-background-dark py-5">
         <div class="container">
-            <p class="h4 line-height-1 mb-4 text-center">
-                i'm a senior full-stack software developer
-                <br />
-                <small class="h6 font-italic">who has helped build...</small>
-            </p>
+            {{ section_heading(
+                "i'm a senior full-stack software developer",
+                "who has helped build..."
+            ) }}
 
             {% set sites = [
                 {
@@ -101,11 +109,10 @@ description: I'm an active open source developer pretending to know what he's do
 
     <section class="u-background-light py-5">
         <div class="container">
-            <p class="h4 line-height-1 mb-5 text-center text-highlight">
-                and contributor to many open source communities
-                <br />
-                <small class="h6 font-italic">you may know me from...</small>
-            </p>
+            {{ section_heading(
+                "and contributor to many open source communities",
+                "you may know me from..."
+            ) }}
 
             {% set communities = [
                 {
@@ -172,7 +179,43 @@ description: I'm an active open source developer pretending to know what he's do
         </div>
     </section>
 
-    <footer class="u-background-white text-center py-4 py-sm-5">
+    <section class="u-background-white py-5">
+        <div class="container">
+            {{ section_heading(
+                "i occasionally write about my experiences",
+                "but it's not like you really care, right?"
+            ) }}
+
+            {% set latest_article = collections.posts | order('date', 'DESC') | first %}
+
+            <article class="mt-5">
+                <div class="d-flex align-items-center mb-4">
+                    <h3 class="order-2 m-0">
+                        <a href="{{ url(latest_article) }}">
+                            {{ latest_article.title }}
+                        </a>
+                    </h3>
+
+                    <div class="order-1 mr-3">
+                        {{ calendar(latest_article.date) }}
+                    </div>
+                </div>
+
+                <div class="s-markdown mb-4">
+                    {{ latest_article.content | summary | striptags }}
+                </div>
+
+                <footer class="text-lg-right">
+                    <a href="{{ url(latest_article) }}" class="c-button">
+                        <i class="fa fa-fw fa-glasses" aria-hidden="true"></i>
+                        Read full post
+                    </a>
+                </footer>
+            </article>
+        </div>
+    </section>
+
+    <footer class="u-background-dark text-center py-4 py-sm-5">
         <span>copyright &copy; {{ 'now' | date('Y') }}</span>
     </footer>
 {% endblock %}
