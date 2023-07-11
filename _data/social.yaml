@@ -2,10 +2,10 @@
   url: https://instagram.com/allejome/
   color: "#125688"
   slug: Follow me on Instagram
-- logo: twitter
-  url: https://twitter.com/allejome
-  color: "#55ACEE"
-  slug: Follow me on Twitter
+#- logo: twitter
+#  url: https://twitter.com/allejome
+#  color: "#55ACEE"
+#  slug: Follow me on Twitter
 - logo: mastodon
   url: https://mastodon.social/@allejo
   color: "#595AFF"

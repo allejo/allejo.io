@@ -6,3 +6,14 @@ a {
     text-decoration: underline;
   }
 }
+
+.u-background-light,
+.u-background-white {
+  a {
+    color: var(--stx-color-red);
+  }
+}
+
+.u-background-dark a {
+  color: var(--stx-color-egg-yolk);
+}

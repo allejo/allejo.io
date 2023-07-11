@@ -131,14 +131,12 @@ sup {
 }
 
 a {
-  color: $color-hyperlink-background-light;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: darken($color-hyperlink-background-light, 10%);
   text-decoration: underline;
 }
 
