@@ -1,0 +1,167 @@
+---
+title: How and why I jailbroke my Kindle
+date: 2025-XX-XX 00:00:00.00 -8
+anthology:
+  name: Kindle Modding
+  type: chapter
+  chapter: 1
+  summary: Jailbreaking my Kindle
+categories:
+  - hacking
+---
+
+For years, I had been in search for the "perfect e-ink reader" that met all of my niche needs/wants. I wanted simple to configure integration with [calibre](https://calibre-ebook.com/), be able to download and read RSS feeds, and lastly, be able to connect to cloud storage such as Google Drive where I host my PDFs. These seem like a niche set of features, and honestly, they are. However, this is what I've always wanted. I did my research and evaluated many e-ink readers; e.g. Boox, Kobo, a new Kindle, Nook, ReMarkable, and others. None of them checked all the boxes and all came with extreme vendor lock-in or had virtually no developer community behind it. Sure, I've got an iPad that can accomplish all those features and more, but an iPad has a lot more functionality than I need when I just want to read without distractions.
+
+I recently discovered the Kindle jailbreaking community and was reminded my teen years where I was active in the iOS jailbreaking community. The level of freedom I had over my device at the time was something I would love to have over my Kindle and with Amazon running [a big book sale that "coincidentally" overlaps with Independent Bookstore Day](https://techcrunch.com/2025/04/26/amazons-big-book-sale-just-happens-to-overlap-with-independent-bookstore-day/?guccounter=1), I decided it was time to say "fuck you" to Amazon and part ways as much as I can.
+
+## Why am I jailbreaking my Kindle?
+
+I have recently worked long hours in organizing _all_ of my eBooks into a single library within calibre with the goal of being able to easily sync my Kindle with my books. Here's the difficult part, for years I had been buying ebooks from Amazon and while they did make the ecosystem incredibly user-friendly for the majority of the population, I felt nothing but limited due to the following:
+
+1. As of February 26, 2025, Amazon has stopped supporting the "Download & Transfer via USB" functionality. This means, it is now incredibly more tedious for you to be able to download copies of the ebooks that **you** have bought. In the past, I have had Amazon delist ebooks from their online stores and in turn, I lost it from my Kindle since I can't search for it anymore. Thankfully, I was in the habit of always downloading a copy of those ebooks but what if I hadn't? I might have lost that digital book even though I **bought** it.
+2. I never thought this is something I would be writing this but with the direction my country, the United States, is heading regarding censorship, I did not want to remain at the mercy of Amazon to dictate which books that I've **purchased** I'm still allowed to read.
+3. The only way I can transfer books to my Kindle wirelessly is by emailing the file to my Kindle email, which is handled by Amazon. What's stopping Amazon from censoring the books I send to them to deliver to my Kindle.
+4. My Kindle Paperwhite 3rd generation from 2015 is considered "end of life," meaning I no longer receive updates from Amazon. According to Amazon, my Kindle is considered no different than a paperweight. Why would I trade in, my perfectly functional and in good condition device for a new device that has even more restrictions placed on it? It's just wasteful consumerism if you ask me. If Amazon won't continue developing for my Kindle, let's turn to the open source community of nerds that will.
+
+Fuck Amazon! Let's jailbreak my 7th generation 2015 Kindle Paperwhite (aka `PW3`).
+
+## The Jailbreaking Process
+
+First off, the jailbreaking process is nowhere near as simple as it was with my iOS days, where you could just download an app on your computer, press a single button, and wait. That's not to say that it's difficult or impossible either, it's just a move involved process. A lot very smart nerds who felt the same way about breathing new life into their abandoned devices, have put in a lot of work into simplifying the process as much as possible.
+
+Thank you to the awesome community behind [Kindle Modding](https://kindlemodding.org/) for writing all of the tutorials and documentation I used to jailbreak my Kindle. This would not have been possible without [HackerDude](https://www.mobileread.com/forums/member.php?u=330416)'s WinterBreak exploit that I was able to get working.
+
+### The Prerequisites
+
+- A computer; it's not possbile to jailbreak your Kindle just from the device itself
+- Your Kindle **must** be registered with Amazon (unfortunately)
+- You must have a saved Wi-Fi connection on your Kindle, and be ready to connect to that Wi-Fi during the jailbreaking process
+
+### Run the Jailbreak Exploit
+
+The first step is to actually run an exploit allowing us to remove security restrictions on the Kindle; this is known as "jailbreaking."
+
+1. I downloaded the [latest release of the WinterBreak jailbreak](https://github.com/KindleModding/WinterBreak/releases/latest/download/WinterBreak.tar.gz)
+2. Turn on Airplane mode
+3. Reboot Kindle
+4. After rebooting, connect the Kindle to the computer. Extract WinterBreak and copy over the contents onto the Kindle (including the hidden dot files!). Replace any files that may already exist
+5. Eject Kindle from the computer
+6. Open the Kindle Store by clicking on the cart. It'll prompt you to disable Airplane mode, do it. Once the store loads, the Mesquito hack will be displayed. Click to run it.
+   ![WinterBreak "click to run" prompt](./winterbreak-click-to-run.png)
+7. Wait for a few seconds and then console text will appear in the upper left corner of the display. At this point, turn airplane mode back on and install the hotfix to persist this jailbreak across reboots.
+   ![Jailbreak process log text displaying on the upper left part of the screen](./jailbreak-successful.png)
+
+### Persisting the Jailbreak (aka "Installing the Hotfix")
+
+The next step is to persist this jailbreak across reboots and updates; a Kindle update referred to as a "hotfix" is needed to accomplish this.
+
+1. Download the [update `.bin` file from GitHub](https://github.com/KindleModding/Hotfix/releases/latest/download/Update\_hotfix\_universal.bin), this file is what's known as the "hotfix."
+2. Plug in the Kindle and copy the `.bin` file to the root of the device. If there are any other `.bin` files on the device already, delete them first.
+3. Go to your Kindle settings, then click the three dot menu, and select "Update your Kindle." Confirm the installation.
+   ![Dropdown menu with "Update your Kindle" option](update-your-kindle.png)
+4. After the Kindle has rebooted, the hotfix is now installed and needs to be executed on the device. A new "ebook" is displayed in your device's library called "Run Hotfix." Open that book to run the process.
+5. Do **not** delete the hotfix eBook, it is necessary to run it every time there's an update
+
+### Install KUAL and MRPI
+
+Now that our Kindle is officially jailbroken, we can run whatever code or applications we want. Similarly to how the hotfix in the previous step created a fake "ebook," that when opened, executed code; we need to do the same for our other applications so that we can launch them from the Kindle UI. This is where the Kindle Unified Application Launcher, or KUAL, comes in to solve that need.
+
+1. Download [KUAL for devices released in 2012 or after](https://kindlemodding.org/jailbreaking/post-jailbreak/installing-kual-mrpi/Update\_KUALBooklet\_ALLDEVICES\_KS2\_install.bin) or [KUAL for legacy devices (pre-2012)](https://storage.gra.cloud.ovh.net/v1/AUTH\_2ac4bfee353948ec8ea7fd1710574097/mr-public/KUAL/KUAL-v2.7.37-gfcb45b5-20250419.tar.xz).   
+2. Download [MobileRead Package Installer (MRPI)](https://fw.notmarek.com/khf/kual-mrinstaller-khf.tar.xz) so that will simplify installing update packages (remember the `.bin` file in the previous step?)
+3. Connect your Kindle to your computer
+4. Extract the MRPI contents and copy over/merge the `extensions` and `mrpackages` folders to your Kindle
+5. Copy over the KUAL `.bin` file to the root of the device
+6. Eject and unplug your Kindle
+7. In the Kindle's search bar, type `;log mrpi`
+8. Go to your Kindle settings, then click the three dot menu, and select "Update your Kindle." Confirm the installation.
+9. After your Kindle reboots, there should be a KUAL eBook located in your library.
+
+### Disable OTA Updates
+
+My Kindle Paperwhite 3rd gen is EOL and no longer receives updates, but just in case, let's disable OTA anyways to be safe. My Kindle is stuck at firmware 5.16.2.1.1 so I need to install `renameotabin`.
+
+1. Download [`renameotabin`](https://www.mobileread.com/forums/showpost.php?p=4076733\&postcount=25)
+2. Connect the Kindle to your computer and copy the `renameotabin` folder into the `extensions` folder.
+3. Eject and unplug the Kindle
+4. Open the KUAL eBook and select "Rename OTA Binaries" from the menu. Then proceed to select "Rename."
+   1. If you need to restore, downgrade, or otherwise manage my Kindle through official methods, select `Restore` before being able to do anything
+
+### Restoring the Store
+
+I'm not sure how I feel about having the Kindle Store enabled again but I did re-enable its access, just in case I need it. I may disable it at a later point.
+
+1. Delete `.active_content_sandbox` from the root of the device.
+2. Eject and unplug
+3. Reboot your device
+
+### Installing KOReader
+
+KOReader is a replacement for Kindle's default e-Reader software and this is the biggest reason why I jailbroke my Kindle.
+
+1. Download [the latest version of KOReader from GitHub](https://github.com/koreader/koreader/releases)
+2. If your Kindle was released prior to 2012, use the "legacy" Kindle download. Otherwise, download the non-"legacy" version.
+3. Connect the Kindle to the computer
+4. Extract the contents of the KOReader archive and copy/merge over all the folders onto the Kindle's root
+5. Launch KOReader from KUAL; prefer to use "Start KOReader" because the "no framework" version is largely intended for older devices. The ASAP variant is just a faster startup time for KOReader but I see no need to use it since it loads pretty fast for me.
+
+## Connecting to calibre
+
+One of the most powerful feature that I love about KOReader is that it can connect wirelessly to calibre on my computer. Every other device I have supports USB-C or wireless charging, both of which I have readily available on my desk. I no longer need look for my micro-USB cable that supports literally none of my other devices I regularly have on my desk. One less cable! Hell yea!
+
+## Setting Up SSH
+
+I'm really trying to avoid having a micro-USB cable on my desk; I already have that cable at charging corner. So I enabled SSH on my Kindle so that I could mount my Kindle wirelessly on my Mac; i.e. I can drag and drop from Finder wirelessly.
+
+Next up, I'm going to setup my SSH key on the Kindle so that I can connect to my Kindle in a more secure manner. 
+
+1. I first need to temporarily enable "Login without password (DANGEROUS)" on my Kindle.
+2. Then, I will start the SSH server by clicking on the "SSH Server" menu item. You will get a popup on your Kindle that displays its IP address; I need it for the next step.
+3. I can now connect via SSH. The connection details are as follows,
+   * Host: Your Kindle's IP address from step 2
+   * username: root
+   * password: \<leave empty>
+4. My SSH command looked like so,
+
+```
+$ ssh root@192.168.12.120 -p 2222
+#################################################
+#  N O T I C E  *  N O T I C E  *  N O T I C E  #
+#################################################
+Rootfs is mounted read-only. Invoke mntroot rw to
+switch back to a writable rootfs.
+#################################################
+[root@kindle root]# mntroot rw
+```
+
+Upon connecting, I'm greeted by this notice that essentially tells me, "consider your current session as read-only, if you want to make edits to any files, (which we do), run this command." I want to be able to save my public key on the Kindle so that we can use it to SSH in; therefore we need to make the filesystem writeable. 
+
+```
+# mntroot rw
+system: I mntroot:def:Making root filesystem writeable
+```
+
+Now I need to find my Kindle's `authorized_keys` file, which is located at, `/mnt/us/koreader/settings/SSH/authorized_keys`. Like most light-weight systems, the only text editor available is `vi` so be sure to know how to exit once you're done.
+
+Paste your public key into your `authorized_keys` and exit your SSH session. Go back to your kindle and shut down your SSH server. Earlier, I enabled "Login without password." Now, it's time for me to turn it off and I should be able to login with my SSH key.
+
+Now, I'm going to verify that updating my `authorized_keys` worked correctly. When I connect via SSH, I'll add a `-v` and read the logs of which public key is accepted by my Kindle (I have several on my computer).
+
+```
+$ ssh root@192.168.12.120 -p 2222 -v
+
+... lots of output ...
+
+debug1: Offering public key: /Users/allejo/.ssh/id_ed25519 ED25519 SHA256:9S2ld7G9EZXqIbqXKvosAKA74Xj1rDaOP9Gpx4pvdIQ
+debug1: Server accepts key: /Users/allejo/.ssh/id_ed25519 ED25519 SHA256:9S2ld7G9EZXqIbqXKvosAKA74Xj1rDaOP9Gpx4pvdIQ
+Enter passphrase for key '/Users/allejo/.ssh/id_ed25519':
+```
+
+The "Server accepts key:" is the important line that we're looking for. This means that my Kindle recognizes my SSH key and will allow me to log in once I unlock my key. Now, I can use my favorite SFTP client (or Finder) to connect to my Kindle in a secure manner. If I want to see the equivalent of my Kindle's "root," i.e. the filesystem I see when I connect my Kindle to my computer with a micro-USB cable, then that's mounted at `/mnt/us/`.
+
+## Exiting KOReader
+
+To go back to my stock Kindle UI, I exit out of KOReader. Just know, this will shut down everything I mentioned above like your SSH server and calibre wireless connection.
+
+## That's It So Far
+
+This was my first weekend project 
