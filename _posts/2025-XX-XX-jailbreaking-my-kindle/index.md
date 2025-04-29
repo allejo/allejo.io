@@ -16,7 +16,7 @@ I recently discovered the Kindle jailbreaking community and was reminded my teen
 
 ## Why am I jailbreaking my Kindle?
 
-I have recently worked long hours in organizing _all_ of my eBooks into a single library within calibre with the goal of being able to easily sync my Kindle with my books. Here's the difficult part, for years I had been buying ebooks from Amazon and while they did make the ecosystem incredibly user-friendly for the majority of the population, I felt nothing but limited due to the following:
+I have recently worked long hours in organizing _all_ of my eBooks into a single library with calibre with the goal of being able to easily sync my Kindle with my books. Here's the difficult part, for years I had been buying ebooks from Amazon and while they did make the ecosystem incredibly user-friendly for the majority of the population, I felt nothing but limited due to the following:
 
 1. As of February 26, 2025, Amazon has stopped supporting the "Download & Transfer via USB" functionality. This means, it is now incredibly more tedious for you to be able to download copies of the ebooks that **you** have bought. In the past, I have had Amazon delist ebooks from their online stores and in turn, I lost it from my Kindle since I can't search for it anymore. Thankfully, I was in the habit of always downloading a copy of those ebooks but what if I hadn't? I might have lost that digital book even though I **bought** it.
 2. I never thought this is something I would be writing this but with the direction my country, the United States, is heading regarding censorship, I did not want to remain at the mercy of Amazon to dictate which books that I've **purchased** I'm still allowed to read.
@@ -96,7 +96,7 @@ I'm not sure how I feel about having the Kindle Store enabled again but I did re
 
 ### Installing KOReader
 
-KOReader is a replacement for Kindle's default e-Reader software and this is the biggest reason why I jailbroke my Kindle.
+KOReader is a replacement for Kindle's default e-Reader software and honestly, it has so much more. This is the biggest reason why I jailbroke my Kindle.``
 
 1. Download [the latest version of KOReader from GitHub](https://github.com/koreader/koreader/releases)
 2. If your Kindle was released prior to 2012, use the "legacy" Kindle download. Otherwise, download the non-"legacy" version.
@@ -104,20 +104,22 @@ KOReader is a replacement for Kindle's default e-Reader software and this is the
 4. Extract the contents of the KOReader archive and copy/merge over all the folders onto the Kindle's root
 5. Launch KOReader from KUAL; prefer to use "Start KOReader" because the "no framework" version is largely intended for older devices. The ASAP variant is just a faster startup time for KOReader but I see no need to use it since it loads pretty fast for me.
 
-## Connecting to calibre
-
-One of the most powerful feature that I love about KOReader is that it can connect wirelessly to calibre on my computer. Every other device I have supports USB-C or wireless charging, both of which I have readily available on my desk. I no longer need look for my micro-USB cable that supports literally none of my other devices I regularly have on my desk. One less cable! Hell yea!
-
 ## Setting Up SSH
 
-I'm really trying to avoid having a micro-USB cable on my desk; I already have that cable at charging corner. So I enabled SSH on my Kindle so that I could mount my Kindle wirelessly on my Mac; i.e. I can drag and drop from Finder wirelessly.
+I'm really trying to avoid having a micro-USB cable on my desk; I already have that cable at my charging corner. Every other device that's on my desk supports either wireless charing or USB-C and that's all I ever have. I like to avoid having too many cables. So I enabled SSH on my Kindle so that I could mount my Kindle wirelessly on my Mac; i.e. I can drag and drop from my SFTP client wirelessly.
 
-Next up, I'm going to setup my SSH key on the Kindle so that I can connect to my Kindle in a more secure manner. 
+Within KOReader, I navigate with the gear icon in the top menu bar, `Network`, then `SSH Server`.
 
-1. I first need to temporarily enable "Login without password (DANGEROUS)" on my Kindle.
+![](./gear-network.png)
+![](./gear-network-ssh-server.png)
+
+I'm going to setup my SSH key on the Kindle so that I can connect to my Kindle in a more secure manner. 
+
+1. I first need to temporarily enable "Login without password (DANGEROUS)" on my Kindle. This will allow me to connect to the Kindle via SSH with a blank password.
 2. Then, I will start the SSH server by clicking on the "SSH Server" menu item. You will get a popup on your Kindle that displays its IP address; I need it for the next step.
+   ![](./ssh-server-started.png)
 3. I can now connect via SSH. The connection details are as follows,
-   * Host: Your Kindle's IP address from step 2
+   * Host: Your Kindle's IP address from step 2, for me it was 192.168.12.120.
    * username: root
    * password: \<leave empty>
 4. My SSH command looked like so,
@@ -142,9 +144,9 @@ system: I mntroot:def:Making root filesystem writeable
 
 Now I need to find my Kindle's `authorized_keys` file, which is located at, `/mnt/us/koreader/settings/SSH/authorized_keys`. Like most light-weight systems, the only text editor available is `vi` so be sure to know how to exit once you're done.
 
-Paste your public key into your `authorized_keys` and exit your SSH session. Go back to your kindle and shut down your SSH server. Earlier, I enabled "Login without password." Now, it's time for me to turn it off and I should be able to login with my SSH key.
+Paste your public key into your `authorized_keys` and exit your SSH session. Go back to your Kindle and shut down your SSH server. Earlier, I enabled "Login without password." Now, it's time for me to turn it off and I should be able to login with my SSH key.
 
-Now, I'm going to verify that updating my `authorized_keys` worked correctly. When I connect via SSH, I'll add a `-v` and read the logs of which public key is accepted by my Kindle (I have several on my computer).
+To verify that updating my `authorized_keys` worked correctly, I'll add a `-v` to my SSH command and read the logs of which public key is accepted by my Kindle (I have several keys on my computer).
 
 ```
 $ ssh root@192.168.12.120 -p 2222 -v
@@ -156,12 +158,26 @@ debug1: Server accepts key: /Users/allejo/.ssh/id_ed25519 ED25519 SHA256:9S2ld7G
 Enter passphrase for key '/Users/allejo/.ssh/id_ed25519':
 ```
 
-The "Server accepts key:" is the important line that we're looking for. This means that my Kindle recognizes my SSH key and will allow me to log in once I unlock my key. Now, I can use my favorite SFTP client (or Finder) to connect to my Kindle in a secure manner. If I want to see the equivalent of my Kindle's "root," i.e. the filesystem I see when I connect my Kindle to my computer with a micro-USB cable, then that's mounted at `/mnt/us/`.
+The "Server accepts key:" is the important line that we're looking for. This means that my Kindle recognizes my SSH key and will allow me to log in once I unlock my key. Now, I can use my favorite SFTP client to connect to my Kindle in a secure manner. If I want to see the equivalent of my Kindle's "root," i.e. the filesystem I see when I connect my Kindle to my computer with a micro-USB cable, that's mounted at `/mnt/us/`.
+
+## Screenshots
+
+Another feature I was oddly excited for was the ability to take screenshots! Okay, so Kindles have had the ability to [take screenshots since at least 2020](https://www.toptrix.net/2020/05/most-useful-kindle-tools-services.html), but it's such a bad experience. The gesture isn't difficult, but for the life of me, I cannot tap both corners at the same time. And let's say I do manage by chance, the screen flashes white and that's it. But you know what else that looks like? Your Kindle repainting its entire screen. There's no notification at all that my screenshot was successful.
+
+But KOReader gets it right! Its default gesture for screenshots is a long one-finger diagnol swipe. I swipe from a top corner to its diagonal bottom corner and I get this notification that my screenshot was taken.
+
+![](./screenshot-notification.png)
+
+And since I can SFTP to my Kindle at any time, I can easily view those screenshots on my computer. And since KOReader providers a file browser, I can go find my screenshots at `/mnt/us/koreader/screenshots/` and view them on my Kindle itself!
 
 ## Exiting KOReader
 
-To go back to my stock Kindle UI, I exit out of KOReader. Just know, this will shut down everything I mentioned above like your SSH server and calibre wireless connection.
+To go back to my stock Kindle UI, I exit out of KOReader. This will shut down or disable any of the features I mentioned like screenshots or SSH. The way I see it is like KOReader because your enhanced "operating system" providing many useful services and integrations/apps. I intend on running KOReader 24/7 on my Kindle and treat it as a better OS.
+
+## Next free weekend's task: integrating calibre
+
+One of the most powerful feature that I'm excited about is its **wireless** integration with calibre! My tags, my genres, my collections, all of my hard work that I **own** finally able to integrate smoothly with my Kindle. Something Amazon would never support with it's incredibly shit excuse for a library UI on its website or within its apps. However, I have yet to fully learn about this feature and it will be a project for another weekend.
 
 ## That's It So Far
 
-This was my first weekend project 
+This was my first weekend project in many, many years. Life happens? Priorities shift? Depression? I don't know man, it's scary how it's been such a long time since I was motivated for a weekend project like this.
