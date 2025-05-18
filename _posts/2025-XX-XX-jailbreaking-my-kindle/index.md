@@ -110,8 +110,8 @@ I'm really trying to avoid having a micro-USB cable on my desk; I already have t
 
 Within KOReader, I navigate with the gear icon in the top menu bar, `Network`, then `SSH Server`.
 
-![](./gear-network.png)
-![](./gear-network-ssh-server.png)
+![](./menu-tools.png)
+![](./menu-tools-network.png)
 
 I'm going to setup my SSH key on the Kindle so that I can connect to my Kindle in a more secure manner. 
 
@@ -170,9 +170,68 @@ But KOReader gets it right! Its default gesture for screenshots is a long one-fi
 
 And since I can SFTP to my Kindle at any time, I can easily view those screenshots on my computer. And since KOReader providers a file browser, I can go find my screenshots at `/mnt/us/koreader/screenshots/` and view them on my Kindle itself!
 
+## Add a Dictionary
+
+My KOReader installation did not have a dictionary installed by default; I'm not sure if I configured it like that, or this is expected. There are two methods of installing dictionaries, through tne KOReader top menu and by transferring dictionaries manually.
+
+![](./menu-search-settings.png)
+![](./menu-search-settings-dictionary.png)
+
+### Through KOReader's Top Menu
+
+The first option is to install a dictionary from inside of KOReader. Navigate to the Search menu (the magnifying glass), Settings, Download Dictionaries. The annoying part about this method is that there are 20 pages worth of dictionaries that you need to flip through to. "E" for "English" is early on in the alphabet, so it's on page 4 for me.
+
+![](./menu-search-settings-dictionary-download.png)
+![](./menu-search-settings-dictionary-download-english.png)
+
+### Manually via SFTP (or wired)
+
+My preferred approach is to do download dictionary bundles manually and copy them to my Kindle via SFTP (or wired, if you prefer). The dictionaries I downloaded and installed are based on daily dumps from [Wiktionary](https://www.wiktionary.org/); I got the English-only dictionary and an English-Spanish dictionary.
+
+- [English Dictionary from Wiktionary](https://www.reader-dict.com/en/download/en) (i.e. `dict-en-en.zip`)
+- [Bilingual Dictionaries from Wiktionary](https://download.wikdict.com/dictionaries/stardict/) (i.e. `wikdict-en-es.zip`)
+
+KOReader supports dictionaries that are in the [StarDict](https://en.wikipedia.org/wiki/StarDict) format, which consists of extensions such as `*.idx`, `*.ifo` or `*.ifo.gz`, `*.dict` or `*.dict.dz`. The above links will download a ZIP file respectively that, when extracted, gives you folders with its StarDict files inside of said folders; extracting these ZIP files gave me the `dict-en-en` and `wikdict-en-es` folders.
+
+KOReader requires dictionaries to be stored in `/mnt/us/koreader/data/dict` (or `/koreader/data/dict` when connected with a cable). Each dictionary requires two levels of folders, so I created two folders to store my downloaded dictionary: "WikDict Bilingual" and "Ebook Reader Dict;" I then put `wikdict-en-es` and `dict-en-en` in those folders respectively.
+
+```
+.
+  |- GNU Collaborative International Dictionary of English
+  |  |- gcide
+  |  |  |- stardict.idx
+  |  |  |- stardict.dict.dz
+  |  |  |- stardict.syn
+  |  |  |- stardict.ifo
+  |  |  |- stardict.idx.oft
+  |- WikDict Bilingual
+  |  |- wikdict-en-es
+  |  |  |- stardict.dict.dz
+  |  |  |- stardict.idx
+  |  |  |- stardict.ifo
+  |  |  |- stardict.idx.oft
+  |- Ebook Reader Dict
+  |  |- dict-en-en
+  |  |  |- dict-data.ifo
+  |  |  |- dict-data.dict.dz
+  |  |  |- dict-data.syn.dz
+  |  |  |- res/
+  |  |  |- dict-data.idx
+  |  |  |- dict-data.idx.oft
+```
+
+After installing dictionaries, the `data/dict/` folder looks like the file tree show above. The "GNU Collaborative International Dictionary of English" folder was created automatically for me by KOReader. When I installed the English dictionary via the KOReader UI (what I talked about in the previous section), this is where it was stored.
+
 ## Exiting KOReader
 
-To go back to my stock Kindle UI, I exit out of KOReader. This will shut down or disable any of the features I mentioned like screenshots or SSH. The way I see it is like KOReader because your enhanced "operating system" providing many useful services and integrations/apps. I intend on running KOReader 24/7 on my Kindle and treat it as a better OS.
+One important thing to note is that while KOReader is running, it is impossible to connect your Kindle to your computer with a USB cable and transfer data to it. For me, this isn't really an issue since I setup SSH and I've been wanting to wireless manage my Kindle at my desk.
+
+Now, I may not need to exit KOReader to transfer any books to it but it is useful to know how to exit an application; I'm looking at you, Vim. Exiting out of KOReader will return me to my stock Kindle UI; this will shut down or disable any of the features I mentioned like screenshots or SSH. The way I see it is KOReader is your enhanced "operating system" providing many useful services and integrations/apps. I intend on running KOReader 24/7 on my Kindle and treat it as a better OS.
+
+![](./menu-main.png)
+![](./menu-main-exit.png)
+
+I click on the Main menu (the hamburger icon), click on Exit, and choose Exit once more to full shutdown KOReader.
 
 ## Next free weekend's task: integrating calibre
 
