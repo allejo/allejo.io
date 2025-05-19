@@ -10,13 +10,13 @@ categories:
   - hacking
 ---
 
-For years, I had been in search for the "perfect e-ink reader" that met all of my niche needs/wants. I wanted simple to configure integration with [calibre](https://calibre-ebook.com/), be able to download and read RSS feeds, and lastly, be able to connect to cloud storage such as Google Drive where I host my PDFs. These seem like a niche set of features, and honestly, they are. However, this is what I've always wanted. I did my research and evaluated many e-ink readers; e.g. Boox, Kobo, a new Kindle, Nook, ReMarkable, and others. None of them checked all the boxes and all came with extreme vendor lock-in or had virtually no developer community behind it. Sure, I've got an iPad that can accomplish all those features and more, but an iPad has a lot more functionality than I need when I just want to read without distractions.
+For years, I had been in search for the "perfect e-ink reader" that met all of my niche needs/wants. I wanted something with an integration to [calibre](https://calibre-ebook.com/), be able to download and read RSS feeds, and lastly, be able to connect to cloud storage such as Google Drive where I host my PDFs. These seem like a niche set of features, and honestly, they are. However, this is what I've always wanted. I did my research and evaluated many e-ink readers; e.g. Boox, Kobo, a new Kindle, Nook, ReMarkable, and others. None of them checked all the boxes and all came with extreme vendor lock-in or had virtually no developer community behind it. Sure, I've got an iPad that can accomplish all those features and more, but an iPad has a lot more functionality than I need when I just want to read without distractions.
 
-I recently discovered the Kindle jailbreaking community and was reminded my teen years where I was active in the iOS jailbreaking community. The level of freedom I had over my device at the time was something I would love to have over my Kindle and with Amazon running [a big book sale that "coincidentally" overlaps with Independent Bookstore Day](https://techcrunch.com/2025/04/26/amazons-big-book-sale-just-happens-to-overlap-with-independent-bookstore-day/?guccounter=1), I decided it was time to say "fuck you" to Amazon and part ways as much as I can.
+I recently discovered the Kindle jailbreaking community and was reminded of my teen years where I was active in the iOS jailbreaking community. The level of freedom I had over my device at the time was something I would love to have over my Kindle. With Amazon recently running [a big book sale that "coincidentally" overlapped with Independent Bookstore Day](https://techcrunch.com/2025/04/26/amazons-big-book-sale-just-happens-to-overlap-with-independent-bookstore-day/?guccounter=1), I decided it was time to say "fuck you" to Amazon and part ways as much as I can.
 
 ## Why am I jailbreaking my Kindle?
 
-I have recently worked long hours in organizing _all_ of my eBooks into a single library with calibre with the goal of being able to easily sync my Kindle with my books. Here's the difficult part, for years I had been buying ebooks from Amazon and while they did make the ecosystem incredibly user-friendly for the majority of the population, I felt nothing but limited due to the following:
+I have recently worked long hours in organizing _all_ of my ebooks into a single library with calibre with the goal of being able to easily sync my Kindle with my books. Here's the difficult part, for years I had been buying ebooks from Amazon and while they did make the ecosystem incredibly user-friendly for the majority of the population, I felt nothing but limited due to the following:
 
 1. As of February 26, 2025, Amazon has stopped supporting the "Download & Transfer via USB" functionality. This means, it is now incredibly more tedious for you to be able to download copies of the ebooks that **you** have bought. In the past, I have had Amazon delist ebooks from their online stores and in turn, I lost it from my Kindle since I can't search for it anymore. Thankfully, I was in the habit of always downloading a copy of those ebooks but what if I hadn't? I might have lost that digital book even though I **bought** it.
 2. I never thought this is something I would be writing this but with the direction my country, the United States, is heading regarding censorship, I did not want to remain at the mercy of Amazon to dictate which books that I've **purchased** I'm still allowed to read.
@@ -47,9 +47,13 @@ The first step is to actually run an exploit allowing us to remove security rest
 4. After rebooting, connect the Kindle to the computer. Extract WinterBreak and copy over the contents onto the Kindle (including the hidden dot files!). Replace any files that may already exist
 5. Eject Kindle from the computer
 6. Open the Kindle Store by clicking on the cart. It'll prompt you to disable Airplane mode, do it. Once the store loads, the Mesquito hack will be displayed. Click to run it.
+   <div class="c-image-gallery" markdown="1">
    ![WinterBreak "click to run" prompt](./winterbreak-click-to-run.png)
+   </div>
 7. Wait for a few seconds and then console text will appear in the upper left corner of the display. At this point, turn airplane mode back on and install the hotfix to persist this jailbreak across reboots.
+   <div class="c-image-gallery" markdown="1">
    ![Jailbreak process log text displaying on the upper left part of the screen](./jailbreak-successful.png)
+   </div>
 
 ### Persisting the Jailbreak (aka "Installing the Hotfix")
 
@@ -58,7 +62,9 @@ The next step is to persist this jailbreak across reboots and updates; a Kindle 
 1. Download the [update `.bin` file from GitHub](https://github.com/KindleModding/Hotfix/releases/latest/download/Update\_hotfix\_universal.bin), this file is what's known as the "hotfix."
 2. Plug in the Kindle and copy the `.bin` file to the root of the device. If there are any other `.bin` files on the device already, delete them first.
 3. Go to your Kindle settings, then click the three dot menu, and select "Update your Kindle." Confirm the installation.
+   <div class="c-image-gallery" markdown="1">
    ![Dropdown menu with "Update your Kindle" option](update-your-kindle.png)
+   </div>
 4. After the Kindle has rebooted, the hotfix is now installed and needs to be executed on the device. A new "ebook" is displayed in your device's library called "Run Hotfix." Open that book to run the process.
 5. Do **not** delete the hotfix eBook, it is necessary to run it every time there's an update
 
@@ -110,14 +116,19 @@ I'm really trying to avoid having a micro-USB cable on my desk; I already have t
 
 Within KOReader, I navigate with the gear icon in the top menu bar, `Network`, then `SSH Server`.
 
+<div class="c-image-gallery" markdown="1">
 ![](./menu-tools.png)
+
 ![](./menu-tools-network.png)
+</div>
 
 I'm going to setup my SSH key on the Kindle so that I can connect to my Kindle in a more secure manner. 
 
 1. I first need to temporarily enable "Login without password (DANGEROUS)" on my Kindle. This will allow me to connect to the Kindle via SSH with a blank password.
 2. Then, I will start the SSH server by clicking on the "SSH Server" menu item. You will get a popup on your Kindle that displays its IP address; I need it for the next step.
+   <div class="c-image-gallery" markdown="1">
    ![](./ssh-server-started.png)
+   </div>
 3. I can now connect via SSH. The connection details are as follows,
    * Host: Your Kindle's IP address from step 2, for me it was 192.168.12.120.
    * username: root
@@ -166,7 +177,9 @@ Another feature I was oddly excited for was the ability to take screenshots! Oka
 
 But KOReader gets it right! Its default gesture for screenshots is a long one-finger diagnol swipe. I swipe from a top corner to its diagonal bottom corner and I get this notification that my screenshot was taken.
 
+<div class="c-image-gallery" markdown="1">
 ![](./screenshot-notification.png)
+</div>
 
 And since I can SFTP to my Kindle at any time, I can easily view those screenshots on my computer. And since KOReader providers a file browser, I can go find my screenshots at `/mnt/us/koreader/screenshots/` and view them on my Kindle itself!
 
@@ -174,15 +187,21 @@ And since I can SFTP to my Kindle at any time, I can easily view those screensho
 
 My KOReader installation did not have a dictionary installed by default; I'm not sure if I configured it like that, or this is expected. There are two methods of installing dictionaries, through tne KOReader top menu and by transferring dictionaries manually.
 
+<div class="c-image-gallery" markdown="1">
 ![](./menu-search-settings.png)
+
 ![](./menu-search-settings-dictionary.png)
+</div>
 
 ### Through KOReader's Top Menu
 
 The first option is to install a dictionary from inside of KOReader. Navigate to the Search menu (the magnifying glass), Settings, Download Dictionaries. The annoying part about this method is that there are 20 pages worth of dictionaries that you need to flip through to. "E" for "English" is early on in the alphabet, so it's on page 4 for me.
 
+<div class="c-image-gallery" markdown="1">
 ![](./menu-search-settings-dictionary-download.png)
+
 ![](./menu-search-settings-dictionary-download-english.png)
+</div>
 
 ### Manually via SFTP (or wired)
 
@@ -228,8 +247,11 @@ One important thing to note is that while KOReader is running, it is impossible 
 
 Now, I may not need to exit KOReader to transfer any books to it but it is useful to know how to exit an application; I'm looking at you, Vim. Exiting out of KOReader will return me to my stock Kindle UI; this will shut down or disable any of the features I mentioned like screenshots or SSH. The way I see it is KOReader is your enhanced "operating system" providing many useful services and integrations/apps. I intend on running KOReader 24/7 on my Kindle and treat it as a better OS.
 
+<div class="c-image-gallery" markdown="1">
 ![](./menu-main.png)
+
 ![](./menu-main-exit.png)
+</div>
 
 I click on the Main menu (the hamburger icon), click on Exit, and choose Exit once more to full shutdown KOReader.
 

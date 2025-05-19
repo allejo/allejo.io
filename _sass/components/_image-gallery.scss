@@ -1,0 +1,26 @@
+.c-image-gallery {
+  @include padding(y, 3);
+
+  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  overflow: hidden;
+
+  img, p {
+    max-height: 300px;
+  }
+
+  img {
+    @include padding(x, 3);
+
+    &::after {
+      content: attr(alt);
+      display: block;
+    }
+  }
+
+  p {
+    overflow: hidden;
+  }
+}
