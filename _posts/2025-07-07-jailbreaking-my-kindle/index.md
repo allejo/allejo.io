@@ -1,6 +1,6 @@
 ---
 title: How and why I jailbroke my Kindle
-date: 2025-06-20 00:00:00.00 -8
+date: 2025-07-07 00:00:00.00 -8
 anthology:
   name: Kindle Modding
   type: chapter
