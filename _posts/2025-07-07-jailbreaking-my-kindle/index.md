@@ -10,6 +10,8 @@ categories:
   - hacking
 ---
 
+{% from '_macros/blog-gallery.html.twig' import image_gallery %}
+
 For years, I had been searching for the "perfect e-ink reader" that met all of my niche needs and wants. I wanted something with integration to [calibre](https://calibre-ebook.com/), the ability to download and read RSS feeds, and, lastly, the ability to connect to cloud storage, such as Google Drive, where I host my PDFs. These seem like a niche set of features, and honestly, they are. However, this is what I've always wanted. I conducted my research and evaluated numerous e-ink readers, including Boox, Kobo, the new Kindle, Nook, ReMarkable, and others. None of them checked all the boxes, and all came with extreme vendor lock-in or had virtually no developer community behind them. Sure, I've got an iPad that can accomplish all those features and more, but it has a lot more functionality than I need when I want to read without distractions.
 
 I recently discovered the Kindle jailbreaking community and was reminded of my teen years when I was active in the iOS jailbreaking community. The level of freedom I had over my device at the time was something I would love to have over my Kindle. With Amazon recently running [a big book sale that "coincidentally" overlapped with Independent Bookstore Day](https://techcrunch.com/2025/04/26/amazons-big-book-sale-just-happens-to-overlap-with-independent-bookstore-day/?guccounter=1), I decided it was time to say "fuck you" to Amazon and part ways as much as I can.
@@ -47,13 +49,21 @@ The first step is to run an exploit, which allows us to remove security restrict
 4. After rebooting, connect the Kindle to the computer via USB. Extract WinterBreak and copy over the contents onto the Kindle (including the hidden dot files!). Replace any files that may already exist.
 5. Eject your Kindle from the computer.
 6. Open the Kindle Store by clicking on the cart icon. It'll prompt you to turn off Airplane mode, do it. Once the store loads, the Mesquito hack will be displayed. Click to run it.
-   <div class="c-image-gallery" markdown="1">
-   ![WinterBreak "click to run" prompt](./winterbreak-click-to-run.png)
-   </div>
+   {{ image_gallery([
+     {
+        alt: "Kindle screenshot of WinterBreak's \"click to run\" prompt",
+        caption: "The Kindle Store serves as our environment for executing code, so we run the Mesquito exploit from here.",
+        src: "./winterbreak-click-to-run.png",
+     }
+   ]) }}
 7. Wait for a few seconds, and then console text will appear in the upper left corner of the display. At this point, turn airplane mode back on and install the hotfix to persist this jailbreak across reboots.
-   <div class="c-image-gallery" markdown="1">
-   ![Jailbreak process log text displaying on the upper left part of the screen](./jailbreak-successful.png)
-   </div>
+   {{ image_gallery([
+     {
+        alt: "Jailbreak process log text displaying on the upper left part of the screen",
+        caption: "When the jailbreak process is complete, the top left of your Kindle will display Terminal-like log message.",
+        src: "./jailbreak-successful.png",
+     }
+   ]) }}
 
 ### Persisting the Jailbreak (aka "Installing the Hotfix")
 
@@ -62,9 +72,13 @@ The next step is to persist this jailbreak across reboots and updates; a Kindle 
 1. Download the [update `.bin` file from GitHub](https://github.com/KindleModding/Hotfix/releases/latest/download/Update\_hotfix\_universal.bin), this file is what's known as the "hotfix."
 2. Plug in the Kindle and copy the `.bin` file to the device's root directory. If there are any other `.bin` files on the device already, delete them first.
 3. Go to your Kindle settings, then click the three-dot menu, and select "Update your Kindle." Confirm the installation.
-   <div class="c-image-gallery" markdown="1">
-   ![Dropdown menu with "Update your Kindle" option](update-your-kindle.png)
-   </div>
+   {{ image_gallery([
+     {
+        alt: "Dropdown menu with \"Update your Kindle\" option",
+        caption: "From your Kindle settings, you will apply the hotfix as an \"update\" to your Kindle software.",
+        src: "update-your-kindle.png",
+     }
+   ]) }}
 4. After the Kindle has rebooted, the hotfix is now installed and needs to be executed on the device. A new "ebook" is displayed in your device's library called "Run Hotfix." Open that book to run the process.
 5. Do **not** delete the hotfix ebook, it is necessary to run it every time there's an update.
 
@@ -116,23 +130,34 @@ I'm trying to avoid having a micro-USB cable on my desk; I already have one at m
 
 Within KOReader, I navigate to the gear icon in the top menu bar, then select `Network`, followed by `SSH Server`.
 
-<div class="c-image-gallery" markdown="1">
-![](./menu-tools.png)
-
-![](./menu-tools-network.png)
-</div>
+{{ image_gallery([
+  {
+    alt: "KOReader's Gear menu",
+    caption: "In KOReader's Gear menu, select the \"Network\" submenu that is the third item from the top.",
+    src: "./menu-tools.png",
+  },
+  {
+    alt: "KOReader's Network menu",
+    caption: "Within the Network menu, select the \"SSH server\" submenu that is the last item of the menu.",
+    src: "./menu-tools-network.png",
+  }
+]) }}
 
 I'm setting up my SSH key on the Kindle so that I can connect to it securely.
 
 1. I first need to temporarily enable "Login without password (DANGEROUS)" on my Kindle. This will allow me to connect to the Kindle via SSH with a blank password.
 2. Then, I will start the SSH server by clicking on the "SSH Server" menu item. You will get a pop-up on your Kindle that displays its IP address; I need it for the next step.
-   <div class="c-image-gallery" markdown="1">
-   ![](./ssh-server-started.png)
-   </div>
+   {{ image_gallery([
+     {
+        alt: "Pop-up notification confirming KOReader's SSH server started successfully",
+        caption: "When the SSH server has started, you'll receive a success notification with two bits of important information: the Kindle's IP address and KOReader's SSH port.",
+        src: "./ssh-server-started.png",
+     }
+   ]) }}
 3. I can now connect via SSH. The connection details are as follows,
    - Host: Your Kindle's IP address from step 2, for me, it was 192.168.12.120.
    - Username: root
-   - Password: \<leave empty>
+   - Password: &lt;leave empty&gt;
 4. My SSH command looked like so,
 
    ```
@@ -177,9 +202,13 @@ Another feature I was oddly excited for was the ability to take screenshots! Oka
 
 But KOReader gets it right! Its default gesture for screenshots is a long one-finger diagonal swipe. I swipe from a top corner to its diagonal bottom corner, and I receive a notification that my screenshot was taken.
 
-<div class="c-image-gallery" markdown="1">
-![](./screenshot-notification.png)
-</div>
+{{ image_gallery([
+  {
+    alt: "Screenshot notification on KOReader displayed as a popup",
+    caption: "KOReader displays a notification when you successfully take a screenshot, confirming your action was recorded.",
+    src: "./screenshot-notification.png",
+  }
+]) }}
 
 And since I can SFTP to my Kindle at any time, I can easily view those screenshots on my computer. And since KOReader provides a file browser, I can go find my screenshots at `/mnt/us/koreader/screenshots/` and view them on my Kindle itself!
 
@@ -187,23 +216,40 @@ And since I can SFTP to my Kindle at any time, I can easily view those screensho
 
 My KOReader installation did not have a dictionary installed by default; I'm unsure if I configured it that way or if this is expected. There are two methods for installing dictionaries: through KOReader's top menu and by manually transferring dictionaries.
 
-<div class="c-image-gallery" markdown="1">
-![](./menu-search.png)
-
-![](./menu-search-settings.png)
-
-![](./menu-search-settings-dictionary.png)
-</div>
+{{ image_gallery([
+    {
+        alt: "KOReader's Search menu",
+        caption: "In KOReader, tap the magnifying glass icon to access the Search menu.",
+        src: "./menu-search.png",
+    },
+    {
+        alt: "KOReader's Search Settings menu",
+        caption: "From the Search menu, select the \"Settings\" option to configure dictionary and search preferences.",
+        src: "./menu-search-settings.png",
+    },
+    {
+        alt: "KOReader's Dictionary Settings menu",
+        caption: "The \"Dictionary Settings\" menu allows you to manage, download, and configure how dictionaries work in KOReader.",
+        src: "./menu-search-settings-dictionary.png",
+    },
+]) }}
 
 ### Through KOReader's Top Menu
 
 The first option is to install a dictionary from inside KOReader. Navigate to the Search menu (represented by a magnifying glass), then select Settings, and finally, Download Dictionaries. The annoying part about this method is that there are 20 pages worth of dictionaries that you need to flip through. "E" for "English" is early on in the alphabet, so it's on page 4 for me.
 
-<div class="c-image-gallery" markdown="1">
-![](./menu-search-settings-dictionary-download.png)
-
-![](./menu-search-settings-dictionary-download-english.png)
-</div>
+{{ image_gallery([
+  {
+    alt: "KOReader's Download Dictionaries menu",
+    caption: "The \"Download Dictionaries\" submenu shows a paginated list of available dictionaries to install.",
+    src: "./menu-search-settings-dictionary-download.png",
+  },
+  {
+    alt: "English dictionary selection in KOReader",
+    caption: "The English dictionary can be found on page 4 of the \"Download Dictionaries\" submenu.",
+    src: "./menu-search-settings-dictionary-download-english.png",
+  }
+]) }}
 
 ### Manually via SFTP (or wired)
 
@@ -243,9 +289,13 @@ KOReader requires dictionaries to be stored in `/mnt/us/koreader/data/dict` (or 
 
 After installing dictionaries, the `data/dict/` folder looks like the file tree shown above. The "GNU Collaborative International Dictionary of English" folder was automatically created for me by KOReader when I installed the English dictionary through the KOReader UI (as discussed in the previous section).
 
-<div class="c-image-gallery" markdown="1">
-![](./menu-search-settings-dictionary-manage.png)
-</div>
+{{ image_gallery([
+  {
+    alt: "KOReader's Dictionary Management interface",
+    caption: "The \"Dictionary Management\" menu allows you to view and manage all installed dictionaries on your Kindle.",
+    src: "./menu-search-settings-dictionary-manage.png",
+  }
+]) }}
 
 ## Exiting KOReader
 
@@ -253,11 +303,18 @@ One important thing to note is that while KOReader is running, it is not possibl
 
 Now, I may not need to exit KOReader to transfer any books to it, but it is helpful to know how to exit an application; I'm looking at you, Vim. Exiting KOReader will return me to my stock Kindle UI; this will turn off any of the features I mentioned, such as screenshots or SSH. The way I see it is KOReader is your enhanced "operating system" providing many useful services and integrations/apps. I intend on running KOReader 24/7 on my Kindle and treat it as a better OS.
 
-<div class="c-image-gallery" markdown="1">
-![](./menu-main.png)
-
-![](./menu-main-exit.png)
-</div>
+{{ image_gallery([
+  {
+    alt: "KOReader's main menu",
+    caption: "Access the main menu by tapping the hamburger icon to find the Exit submenu.",
+    src: "./menu-main.png",
+  },
+  {
+    alt: "KOReader's exit confirmation dialog",
+    caption: "Select \"Exit\" once more to close KOReader and return to the stock Kindle interface.",
+    src: "./menu-main-exit.png",
+  }
+]) }}
 
 Click on the Main menu (the hamburger icon), then click on Exit, and choose Exit again to shut down KOReader entirely.
 
