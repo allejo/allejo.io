@@ -1,0 +1,12 @@
+{% macro image_gallery(images) %}
+  <div class="c-image-gallery">
+    {% for image in images %}
+      <figure>
+        <div markdown="1">[![{{ image.alt }}]({{ image.src }})]({{ image.src }})</div>
+        <figcaption>
+          {{ image.caption }}
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+{% endmacro %}
