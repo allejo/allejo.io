@@ -1,11 +1,3 @@
-- logo: instagram
-  url: https://instagram.com/allejome/
-  color: "#125688"
-  slug: Follow me on Instagram
-#- logo: twitter
-#  url: https://twitter.com/allejome
-#  color: "#55ACEE"
-#  slug: Follow me on Twitter
 - logo: mastodon
   url: https://mastodon.social/@allejo
   color: "#595AFF"
@@ -19,11 +11,3 @@
   url: https://github.com/allejo
   color: "#181717"
   slug: Check out my open source projects
-# - logo: patreon
-#   url: https://patreon.com/allejo
-#   color: "#E85A46"
-#   slug: Support me on Patreon
-- logo: stack-overflow
-  url: https://stackoverflow.com/users/1239484/allejo
-  color: "#F48024"
-  slug: Find me on Stack Overflow
