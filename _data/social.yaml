@@ -3,6 +3,9 @@
   color: "#595AFF"
   slug: Follow me on Mastodon
   rel: me
+- logo: bluesky
+  url: https://bsky.app/profile/allejo.bsky.social
+  color: "#1DA1F2"
 - logo: linkedin
   url: https://www.linkedin.com/in/allejo
   color: "#0077B5"
