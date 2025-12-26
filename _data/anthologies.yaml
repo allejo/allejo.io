@@ -1,7 +1,10 @@
 - name: BZFlag Plug-ins for Dummies
-  status: on hiatus
-  updates: N/A
   description: |
     An opinionated series about how to write plug-ins for BZFlag servers. This
     series expects that you have a general grasp of C++ and programming that
     you'll be able to understand its concepts.
+- name: Kindle Modding
+  description: |
+    My adventures in modding my Kindle e-reader to add new features and
+    functionality since Jeff Bezos has deemed that my device is no longer worth
+    of updates and security patches.
