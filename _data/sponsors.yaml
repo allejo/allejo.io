@@ -2,40 +2,23 @@
 #
 # - name: OT John Doe
 #   url: https://google.com
-#   one-time: true
-# - name: Ongoing Doe
-#   url: https://google.com
-#   start: 2019-10-01
-# - name: Doe of Sponsor Past
-#   url: https://google.com
-#   start: 2019-10-01
-#   end: 2019-10-15
 
-- name: Pete Medina
-  #url: https://google.com
-  start: 2019-10-30
-  end: 2021-12-31
-- name: Jang Rush
-  start: 2019-11-22
-  end: 2020-02-01
-- name: Stephen Hoover
-  one-time: true
-- name: Pavel Serikov
-  one-time: true
-- name: Weston Ruter
-  start: 2020-08-29
-- name: Henry Blyth
-  url: https://henryblyth.com/
-  one-time: true
-- name: Andreas Möller
-  url: https://localheinz.com
-  one-time: true
-- name: Jordan Nash
-  url: https://github.com/LayersOfAbstraction
-  one-time: true
-- name: Alex Renoki
-  url: https://github.com/rennokki
-  start: 2022-06-26
-- name: Michael Fehrenbach
-  url: https://twitter.com/mfehrenbach
-  one-time: true
+sponsors:
+  - name: Pete Medina
+    #url: https://google.com
+  - name: Jang Rush
+  - name: Weston Ruter
+  - name: Alex Renoki
+    url: https://github.com/rennokki
+
+one-time:
+  - name: Stephen Hoover
+  - name: Pavel Serikov
+  - name: Henry Blyth
+    url: https://henryblyth.com/
+  - name: Andreas Möller
+    url: https://localheinz.com
+  - name: Jordan Nash
+    url: https://github.com/LayersOfAbstraction
+  - name: Michael Fehrenbach
+    url: https://twitter.com/mfehrenbach

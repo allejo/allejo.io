@@ -19,7 +19,6 @@ menu: false
 {%- endmacro -%}
 
 {% set github = '[GitHub Sponsors](https://github.com/sponsors/allejo)' %}
-{% set patreon = '[Patreon](https://patreon.com/allejo)' %}
 {% set ko_fi = '[Ko-Fi](https://ko-fi.com/allejo)' %}
 {% set coffee = '[Buy Me a Coffee](https://buymeacoffee.com/allejo)' %}
 {% set paypal = '[PayPal](https://www.paypal.me/allejo)' %}
@@ -27,41 +26,21 @@ menu: false
 {% block content %}
     {% from _self import unordered_list %}
 
-    {% set og_sponsors = data.sponsors | where('start', '!=', null) | where('end', '==', null) %}
-    {% set pv_sponsors = data.sponsors | where('start', '!=', null) | where('end', '!=', null) %}
-    {% set ot_sponsors = data.sponsors | where('one-time', '==', true) %}
-
     {% markdown %}
         # Thanks!
 
-        I'm not a full-time open source developer but I dedicate a lot of my spare time to open source projects. I am grateful to everyone who financially supported my open source ventures via {{ github }}, {{ patreon }}, {{ ko_fi }}, {{ coffee }}, or {{ paypal }}.
+        My dream is to retire young, have a farm, and work on open source software for fun. Help me achieve this dream by donating to my retirement fund or sponsoring my open source work! I am grateful to everyone who has financially supported my open source ventures via {{ github }}, {{ ko_fi }}, {{ coffee }}, or {{ paypal }}.
 
         ## Sponsorships
 
-        These are the amazing companies or individuals who have supported me with reoccurring sponsorships through {{ github }} or {{ patreon }}.
+        These are the amazing individuals who have supported me with recurring sponsorships through {{ github }}.
 
-        {% if og_sponsors -%}
-        {{- unordered_list(og_sponsors) -}}
-        {% else -%}
-        - This list is a little lonely, maybe consider adding yourself or your company to this list?
-        {% endif %}
-
-        {% if pv_sponsors -%}
-        ### Previous Sponsors
-
-        These companies or individuals once sponsored me in the past and I am forever grateful for their contributions.
-
-        {{- unordered_list(pv_sponsors) -}}
-        {% endif %}
+        {{ unordered_list(data.sponsors.sponsors | order('name')) }}
 
         ## One-time Sponsors
 
         These sponsors have made their impact with one-time donations for any of my projects through {{ ko_fi }}, {{ coffee }}, or {{ paypal }}.
 
-        {% if ot_sponsors %}
-        {{- unordered_list(ot_sponsors) -}}
-        {% else -%}
-        - This list is a little lonely, maybe consider adding yourself or your company to this list?
-        {% endif %}
+        {{ unordered_list(data.sponsors['one-time'] | order('name')) }}
     {% endmarkdown %}
 {% endblock %}

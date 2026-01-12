@@ -84,17 +84,29 @@ description: I'm just another boring developer pretending to know what he's doin
 {% endmacro %}
 
 {% block content %}
-    {% set page_content %}{% markdown %}
-        *[CMS]: Content Management System
+    {% set page_content %}
+        {% markdown %}
+            # About
 
-        # About
+            My name's Vladimir and on the Internet, I go by "allejo."
 
-        My name's Vladimir and on the Internet, I go by "allejo."
+            You may recognize me as a former coworker that you liked, a mentor from a tech community, a shitposter on LinkedIn, or as a contributor to open source projects. I'm a senior software engineer currently in higher ed doing frontend development at [UC Merced](https://www.ucmerced.edu), previously I was at [Stack Overflow](https://stackoverflow.com/) until capitalism laid me off.
 
-        I pretend to know what I'm doing as a developer solely because I can't live out my dream of taking part in interstellar space travel. I enjoy late night food runs, eating sushi, staring at my desktop legion, and occasionally playing on my PS4.
+            I enjoy building developer tools like documentation builders, code generators, syntax highlighters, and similar tools. Building 3D worlds is a hobby of mine so I've enjoyed contributing to BZFlag, its community, and ecosystem over the past decade.
 
-        When I'm not building on BZFlag related projects or working on open source projects, I work as a software developer for [Stack Overflow](https://stackoverflow.com/) working on the Community Enablement team.
+            Since 2019, I have mentored 30+ junior and 10+ mid-level developers. I speak at conferences and workplaces about accessibility, mentoring, frontend, and technical leadership.
+        {% endmarkdown %}
 
+        <div class="position-relative">
+            <ul class="c-tabs position-sticky">
+                <li class="c-tabs__tab selected"><a href="#communities">Communities</a></li>
+                <li class="c-tabs__tab"><a href="#employment">Employment</a></li>
+                <li class="c-tabs__tab"><a href="#conference-talks">Conference Talks</a></li>
+                <li class="c-tabs__tab"><a href="#accomplishments">Accomplishments</a></li>
+            </ul>
+        </div>
+
+    {% markdown %}
         ## Communities
 
         Since I'm not busy enough and am an advocate for open source projects, these are the projects/communities that I'm actively involved in and dedicate a lot of my spare time towards.
@@ -110,7 +122,7 @@ description: I'm just another boring developer pretending to know what he's doin
             }
         ) }}
 
-        ## Places I've Worked
+        ## Employment
 
         It's not all just open source and games for me; just like most people, I have bills to pay too. These are the awesome companies and organizations that have helped me do so over the years.
 
@@ -125,7 +137,7 @@ description: I'm just another boring developer pretending to know what he's doin
             }
         ) }}
 
-        ## Talks
+        ## Conference Talks
 
         Even though hearing the sound of my own voice weirds me out, other people like hearing me talk about things I've managed to accomplish.
 
@@ -139,7 +151,7 @@ description: I'm just another boring developer pretending to know what he's doin
             }
         ) }}
 
-        ## Accomplishments
+        ## Awards
 
         I occasionally take part in code related competitions whenever I'm invited to do so. Here are some notable mentions of competitions I've participated in and the work I did during the said competitions.
 

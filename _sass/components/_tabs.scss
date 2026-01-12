@@ -1,0 +1,31 @@
+.c-tabs {
+  background-color: #e9e9e9;
+  border: 1px solid var(--stx-color-grey-light);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.c-tabs__tab {
+  flex-grow: 1;
+  list-style: none;
+  text-align: center;
+
+  &.selected {
+    background-color: var(--stx-color-blue-light);
+    transition: background-color 0.3s ease;
+
+    a {
+      color: var(--stx-color-cream);
+      font-weight: bold;
+    }
+  }
+
+  a {
+    display: block;
+    line-height: 1;
+    padding: 0.75rem;
+    text-decoration: none;
+  }
+}

@@ -32,11 +32,6 @@ menu: false
                 <i class="fas fa-fw fa-coffee" aria-hidden="true"></i>
                 Buy me a coffee Subscription
             </a>
-            {# <a href="https://patreon.com/{{ site.social.patreon.username }}" class="c-button">
-                <i class="fab fa-fw fa-patreon" aria-hidden="true"></i>
-
-                Support Me on Patreon
-            </a> #}
         </div>
 
         ## Send a Donation
@@ -49,8 +44,8 @@ menu: false
                 Buy me a coffee
             </a>
             <a href="https://ko-fi.com/{{ site.social.kofi.username }}" class="c-button">
-                <i class="fas fa-fw fa-utensils" aria-hidden="true"></i>
-                Feed my sushi addiction
+                <i class="fas fa-fw fa-beer" aria-hidden="true"></i>
+                Buy me a beer
             </a>
             <a href="https://paypal.me/{{ site.social.paypal.username }}" class="c-button">
                 <i class="fab fa-fw fa-paypal" aria-hidden="true"></i>
@@ -62,9 +57,9 @@ menu: false
 
         I'm not very active on social media but I do occasionally post with regards to stuff I build or have learned; having followers makes me feel popular. Oh, let's not forget about my several attempts at being funny.
 
-        - [GitHub](https://github.com/allejo)
-        - [Instagram](https://www.instagram.com/allejome/)
-        - [Mastodon](https://mastodon.social/@allejo)
+        {% for social in data.social | order('name') -%}
+            - [{{ social.name }}]({{ social.url }})
+        {% endfor %}
 
         ## Spread the Word
 
