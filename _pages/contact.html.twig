@@ -2,7 +2,7 @@
 title: Contact
 permalink: /contact/
 menu: false
-description: I hang around Freenode's IRC network as allejo. For quick help, find me on IRC or send me a quick message on Twitter.
+description: Contact allejo via social media or email.
 ---
 
 {% extends '_layouts/page.html.twig' %}
@@ -12,56 +12,14 @@ description: I hang around Freenode's IRC network as allejo. For quick help, fin
 {% endblock %}
 
 {% block content %}
-    <h1>Contact</h1>
+    {% markdown %}
+        # Contact
 
-    <p>I hang around Freenode's IRC network as <em>allejo</em>. For quick help, find me on IRC or send me a quick message on <a href="https://twitter.com/allejome">Twitter</a>. If you have a longer or more detailed message, here are some things to keep in mind.</p>
+        Feel free to reach out to me via any of the following methods:
 
-    <ul>
-        {#<li>If you're contacting me with questions or corrections regarding a blog post, the comment section of the respective post is better suited.</li>#}
-        <li>If you'd like to report a bug, request a feature, or ask for help regarding one of my open source projects, the "Issues" section of the respective GitHub repository is better suited.</li>
-    </ul>
+        - on BlueSky: [@allejo.bsky.social](https://bsky.app/profile/allejo.bsky.social)
+        - on LinkedIn: [/in/allejo/](https://www.linkedin.com/in/allejo/)
 
-    <p>Chances are, other people may have the same question or issue as you, so it's best to let Google index that public knowledge. There are obviously exceptions to this (e.g. security, privacy, etc.), so use your best judgement.</p>
-
-    <form accept-charset="UTF-8" action="https://allejo.wufoo.com/forms/z1cawajh0hc506w/" autocomplete="off" class="wufoo topLabel page1" enctype="multipart/form-data" id="form1" method="post" name="form1" novalidate="">
-        <div class="form-group">
-            <label for="Field1" class="sr-only">
-                Name
-                <span class="req" id="req_1">*</span>
-            </label>
-            <input id="Field1" maxlength="255" name="Field1" placeholder="Name" required="true" type="text" value="" />
-        </div>
-        <div class="form-group">
-            <label for="Field3" class="sr-only">
-                Email address
-                <span class="req" id="req_3">*</span>
-            </label>
-            <input id="Field3" maxlength="255" name="Field3" placeholder="Email address (will remain private)" required="true" spellcheck="false" type="email" value="" />
-        </div>
-        <div class="form-group">
-            <label for="Field4" class="sr-only">
-                How'd you hear about my website?
-            </label>
-            <input id="Field4" maxlength="255" name="Field8" placeholder="How'd you hear about my website?" type="text" value="" />
-        </div>
-        <div class="form-group">
-            <label for="Field6" class="sr-only">
-                Message
-                <span class="req" id="req_6">*</span>
-            </label>
-            <textarea id="Field6" name="Field6" placeholder="Message" required="true" cols="50" rows="10" spellcheck="true"></textarea>
-        </div>
-        <div class="form-group">
-            <button class="c-button" id="saveForm" name="saveForm" type="submit">
-                Send Message
-            </button>
-        </div>
-        <div class="d-none">
-            <label for="comment">
-                Do Not Fill This Out
-            </label>
-            <textarea cols="1" id="comment" name="comment" rows="1"></textarea>
-            <input id="idstamp" name="idstamp" type="hidden" value="{{ site.api.wufoo }}"/>
-        </div>
-    </form>
+        If you'd like to send me an email, it's "me" at this domain.
+    {% endmarkdown %}
 {% endblock %}
