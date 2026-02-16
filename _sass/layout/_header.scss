@@ -2,22 +2,13 @@
     $_spacing: map-get($spacing, 3);
 
     background-color: $hamburger-color;
+    display: flex;
+    justify-content: space-between;
     height: $hamburger-height;
     margin: 0 (-1 * $_spacing) $_spacing;
     padding: 0 $_spacing;
     position: relative;
     transition: background-color $hamburger-transistion-duration;
-
-    @include respond-up(sm) {
-        margin: {
-            left: (-2 * $_spacing);
-            right: (-2 * $_spacing);
-        }
-        padding: {
-            left: (2 * $_spacing);
-            right: (2 * $_spacing);
-        }
-    }
 
     @include respond-up(lg) {
         display: none;

@@ -1,0 +1,17 @@
+.c-table-of-contents {
+  @include padding(null, 4);
+
+  border-left: 5px solid var(--stx-color-blue-dark);
+  position: absolute;
+  right: 0;
+  top: $hamburger-height;
+
+  @include respond-up(lg) {
+    @include margin(t, 5);
+
+    left: 0;
+    position: sticky;
+    right: unset;
+    top: map-get($spacing, 4);
+  }
+}

@@ -1,4 +1,5 @@
 # Stakx configuration
+debug: true
 
 collections:
   - name: posts

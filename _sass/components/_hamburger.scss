@@ -96,3 +96,45 @@
         transition-delay: 0s, $hamburger-transistion-duration;
     }
 }
+
+.c-toc-toggle {
+    align-items: flex-start;
+    appearance: none;
+    background-color: $hamburger-color;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $hamburger-bar-padding;
+    height: $hamburger-width;
+    width: $hamburger-width;
+    padding: 10px;
+}
+
+.c-toc-toggle__line {
+    background-color: white;
+    display: block;
+    height: $hamburger-bar-thickness;
+    margin-left: 5px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        height: $hamburger-bar-thickness;
+        width: $hamburger-bar-thickness;
+        background-color: white;
+    }
+
+    &:nth-child(1) {
+        width: calc(100% - 5px);
+    }
+
+    &:nth-child(2) {
+        width: calc(2/3 * (100% - 5px));
+    }
+
+    &:nth-child(3) {
+        width: calc((100% - 5px) * 1/3);
+    }
+}
