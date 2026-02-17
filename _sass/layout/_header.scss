@@ -58,6 +58,7 @@
 .u-nav-open {
     .c-page-header {
         background-color: $hamburger-color-active;
+        min-width: 100px;
         padding-left: 0;
         width: calc(100vw - (#{$width-sidebar} - #{$hamburger-width}));
     }
