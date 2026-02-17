@@ -53,6 +53,11 @@
   font-weight: 300;
   letter-spacing: 0.2rem;
   line-height: 1;
+
+  &:focus,
+  &:hover {
+    color: var(--stx-color-egg-yolk);
+  }
 }
 
 .u-nav-open {
