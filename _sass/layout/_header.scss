@@ -1,6 +1,7 @@
 .c-page-header {
     $_spacing: map-get($spacing, 3);
 
+    align-items: center;
     background-color: $hamburger-color;
     display: flex;
     justify-content: space-between;
@@ -45,10 +46,23 @@
     margin-top: -7px;
 }
 
+.c-page-header-title {
+  color: var(--stx-color-white);
+  font-family: $font-stack-branding;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+}
+
 .u-nav-open {
     .c-page-header {
         background-color: $hamburger-color-active;
         padding-left: 0;
         width: calc(100vw - (#{$width-sidebar} - #{$hamburger-width}));
+    }
+
+    .c-page-header-title {
+        display: none;
     }
 }
