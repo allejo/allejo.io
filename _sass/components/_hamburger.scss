@@ -3,10 +3,9 @@
 //
 
 .c-hamburger {
-    display: block;
+    display: flex;
     position: relative;
     overflow: hidden;
-    left: -5px;
     margin: 0;
     padding: 0;
     width: $hamburger-width;
@@ -25,6 +24,7 @@
     right: $hamburger-padding;
     height: $hamburger-bar-thickness;
     background: white;
+  transition: background 0s $hamburger-transistion-duration;
 }
 
 .c-hamburger span::before,
@@ -36,63 +36,112 @@
     height: $hamburger-bar-thickness;
     background-color: #fff;
     content: "";
+  transition-duration: $hamburger-transistion-duration, $hamburger-transistion-duration;
+  transition-delay: $hamburger-transistion-duration, 0s;
 }
 
 .c-hamburger span::before {
     top: -$hamburger-bar-thickness - $hamburger-bar-padding;
+  transition-property: top, transform;
 }
 
 .c-hamburger span::after {
     bottom: -$hamburger-bar-thickness - $hamburger-bar-padding;
-}
-
-// Hamburger to "x"
-
-.c-hamburger--htx {
-    background-color: $hamburger-color;
-}
-
-.c-hamburger--htx span {
-    transition: background 0s $hamburger-transistion-duration;
-}
-
-.c-hamburger--htx span::before,
-.c-hamburger--htx span::after {
-    transition-duration: $hamburger-transistion-duration, $hamburger-transistion-duration;
-    transition-delay: $hamburger-transistion-duration, 0s;
-}
-
-.c-hamburger--htx span::before {
-    transition-property: top, transform;
-}
-
-.c-hamburger--htx span::after {
-    transition-property: bottom, transform;
+  transition-property: bottom, transform;
 }
 
 /* active state, i.e. menu open */
 
 .u-nav-open {
-    .c-hamburger--htx {
-        background-color: $hamburger-color-active;
-
+    .c-hamburger {
         span {
             background: none;
         }
     }
 
-    .c-hamburger--htx span::before {
+    .c-hamburger span::before {
         top: 0;
         transform: rotate(45deg);
     }
 
-    .c-hamburger--htx span::after {
+    .c-hamburger span::after {
         bottom: 0;
         transform: rotate(-45deg);
     }
 
-    .c-hamburger--htx span::before,
-    .c-hamburger--htx span::after {
+    .c-hamburger span::before,
+    .c-hamburger span::after {
         transition-delay: 0s, $hamburger-transistion-duration;
     }
+}
+
+.c-toc-toggle {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: $hamburger-bar-padding;
+    padding: 10px;
+}
+
+.c-toc-toggle__line {
+    background-color: white;
+    display: block;
+    height: $hamburger-bar-thickness;
+    margin-left: 5px;
+    position: relative;
+
+    --line-width: calc(100% - 5px);
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        height: $hamburger-bar-thickness;
+        width: $hamburger-bar-thickness;
+        background-color: white;
+    }
+
+    &:nth-child(1) {
+        width: var(--line-width);
+    }
+
+    &:nth-child(2) {
+        width: calc(var(--line-width) * 2/3);
+    }
+
+    &:nth-child(3) {
+        width: calc(var(--line-width) * 1/3);
+    }
+}
+
+.c-header-button,
+.c-header-placeholder {
+  height: $hamburger-height;
+  width: $hamburger-width;
+}
+
+.c-header-button {
+  appearance: none;
+  background-color: $hamburger-color;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  transition: background $hamburger-transistion-duration, left $hamburger-transistion-duration;
+}
+
+.u-toc-open .c-toc-toggle,
+.u-nav-open .c-toc-toggle,
+.u-nav-open .c-hamburger {
+  background-color: $hamburger-color-active;
+}
+
+.u-toc-open.u-nav-open {
+  .c-toc-toggle {
+    background-color: var(--stx-color-white);
+  }
+
+  .c-toc-toggle__line,
+  .c-toc-toggle__line::before {
+    background-color: var(--stx-color-blue-dark);
+  }
 }

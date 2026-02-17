@@ -1,10 +1,19 @@
 .c-page {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: $hamburger-height + 16px;
+
+  @include margin(t, 0, lg);
+}
+
+.c-content {
   @include padding(x, 3);
   @include padding(null, 5, lg);
 
   @include respond-up(lg) {
     margin-left: $width-sidebar;
-    max-width: 1000px;
+    max-width: 800px;
   }
 
   img {
