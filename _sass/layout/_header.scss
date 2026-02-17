@@ -5,10 +5,13 @@
     display: flex;
     justify-content: space-between;
     height: $hamburger-height;
-    margin: 0 (-1 * $_spacing) $_spacing;
     padding: 0 $_spacing;
-    position: relative;
-    transition: background-color $hamburger-transistion-duration;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: background-color $hamburger-transistion-duration, width $hamburger-transistion-duration, padding-left $hamburger-transistion-duration;
+    width: 100vw;
+    z-index: 20;
 
     @include respond-up(lg) {
         display: none;
@@ -45,11 +48,7 @@
 .u-nav-open {
     .c-page-header {
         background-color: $hamburger-color-active;
+        padding-left: 0;
+        width: calc(100vw - (#{$width-sidebar} - #{$hamburger-width}));
     }
-}
-
-.u-nav-open .c-hamburger {
-    left: calc(#{$width-sidebar} - #{$hamburger-width});
-    position: fixed;
-    z-index: 15;
 }

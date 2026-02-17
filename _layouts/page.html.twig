@@ -1,6 +1,36 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block body %}
+    <div class="c-page-header">
+        <button
+            class="c-header-button c-hamburger"
+            aria-expanded="false"
+            aria-controls="sidebar-lhs"
+            data-role="class-toggler"
+            data-target=".c-body"
+            data-toggle-class="u-nav-open"
+        >
+            <span></span>
+
+            <span class="sr-only">toggle menu</span>
+        </button>
+
+        <button
+            class="c-header-button c-toc-toggle"
+            aria-expanded="false"
+            aria-controls="sidebar-rhs"
+            data-role="class-toggler"
+            data-target=".c-body"
+            data-toggle-class="u-toc-open"
+        >
+            <span class="c-toc-toggle__line"></span>
+            <span class="c-toc-toggle__line"></span>
+            <span class="c-toc-toggle__line"></span>
+
+            <span class="sr-only">toggle table of contents</span>
+        </button>
+    </div>
+
     <aside id="sidebar-lhs" class="c-sidebar-lhs u-background-dark">
         <div class="c-branding mb-5">
             <a href="{{ url(pages['Home']) }}" class="c-branding__logo">allejo</a>
@@ -19,38 +49,6 @@
 
     <div class="c-page">
         <main class="c-content u-background-light">
-            <span id="main-content"></span>
-
-            <div class="c-page-header">
-                <button
-                    class="c-header-button c-hamburger"
-                    aria-expanded="false"
-                    aria-controls="sidebar-lhs"
-                    data-role="class-toggler"
-                    data-target=".c-body"
-                    data-toggle-class="u-nav-open"
-                >
-                    <span></span>
-
-                    <span class="sr-only">toggle menu</span>
-                </button>
-
-                <button
-                    class="c-header-button c-toc-toggle"
-                    aria-expanded="false"
-                    aria-controls="sidebar-rhs"
-                    data-role="class-toggler"
-                    data-target=".c-body"
-                    data-toggle-class="u-toc-open"
-                >
-                    <span class="c-toc-toggle__line"></span>
-                    <span class="c-toc-toggle__line"></span>
-                    <span class="c-toc-toggle__line"></span>
-
-                    <span class="sr-only">toggle table of contents</span>
-                </button>
-            </div>
-
             <div class="c-print-header">
                 <p class="c-print-header__title">allejo</p>
                 <p class="c-print-header__slogan">
@@ -58,6 +56,7 @@
                 </p>
             </div>
 
+            <span id="main-content"></span>
             {% block content %}{% endblock %}
 
             <footer class="c-site-footer">

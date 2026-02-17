@@ -6,6 +6,7 @@
   left: -1 * $width-sidebar;
   position: fixed;
   text-align: center;
+  top: 0;
   transition: left 0.3s;
   width: $width-sidebar;
   z-index: 10;
@@ -26,7 +27,7 @@
 }
 
 .c-sidebar-rhs {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: $hamburger-height;
   visibility: hidden;
@@ -40,10 +41,6 @@
 }
 
 .u-nav-open {
-  .c-page-header {
-    justify-content: flex-end;
-  }
-
   .c-sidebar-lhs {
     left: 0;
   }
