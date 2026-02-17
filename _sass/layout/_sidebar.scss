@@ -1,4 +1,5 @@
 .c-sidebar-lhs {
+  @include padding(x, 4);
   @include padding(y, 5);
 
   background-color: $color-background-dark;
