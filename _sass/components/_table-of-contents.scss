@@ -1,0 +1,9 @@
+.c-table-of-contents {
+  @include padding(null, 4);
+
+  border-left: 5px solid var(--stx-color-blue-dark);
+  min-width: 250px;
+  left: 0;
+  position: sticky;
+  top: map-get($spacing, 4);
+}

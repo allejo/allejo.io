@@ -1,4 +1,5 @@
-.c-sidebar {
+.c-sidebar-lhs {
+  @include padding(x, 4);
   @include padding(y, 5);
 
   background-color: $color-background-dark;
@@ -6,6 +7,7 @@
   left: -1 * $width-sidebar;
   position: fixed;
   text-align: center;
+  top: 0;
   transition: left 0.3s;
   width: $width-sidebar;
   z-index: 10;
@@ -25,8 +27,29 @@
   }
 }
 
+.c-sidebar-rhs {
+  position: fixed;
+  right: 0;
+  top: $hamburger-height;
+  visibility: hidden;
+  z-index: 30;
+
+  @include respond-up(lg) {
+    @include margin(t, 5);
+
+    position: unset;
+    visibility: visible;
+  }
+}
+
 .u-nav-open {
-  .c-sidebar {
+  .c-sidebar-lhs {
     left: 0;
+  }
+}
+
+.u-toc-open {
+  .c-sidebar-rhs {
+    visibility: visible;
   }
 }

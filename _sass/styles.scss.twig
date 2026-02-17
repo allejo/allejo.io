@@ -52,6 +52,7 @@ permalink: /assets/css/styles.css
 @import 'components/social';
 @import 'components/split-container';
 @import 'components/svg-icon';
+@import 'components/table-of-contents';
 @import 'components/tabs';
 @import 'components/tags';
 @import 'components/thumbnail';
@@ -64,3 +65,14 @@ permalink: /assets/css/styles.css
 @import 'utilities/spacing';
 @import 'utilities/typography';
 @import 'utilities/visibility';
+
+.-debug-viewport {
+    @include padding(null, 2);
+
+    background-color: maroon;
+    bottom: 0;
+    color: white;
+    opacity: 50%;
+    position: fixed;
+    right: 0;
+}

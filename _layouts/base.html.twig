@@ -93,21 +93,22 @@
 
         <a href="#main-content" class="sr-only sr-only-focusable c-skip-content">Skip to Content</a>
 
-        {% if site.debug %}
-            <section class="c-screensize">
-                <div class="c-screensize--xl">xl</div>
-                <div class="c-screensize--lg">lg</div>
-                <div class="c-screensize--md">md</div>
-                <div class="c-screensize--sm">sm</div>
-                <div class="c-screensize--xs">xs</div>
-            </section>
-        {% endif %}
-
         {# ----------------- Actual Page Content ----------------- #}
 
         <div class="c-body">
             {% block body %}{% endblock %}
         </div>
+
+        {% if site.debug %}
+            <div class="-debug-viewport" aria-hidden="true">
+                <span class="hide-sm">xs</span>
+                <span class="hide-xs show-sm hide-md">sm</span>
+                <span class="hide-xs show-md hide-lg">md</span>
+                <span class="hide-xs show-lg hide-xl">lg</span>
+                <span class="hide-xs show-xl hide-2xl">xl</span>
+                <span class="hide-xs show-2xl">2xl</span>
+            </div>
+        {% endif %}
 
         {# ------------ Everything Javascript Related ------------ #}
 

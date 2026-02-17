@@ -1,34 +1,17 @@
 "use strict";
 
-/**
- * Toggle a class for an element.
- *
- * @param {Element} element
- * @param {string} toggleClass
- *
- * @link https://stackoverflow.com/a/25544148
- */
-function toggleClass(element, toggleClass){
-    var currentClass = element.className;
-    var newClass;
+const toggleButtons = document.querySelectorAll('[data-role="class-toggler"]');
 
-    if (currentClass.split(' ').indexOf(toggleClass) > -1) {
-        newClass = currentClass.replace(new RegExp('\\b' + toggleClass + '\\b', 'g'), '')
-    } else {
-        newClass = currentClass + ' ' + toggleClass;
-    }
-
-    element.className = newClass.trim();
-}
-
-var hamburger = document.getElementsByClassName('c-hamburger');
-
-if (hamburger.length) {
-    hamburger[0].addEventListener('click', function (ev) {
+for (const toggleButton of toggleButtons) {
+    toggleButton.addEventListener('click', function (ev) {
         ev.preventDefault();
 
-        var body = document.getElementsByClassName('c-body');
+        const targetSelector = this.getAttribute('data-target');
+        const toggleClass = this.getAttribute('data-toggle-class');
 
-        toggleClass(body[0], 'u-nav-open');
+        const targetElement = document.querySelector(targetSelector);
+
+        targetElement.classList.toggle(toggleClass);
+        this.setAttribute('aria-expanded', targetElement.classList.contains(toggleClass) ? 'true' : 'false');
     });
 }

@@ -1,7 +1,43 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block body %}
-    <aside class="c-sidebar u-background-dark">
+    <div class="c-page-header">
+        <button
+            class="c-header-button c-hamburger"
+            aria-expanded="false"
+            aria-controls="sidebar-lhs"
+            data-role="class-toggler"
+            data-target=".c-body"
+            data-toggle-class="u-nav-open"
+        >
+            <span></span>
+
+            <span class="sr-only">toggle menu</span>
+        </button>
+
+        <a class="c-page-header-title" href="{{ url('/') }}">allejo</a>
+
+        {% if this.has_toc %}
+            <button
+                class="c-header-button c-toc-toggle"
+                aria-expanded="false"
+                aria-controls="sidebar-rhs"
+                data-role="class-toggler"
+                data-target=".c-body"
+                data-toggle-class="u-toc-open"
+            >
+                <span class="c-toc-toggle__line"></span>
+                <span class="c-toc-toggle__line"></span>
+                <span class="c-toc-toggle__line"></span>
+
+                <span class="sr-only">toggle table of contents</span>
+            </button>
+        {% else %}
+            <div class="c-header-placeholder"></div>
+        {% endif %}
+    </div>
+
+    <aside id="sidebar-lhs" class="c-sidebar-lhs u-background-dark">
         <div class="c-branding mb-5">
             <a href="{{ url(pages['Home']) }}" class="c-branding__logo">allejo</a>
         </div>
@@ -17,32 +53,35 @@
         <p>Copyright &copy; {{ 'now' | date('Y') }}</p>
     </aside>
 
-    <main class="c-page u-background-light">
-        <span id="main-content"></span>
+    <div class="c-page">
+        <main class="c-content u-background-light">
+            <div class="c-print-header">
+                <p class="c-print-header__title">allejo</p>
+                <p class="c-print-header__slogan">
+                    {{ site.motto }} &bull; <a href="{{ site.url }}">{{ site.url }}</a>
+                </p>
+            </div>
 
-        <div class="c-page-header">
-            <button class="c-hamburger c-hamburger--htx">
-                <span></span>
+            <span id="main-content"></span>
+            {% block content %}{% endblock %}
 
-                <span class="sr-only">toggle menu</span>
-            </button>
-        </div>
+            <footer class="c-site-footer">
+                <ul class="u-list-inline">
+                    <li><a href="{{ url(pages['Support Me']) }}">Support Me</a></li>
+                    <li><a href="{{ url(pages['Supporters']) }}">Sponsors</a></li>
+                    <li><a href="{{ url(pages['Contact']) }}">Contact</a></li>
+                </ul>
+            </footer>
+        </main>
 
-        <div class="c-print-header">
-            <p class="c-print-header__title">allejo</p>
-            <p class="c-print-header__slogan">
-                {{ site.motto }} &bull; <a href="{{ site.url }}">{{ site.url }}</a>
-            </p>
-        </div>
+        {% if this.has_toc %}
+            <div id="sidebar-rhs" class="c-sidebar-rhs">
+                <aside class="c-table-of-contents u-background-white">
+                    <h2 class="h5 mt-0 mb-2">On This Page</h2>
 
-        {% block content %}{% endblock %}
-
-        <footer class="c-site-footer">
-            <ul class="u-list-inline">
-                <li><a href="{{ url(pages['Support Me']) }}">Support Me</a></li>
-                <li><a href="{{ url(pages['Supporters']) }}">Sponsors</a></li>
-                <li><a href="{{ url(pages['Contact']) }}">Contact</a></li>
-            </ul>
-        </footer>
-    </main>
+                    {{ block('content') | toc(hMin=2, class="m-0 pl-4") }}
+                </aside>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
