@@ -1,4 +1,4 @@
-.c-sidebar {
+.c-sidebar-lhs {
   @include padding(y, 5);
 
   background-color: $color-background-dark;
@@ -25,8 +25,32 @@
   }
 }
 
+.c-sidebar-rhs {
+  position: absolute;
+  right: 0;
+  top: $hamburger-height;
+  visibility: hidden;
+
+  @include respond-up(lg) {
+    @include margin(t, 5);
+
+    position: unset;
+    visibility: visible;
+  }
+}
+
 .u-nav-open {
-  .c-sidebar {
+  .c-page-header {
+    justify-content: flex-end;
+  }
+
+  .c-sidebar-lhs {
     left: 0;
+  }
+}
+
+.u-toc-open {
+  .c-sidebar-rhs {
+    visibility: visible;
   }
 }

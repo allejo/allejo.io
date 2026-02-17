@@ -1,7 +1,7 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block body %}
-    <aside id="c-sidebar" class="c-sidebar u-background-dark">
+    <aside id="sidebar-lhs" class="c-sidebar-lhs u-background-dark">
         <div class="c-branding mb-5">
             <a href="{{ url(pages['Home']) }}" class="c-branding__logo">allejo</a>
         </div>
@@ -25,7 +25,7 @@
                 <button
                     class="c-hamburger c-hamburger--htx"
                     aria-expanded="false"
-                    aria-controls="c-sidebar"
+                    aria-controls="sidebar-lhs"
                     data-role="class-toggler"
                     data-target=".c-body"
                     data-toggle-class="u-nav-open"
@@ -38,10 +38,10 @@
                 <button
                     class="c-toc-toggle"
                     aria-expanded="false"
-                    aria-controls="c-toc-sidebar"
+                    aria-controls="sidebar-rhs"
                     data-role="class-toggler"
-                    data-target="#c-toc-sidebar"
-                    data-toggle-class="hide-xs"
+                    data-target=".c-body"
+                    data-toggle-class="u-toc-open"
                 >
                     <span class="c-toc-toggle__line"></span>
                     <span class="c-toc-toggle__line"></span>
@@ -69,7 +69,7 @@
             </footer>
         </main>
 
-        <div id="c-toc-sidebar" class="show-lg">
+        <div id="sidebar-rhs" class="c-sidebar-rhs">
             <aside class="c-table-of-contents u-background-white">
                 <h2 class="h5 mt-0 mb-2">On This Page</h2>
 
