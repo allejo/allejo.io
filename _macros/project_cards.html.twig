@@ -1,0 +1,92 @@
+{% macro project_card(project) -%}
+    {%- set projectIcons = {
+        'cli': 'fa fa-terminal',
+        'game': 'fa fa-gamepad',
+        'library': 'fa fa-book',
+        'plugin': 'fa fa-plug',
+        'website': 'fa fa-desktop',
+    } -%}
+
+    <article class="c-card">
+        <header class="c-card__header">
+            <div class="c-card__titles">
+                <p class="c-card__header__title">{{ project.name }}</p>
+
+                {% if project.links | length > 0 %}
+                    <ul class="c-card__header__links">
+                        {% for link in project.links %}
+                            <li>
+                                <a href="{{ link.url }}">
+                                    <i class="{{ link.class }}" aria-hidden="true"></i>
+                                    <span>{{ link.label }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            {% if project.categories %}
+                <div>
+                    <span aria-hidden="true" class="sr-only">Category</span>
+                    {% for category in project.categories %}
+                        {% if category %}
+                            <span>
+                                <i aria-hidden="true" class="{{ projectIcons[category] }}"></i>
+                                <span class="sr-only">{{ category | title }}</span>
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </header>
+
+        <section class="h-100 s-markdown">
+            {{ project.content }}
+        </section>
+
+        {% set showFooter = project.last_release or project.languages %}
+        {% if showFooter %}
+            <footer class="c-card__footer">
+                {% if project.last_release %}
+                    <div class="c-card__footer__row">
+                        <p>
+                            <strong>version</strong>
+                            <a href="{{ project.last_release.url }}">
+                                {{ project.last_release.version }}
+                            </a>
+                        </p>
+                        <p><strong>released on</strong> {{ project.last_release.date | date('M d, Y') }}</p>
+                    </div>
+                {% endif %}
+
+                {% if project.languages %}
+                    <div class="c-card__footer__row">
+                        <p class="sr-only">Languages:</p>
+
+                        <ul class="c-language-list">
+                            {% for language in project.languages %}
+                                <li class="c-language">
+                                    <span
+                                        class="c-language__color"
+                                        data-language="{{ language | lower }}"
+                                    ></span>
+
+                                    {{ language }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </footer>
+        {% endif %}
+    </article>
+{%- endmacro %}
+
+{% macro project_cards(projects) -%}
+    <div class="c-card-grid">
+        {% for project in projects %}
+            {{ _self.project_card(collections.projects[project]) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}

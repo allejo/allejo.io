@@ -4,12 +4,18 @@ permalink: /assets/css/styles.css
 
 @charset 'UTF-8';
 
+// The colors we care about, this is in Twig so that I can generate a Sass map
+// of colors, that I can then use in a Sass loop to generate CSS classes for each
+// language.
+{% set languages = ['CSS', 'Go', 'HTML', 'JavaScript', 'Liquid', 'PHP'] %}
+
 // Colors come from GitHub's Linguist library.
 //   https://github.com/ozh/github-colors/blob/master/colors.json
-:root {
-    --gh-color-go: {{ data.github_colors.Go.color }};
-    --gh-color-php: {{ data.github_colors.PHP.color }};
-}
+$languages: (
+    {% for lang in languages %}
+        {{ lang | lower }}: {{ data.github_colors[lang].color }},
+    {% endfor %}
+);
 
 @import 'abstracts/functions/color';
 @import 'abstracts/functions/math';

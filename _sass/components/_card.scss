@@ -108,6 +108,7 @@
 
 .c-language-list {
   display: flex;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -128,11 +129,9 @@
   height: var(--size);
   width: var(--size);
 
-  &[data-language="go"] {
-    background-color: var(--gh-color-go);
-  }
-
-  &[data-language="php"] {
-    background-color: var(--gh-color-php);
+  @each $lang, $color in $languages {
+    &[data-language="#{$lang}"] {
+      background-color: $color;
+    }
   }
 }
