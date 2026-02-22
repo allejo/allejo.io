@@ -11,8 +11,8 @@ has_toc: true
 
 {% macro project_card(project) -%}
     {%- set projectIcons = {
-        'library': 'fa fa-book',
         'cli': 'fa fa-terminal',
+        'library': 'fa fa-book',
     } -%}
 
     <article class="c-card">
@@ -34,10 +34,10 @@ has_toc: true
                 {% endif %}
             </div>
 
-            {% if project.category %}
+            {% if project.categories %}
                 <div>
                     <span aria-hidden="true" class="sr-only">Category</span>
-                    {% for category in project.category %}
+                    {% for category in project.categories %}
                         {% if category %}
                             <span>
                                 <i aria-hidden="true" class="{{ projectIcons[category] }}"></i>
@@ -49,43 +49,49 @@ has_toc: true
             {% endif %}
         </header>
 
-        <section class="s-markdown">
-            {{ project.description | markdown }}
+        <section class="h-100 s-markdown">
+            {{ project.content }}
         </section>
 
-        {% if project.last_release %}
+        {% set showFooter = project.last_release or project.languages %}
+        {% if showFooter %}
             <footer class="c-card__footer">
-                <div>
-                    <strong>version</strong>
-                    <a href="{{ project.last_release.url }}">
-                        {{ project.last_release.version }}
-                    </a>
-                </div>
-                <div><strong>released on</strong> {{ project.last_release.date | date('M d, Y') }}</div>
+                {% if project.last_release %}
+                    <div class="c-card__footer__row">
+                        <p>
+                            <strong>version</strong>
+                            <a href="{{ project.last_release.url }}">
+                                {{ project.last_release.version }}
+                            </a>
+                        </p>
+                        <p><strong>released on</strong> {{ project.last_release.date | date('M d, Y') }}</p>
+                    </div>
+                {% endif %}
+
+                {% if project.languages %}
+                    <div class="c-card__footer__row">
+                        <p class="sr-only">Languages:</p>
+
+                        <ul class="c-language-list">
+                            {% for language in project.languages %}
+                                <li class="c-language">
+                                    <span
+                                        class="c-language__color"
+                                        data-language="{{ language | lower }}"
+                                    ></span>
+
+                                    {{ language }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </footer>
         {% endif %}
     </article>
 {%- endmacro %}
 
 {% block title %}Portfolio | allejo.io{% endblock %}
-
-{% set tfDocsExtras = {
-    category: ['cli', 'library'],
-    name: 'tf-docs-extras',
-    description: "Document your Terraform modules' inputs and outputs inline using the `@`-notation you've seen in other languages.",
-    links: [
-        {
-            url: 'https://github.com/FriendsOfTerraform/tfdocs-extras',
-            label: 'GitHub',
-            class: 'fab fa-github',
-        }
-    ],
-    last_release: {
-        version: '0.0.0-beta.4',
-        date: '2026-02-01',
-        url: 'https://github.com/FriendsOfTerraform/tfdocs-extras/releases/latest',
-    },
-} %}
 
 {% block content %}
     {% markdown %}
@@ -108,8 +114,9 @@ has_toc: true
         One of my greatest accomplishments in this category was receiving a message from a coworker asking me if I remembered how (and where) I built the automated process that published datasets used both internally and externally, because they needed to add some additional information. My process ran uninterrupted and unmaintained for 10 years without failure, completely invisible to everyone relying on it, and was only remembered when they wanted to add to it.
 
         <div class="c-card-grid">
-            {{ project_card(tfDocsExtras) }}
-            {{ project_card(tfDocsExtras) }}
+            {{ project_card(collections.projects['php-vcr-sanitizer']) }}
+            {{ project_card(collections.projects['tfdocs-extras']) }}
+            {{ project_card(collections.projects['vfsStream']) }}
         </div>
 
         ## Jekyll
