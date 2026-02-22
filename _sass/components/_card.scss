@@ -129,10 +129,10 @@
   width: var(--size);
 
   &[data-language="go"] {
-    background-color: #00ADD8;
+    background-color: var(--gh-color-go);
   }
 
   &[data-language="php"] {
-    background-color: #4F5D95;
+    background-color: var(--gh-color-php);
   }
 }

@@ -4,6 +4,13 @@ permalink: /assets/css/styles.css
 
 @charset 'UTF-8';
 
+// Colors come from GitHub's Linguist library.
+//   https://github.com/ozh/github-colors/blob/master/colors.json
+:root {
+    --gh-color-go: {{ data.github_colors.Go.color }};
+    --gh-color-php: {{ data.github_colors.PHP.color }};
+}
+
 @import 'abstracts/functions/color';
 @import 'abstracts/functions/math';
 
