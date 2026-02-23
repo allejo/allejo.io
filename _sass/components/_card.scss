@@ -1,4 +1,6 @@
 .c-card-grid {
+  @include margin(y, 3);
+
   container-type: inline-size;
   display: flex;
   flex-wrap: wrap;
