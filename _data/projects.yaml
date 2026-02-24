@@ -1,38 +1,46 @@
-github_stars:
-  allejo/jekyll-toc: 522
-  allejo/jekyll-docs-theme: 101
-  allejo/jekyll-anchor-headings: 198
-  bovigo/vfsStream: 1440
-  FriendsOfTerraform/tfdocs-extras: 31
-  allejo/php-vcr-sanitizer: 14
-  scrivo/highlight.php: 709
-  highlightjs/highlight.js: 24824
-  westonruter/syntax-highlighting-code-block: 125
-github_releases:
+github:
   allejo/jekyll-toc:
+    stars: 522
+    isLatest: true
     tag: v1.2.1
     publishedAt: "2023-11-17T07:47:51Z"
   allejo/jekyll-docs-theme:
+    stars: 101
+    isLatest: true
     tag: v1.0.0
     publishedAt: "2020-05-25T03:05:47Z"
   allejo/jekyll-anchor-headings:
+    stars: 198
+    isLatest: true
     tag: v1.0.13
     publishedAt: "2023-03-31T06:28:13Z"
   bovigo/vfsStream:
+    stars: 1440
+    isLatest: true
     tag: v1.6.12
     publishedAt: "2024-08-29T18:46:22Z"
   FriendsOfTerraform/tfdocs-extras:
-    tag: ""
-    publishedAt: ""
+    stars: 31
+    isLatest: false
+    tag: v0.0.0-beta.4
+    publishedAt: "2026-02-21T22:10:58Z"
   allejo/php-vcr-sanitizer:
+    stars: 14
+    isLatest: true
     tag: v1.1.0
     publishedAt: "2023-02-21T00:48:56Z"
   scrivo/highlight.php:
+    stars: 709
+    isLatest: true
     tag: v9.18.1.10
     publishedAt: "2022-12-17T21:56:33Z"
   highlightjs/highlight.js:
+    stars: 24827
+    isLatest: true
     tag: 11.11.1
     publishedAt: "2024-12-25T17:54:14Z"
   westonruter/syntax-highlighting-code-block:
+    stars: 125
+    isLatest: true
     tag: 1.5.1
     publishedAt: "2024-11-12T00:35:51Z"

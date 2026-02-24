@@ -1,16 +1,10 @@
 ---
 name: Anchor Headings
+github: allejo/jekyll-anchor-headings
 categories:
     - plugin
     - website
-links: 
-    - label: GitHub
-      class: fab fa-github
-      url: https://github.com/allejo/jekyll-anchor-headings
-last_release:
-    version: 1.0.13
-    date: 2023-03-30
-    url: https://github.com/allejo/jekyll-anchor-headings/releases/latest
+links: ~
 languages:
   - Liquid
 ---

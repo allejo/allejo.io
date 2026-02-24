@@ -1,4 +1,6 @@
 {% macro project_card(project) -%}
+    {% from "_macros/abbreviate_number.html.twig" import abbr_num %}
+
     {%- set projectIcons = {
         'cli': 'fa fa-terminal',
         'game': 'fa fa-gamepad',
@@ -12,8 +14,17 @@
             <div class="c-card__titles">
                 <p class="c-card__header__title">{{ project.name }}</p>
 
-                {% if project.links | length > 0 %}
+                {% if project.links | length > 0 or project.github %}
                     <ul class="c-card__header__links">
+                        {% if project.github %}
+                            <li>
+                                <a href="https://github.com/{{ project.github }}">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
                         {% for link in project.links %}
                             <li>
                                 <a href="{{ link.url }}">
@@ -47,16 +58,23 @@
 
         {% set showFooter = project.last_release or project.languages %}
         {% if showFooter %}
+            {% set repoData = data.projects.github[project.github] %}
             <footer class="c-card__footer">
-                {% if project.last_release %}
+                {% if repoData %}
                     <div class="c-card__footer__row">
                         <p>
-                            <strong>version</strong>
-                            <a href="{{ project.last_release.url }}">
-                                {{ project.last_release.version }}
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <a href="https://github.com/{{ project.github }}/stargazers" target="_blank" rel="noopener">
+                                {{ abbr_num(repoData.stars) }}
                             </a>
                         </p>
-                        <p><strong>released on</strong> {{ project.last_release.date | date('M d, Y') }}</p>
+                        <p>
+                            <strong>version</strong>
+                            <a href="https://github.com/{{ project.github }}/releases/tag/{{ repoData.tag }}" target="_blank" rel="noopener">
+                                {{ repoData.tag | replace({'v': ''}) }}
+                            </a>
+                        </p>
+                        <p><strong>released on</strong> {{ repoData.publishedAt | date('M d, Y') }}</p>
                     </div>
                 {% endif %}
 

@@ -14,6 +14,8 @@ then
     exit
 fi
 
+touch _data/projects.yaml
+
 github_repos=()
 while IFS='' read -r line; do github_repos+=("$line"); done < <(find _projects -name '*.md' -exec yq --front-matter="extract" '.links[] | select(.url == "*github.com*").url' {} \;)
 
@@ -24,13 +26,15 @@ for url in "${github_repos[@]}"; do
     name=${nameAndStar[0]}
     stars=${nameAndStar[1]}
 
-    yq -i ".github_stars[\"$name\"] = $stars" _data/github_data.yaml
+    yq -i ".github[\"$name\"].stars = $stars" _data/projects.yaml
 
     echo "Fetching releases for $url"
-    IFS=" " read -r -a releases <<< "$(gh release list -R "$name" --json isLatest,tagName,publishedAt --jq '.[] | select(.isLatest == true)' | jq -r '[.tagName, .publishedAt] | @tsv' | xargs)"
-    tagName=${releases[0]}
-    publishedAt=${releases[1]}
+    IFS=" " read -r -a releases <<< "$(gh release list -R "$name" --json isLatest,tagName,publishedAt --jq 'first(.[] | select(.isLatest == true)) // .[0]' | jq -r '[.isLatest, .tagName, .publishedAt] | @tsv' | xargs)"
+    isLatest=${releases[0]}
+    tagName=${releases[1]}
+    publishedAt=${releases[2]}
 
-    yq -i ".github_releases[\"$name\"].tag = \"$tagName\"" _data/github_data.yaml
-    yq -i ".github_releases[\"$name\"].publishedAt = \"$publishedAt\"" _data/github_data.yaml
+    yq -i ".github[\"$name\"].isLatest = $isLatest" _data/projects.yaml
+    yq -i ".github[\"$name\"].tag = \"$tagName\"" _data/projects.yaml
+    yq -i ".github[\"$name\"].publishedAt = \"$publishedAt\"" _data/projects.yaml
 done

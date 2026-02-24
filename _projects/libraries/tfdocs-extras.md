@@ -1,16 +1,9 @@
 ---
 name: tfdocs-extras
+github: FriendsOfTerraform/tfdocs-extras
 categories:
     - cli
     - library
-links:
-    - label: GitHub
-      class: fab fa-github
-      url: https://github.com/FriendsOfTerraform/tfdocs-extras
-last_release:
-    version: 0.0.0-beta.4
-    date: 2026-02-01
-    url: https://github.com/FriendsOfTerraform/tfdocs-extras/releases/latest
 languages:
     - Go
 ---

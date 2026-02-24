@@ -1,16 +1,9 @@
 ---
 name: Table of Contents Generator
+github: allejo/jekyll-toc
 categories:
     - plugin
     - website
-links:
-    - label: GitHub
-      class: fab fa-github
-      url: https://github.com/allejo/jekyll-toc
-last_release:
-    version: 1.2.1
-    date: 2023-11-16
-    url: https://github.com/allejo/jekyll-toc/releases/latest
 languages:
   - Liquid
 ---

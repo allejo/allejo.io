@@ -1,18 +1,12 @@
 ---
 name: php-vcr-sanitizer
+github: allejo/php-vcr-sanitizer
 categories:
     - library
 links:
-    - label: GitHub
-      class: fab fa-github
-      url: https://github.com/allejo/php-vcr-sanitizer
     - label: Packagist
       class: fa fa-box
       url: https://packagist.org/packages/allejo/php-vcr-sanitizer
-last_release:
-    version: 1.1.1
-    date: 2024-10-30
-    url: https://packagist.org/packages/allejo/php-vcr-sanitizer
 languages:
   - PHP
 ---
