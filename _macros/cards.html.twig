@@ -170,3 +170,22 @@
         {% endfor %}
     </div>
 {%- endmacro %}
+
+{% macro conference_talk_card(talk) %}
+    {% set tertiary_title %}
+        <span>{{ talk.date | date('M Y') }}</span>
+        <span>&bull;</span>
+        <span>{{ talk.conference }}</span>
+    {% endset %}
+
+    {{ _self.header_card(null, talk.title, null, tertiary_title, talk.content, null) }}
+{% endmacro %}
+
+{% macro conference_talk_cards() -%}
+    <div class="c-card-grid">
+        {% set talks = collections.talks | order('date', 'DESC') %}
+        {% for talk in talks %}
+            {{ _self.conference_talk_card(talk) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}

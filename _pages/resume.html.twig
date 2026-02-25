@@ -7,7 +7,7 @@ has_toc: true
 ---
 
 {% extends '_layouts/page.html.twig' %}
-{% from '_macros/cards.html.twig' import resume_cards %}
+{% from '_macros/cards.html.twig' import conference_talk_cards, resume_cards %}
 
 {% block title %}Resume | allejo.io{% endblock %}
 
@@ -22,5 +22,7 @@ has_toc: true
         {{ resume_cards() }}
 
         ## Conference Talks
+
+        {{ conference_talk_cards() }}
     {% endmarkdown %}
 {% endblock %}
