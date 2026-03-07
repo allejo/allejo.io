@@ -3,167 +3,42 @@ permalink: /about/
 title: About
 nav: 1
 description: I'm just another boring developer pretending to know what he's doing in California. I enjoy late night food runs, eating wings, staring at my desktop legion, and occasionally playing on my PS4.
+has_toc: true
 ---
 
 {% extends '_layouts/page.html.twig' %}
-{% from _self import brag_display, brag_repeater %}
+{% from '_macros/cards.html.twig' import award_cards %}
 
 {% block title %}About | allejo.io{% endblock %}
 
-{% macro linkable_text(text, url) %}
-    {% if url %}<a href="{{ url }}">{% endif %}
-    {{- text -}}
-    {% if url %}</a>{% endif %}
-{% endmacro %}
-
-{% macro brag_card(heading, heading_url, subheading, subheading_url, start_date, end_date, pre_content, content) %}
-    {% from _self import linkable_text %}
-
-    {% set end_date = end_date | default(false) %}
-
-    <article class="c-card c-card--left mb-4 p-3">
-        <header class="mb-2">
-            <div>
-                <p class="c-brag-card__heading-1">
-                    {{- linkable_text(heading, heading_url) -}}
-                </p>
-
-                {% if subheading %}
-                    <p class="c-brag-card__heading-2">
-                        {{- linkable_text(subheading, subheading_url) -}}
-                    </p>
-                {% endif %}
-            </div>
-            <div class="c-brag-card__meta">
-                {{- start_date | date ('M Y') -}}
-
-                {%- if end_date is not same as(false) %}
-                    -
-                    {% if end_date is same as("Current") -%}
-                        {{- end_date -}}
-                    {%- else -%}
-                        {{- end_date | date('M Y') -}}
-                    {%- endif -%}
-                {%- endif -%}
-            </div>
-        </header>
-
-        {{ pre_content }}
-
-        <section class="s-markdown">
-            {{ content }}
-        </section>
-    </article>
-{% endmacro %}
-
-{% macro brag_repeater(cards, mapping) %}
-    {% from _self import brag_card %}
-
-    {% for i, card in cards ~%}
-        {{ brag_card(
-            card[mapping['heading']],
-            card[mapping['heading_url']],
-            card[mapping['subheading']],
-            card[mapping['subheading_url']],
-            card[mapping['start_date']],
-            card[mapping['end_date']],
-            card[mapping['pre_content']],
-            card[mapping['content']]
-        ) | spaceless }}
-    {%~ endfor %}
-{% endmacro %}
-
-{% macro brag_display(collection, mapping) %}
-    {% from _self import brag_repeater %}
-
-    {% set active = collection | where('end', '==', false) | order('start', 'ASC') %}
-    {% set former = collection | where('end', '!=', false) | order('end', 'DESC') %}
-
-    {{ brag_repeater(active, mapping) }}
-    {{ brag_repeater(former, mapping) }}
-{% endmacro %}
-
 {% block content %}
-    {% set page_content %}
-        {% markdown %}
-            # About
+    {% set page_content %}{% markdown %}
+        # About
 
-            My name's Vladimir and on the Internet, I go by "allejo."
+        My name's Vladimir and on the Internet, I go by "allejo."
 
-            You may recognize me as a former coworker that you liked, a mentor from a tech community, a shitposter on LinkedIn, or as a contributor to open source projects. I'm a senior software engineer currently in higher ed doing frontend development at [UC Merced](https://www.ucmerced.edu), previously I was at [Stack Overflow](https://stackoverflow.com/) until capitalism laid me off.
+        You may recognize me as a former coworker that you liked, a mentor from a tech community, a shitposter on LinkedIn, or as a contributor to open source projects. I'm a senior software engineer currently in higher ed doing frontend development at [UC Merced](https://www.ucmerced.edu), previously I was at [Stack Overflow](https://stackoverflow.com/) until [poor company leadership laid me off in the first of many layoffs to come]({{ url(collections.posts['2023-10-21-Being-Promoted-to-Customer-at-Stack-Overflow'] }}).
 
-            I enjoy building developer tools like documentation builders, code generators, syntax highlighters, and similar tools. Building 3D worlds is a hobby of mine so I've enjoyed contributing to BZFlag, its community, and ecosystem over the past decade.
+        I enjoy building developer tools like documentation builders, code generators, syntax highlighters, and similar tools. Building 3D worlds is a hobby of mine so I've enjoyed contributing to BZFlag, its community, and ecosystem over the past decade.
+        
+        I speak at conferences and workplaces about accessibility, mentoring, frontend, and technical leadership.
+        
+        ## Mentoring
 
-            Since 2019, I have mentored 30+ junior and 10+ mid-level developers. I speak at conferences and workplaces about accessibility, mentoring, frontend, and technical leadership.
-        {% endmarkdown %}
-
-        <div class="position-relative">
-            <ul class="c-tabs position-sticky">
-                <li class="c-tabs__tab selected"><a href="#communities">Communities</a></li>
-                <li class="c-tabs__tab"><a href="#employment">Employment</a></li>
-                <li class="c-tabs__tab"><a href="#conference-talks">Conference Talks</a></li>
-                <li class="c-tabs__tab"><a href="#accomplishments">Accomplishments</a></li>
-            </ul>
-        </div>
-
-    {% markdown %}
-        ## Communities
-
-        Since I'm not busy enough and am an advocate for open source projects, these are the projects/communities that I'm actively involved in and dedicate a lot of my spare time towards.
-
-        {{ brag_display(
-            collections.communities,
-            {
-                heading: 'title',
-                heading_url: 'url',
-                start_date: 'start',
-                end_date: 'end',
-                content: 'content',
-            }
-        ) }}
-
-        ## Employment
-
-        It's not all just open source and games for me; just like most people, I have bills to pay too. These are the awesome companies and organizations that have helped me do so over the years.
-
-        {{ brag_display(
-            collections.experience,
-            {
-                heading: 'title',
-                subheading: 'company',
-                start_date: 'start',
-                end_date: 'end',
-                content: 'content',
-            }
-        ) }}
-
-        ## Conference Talks
-
-        Even though hearing the sound of my own voice weirds me out, other people like hearing me talk about things I've managed to accomplish.
-
-        {{ brag_display(
-            collections.talks | order('date', 'DESC'),
-            {
-                heading: 'title',
-                subheading: 'conference',
-                start_date: 'date',
-                content: 'content',
-            }
-        ) }}
+        Since 2019, I have mentored 30+ junior and 10+ mid-level developers. With AI on the rise, I believe now more than ever, we should be focusing on training junior and mid-level developers. Once the current generation of seniors retire or get promoted, we won't have anyone in the industry who's been learning how to fill those roles. I make it a goal to always mentor junior developers in every position I go.
+        
+        - While at the City of Santa Monica, I helped run the Youth Tech Program where I taught high school students how to build websites
+        - While at California State University, Northridge, I started my own student development team that during my tenure, I had over 10 student hires
+        - While at Stack Overflow, I volunteered as a mentor at Techtonica—a bootcamp to help women and LGBTQ+ transition into tech careers
+        - While at UC Merced, I started the departments first student development team and in under 2 years, have hired 6+ students; with 2 being undocumented students I was able to work with via grants
+        
+        My next goal is to start lecturing at the college level for computer science, software engineering, web design, and HCI/accessibility classes.
 
         ## Awards
-
-        I occasionally take part in code related competitions whenever I'm invited to do so. Here are some notable mentions of competitions I've participated in and the work I did during the said competitions.
-
-        {{ brag_repeater(
-            collections.accomplishments | order('event_date', 'DESC'),
-            {
-                heading: 'title',
-                subheading: 'position',
-                start_date: 'event_date',
-                content: 'content',
-            }
-        ) }}
+        
+        Early in my career, I would occasionally be invited to take part in code related competitions. Here are some notable mentions of competitions I've participated in and the work I did during the said competitions.
+        
+        {{ award_cards() }}
     {% endmarkdown %}{% endset %}
 
     <div class="s-markdown">
