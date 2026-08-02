@@ -191,7 +191,7 @@
 {%- endmacro %}
 
 {% macro award_card(award) -%}
-    {{ _self.header_card(null, award.title, award.position, award.event_date | date('M Y'), award.content, null) }}
+    {{ _self.header_card(null, award.title, award.position, award.date | date('M Y'), award.content, null) }}
 {%- endmacro %}
 
 {% macro award_cards() -%}
