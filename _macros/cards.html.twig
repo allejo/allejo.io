@@ -1,0 +1,204 @@
+{% macro bare_card(sideHighlight, media, header, body, footer = null) %}
+    <article class="c-card {{ sideHighlight ? 'c-card--left' : '' }}">
+        <header class="c-card__header">
+            {% if media %}
+                <div class="c-card__media">
+                    {{ media }}
+                </div>
+            {% endif %}
+
+            <div class="c-card__titles">
+                {{ header }}
+            </div>
+        </header>
+
+        <section class="h-100 s-markdown">
+            {{ body | markdown }}
+        </section>
+
+        {% if footer %}
+            <footer class="c-card__footer">
+                {{ footer }}
+            </footer>
+        {% endif %}
+    </article>
+{% endmacro %}
+
+{% macro header_card(media, title, subtitle, tertiary_title, content, footer) %}
+    {% set titles %}
+        <div class="d-flex flex-row align-items-end">
+            <p class="c-card__title">{{ title }}</p>
+            <p class="c-card__subtitle">{{ subtitle }}</p>
+        </div>
+        {% if tertiary_title %}
+            <p class="c-card__tertiary-title">{{ tertiary_title }}</p>
+        {% endif %}
+    {% endset %}
+
+    {{ _self.bare_card(true, media, titles, content, footer) }}
+{% endmacro %}
+
+{% macro project_card(project) -%}
+    {% from "_macros/abbreviate_number.html.twig" import abbr_num %}
+
+    {%- set projectIcons = {
+        'cli': 'fa fa-terminal',
+        'game': 'fa fa-gamepad',
+        'library': 'fa fa-book',
+        'plugin': 'fa fa-plug',
+        'website': 'fa fa-desktop',
+    } -%}
+
+    {% set media %}
+        {% if project.categories %}
+            <div>
+                <span aria-hidden="true" class="sr-only">Category</span>
+                {% for category in project.categories %}
+                    {% if category %}
+                        <span>
+                            <i aria-hidden="true" class="{{ projectIcons[category] }}"></i>
+                            <span class="sr-only">{{ category | title }}</span>
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endset %}
+
+    {% set titles %}
+        <p class="c-card__title">{{ project.name }}</p>
+
+        {% if project.links | length > 0 or project.github %}
+            <ul class="c-card__links">
+                {% if project.github %}
+                    <li>
+                        <a href="https://github.com/{{ project.github }}">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% for link in project.links %}
+                    <li>
+                        <a href="{{ link.url }}">
+                            <i class="{{ link.class }}" aria-hidden="true"></i>
+                            <span>{{ link.label }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endset %}
+
+    {% set footer %}
+        {% if project.last_release or project.languages %}
+            {% set repoData = data.projects.github[project.github] %}
+            {% if repoData %}
+                <div class="c-card__footer__row">
+                    <p>
+                        <i class="fa fa-star small" aria-hidden="true"></i>
+                        <a href="https://github.com/{{ project.github }}/stargazers" target="_blank" rel="noopener">
+                            {{ abbr_num(repoData.stars) }}
+                        </a>
+                    </p>
+                    <p>
+                        <strong>version</strong>
+                        <a href="https://github.com/{{ project.github }}/releases/tag/{{ repoData.tag }}" target="_blank" rel="noopener">
+                            {{ repoData.tag | replace({'v': ''}) }}
+                        </a>
+                    </p>
+                    <p><strong>released on</strong> {{ repoData.publishedAt | date('M d, Y') }}</p>
+                </div>
+            {% endif %}
+
+            {% if project.languages %}
+                <div class="c-card__footer__row">
+                    <p class="sr-only">Languages:</p>
+
+                    <ul class="c-language-list">
+                        {% for language in project.languages %}
+                            <li class="c-language">
+                                <span
+                                    class="c-language__color"
+                                    data-language="{{ language | lower }}"
+                                ></span>
+
+                                {{ language }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endset %}
+
+    {{ _self.bare_card(false, media, titles, project.content, footer) }}
+{%- endmacro %}
+
+{% macro project_cards(projects) -%}
+    <div class="c-card-grid c-card-grid--2-col">
+        {% for project in projects %}
+            {{ _self.project_card(collections.projects[project]) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+{% macro resume_card(job_position) %}
+    {% set media %}
+        {% if job_position.logo %}
+            <img src="{{ job_position.logo }}" alt="{{ job_position.company }} logo" class="c-card__logo">
+        {% endif %}
+    {% endset %}
+
+    {% set duration %}
+        {% if job_position.start and job_position.end %}
+            {{ job_position.start | date('M Y') }} - {{ job_position.end | date('M Y') }}
+        {% elseif job_position.start and not job_position.end %}
+            {{ job_position.start | date('M Y') }} - Present
+        {% endif %}
+    {% endset %}
+
+    {{ _self.header_card(media, job_position.title, job_position.company, duration, job_position.content, null) }}
+{% endmacro %}
+
+{% macro resume_cards() -%}
+    <div class="c-card-grid">
+        {% set jobs = collections.experience | order('start', 'DESC') %}
+        {% for experience in jobs %}
+            {{ _self.resume_card(experience) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+{% macro conference_talk_card(talk) %}
+    {% set tertiary_title %}
+        <span>{{ talk.date | date('M Y') }}</span>
+        <span>&bull;</span>
+        <span>{{ talk.conference }}</span>
+    {% endset %}
+
+    {{ _self.header_card(null, talk.title, null, tertiary_title, talk.content, null) }}
+{% endmacro %}
+
+{% macro conference_talk_cards() -%}
+    <div class="c-card-grid">
+        {% set talks = collections.talks | order('date', 'DESC') %}
+        {% for talk in talks %}
+            {{ _self.conference_talk_card(talk) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+{% macro award_card(award) -%}
+    {{ _self.header_card(null, award.title, award.position, award.date | date('M Y'), award.content, null) }}
+{%- endmacro %}
+
+{% macro award_cards() -%}
+    <div class="c-card-grid">
+        {% set awards = collections.awards | order('date', 'DESC') %}
+        {% for award in awards %}
+            {{ _self.award_card(award) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}

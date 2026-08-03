@@ -3,8 +3,8 @@
 collections:
   - name: posts
     folder: _posts
-  - name: accomplishments
-    folder: _about/accomplishments
+  - name: awards
+    folder: _about/awards
   - name: communities
     folder: _about/communities
   - name: experience

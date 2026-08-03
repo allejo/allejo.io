@@ -1,0 +1,12 @@
+{% macro abbr_num(value) %}
+    {% set abs_value = value | abs %}
+    {% if abs_value >= 1000000000 %}
+        {{ (value / 1000000000) | round(1, 'floor') }}B
+    {% elseif abs_value >= 1000000 %}
+        {{ (value / 1000000) | round(1, 'floor') }}M
+    {% elseif abs_value >= 1000 %}
+        {{ (value / 1000) | round(1, 'floor') }}K
+    {% else %}
+        {{ value }}
+    {% endif %}
+{% endmacro %}

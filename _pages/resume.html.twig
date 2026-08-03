@@ -1,0 +1,28 @@
+---
+title: Resume
+nav: 4
+description: A comprehensive overview of my professional experience, skills, and accomplishments in the field of software
+permalink: /resume/
+has_toc: true
+---
+
+{% extends '_layouts/page.html.twig' %}
+{% from '_macros/cards.html.twig' import conference_talk_cards, resume_cards %}
+
+{% block title %}Resume | allejo.io{% endblock %}
+
+{% block content %}
+    {% markdown %}
+        # Resume
+
+        I’ve been doing writing code for an employer professionally (i.e., I got paid) for about a decade and a half. On this page, I’m sharing the highlights of my career in a relatively detailed manner. I also have a one-page, printable version of my resume.
+
+        ## Work Experience
+
+        {{ resume_cards() }}
+
+        ## Conference Talks
+
+        {{ conference_talk_cards() }}
+    {% endmarkdown %}
+{% endblock %}
